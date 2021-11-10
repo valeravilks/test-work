@@ -1,0 +1,23 @@
+{% spaceless %}
+	{% set component_class = "m-search-bar" %}
+	{% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+	{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+	<div class="{{ component_class }} {{ version }} {{ parent }} {{ extra_class }}" data-module="searchBar">
+		<div class="{{ component_class }}__container">
+
+			<form role="search" method="get" class="{{ component_class }}__search-form" action="/">
+
+				<label class="{{ component_class }}__label">
+					<span class="{{ component_class }}__indicator screen-reader-text">Search for:</span>
+					<input type="search" class="{{ component_class }}__search-field"
+						   placeholder="Enter your search term&hellip;" value="" name="s"/>
+				</label>
+
+				<input class="{{ component_class }}__search-submit" type="submit" value="Search"/>
+
+			</form>
+
+		</div>
+	</div>
+{% endspaceless %}

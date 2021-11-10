@@ -1,0 +1,28 @@
+{% spaceless %}
+{% set component_class = "c--default-gate" %}
+
+{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+{% block main_payload %}
+        <div class="{{ component_class }}__wrapper">
+
+            <div class="{{ component_class }}__left">
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage(section.image) %}
+				<div class="{{ component_class }}__image-wrapper">
+
+				</div>
+
+            </div>
+
+			<div class="{{ component_class }}__right">
+				<div class="{{ component_class }}__form-wrapper">
+
+				</div>
+			</div>
+
+        </div>
+
+    {% endblock %}
+
+{% endspaceless %}

@@ -1,0 +1,53 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-cta-bar" %}
+
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block block_inner %}
+
+		<div class="{{ component_class }}__container l-container">
+			<div class="{{ component_class }}__container-inner flex flex-col md:flex-row">
+
+				<div class="{{ component_class }}__column {{ component_class }}__column--1 md:w-6/12 md:justify-start md:text-left text-center">
+					{% include '01-atoms/content/title/title.twig' with {
+						title        : section.block_title,
+						parent_class : component_class,
+						h            : 2
+					} only %}
+				</div>
+
+				<div class="{{ component_class }}__column {{ component_class }}__column--2 md:w-6/12 flex md:justify-end justify-center md:items-center">
+					<div class="{{component_class}}__btn-wrapper">
+						{% include '01-atoms/buttons/button/button.twig' with {
+							parent_class : component_class,
+							button       : section.button
+						} only %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	{% endblock %}
+
+{% endspaceless %}

@@ -1,0 +1,404 @@
+{
+    "key": "group_5e486e12c4c3b",
+    "title": "Video",
+    "fields": [
+        {
+            "key": "field_5e486e175729d",
+            "label": "Video Type",
+            "name": "video_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "file": "File (WebM or MP4)",
+                "external": "External URL",
+                "embed-link": "Embed Link (Youtube, Vimeo etc)",
+                "embed": "Embed Script (Youtube, Vimeo etc)"
+            },
+            "default_value": "file",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e486e525729e",
+            "label": "Video Embed",
+            "name": "video_embed",
+            "type": "acf_code_field",
+            "instructions": "Paste an embedded video here. Either Vimeo or YouTube",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "monokai"
+        },
+        {
+            "key": "field_5fd9c76cca9cc",
+            "label": "Video Aspect Ratio",
+            "name": "video_aspect_ratio",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "sixteen-to-nine": "16:9",
+                "four-to-three": "4:3"
+            },
+            "default_value": "sixteen-to-nine",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e486e6c5729f",
+            "label": "Video File (MP4)",
+            "name": "video_file_mp4",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "file"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "acfe_uploader": "wp",
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5e486e81572a0",
+            "label": "Video File (WebM)",
+            "name": "video_file_webm",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "file"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "acfe_uploader": "wp",
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5e486e94572a1",
+            "label": "Video External (MP4)",
+            "name": "video_external_mp4",
+            "type": "url",
+            "instructions": "Add an external URL to a video file. Note: The external URL has to end with mp4",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e486ee4572a2",
+            "label": "Video External (WebM)",
+            "name": "video_external_webm",
+            "type": "url",
+            "instructions": "Add an external URL to a video file. Note: The external URL has to end with WebM",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5eb10ef920723",
+            "label": "Video Link (embed)",
+            "name": "video_embed_link",
+            "type": "url",
+            "instructions": "Add an external URL to a video file. Note: The external URL should be like YouTube, Vimeo video links.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "==",
+                        "value": "embed-link"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e48762877c2f",
+            "label": "Video Cover",
+            "name": "video_cover",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "!=",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "acfe_uploader": "wp",
+            "acfe_thumbnail": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5fd8a8e6b1c9a",
+            "label": "Mute Video",
+            "name": "video_mute",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "!=",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fd8a908b1c9b",
+            "label": "Enable Video Autoplay",
+            "name": "video_enable_autoplay",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "!=",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fd8d73364caf",
+            "label": "Enable Video Loop",
+            "name": "video_enable_loop",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "!=",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fd8d77164cb0",
+            "label": "Show Video Controls",
+            "name": "video_show_controls",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e486e175729d",
+                        "operator": "!=",
+                        "value": "embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_permissions": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1608109627
+}

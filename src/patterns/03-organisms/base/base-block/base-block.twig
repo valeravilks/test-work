@@ -1,0 +1,187 @@
+{% spaceless %}
+	{##################################################################################################################}
+	{# 	Organism: Base Block																					      #}
+	{# 																											      #}
+	{# 	Important code here! :D																					      #}
+	{#	This is the default / base block that ALL blocks will inherit from (through the Base Block Layout Types).     #}
+	{#	This approach prevents a massive amount of code repetition.												      #}
+	{#	This file should NOT be edited as it might conflict with other default and custom blocks.			          #}
+	{#	Please ask your development manager when you would like to edit this block.								      #}
+	{##################################################################################################################}
+
+	{# 	Base block class. All blocks have this class. #}
+	{% set default_block_class = 'o-dbm' %}
+
+	{# 	Some blocks have alternate versions which are used to prevent having to create additional blocks when
+		an additional version can easily be created instead.
+	#}
+	{% set block_version       = section.version                        ? component_class ~ "--"                 ~ section.version                              | join("") %}
+
+	{# 	Set the text alignment of this block. Typically default, center and left are used.
+		The default is either the same as center or left.
+		Styles associated with alignment are / should be defined inside the SCSS file for your block.
+		We set 2 CSS classes here. One with the base block CSS class. Other custom to the component (component_class).
+	#}
+	{% set block_align_custom  = section.alignment                      ? component_class ~ "--align-"           ~ section.alignment                            | join("") : component_class ~ "--align-default" %}
+	{% set block_align_general = section.alignment                      ? default_block_class ~ "--align-"       ~ section.alignment                            | join("") : default_block_class ~ "--align-default" %}
+
+	{# 	Set a color palette for this block.
+		An example would be a block with a dark BG and white text that has a light BG and dark text on another page.
+		This CSS class does NOT handle background colors or images. WP users can set those separately (see base-block-background-set.twig).
+		Styles associated with color palette's for this block are / should be defined inside the SCSS file for your block
+	#}
+	{% set block_color         = section.block_visuals.block_text_color ? component_class ~ "--color-"           ~ section.block_visuals.block_text_color       | join("") : component_class ~ "--color-default" %}
+
+	{#
+	Other misc settings that provide helpful classes to the block wrapper. Only used for specific blocks or scenarios
+	#}
+	{% set block_image_align   = section.image_left_or_right            ? default_block_class ~ "--image-align-" ~ section.image_left_or_right                  | join("") %}
+	{% set block_title_type    = section.title_type                     ? section.title_type                                                                     %}
+
+	{#
+	Wrapper of the block. Used to output a large number of block specific classes
+	#}
+	<div
+		class="
+		{{ default_block_class }}
+		{{ component_class }}
+		{{ block_version }}
+		{{ block_align_general }}
+		{{ block_align_custom }}
+		{{default_block_class}}--padding-bottom-{{ section.block_visuals.block_padding_bottom }}
+		{{default_block_class}}--padding-top-{{ section.block_visuals.block_padding_top }}
+		{{ block_color }}
+		{{ block_card_type }}
+		{{ block_image_align }}
+		"
+		id="{{ section.block_id ? section.block_id }}"
+	>
+
+		{# 	Background options for the block. Spans the entire block.
+		   	Regardless of the Base Block Layout Type, each block has the same background options #}
+		{% include '02-molecules/background-set/background-set.twig' with {
+			default_block_class : default_block_class,
+			set 				: section.block_visuals,
+			parent_class        : component_class,
+		} only %}
+
+		{% block before_container %}{% endblock %}
+
+		{% if container != false %}
+		<div class="l-container {{ component_class }}__container">
+			{% endif %}
+
+			{# 	Block Inner is used by various Base Block Types.
+				Content (title, text, repeater, buttons etc) inside any default or custom block
+				is nested in the Base Block Types. All Base Block Types use block_inner.
+
+				Overwrite Block Inner if you want a completely custom block
+			#}
+			{#####################################}
+			{# Block Inner                       #}
+			{#####################################}
+			{% block block_inner %}
+
+				{# Used to output custom block shapes, decoration or images #}
+				{% block shape_top %}
+
+				{% endblock %}
+
+				{# Used to output optional pretitles #}
+				{% block pretitle %}
+					{% if section.block_pretitle %}
+						<div class="{{ default_block_class }}__pretitle-wrapper {{component_class}}__pretitle-wrapper wow">
+							<span class="h3 {{ default_block_class }}__pretitle {{component_class}}__pretitle">{{ section.block_pretitle }}</span>
+						</div>
+					{% endif %}
+				{% endblock %}
+
+				{# If you want a block that has the title, content, button, like the rest them but some other functionality in between content and button then you overide the after_content block#}
+				{% block before_title %}
+				{% endblock %}
+
+				{# Used to output the main block title #}
+				{% block title %}
+					{% include '01-atoms/content/title/title.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						title               : section.block_title,
+						type                : section.title_type,
+						version             : section.title_width,
+						h                   : block_title_type,
+						spacing_bottom      : section.title_padding_bottom,
+						add_class_on_anim   : true
+					} only %}
+				{% endblock %}
+
+				{# Used to output an optional subheader. Rarely used #}
+				{% block after_title %}
+					{% if section.subheader %}
+						<div class="{{component_class}}__subheader-wrapper wow">
+							<h4 class="{{component_class}}__subheader h2">{{ section.subheader }}</h4>
+						</div>
+					{% endif %}
+				{% endblock %}
+
+				{% block before_content %}{% endblock %}
+
+				{# Used to output the main content field of this block #}
+				{% block content %}
+					{% include '01-atoms/content/content/content.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						content             : section.content,
+						add_class_on_anim   : true
+					} only %}
+				{% endblock %}
+
+				{% block after_content %}{% endblock %}
+
+				{# 	IMPORTANT. Custom block features go here #}
+
+				{% block before_main_payload %}
+				{% endblock %}
+
+				{% block main_payload %}{% endblock %}
+
+				{% block after_main_payload %}
+				{% endblock %}
+
+				{# Used to output one or multiple buttons #}
+
+				{% block before_button %}{% endblock %}
+
+				{% block button %}
+					{% if section.add_bottom_content %}
+						<div class="{{default_block_class}}__bottom-content">
+							{{ section.bottom_content }}
+						</div>
+					{% endif %}
+
+					{% if section.add_button %}
+						{% include '01-atoms/buttons/button/button.twig' with {
+							default_block_class : default_block_class,
+							parent_class 		: component_class,
+							button      		: section.button,
+							add_class_on_anim   : true
+						} only %}
+					{% endif %}
+				{% endblock %}
+
+				{% block after_button %}
+				{% endblock %}
+
+				{# Used to output custom block shapes, decoration or images #}
+				{% block shape_bottom %}
+
+				{% endblock %}
+
+			{% endblock %}
+
+			{# Blocks inside of the 'sidebar - content blocks' and 'under main content - content blocks' dont need a container with gutters / sizing helpers #}
+			{% if container != false %}
+		</div>
+		{% endif %}
+
+	</div>
+{% endspaceless %}

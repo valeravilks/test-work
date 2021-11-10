@@ -1,0 +1,34 @@
+{% spaceless %}
+	{#
+	* Renders the scroll to pagination button. Used for sliders
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class  = "a-btn-pagination" %}
+	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
+
+	<div class="{{ component_class }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
+
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 18 17" style="enable-background:new 0 0 18 17;" xml:space="preserve">
+                       <style type="text/css"> .st000111{enable-background:new;}  .st11100{fill:#FFFFFF;}</style>
+			<g id="Page-1-Copy">
+				<g id="arrow-direction" transform="translate(-1216.000000, -5739.000000)">
+					<g id="QUOTE" transform="translate(-1.000000, 5424.000000)">
+						<g id="Arrows" transform="translate(161.000000, 300.000000)">
+							<g class="st000111">
+								<path
+									class="st11100" d="M1066.5,31.1c-0.2,0.2-0.4,0.2-0.6,0.2c-0.2,0-0.4-0.1-0.6-0.2s-0.2-0.4-0.2-0.6c0-0.2,0.1-0.4,0.2-0.6 l5.6-5.6h-13.8c-0.2,0-0.4-0.1-0.6-0.2s-0.2-0.4-0.2-0.6c0-0.2,0.1-0.4,0.2-0.6s0.4-0.2,0.6-0.2h13.8l-5.6-5.6 c-0.2-0.2-0.2-0.4-0.2-0.6c0-0.2,0.1-0.4,0.2-0.6s0.4-0.2,0.6-0.2c0.2,0,0.4,0.1,0.6,0.2l7,7c0.2,0.2,0.2,0.4,0.2,0.6 s-0.1,0.4-0.2,0.6L1066.5,31.1z"
+								/>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</svg>
+	</div>
+{% endspaceless %}

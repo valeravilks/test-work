@@ -1,0 +1,113 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Modal
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Molecule Variables         //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.m-modal {
+	z-index: $g-z1;
+	position: relative;
+
+	&__outer-wrapper {
+		display: none;
+
+		&.is-open {
+			display: block;
+			z-index: $g-z500;
+		}
+
+		&[aria-hidden="false"] .m-modal__overlay {
+			animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+		}
+
+		&[aria-hidden="false"] .m-modal__dialog {
+			animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+		}
+
+		&[aria-hidden="true"] .m-modal__overlay {
+			animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+		}
+
+		&[aria-hidden="true"] .m-modal__dialog {
+			animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+		}
+
+		.m-modal__dialog,
+		.m-modal__overlay {
+			will-change: transform;
+		}
+	}
+
+	&__overlay {
+		@include fixed-full;
+		background: rgba(0, 0, 0, .6);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__dialog {
+		max-width: 500px;
+		max-height: 100vh;
+		padding: 30px;
+		background-color: #fff;
+		border-radius: 4px;
+		box-sizing: border-box;
+		overflow-y: auto;
+		@include bp-md {
+			min-width: 500px;
+		}
+	}
+
+	&__button-wrapper {
+		text-align: center;
+	}
+
+	@keyframes mmfadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes mmfadeOut {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@keyframes mmslideIn {
+		from { transform: translateY(15%); }
+		to { transform: translateY(0); }
+	}
+
+	@keyframes mmslideOut {
+		from { transform: translateY(0); }
+		to { transform: translateY(-10%); }
+	}
+}
+
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+// Used to create additional versions of this molecule.
+
+.m-modal {
+	&--default {
+
+	}
+}

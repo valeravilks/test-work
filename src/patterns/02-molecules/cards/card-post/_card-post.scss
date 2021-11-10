@@ -1,0 +1,96 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Card Post				                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-card-post {
+	display: flex;
+	flex-direction: column;
+	transition: $g-trans-base;
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+
+	&:hover {
+		box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	&__img-wrapper {
+		position: relative;
+		height: 200px;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	&__img-link {
+		line-height: 0;
+		overflow: hidden;
+		&:hover {
+			.m-card-post {
+				&__img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: $g-trans-base-longer !important;
+		transform: scale(1);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 30px;
+	}
+
+	&__title,
+	&__title-link {
+		color: #000;
+		padding-bottom: 15px;
+	}
+
+	&__title {
+		transition: $g-trans-base;
+		&:hover {
+			color: $g-brand-color-1;
+		}
+	}
+
+	&__description,
+	&__link {
+	}
+
+	&__content {
+		padding-bottom: 15px;
+	}
+
+	&__link-wrapper {
+		margin-top: 20px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		font-weight: 700;
+		color: $g-heading-dark;
+		@include underline-special-reverse;
+		&:hover {
+			color: $g-heading-dark;
+		}
+	}
+}

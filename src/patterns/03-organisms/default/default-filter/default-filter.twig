@@ -1,0 +1,79 @@
+{% spaceless %}
+	{#
+	* Renders the filter component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "o-default-filter" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"o-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
+
+	{# Grabbing the terms. Used for filtering. Typically the taxonomy variable is hardcoded in the page template. #}
+	{# Ideally, terms should be coming from a PHP file #}
+	{% set terms = function(
+		'get_terms',
+		{
+			'taxonomy' : "category",
+			'hide_empty' : true,
+		}
+	) %}
+
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}" data-module="defaultFilter">
+		<div class='{{ component_class }}__container l-container'>
+
+			<div class="{{ component_class }}__repeater js-filter">
+
+				{# "Items" need to come from somewhere. Either an ACF field or loop. Please see src/helpers/sample-queries for examples #}
+				{# In this case, items is coming from the PHP page template file. #}
+				{% for item in items %}
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{# {% set item = TimberPost( item ) %}#}
+
+					{# We're keeping the TimberImage outside the card to ensure the card can be used in other places #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{# Needed for the MixItUp filter library #}
+					{% set extra_class_for_filter = 'mix'  %}
+
+					{# Grabbing the categories of the post (item) in question. Alternatively, custom taxonomies can be used #}
+					{% set filters = item.terms('category')  %}
+
+					{% include '02-molecules/cards/card-post-alt-horizontal/card-post-alt-horizontal.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						extra_class			: extra_class_for_filter,
+						filters				: filters,
+						add_class_on_anim   : true,
+						version       		: index == 0 ? 'big',
+						resize_number 		: index == 0 ? 900 : 650
+					} only %}
+				{% endfor %}
+
+				<div class="{{ component_class }}__no-result">
+					No entries found!
+				</div>
+			</div>
+
+			<div class="{{ component_class }}__sidebar">
+				<div class="{{ component_class }}__sidebar-inner">
+					{% include '02-molecules/filter-control/filter-control.twig' with {
+						parent_class 		: component_class,
+						terms				: terms,
+						title               : "Filter",
+						title_dropdown      : "Choose your filter option"
+					} only %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+{% endspaceless %}

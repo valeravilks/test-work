@@ -1,0 +1,105 @@
+{% spaceless %}
+	{% set component_class = "o-footer" %}
+	{% set column_1        = options.footer_column_1 %}
+	{% set column_2        = options.footer_column_2 %}
+	{% set column_3        = options.footer_column_3 %}
+	{% set column_4        = options.footer_column_4 %}
+	{% set logo_svg        = options.header_logo_svg %}
+	{% set logo_png        = TimberImage( options.header_logo_png ) %}
+
+	{% set top_bar_group   = options.header_top_bar_group %}
+
+	<footer class="{{ component_class }}">
+		<div class="{{ component_class }}__container l-container">
+			{% if logo_svg or logo_png.id %}
+				<div class="{{component_class}}__logo-wrapper">
+					{% include '01-atoms/icon/icon.twig' with {
+						parent_class : component_class,
+						icon_svg     : logo_svg,
+						icon_image   : logo_png,
+						link         : site.link,
+						lazyload     : false,
+					} only %}
+				</div>
+			{% endif %}
+
+			<div class="{{ component_class }}__socials-wrapper">
+				{% include '02-molecules/social/social-links/social-links.twig' with {
+					parent_class : component_class,
+					social_links : options.social_links
+				} only %}
+			</div>
+
+			<div class="{{ component_class }}__columns-wrapper">
+				<div class="{{ component_class }}__column {{ component_class }}__column--1">
+					{% if column_1.title %}
+						<h6 class="{{ component_class }}__column-title">
+							{{ column_1.title }}
+						</h6>
+					{% endif %}
+
+					{% if column_1.content %}
+						<div class="{{ component_class }}__content-wrapper">
+							{{ column_1.content }}
+						</div>
+					{% endif %}
+
+
+					{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
+					{{ nav.menu( menu_footer_1.get_items, 'm-nav', 'm-nav--footer', component_class, false, false ) }}
+				</div>
+
+				<div class="{{component_class}}__column {{ component_class }}__column--2">
+					{% if column_2.title %}
+						<h6 class="{{ component_class }}__column-title">
+							{{ column_2.title }}
+						</h6>
+					{% endif %}
+
+					{% if column_2.content %}
+						<div class="{{ component_class }}__content-wrapper">
+							{{ column_2.content }}
+						</div>
+					{% endif %}
+
+					{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
+					{{ nav.menu( menu_footer_2.get_items, 'm-nav', 'm-nav--footer', component_class, false, false ) }}
+				</div>
+
+				<div class="{{component_class}}__column {{ component_class }}__column--3">
+					{% if column_3.title %}
+						<h6 class="{{ component_class }}__column-title">
+							{{ column_3.title }}
+						</h6>
+					{% endif %}
+
+					{% if column_3.content %}
+						<div class="{{ component_class }}__content-wrapper">
+							{{ column_3.content }}
+						</div>
+					{% endif %}
+				</div>
+
+				<div class="{{component_class}}__column {{ component_class }}__column--4">
+					{% if column_4.title %}
+						<h6 class="{{ component_class }}__column-title">
+							{{ column_4.title }}
+						</h6>
+					{% endif %}
+
+					{% if column_4.content %}
+						<div class="{{ component_class }}__content-wrapper">
+							{{ column_4.content }}
+						</div>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+
+		{% include '03-organisms/custom/custom-footer/footer-bar.twig' with {
+			component_class : component_class ~ '-bar',
+			bottom_bar      : options.footer_bottom_bar
+		} %}
+	</footer>
+{% endspaceless %}

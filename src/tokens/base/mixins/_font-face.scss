@@ -1,0 +1,13 @@
+///////////////////////////
+// Font-face mixin      //
+/////////////////////////
+
+@mixin font-face($font-family, $url, $font-style, $font-weight) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url($url + ".woff") format("woff"),
+             url($url + ".woff2") format("woff2");
+        font-style: $font-style;
+        font-weight: $font-weight;
+    }
+}

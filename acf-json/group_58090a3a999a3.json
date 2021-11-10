@@ -1,0 +1,79 @@
+{
+    "key": "group_58090a3a999a3",
+    "title": "Button",
+    "fields": [
+        {
+            "key": "field_58862e48827ba",
+            "label": "Style",
+            "name": "style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "a-btn a-btn--primary": "Closed Primary Color",
+                "a-btn a-btn--secondary": "Closed Secondary Color",
+                "a-btn a-btn--tertiary": "Closed Tertiary Color",
+                "a-btn a-btn--open-primary": "Opened Primary Color",
+                "a-btn a-btn--open-secondary": "Opened Secondary Color",
+                "a-btn a-btn--open-tertiary": "Opened Tertiary Color",
+                "a-link--underline": "Underline Link",
+                "a-link--basic": "Normal Link"
+            },
+            "default_value": "a-btn a-btn--primary",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58090b4741841",
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1633129772
+}

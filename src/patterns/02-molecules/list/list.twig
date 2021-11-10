@@ -1,0 +1,54 @@
+{% spaceless %}
+	{#
+	* Renders the sample component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-list" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
+
+		<div class="{{ component_class }}__card wow {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }}">
+			<h4 class="{{ component_class }}__card-title wow">
+				{{ list_title }}
+			</h4>
+
+			<ul class="{{ component_class }}__card-list">
+				{% for item in list_items %}
+					{% set delay_time = loop.index*3 %}
+					<li class="{{ component_class }}__card-list-item wow" data-wow-delay=".{{ delay_time }}s">
+						<span class="{{ component_class }}__card-list-icon wow" data-wow-delay=".{{ delay_time }}s">
+							{% if list_type == 'cons' %}
+								<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+									<g>
+										<g>
+											<path fill="red" fill-opacity=".5" d="M20 17.855c.269.282.429.665.429 1.065 0 .4-.16.783-.429 1.08-.297.269-.68.429-1.08.429s-.783-.16-1.065-.429l-1.935-2L14 20c-.297.269-.68.429-1.08.429s-.783-.16-1.065-.429a1.562 1.562 0 0 1-.444-1.08c0-.4.16-.783.444-1.065l1.95-1.935-1.95-1.92a1.524 1.524 0 0 1 0-2.145 1.524 1.524 0 0 1 2.145 0l1.92 1.95 1.935-1.95a1.524 1.524 0 0 1 2.145 0A1.553 1.553 0 0 1 20 14l-2 1.92zM15.92.92c-8.284 0-15 6.716-15 15 0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15a15 15 0 0 0-15-15z"/>
+										</g>
+									</g>
+								</svg>
+							{% else %}
+								<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+									<g>
+										<g>
+											<path fill="#45c58e" d="M22.172 13.134l-6.818 8.181a1.364 1.364 0 0 1-2.012.092l-4.09-4.091a1.364 1.364 0 0 1 1.928-1.928l3.034 3.035 5.863-7.035a1.363 1.363 0 0 1 1.29-.498c.488.11.895.42 1.062.885.167.466.069.986-.257 1.359zM15.67.67c-8.284 0-15 6.716-15 15 0 8.33 6.716 15 15 15 8.33 0 15-6.67 15-15 0-8.284-6.67-15-15-15z"/>
+										</g>
+									</g>
+								</svg>
+							{% endif %}
+						</span>
+
+						<span class="{{ component_class }}__card-list-txt wow" data-wow-delay=".{{ delay_time }}s">
+							{{ item.list_item }}
+						</span>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+{% endspaceless %}

@@ -1,0 +1,28 @@
+{% spaceless %}
+	{#
+	* Renders the social sharing component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class = "m-social-links" %}
+	{% set version         = version      ? component_class ~ "--" ~ version                                | join("") %}
+	{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class | replace({"a-" : ""}) | join("") %}
+
+	<div class="{{ parent }} {{ component_class }} {{ version }} {{ extra_class }}">
+		{% for item in social_links %}
+			{% set social_link = item.link %}
+
+			<a
+				class="{{ component_class }}__link {{ component_class }}__link--{{ social_link.title | lower }}"
+				href="{{ social_link.url }}"
+				target="_blank"
+			>
+				<i class="fa {{ item.social_icon }}" aria-hidden="true"></i>
+			</a>
+		{% endfor %}
+	</div>
+{% endspaceless %}

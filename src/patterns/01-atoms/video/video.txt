@@ -1,0 +1,41 @@
+NOTES:
+
+When using the WordPress CMS ACF as video source:
+
+Use the "video" cloned field group. Use clone fields and select "group".
+Make sure to prefix all fields names. Do not prefill labels.
+
+You may include a video like this:
+
+{% include 'objects/video/video.twig' with {
+    version         : "full",
+    autoplay        : true,
+    muted           : true,
+    loop            : true,
+    playsinline     : true,
+    controls        : false,
+    type            : post.hero_bg_video_type,
+    video_mp4       : TimberImage(post.hero_bg_video_file_mp4),
+    video_webm      : TimberImage(post.hero_bg_video_file_webm),
+    video_ext_mp4   : post.hero_bg_video_external_mp4,
+    video_ext_webm  : post.hero_bg_video_external_webm,
+    video_embed     : post.hero_bg_video_embed,
+    video_cover     : TimberImage(post.hero_bg_video_cover)
+} %}
+
+{% include 'objects/video/video.twig' with {
+    parent_class    : component_class,
+    version         : "default",
+    autoplay        : false,
+    muted           : false,
+    loop            : false,
+    playsinline     : false,
+    controls        : true,
+    type            : item.video.type,
+    video_mp4       : TimberImage(item.video.file_mp4),
+    video_webm      : TimberImage(item.video.file_webm),
+    video_ext_mp4   : item.video.external_mp4,
+    video_ext_webm  : item.video.external_webm,
+    video_embed     : item.video.embed,
+    video_cover     : TimberImage(item.video.cover)
+} %}

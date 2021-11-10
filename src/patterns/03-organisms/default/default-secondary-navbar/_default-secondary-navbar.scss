@@ -1,0 +1,175 @@
+.o-default-secondary-navbar {
+	position: sticky;
+	top: 83px;
+	left: 0;
+	z-index: $g-z80;
+	transition: $g-trans-base;
+	@include bpm-xs {
+		top: 66px;
+	}
+
+	&--scrollable {
+		box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+	}
+
+	&--hidden {
+		transform: translateY(-100%);
+	}
+
+	&__container {
+		@include bpm-xs {
+			width: 100%;
+			padding: 0;
+		}
+	}
+
+	&__inner {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__scroll-btn-wrapper {
+		position: absolute;
+		top: 0;
+		display: flex;
+		width: 30px;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		background-color: var(--secondary-nav-bg-color);
+		opacity: 0;
+		pointer-events: none;
+		transition: $g-trans-base;
+
+		&--visible {
+			visibility: visible;
+			opacity: 1;
+			pointer-events: auto;
+			@include bpm-xs {
+				display: none;
+			}
+		}
+
+		&--left {
+			left: 15px;
+			box-shadow: 24px 0px 38px 11px var(--secondary-nav-bg-color);
+			@include bpm-xs {
+				left: 5px;
+			}
+		}
+
+		&--right {
+			right: 15px;
+			box-shadow: -24px 0px 38px 11px var(--secondary-nav-bg-color);
+			@include bpm-xs{
+				right: 5px;
+			}
+		}
+	}
+
+	&__scroll-btn {
+		display: none;
+		width: 30px;
+		height: 30px;
+		padding: 8px;
+		background-color: $g-brand-color-1;
+		border-radius: 50%;
+		transition: $g-trans-base;
+
+		&:hover {
+			background-color: #fb5d5d;
+		}
+
+		&--visible {
+			display: block;
+			@include bpm-xs {
+				display: none;
+			}
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			fill: #fff;
+			transition: $g-trans-base;
+		}
+	}
+
+	&__list {
+		list-style-type: none;
+		display: flex;
+		min-width: max-content;
+	}
+
+	&__list-item {
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	&__list-item-link {
+		display: block;
+		padding: 15px 30px;
+		border-bottom: 2px solid transparent;
+		outline: none;
+		font-family: $g-heading-font-family;
+		@include bpm-xs {
+			padding: 15px;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				border-bottom: 2px solid $g-brand-color-1;
+			}
+		}
+
+		&--active {
+			border-bottom: 2px solid $g-brand-color-1;
+			color: $g-brand-color-1;
+
+			@media (hover: hover) {
+				&:hover {
+					border-bottom: 2px solid $g-brand-color-1;
+				}
+			}
+		}
+	}
+}
+
+// Covers scenario(s) where this block has multiple text colors ..
+// "color-default" is the starting point and is required to style
+.o-default-secondary-navbar--color-default,
+.o-default-secondary-navbar--color-dark {
+	.o-default-secondary-navbar {
+		&__title,
+		&__content,
+		&__list-item-link {
+			color: $g-body-dark;
+
+			&--active {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+}
+
+.o-default-secondary-navbar--color-light {
+	.o-default-secondary-navbar {
+		&__title,
+		&__content,
+		&__list-item-link {
+			color: $g-body-light;
+
+			&--active {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Default Badges Repeater                     //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-default-badges {
+	&__repeater {
+		padding-top: 40px;
+		@include outlining-card-1-by-6;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+}

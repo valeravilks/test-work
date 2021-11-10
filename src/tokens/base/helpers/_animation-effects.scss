@@ -1,0 +1,38 @@
+///////////////////////////////////////////////////////////////////////
+// Animation for WOW + Preventing flash of unfired animation         //
+///////////////////////////////////////////////////////////////////////
+
+// Be careful using this. Could cause content to NOT be indexed by search engines
+.h-wow .wow {
+	visibility: hidden;
+}
+
+// TODO: Make sure we use h-lazyload everywhere
+.lazyload, .h-lazyload, .h-lazy--fade, .h-lazyload--fade {
+	opacity: 0;
+    transition: $g-trans-opacity;
+
+	.lazyloaded &,
+	.lazyloaded ~ &,
+	.lazyloaded ~ * &,
+	&.lazyloaded {
+		opacity: 1;
+		transition: $g-trans-opacity;
+	}
+}
+
+.lazyloaded {
+    opacity: 1;
+}
+
+.h-lazyload--from-bottom {
+	transform: translate3d(0, 50px, 0);
+
+	.lazyloaded &,
+	.lazyloaded ~ &,
+	.lazyloaded ~ * &,
+	&.lazyloaded {
+		transform: translate3d(0, 0, 0);
+		transition: $g-trans-transform;
+	}
+}

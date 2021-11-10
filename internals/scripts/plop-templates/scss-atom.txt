@@ -1,0 +1,33 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: {{ titleCase elementName }}
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Atom Variables           //
+//////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-{{ dashCase elementName }} {
+}
+
+
+/////////////////////////////
+// Atom Versions           //
+/////////////////////////////
+
+// Used to create additional versions of this atom.
+
+.a-{{ dashCase elementName }} {
+	&--default {
+
+	}
+}

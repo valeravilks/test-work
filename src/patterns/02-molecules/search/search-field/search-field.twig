@@ -1,0 +1,22 @@
+{% spaceless %}
+	{#
+	# Rest Search
+	#
+	# should include it with a types variable so this form knows what to search
+	#
+	# {% include '/components/search/search-field.twig' with {types: ['post', 'staff', 'page']} %}
+	#}
+
+	{% set component_class = "m-search-field" %}
+	{% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+	{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+	<div class="{{ component_class }} {{ parent }} {{version}} {{ extra_class}}">
+		<form class="{{ component_class }}__form js-search-field">
+			<span class="{{ component_class }}__icon fa fa-search"></span>
+			<div class="{{ component_class }}__input-wrap">
+				<input type="text" name="s" placeholder="search"/>
+			</div>
+		</form>
+	</div>
+{% endspaceless %}

@@ -1,0 +1,48 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Shame                                       //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+/**
+ * The idea of shame.css is that you have a totally new stylesheet reserved just for your hacky code.
+ * The code you have to write to get the release out on time, but the code that makes you ashamed.
+ *
+ * ----------------------------------------------------------------------------------------------
+ *
+ * By putting your bodges, hacks and quick-fixes in their own file you do a few things:
+ *
+ * ----------------------------------------------------------------------------------------------
+ *
+ * You make them stick out like a sore thumb.
+ * You keep your ‘main’ codebase clean.
+ * You make developers aware that their hacks are made very visible.
+ * You make them easier to isolate and fix.
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * Obviously we need some kind of rules and criteria:
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * If it’s a hack, it goes in shame.css.
+ * Document all hacks fully:
+ * What part of the codebase does it relate to?
+ * Why was this needed?
+ * How does this fix it?
+ * How might you fix it properly, given more time?
+ * Do not blame the developer; if they explained why they had to do it then their reasons are probably (hopefully) valid.
+ * Try and clean shame.css up when you have some down time.
+ * Even better, get a tech-debt story in which you can dedicate actual sprint time to it.
+ *
+ */
+
+.wow {
+  //visibility: hidden;
+}
+
+// Storybook preview fix
+#root {
+	margin: 0 !important;
+}

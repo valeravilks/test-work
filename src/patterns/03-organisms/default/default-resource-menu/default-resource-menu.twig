@@ -1,0 +1,39 @@
+{% spaceless %}
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-resource-menu" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+
+	{# Which taxonomy to output here is set in the PHP template file OR index.php #}
+	{% set category_terms = function(
+		'get_terms',
+		{
+			'taxonomy' : taxonomy,
+			'hide_empty' : true,
+		}
+	) %}
+
+	{# If no taxonomy is set, don't output the menu #}
+	{% if taxonomy %}
+		<div class="{{ component_class }} {{ version }}">
+			<div class="{{component_class}}__container l-container">
+
+				<div class="{{component_class}}__menu">
+					{# We're only showing the first 5 #}
+					{% for category_term in category_terms|slice(0, 5) %}
+
+						<a class="{{component_class}}__link" href="{{ site.url }}/{{ category_term.taxonomy }}/{{ category_term.slug }}">{{ category_term.name }}</a>
+
+					{% endfor %}
+				</div>
+
+			</div>
+		</div>
+	{% endif %}
+
+{% endspaceless %}

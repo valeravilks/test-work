@@ -1,0 +1,111 @@
+{#
+# pagination.twig
+#
+#
+# ACCEPTED ARGUMENTS
+# class
+#
+# EXAMPLE
+# {% include 'components/pagination/pagination.twig' with { class: 'blog'} %}
+#}
+{% spaceless %}
+    {% set component_class = "m-pagination" %}
+	{% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+	{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+    {% if posts.pagination.total > 1 %}
+        {% set pagination_prev_url = posts.pagination.prev.link %}
+        {% set pagination_next_url = posts.pagination.next.link %}
+
+        {% if dynamic_content_flag == "yes" %}
+            {% set splited_pagination_prev_url = posts.pagination.prev.link | split( '/' ) %}
+            {% set splited_pagination_next_url = posts.pagination.next.link | split( '/' ) %}
+
+            {% if splited_pagination_prev_url %}
+                {% set pagination_prev_url = site.link ~ "/" ~ post_main_slug ~ "/"  %}
+                {% set custom_paged_prev   = "" %}
+
+                {% if splited_pagination_prev_url.5 %}
+                    {% set pagination_prev_url = site.link ~ "/" ~ post_main_slug ~ "/" ~ splited_pagination_prev_url.5 ~ "/" ~ splited_pagination_prev_url.6  %}
+                    {% set custom_paged_prev = splited_pagination_prev_url.6 %}
+                {% endif %}
+            {% endif %}
+
+            {% if splited_pagination_next_url %}
+                {% set pagination_next_url = site.link ~ "/" ~ post_main_slug ~ "/"  %}
+                {% set custom_paged_next   = "" %}
+
+                {% if splited_pagination_next_url.5 %}
+                    {% set pagination_next_url = site.link ~ "/" ~ post_main_slug ~ "/" ~ splited_pagination_next_url.5 ~ "/" ~ splited_pagination_next_url.6  %}
+                    {% set custom_paged_next = splited_pagination_next_url.6 %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+        <div class="{{ component_class }} {{ parent }} {{ extra_class }} {{ version }} {{ class ? 'm-pagination--' ~ class : '' }} {{ dynamic_content_flag == "yes" ? component_class ~ "--dynamic" }}">
+            <a
+                class="{{ component_class }}__action-link {{ component_class }}__link--prev {{ posts.pagination.prev ? '' : 'link--inactive' }}"
+                href="{{ pagination_prev_url }}"
+                data-pt="{{ page_posts_type }}"
+                data-ps="{{ post_main_slug }}"
+                data-sm="{{ searched_meta }}"
+                data-paged="{{ custom_paged_prev }}"
+                data-ct="{{ cta_text }}"
+            >
+                <i
+                    class="a-btn-arrow__icon a-btn-arrow__icon--left fa fa-angle-left"
+                    aria-hidden="true"
+                ></i>
+            </a>
+            {% for page in posts.pagination.pages %}
+                {% if page.link %}
+                    {% set page_url = page.link %}
+
+                    {% if dynamic_content_flag == "yes" %}
+                        {% set splited_page_link = page.link | split( '/' ) %}
+                        {% set custom_paged      = "" %}
+                        {% set page_url          = site.link ~ "/" ~ post_main_slug ~ "/"  %}
+
+                        {% if splited_page_link.5 %}
+                            {% set page_url     = site.link ~ "/" ~ post_main_slug ~ "/" ~ splited_page_link.5 ~ "/" ~ splited_page_link.6  %}
+                            {% set custom_paged = splited_page_link.6 %}
+                        {% endif %}
+                    {% endif %}
+
+                    {% if  loop.index  <= 5 or page.title == '...' %}
+                        <a
+                            href="{{ page_url }}"
+                            class="{{ component_class }}__action-link {{ page.class }} {{ component_class }}__link"
+                            data-pt="{{ page_posts_type }}"
+                            data-ps="{{ post_main_slug }}"
+                            data-sm="{{ searched_meta }}"
+                            data-paged="{{ custom_paged }}"
+                            data-ct="{{ cta_text }}"
+                        >
+                            {{ page.title }}
+                        </a>
+                    {% endif %}
+
+                {% else %}
+                    <span class="{{ page.class }} {{ component_class }}__link">{{ page.title }}</span>
+
+                {% endif %}
+            {% endfor %}
+
+            <a
+                class="{{ component_class }}__action-link {{ component_class }}__link--next {{ posts.pagination.next ? '' : 'link--inactive' }}"
+                href="{{ pagination_next_url }}"
+                data-pt="{{ page_posts_type }}"
+                data-ps="{{ post_main_slug }}"
+                data-sm="{{ searched_meta }}"
+                data-paged="{{ custom_paged_next }}"
+                data-ct="{{ cta_text }}"
+            >
+                <i
+                    class="a-btn-arrow__icon a-btn-arrow__icon--right fa fa-angle-right"
+                    aria-hidden="true"
+                ></i>
+            </a>
+        </div>
+    {% endif %}
+{% endspaceless %}

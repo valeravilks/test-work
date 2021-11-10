@@ -1,0 +1,51 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Gallery                   //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.o-default-gallery {
+
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+.o-default-gallery--align-default {
+}
+
+// Covers scenario(s) where this block has multiple color schemes .. "color-default" is required and the starting point
+.o-default-gallery--color-default,
+.o-default-gallery--color-dark {
+	.o-default-gallery {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-default-gallery--color-light {
+	.o-default-gallery {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+// Component versions beyond color and alignment go here

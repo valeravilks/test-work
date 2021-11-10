@@ -1,0 +1,41 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# Organism: Base Banner                                     #}
+{#   					                                     #}
+{# Used to output a banner above the header.  				 #}
+{# The "default" banner is set in the site options. 		 #}
+{# If needed, the user can overwrite this on a page by page. #}
+{# basis. 													 #}
+{#  														 #}
+{# Contact your development manager if you want to edit      #}
+{# this file.                                                #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{% spaceless %}
+	{% set component_class = "o-banner-holder" %}
+
+	{% block block_inner %}
+
+		{# If Global call to actions are used AND IF the global call to action is NOT set to HIDE AND IF a custom call to action is not set for this page. #}
+		{% if options.show_global_banner == true and post.meta('hide_global_banner') == false and post.meta('set_custom_page_banner') == false %}
+			{% set banner = TimberPost(options.global_banner[0]) %}
+
+			{# Loop through selected banner's #}
+			{% for section in banner.meta( 'block' ) %}
+				{% include 'blocks-repeater/base-block-repeater-import-list.twig' %}
+			{% endfor %}
+
+			{# A custom call to action is set for this page #}
+		{% elseif post.meta('set_custom_page_banner') == true or ( options.show_global_banner == false and post.meta('set_custom_page_banner') == true ) %}
+			{% set banner = TimberPost(post.meta( 'banner' )[0]) %}
+
+			{# Loop through selected banner's #}
+			{% for section in banner.meta( 'block' ) %}
+				{% include '03-organisms/base/base-block-repeater/base-block-repeater-import-list.twig' %}
+			{% endfor %}
+		{% endif %}
+
+	{% endblock %}
+
+{% endspaceless %}

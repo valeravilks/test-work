@@ -1,0 +1,148 @@
+{
+    "key": "group_5a7214bb87d40",
+    "title": "Additional Page Options",
+    "fields": [
+        {
+            "key": "field_5e39c7899bf4e",
+            "label": "Pixel Tracker",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a7214bba0907",
+            "label": "Add Pixel Tracker",
+            "name": "has_tracker",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Do you want this item to include a Pixel Tracker?",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a7215917777f",
+            "label": "Tracker Code",
+            "name": "tracker_code",
+            "type": "acf_code_field",
+            "instructions": "Please paste the tracker code here. Careful! Make sure you have an opening and closing tag, otherwise you may break the page...",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a7214bba0907",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "material"
+        },
+        {
+            "key": "field_5e39c7e69dd70",
+            "label": "Schema",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e39c7f29dd71",
+            "label": "Schema Code",
+            "name": "schema_code",
+            "type": "acf_code_field",
+            "instructions": "Please build the appropriate Schema JSON (using a tool like this one <a href='https:\/\/www.schemaapp.com\/tools\/jsonld-schema-generator\/' target='_blank'>JSON Schema Generator<\/a>), test it and paste it here to improve search engine results.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "mode": "htmlmixed",
+            "theme": "monokai"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-study"
+            }
+        ]
+    ],
+    "menu_order": 500,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_permissions": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1608199779
+}

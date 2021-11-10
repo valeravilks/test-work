@@ -1,0 +1,13 @@
+{% extends 'base/sidebar-content.twig' %}
+
+{% block before_main %}
+  {% include 'breadcrumbs/breadcrumbs.twig' %}
+{% endblock %}
+
+{% block content %}
+	
+{% endblock %}
+
+{% block sidebar_primary %}
+	{% include 'sidebar/blog-overview.twig' %}
+{% endblock %}

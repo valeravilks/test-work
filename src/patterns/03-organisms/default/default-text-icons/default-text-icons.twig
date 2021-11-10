@@ -1,0 +1,54 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-text-icons" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	{% block main_payload %}
+
+		{% if section.add_icons %}
+			{# The repeater below might not be be needed. Remove if not applicable #}
+			<div class="{{ component_class }}__repeater">
+				{% for item in section.icons %}
+
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{% set item  = TimberPost(item) %}
+
+					{% set icon_svg   = item.get_field( 'svg_version' ) %}
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set icon_image = TimberImage( item.get_field( 'image_version' ) ) %}
+
+					{% include '02-molecules/cards/card-icon-content/card-icon-content.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						icon_svg            : icon_svg,
+						icon_image          : icon_image,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+				{% endfor %}
+			</div>
+		{% endif %}
+	{% endblock %}
+{% endspaceless %}

@@ -1,0 +1,18 @@
+## Filter Control
+
+Used in the filter organism. Pass the preferred terms string or variable, which can be passed from page template
+to default-filter organism.
+
+For example, to use categories as a filter:
+{% set terms = function(
+	'get_terms',
+	{
+		'taxonomy' : 'category',
+		'hide_empty' : true,
+	}
+) %}
+
+{% include '02-molecules/default-filter-control/default-filter-control.twig' with {
+	parent_class 		: component_class,
+	terms				: terms
+} only %}

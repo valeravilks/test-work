@@ -1,0 +1,24 @@
+///////////////////////////
+// Scroll                //
+///////////////////////////
+
+.h-scroll {
+	-webkit-overflow-scrolling: touch;
+	overflow: auto;
+}
+
+.h-scroll-lock {
+	overflow: hidden;
+}
+
+////////////////////////
+// Links              //
+////////////////////////
+
+.h-link {
+	&--inactive {
+		pointer-events: none;
+		cursor: default;
+		user-select: none;
+	}
+}

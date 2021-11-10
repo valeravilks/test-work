@@ -1,0 +1,12 @@
+{% spaceless %}
+
+	{# Grab the selected CTA's. The CTA is just a regular repeatable block #}
+	{# Accessing WordPress post and making them available to Twig templates #}
+	{% set section = TimberPost(section.relationship[0]) %}
+
+	{# Loop through selected CTA's #}
+	{% for section in section.meta( 'block' ) %}
+		{% include '03-organisms/base/base-block-repeater/base-block-repeater-import-list.twig' %}
+	{% endfor %}
+
+{% endspaceless %}

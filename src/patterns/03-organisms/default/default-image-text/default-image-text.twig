@@ -1,0 +1,88 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-image-text" %}
+	{% set container       = false %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+	{% set img_position    = section.version ? section.version | split('-') | last : 'left' %}
+	{% set container       = false %}
+	{% set resize_width    = 560 %}
+
+	{% if section.version == 'container-img-right' or section.version == 'container-img-left' %}
+		{% set container    = true %}
+	{% endif %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	{% block before_title %}
+		<div class="{{ component_class }}__content-wrapper {{ component_class ~ '__content-wrapper--img-' ~ img_position }}">
+		<div class="{{ component_class }}__group-text">
+	{% endblock %}
+
+	{% block main_payload %}
+		{% if section.add_button %}
+			<div class="{{ default_block_class }}__button-wrapper {{component_class}}__button-wrapper {{component_class}}__btn-wrapper wow">
+				{% include '01-atoms/buttons/button/button.twig' with {
+					parent_class : component_class,
+					button       : section.button
+				} only %}
+			</div>
+		{% endif %}
+		</div>
+		{% if section.image_ratio == 'ratio-16-9' %}
+			{% set resize_height = 315 %}
+		{% elseif section.image_ratio == 'ratio-4-3' %}
+			{% set resize_height = 420 %}
+		{% endif %}
+
+		{% if section.image %}
+			<div class="{{component_class}}__group-img">
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage( section.image ) %}
+
+				<!-- Crop image -->
+				{% if img.post_mime_type != "image/png" and section.image_ratio != 'none' %}
+					<img
+						src="{{ img.src | resize( resize_width, resize_height ) }}"
+						class="{{component_class}}__img lazyload h-lazy--fade"
+					/>
+				{% else %}
+					{% include '01-atoms/images/image-default/image-default.twig' with {
+						parent_class      : component_class,
+						img               : img,
+						version          : "single",
+						lazyload          : true,
+						wrapper           : true,
+						add_class_on_anim : true
+					} only %}
+				{% endif %}
+			</div>
+		{% endif %}
+		</div>
+
+	{% endblock %}
+
+	{% block button %}
+	{% endblock %}
+
+{% endspaceless %}

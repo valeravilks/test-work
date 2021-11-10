@@ -1,0 +1,46 @@
+{% spaceless %}
+{% set component_class = "m-background-set" %}
+{% set version           = version           ? component_class ~ "--" ~ version | join("") %}
+
+	<div class="{{ component_class }} {{ default_block_class }}__bg {{ parent_class }}__bg-set {{ version }} absolute inset-0 w-full h-full">
+
+		{% if set.block_background_color %}
+			<span class="{{ default_block_class }}__bg {{ parent_class }}__bg {{ component_class }}__bg absolute inset-0 w-full h-full" style="background-color: {{ set.block_background_color }}"></span>
+		{% endif %}
+
+		{% if set.block_border_top != 'none' %}
+			<div class="{{component_class}}__border-wrapper {{component_class}}__border-wrapper--top wow">
+				<div class="{{component_class}}__border {{component_class}}__border--top"></div>
+			</div>
+		{% endif %}
+
+		{% if set.block_border_bottom != 'none' %}
+			<div class="{{component_class}}__border-wrapper {{component_class}}__border-wrapper--bottom wow">
+				<div class="{{component_class}}__border {{component_class}}__border--bottom"></div>
+			</div>
+		{% endif %}
+
+		{% if set.block_background_type == 'image' and set.block_background_image_add %}
+
+			{% set block_background_image = TimberImage( set.block_background_image ) %}
+
+			<div class="{{ component_class }}__bg-image-wrapper">
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class : component_class,
+					img          : block_background_image,
+					modifier     : "bg-image",
+					lazyload     : false,
+					srcset       : true,
+					wrapper      : false
+				} only %}
+			</div>
+
+			{% if set.block_background_image_overlay %}
+				<div
+					class="{{ component_class }}__bg-image-overlay"
+					style="background-color: {{ set.block_background_image_overlay }}"
+				></div>
+			{% endif %}
+		{% endif %}
+	</div>
+{% endspaceless %}

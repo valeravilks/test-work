@@ -1,0 +1,37 @@
+{% spaceless %}
+	{% set component_class              = "t-default-article-single" %}
+
+	{% extends '04-templates/base/base-page/base-page.twig' %}
+
+	{% block main %}
+		{% include '03-organisms/default/default-article-single/default-article-single.twig' %}
+
+		{% if post.get_field( 'blog_related_articles' ) %}
+			{% set items = post.get_field( 'blog_related_articles' ) %}
+		{% else %}
+			{% set items = function( 'get_cpt_posts_by', 'post', 3, 'post_date', 'DESC', post.ID ) %}
+		{% endif %}
+
+		{# Hardcoding some of the values for the latest posts. Prevens the creation of a new custom block #}
+		{% set section = {
+			block_title: "something 1",
+			h    : 2,
+			block_visuals: {
+				block_padding_bottom: 'default',
+				block_padding_top: 'default'
+			},
+			content: "something content",
+		} %}
+
+		{% include '03-organisms/default/default-latest-posts/default-latest-posts.twig' with {
+			parent_class         : component_class,
+			title                : options_single_blog_elements.single_blog_other_topics_section_title,
+			subtitle             : options_single_blog_elements.single_blog_other_topics_section_subtitle,
+			alignment            : 'left',
+			section              : section,
+			items                : items
+		} %}
+
+	{% endblock %}
+
+{% endspaceless %}

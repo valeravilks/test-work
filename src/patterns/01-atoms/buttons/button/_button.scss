@@ -1,0 +1,54 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Button				                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+// 1: Normal Button
+.a-btn {
+	@include btn;
+	background-color: transparent;
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+// 4: Button Types
+.a-btn--primary {
+	@include btn-primary;
+}
+
+.a-btn--secondary {
+	@include btn-secondary;
+}
+
+.a-btn--tertiary {
+	@include btn-tertiary;
+}
+
+.a-btn--open-primary {
+	@include btn-open-primary;
+}
+
+.a-btn--open-secondary {
+	@include btn-open-secondary;
+}
+
+.a-btn--open-tertiary {
+	@include btn-open-tertiary;
+}
+
+.a-btn--small {
+	@include btn-small;
+}

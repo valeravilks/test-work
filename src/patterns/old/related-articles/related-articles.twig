@@ -1,0 +1,82 @@
+{% spaceless %}
+    {% set component_class  = "c-related-articles" %}
+    {% set parent_class     = parent_class ? parent_class ~ '__' ~ component_class | replace({ "c-" : "" }) %}
+    {% set headingAlignment = alignment ? component_class ~ "__title-wrapper--" ~ alignment | join("") %}
+
+    <div class="{{ parent_class }} {{ component_class }}">
+		<div class="l-container">
+            <div
+				class="{{ component_class }}__title-wrapper {{ headingAlignment }} h-hide wow fadeInUp"
+				data-wow-delay=".3s"
+			>
+                {% include '01-atoms/content/title/title.twig' with {
+                    title             : title,
+                    parent_class      : component_class,
+                    h                 : 2,
+                    shape_color       : title_shape_color,
+                    add_class_on_anim : true
+                } only %}
+
+                {% include '01-atoms/content/subtitle/subtitle.twig' with {
+                    subtitle     : subtitle,
+                    parent_class : component_class
+                } only %}
+            </div>
+
+            <div
+				class="{{ component_class }}__slider-wrapper h-hide wow fadeInUp"
+				data-wow-delay=".3s"
+				data-module="defaultRelatedArticles"
+			>
+				<div class="{{ component_class }}__slider-container swiper-container">
+					<div class="{{ component_class}}__slider-items-wrapper swiper-wrapper">
+						{% for item in related_posts_object %}
+							<div class="{{ component_class }}__slider-item swiper-slide">
+								{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
+									parent_class : component_class,
+									post         : item
+								} only %}
+							</div>
+						{% endfor %}
+					</div>
+
+					<div class="{{ component_class }}__slider-pagintaion swiper-pagination"></div>
+				</div>
+
+				{% if ( related_posts_object | length > 3 ) %}
+					<div class="{{ component_class }}__slider-controls-holder">
+						<button type="button" class="js-slider-prev">
+							<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11">
+								<g>
+									<g transform="matrix(-1 0 0 1 7 0)">
+										<g>
+											<path fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="20" d="M1 .5l4.95 4.95"/>
+										</g>
+										<g>
+											<path fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="20" d="M1 10.45L5.95 5.5"/>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</button>
+
+						<button type="button" class="js-slider-next">
+							<svg xmlns="http://www.w3.org/2000/svg" width="7" height="11" viewBox="0 0 7 11">
+								<g>
+									<g>
+										<g>
+											<path fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="20" d="M1 .5l4.95 4.95"/>
+										</g>
+										<g>
+											<path fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="20" d="M1 10.45L5.95 5.5"/>
+										</g>
+									</g>
+								</g>
+							</svg>
+						</button>
+					</div>
+				{% endif %}
+            </div>
+        </div>
+    </div>
+{% endspaceless %}

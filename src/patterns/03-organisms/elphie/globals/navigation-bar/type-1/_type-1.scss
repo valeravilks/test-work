@@ -1,0 +1,25 @@
+.o-navigation-bar {
+	display: flex;
+	width: 100%;
+	height: var(--theme-header-height-desk);
+	background-color: var(--theme-color-1);
+	z-index: 999;
+	position: absolute;
+
+	&__logo-wrapper {
+		height: var(--theme-header-height-desk);
+		color: var(--theme-header-logo-text-color);
+		padding: 5px 20px;
+	}
+
+	&__hamburger-wrapper {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 50px;
+		background-color: var(--theme-header-hamburger-bg-color);
+		.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+			background-color: var(--theme-header-hamburger-color);
+		}
+	}
+}

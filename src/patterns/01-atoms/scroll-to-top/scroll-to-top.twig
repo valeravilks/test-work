@@ -1,0 +1,19 @@
+{% spaceless %}
+	{#
+	* Renders the scroll to top button
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class  = "a-scroll-to-top" %}
+	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
+	{% set js_hook          = "js-scroll-to-top" %}
+
+	<div class="{{ component_class }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}" data-module="scrollToTop">
+		<i class="{{ component_class }}__icon fa fa-angle-up"></i>
+	</div>
+{% endspaceless %}

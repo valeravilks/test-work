@@ -1,0 +1,38 @@
+{% spaceless %}
+	{#
+	* Renders the author component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  button               Contains the button label, button link and button external link
+	* @param  {string}  extra_class          optional extra CSS class
+	* @param  {string}  extra_class_wrapper  optional extra CSS class assigned to the wrapper
+	#}
+	{% set component_class   = "m-author" %}
+	{% set version         	 = version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set add_class_on_anim = add_class_on_anim ? "wow" | join("") %}
+	{% set parent        	 = parent_class      ? parent_class ~ "__" ~ component_class | replace({ "m-" : "" }) | join("") %}
+
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}">
+		<div class="{{ component_class }}__img-wrapper">
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class : component_class,
+				img          : author.avatar,
+				modifier     : "author-avatar",
+				lazyload     : true,
+				srcset       : false,
+				wrapper      : false
+			} only %}
+		</div>
+
+		<div class="{{ component_class }}__info">
+			<div class="{{ component_class }}__fullname">
+                {{ author.display_name }}
+            </div>
+
+			<div class="{{ component_class }}__date">{{ date }}</div>
+		</div>
+	</div>
+{% endspaceless %}

@@ -1,0 +1,108 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Slider Images	Repeater    //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-default-slider-images {
+	&__slider {
+	}
+
+	.m-slider__wrapper {
+		margin-top: 20px;
+	}
+
+	&__slider-container {
+		padding-top: 50px;
+	}
+
+	// Block specific stuff here
+	&__slide-item {
+		position: relative;
+		display: flex;
+
+		&.swiper-slide {
+			height: 500px;
+		}
+	}
+
+	&__img-wrapper {
+		@include absolute-full;
+		z-index: 1;
+		margin: 0 58px;
+		@include bpm-sm {
+			margin: 0 45px;
+		}
+		@include bpm-xs {
+			margin: 0;
+		}
+
+		&::after {
+			content: "";
+			@include absolute-full;
+			background-color: rgba(0, 0, 0, .3);
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__slide-item-info {
+		width: 70%;
+		margin: auto auto 0;
+		padding: 15px 15px 35px;
+		text-align: center;
+		font-size: 18px;
+		color: #fff;
+		z-index: 10;
+	}
+
+	&__stories-slider-btn-prev,
+	&__stories-slider-btn-next {
+
+
+		&--disabled,
+		&.swiper-button-disabled {
+			display: none;
+		}
+	}
+
+	&__stories-slider-btn-prev {
+		right: calc(100% - 48px);
+		@include bpm-sm {
+			right: calc(100% - 35px);
+		}
+	}
+
+	&__stories-slider-btn-next {
+		left: calc(100% - 48px);
+		@include bpm-sm {
+			left: calc(100% - 35px);
+		}
+	}
+
+	&__slider-pagination {
+		&.swiper-pagination {
+			position: static;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $g-brand-color-1;
+		}
+	}
+}

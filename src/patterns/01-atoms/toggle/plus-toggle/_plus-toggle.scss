@@ -1,0 +1,92 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Plus Toggle    	                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-plus-toggle {
+	$size: 25px;
+
+	position: relative;
+	display: block;
+	transition: all 0.4s ease;
+	height: $size;
+	width: $size;
+	&__line,
+	&__line:before {
+		content: '';
+		cursor: pointer;
+		display: block;
+		height: 2px;
+		left: 0;
+		background-color: $g-body-dark;
+		position: absolute;
+		top: 10px;
+		width: $size;
+	}
+
+	&__line:before {
+		left: 0;
+		transform: rotate(-90deg);
+		top: 0;
+	}
+
+	&__line,
+	&__line:before {
+		transition: $g-trans-base;
+	}
+	&__mark {
+		@include absolute-tl;
+
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		display: block;
+
+		span,
+		span:before {
+			//background: rgba($g-text-base, 0.85);
+			content: '';
+			cursor: pointer;
+			display: block;
+			height: 2px;
+			left: 1.2em;
+			position: absolute;
+			top: 1.2em;
+			width: 18px;
+		}
+
+		span:before {
+			left: 0;
+			transform: rotate(-90deg);
+			top: 0;
+		}
+
+		span,
+		span:before {
+			transition: all 200ms ease-in-out;
+		}
+	}
+
+	&--opened {
+		span {
+			background-color: transparent;
+		}
+		span:before {
+			top: 0;
+		}
+		span:before {
+			transform: rotate(0);
+		}
+	}
+}

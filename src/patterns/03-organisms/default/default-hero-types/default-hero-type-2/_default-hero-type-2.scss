@@ -1,0 +1,218 @@
+////////////////////////////////////////////////////////////////////
+// Hero Types                                                     //
+//                                                                //
+// Each hero type has it's own alignment + text color options     //
+////////////////////////////////////////////////////////////////////
+
+// Default Hero Type. Included in all DOD projects. Each hero type has it's own alignment + text color options
+.o-hero--default-side-image {
+	.o-hero {
+		&__title {
+		}
+
+		&__content {
+			align-items: center;
+			height: 100%;
+			padding-top: 35px;
+			padding-bottom: 35px;
+			@include bpm-md {
+				flex-wrap: wrap;
+			}
+
+			&--aside-image-right {
+				flex-direction: row;
+
+				.o-hero__info-wrapper {
+					@include bp-md {
+						padding: 20px 50px 20px 0;
+					}
+				}
+			}
+
+			&--aside-image-left {
+				flex-direction: row-reverse;
+
+				.o-hero__info-wrapper {
+					@include bp-md {
+						padding: 20px 0 20px 50px;
+					}
+				}
+			}
+		}
+
+		&__info-wrapper,
+		&__img-wrapper--hero-aside-img {
+			flex-grow: 0;
+			flex-shrink: 1;
+		}
+
+		&__info-wrapper {
+			flex-basis: 50%;
+			@include bpm-md {
+				flex-grow: 1;
+				flex-basis: 100%;
+				padding: 20px 0;
+			}
+		}
+
+		&__img-wrapper--hero-aside-img {
+			flex-basis: 50%;
+			height: 500px;
+			@include bpm-md {
+				flex-grow: 1;
+				flex-basis: 100%;
+			}
+		}
+
+		&__img--hero-aside-img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&__content,
+		&__subtitle {
+		}
+
+		&__button {
+		}
+	}
+
+	////////////////////////////////////////////////////
+	// Additional options within this hero type       //
+	////////////////////////////////////////////////////
+	// Hero with content aligned to the left\
+	&.o-hero--align-default,
+	&.o-hero--align-left {
+		text-align: left;
+
+		.o-hero {
+			&__info-wrapper {
+				align-items: flex-start;
+				text-align: left;
+			}
+
+			&__title,
+			&__subtitle,
+			&__content {
+				text-align: left;
+			}
+
+			&__button-wrapper {
+				.a-button-wrapper__btn {
+					margin-right: 10px;
+					margin-bottom: 10px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Hero with content aligned in the middle
+	&.o-hero--align-center {
+		text-align: center;
+
+		.o-hero {
+			&__info-wrapper {
+				align-items: center;
+			}
+
+			&__title,
+			&__subtitle,
+			&__content {
+				text-align: center;
+			}
+
+			&__button-wrapper {
+				.a-button-wrapper__btn {
+					margin-right: 5px;
+					margin-bottom: 10px;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+
+	// Hero with content aligned in the right
+	&.o-hero--align-right {
+		text-align: right;
+
+		.o-hero {
+			&__info-wrapper {
+				align-items: flex-end;
+			}
+
+			&__title,
+			&__subtitle,
+			&__content {
+				text-align: right;
+			}
+
+			&__button-wrapper {
+				.a-button-wrapper__btn {
+					margin-bottom: 10px;
+					margin-left: 10px;
+
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Hero with dark text
+	&.o-hero--color-default,
+	&.o-hero--color-dark {
+		.o-hero {
+			&__content {
+				color: $g-body-dark;
+			}
+
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__subtitle {
+				color: $g-body-dark;
+
+				& * {
+					color: $g-body-dark;
+				}
+			}
+
+			&__info-wrapper {
+				color: $g-body-dark;
+			}
+		}
+	}
+
+	// Hero with light text
+	&.o-hero--color-light {
+		.o-hero {
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__title {
+				color: $g-body-light;
+			}
+
+			&__subtitle {
+				color: $g-body-light;
+
+				& * {
+					color: $g-body-light;
+				}
+			}
+
+			&__info-wrapper {
+				color: $g-body-light;
+			}
+		}
+	}
+}

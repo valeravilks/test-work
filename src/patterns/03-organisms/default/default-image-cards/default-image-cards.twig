@@ -1,0 +1,74 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-image-cards" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block main_payload %}
+		<div class="{{ component_class }}__repeater">
+
+			{# Dependent on the block version, we're outputting different types of cards.
+				Both options mostly have visual differences #}
+			{% for item in section.repeater %}
+				{% if section.version == "default" %}
+
+					{# Keeping the TimberImage outside of the component below to ensure the card can be used in other places #}
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.image ) %}
+
+					{% include '02-molecules/cards/card-image-link/card-image-link.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						interval            : true,
+						img                 : img,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+				{% elseif section.version == "alt" %}
+
+					{# Keeping the TimberImage outside of the component below to ensure the card can be used in other places #}
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.image ) %}
+
+					{% include '02-molecules/cards/card-image-link-alt/card-image-link-alt.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+				{% endif %}
+
+			{% endfor %}
+		</div>
+
+		{#		{% if section.show_more and section.repeater | length > 6 %}#}
+		{#			<div class="{{ component_class }}__show-more-btn-wrapper">#}
+		{#				<button class="{{ component_class }}__show-more-btn">Show More</button>#}
+		{#			</div>#}
+		{#		{% endif %}#}
+
+
+	{% endblock %}
+
+{% endspaceless %}

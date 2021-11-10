@@ -1,0 +1,61 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-secondary-navbar" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block main_payload %}
+		{% set chosen_menu = function( "wp_get_nav_menu_items", section.secondary_navigation ) %}
+
+		<div class="{{ component_class }}__inner" style="--secondary-nav-bg-color: {{ section.block_visuals.block_background_color }};">
+			<div class="{{ component_class }}__scroll-btn-wrapper {{ component_class }}__scroll-btn-wrapper--left">
+				<button class="{{ component_class }}__scroll-btn {{ component_class }}__scroll-btn--prev" data-module="defaultSecondaryNavbar">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 407.436 407.436" style="enable-background:new 0 0 407.436 407.436;" xml:space="preserve">
+						<polygon points="315.869,21.178 294.621,0 91.566,203.718 294.621,407.436 315.869,386.258 133.924,203.718 "/>
+					</svg>
+				</button>
+			</div>
+
+			<ul class="{{ component_class }}__list">
+				{% for menu_item in chosen_menu %}
+					<li class="{{ component_class }}__list-item">
+						<a
+							class="{{ component_class }}__list-item-link {{ loop.index == 1 ? component_class ~ '__list-item-link--active' }}"
+							href="{{ menu_item.url }}"
+						>
+							{{ menu_item.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<div class="{{ component_class }}__scroll-btn-wrapper {{ component_class }}__scroll-btn-wrapper--right">
+				<button class="{{ component_class }}__scroll-btn {{ component_class }}__scroll-btn--next">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 407.436 407.436" style="enable-background:new 0 0 407.436 407.436;" xml:space="preserve">
+						<polygon points="112.814,0 91.566,21.178 273.512,203.718 91.566,386.258 112.814,407.436 315.869,203.718 "/>
+					</svg>
+				</button>
+			</div>
+		</div>
+	{% endblock %}
+{% endspaceless %}

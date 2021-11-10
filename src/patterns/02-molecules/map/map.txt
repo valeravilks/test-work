@@ -1,0 +1,19 @@
+Usage example:
+	Location object, which should contain lat, lng, zoom, active_pin, inactive_pin, title , address_line_1, address_line_2
+	For example: {% set location = {
+    	lat			  : 30.3079827,
+    	lng			  : -97.893485,
+    	zoom		  : 8,
+    	title		  : 'Austin Texas',
+    	address_line_1: 'test 1',
+    	address_line_2: 'test 2',
+    } %}
+    {% set api_key ='AIzaSyBXSvVZ6CLvhZUJFR7qNF343UJUgsSIdkM' %}
+
+	{% include '02-molecules/map/map.twig' with {
+		parent_class		: component_class,
+		version				: version,
+		api_key				: api_key,
+		location			: location,
+		current_index		: 1 #if outside of loop# loop.index #inside of repeater#
+	} only %}

@@ -1,0 +1,37 @@
+## Filter
+
+// To use the filter for a given post_type and taxonomy (of that post_type), you'll need to pass an array of posts under "items"
+// as well as an array of terms under "terms". Both should come from a PHP file. See src/helpers/sample-queries for examples
+
+// Defining terms in TWIG (Doing this in PHP is preferred)
+{% set terms = function(
+	'get_terms',
+	{
+		'taxonomy' : 'category',
+		'hide_empty' : true,
+	}
+) %}
+
+// Defining terms in TWIG (Doing this in PHP is preferred)
+<!-- Allow WP user to manually select the entries to output -->
+{% if section.manual_post_selector %}
+	{% set items = section.items %}
+
+<!-- No manual selection? Let's show the latest X amount of posts instead. In this case the blog posts -->
+{% else %}
+	{% set items = function( 'get_cpt_posts_by',
+		'post',
+		3,
+		'post_date',
+		'DESC',
+		post.ID
+	) %}
+{% endif %}
+
+// Single use filter (assuming terms and items are ready to query)
+{% include '03-organisms/default/default-filter/default-filter.twig' with {
+	parent_class 		: component_class,
+	items         		: items,
+	terms				: terms,
+	add_class_on_anim   : true
+} only %}

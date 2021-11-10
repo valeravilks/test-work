@@ -1,0 +1,16 @@
+## Outside repeater:
+
+{% include '01-atoms/content/subtitle/subtitle.twig' with {
+	parent_class        : component_class,
+	title               : section.subtitle,
+	add_class_on_anim   : true
+} only %}
+
+
+## Inside repeater:
+
+{% include '01-atoms/content/subtitle/subtitle.twig' with {
+	parent_class        : component_class,
+	title               : item.subtitle,
+	add_class_on_anim   : true
+} only %}

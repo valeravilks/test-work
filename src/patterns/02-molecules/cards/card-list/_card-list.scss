@@ -1,0 +1,47 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Card List			                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-card-list {
+	&__title-wrapper {
+	}
+
+	&__list {
+		@include list-bare;
+	}
+
+	&__list-item {
+		margin-left: 0;
+		padding-left: 0;
+		padding-bottom: 15px;
+		font-weight: 500;
+		letter-spacing: normal;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&__list-link {
+		position: relative;
+		display: inline-block;
+		font-weight: 700;
+		color: $g-heading-dark;
+		@include underline-special-reverse;
+		&:hover {
+			color: $g-heading-dark;
+		}
+	}
+}

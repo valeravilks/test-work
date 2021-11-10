@@ -1,0 +1,14 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# Organism: Custom Block Repeater                           #}
+{#   					                                     #}
+{# Most custom pages use this feature. Custom blocks are 	 #}
+{# defined in WordPress (ACF) or JSON (Mock data)		 	 #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{% spaceless %}
+	{% for section in post.meta( 'block' ) %}
+		{% include '03-organisms/base/base-block-repeater/base-block-repeater-import-list.twig' %}
+	{% endfor %}
+{% endspaceless %}

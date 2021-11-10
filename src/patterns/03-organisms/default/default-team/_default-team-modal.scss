@@ -1,0 +1,102 @@
+.o-default-team {
+	&__member-info-modal {
+		@include fixed-full;
+		overflow-y: auto;
+		padding: 45px 110px 110px;
+		background-color: #000;
+		transform: scale(0);
+		z-index: $g-zmax;
+		transition: $g-trans-base;
+		@include bpm-sm {
+			padding: 45px;
+		}
+		@include bpm-xs {
+			padding: 25px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: #000;
+		}
+
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $g-brand-color-1;
+		}
+
+		&--unfoldIn {
+			transform: scaleY(0.01) scaleX(0);
+			animation: unfoldIn 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+			.o-default-team__member-info-modal-inner {
+				opacity: 1;
+			}
+		}
+
+		&--unfoldOut {
+			transform: scale(1);
+			animation: unfoldOut 0.7s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)
+				forwards;
+
+			.o-default-team__member-info-modal-inner {
+				opacity: 0;
+				transition: opacity 0.4s ease-in-out;
+			}
+		}
+	}
+
+	&__member-info-modal-inner {
+		opacity: 0;
+		transition: opacity 0.4s ease-in-out 0.7s;
+	}
+
+	&__member-info-modal-close-btn {
+		position: relative;
+		width: 105px;
+		height: 105px;
+		margin-left: auto;
+		@include bpm-xl {
+			width: 7.35vw;
+			height: 7.35vw;
+		}
+
+		&:hover {
+			.o-default-team__member-info-modal-close-btn-top,
+			.o-default-team__member-info-modal-close-btn-bottom {
+				background-color: $g-brand-color-1;
+			}
+		}
+	}
+
+	&__member-info-modal-close-btn-top,
+	&__member-info-modal-close-btn-bottom {
+		@include absolute-general($top: 50%, $left: 0);
+		transform: translateY(-50%);
+		width: 100%;
+		height: 1px;
+		background-color: #fff;
+		transform-origin: center;
+		transition: $g-trans-base;
+	}
+
+	&__member-info-modal-close-btn-top {
+		transform: translateY(-50%) rotate(45deg);
+	}
+
+	&__member-info-modal-close-btn-bottom {
+		transform: translateY(-50%) rotate(-45deg);
+	}
+
+	&__member-info-modal-content {
+		@include bp-md {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+		@include bpm-md {
+			margin-top: 25px;
+		}
+	}
+}

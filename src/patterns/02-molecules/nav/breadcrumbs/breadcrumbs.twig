@@ -1,0 +1,29 @@
+{% spaceless %}
+	{#
+	* Renders the card image post alternative component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  item                 content object. Has at least a title and content
+	* @param  {boolean} interval 			 optional helper for animating items one by one
+	* @param  {number}  index  				 current number of the loop this card is in
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class      = "m-breadcrumbs" %}
+	{% set version         		= version 			? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent               = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+	{#	{% if (options.show_breadcrumbs_block == true and post.show_breadcrumbs == true) %}#}
+	{#		<div class="{{ component_class }} {{ version }} {{ parent_class }} {{ extra_class }} {{ add_class_on_anim }}" typeof="BreadcrumbList" vocab="http://schema.org/">#}
+	{#			<div class="{{ component_class }}__container l-container">#}
+	{#				{{ fn('bcn_display ') }}#}
+	{#			</div>#}
+	{#		</div>#}
+	{#	{% endif %}#}
+	<div class="{{ component_class }} {{ version }} {{ parent_class }} {{ extra_class }} {{ add_class_on_anim }}" typeof="BreadcrumbList" vocab="http://schema.org/">
+		{{ fn('bcn_display ') }}
+	</div>
+{% endspaceless %}

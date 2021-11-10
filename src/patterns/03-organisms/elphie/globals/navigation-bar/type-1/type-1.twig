@@ -1,0 +1,22 @@
+{% spaceless %}
+	{% set component_class = "o-navigation-bar" %}
+	{% set version         = version      ? component_class ~ "--" ~ version | join("") %}
+
+	<div class="{{ component_class }} {{ version }} flex l-headroom js-header" id="header" data-module="headRoom">
+		<div class="{{component_class}}__container flex w-full">
+			{% if theme.logo %}
+
+			{% else %}
+				<div class="{{component_class}}__logo-wrapper items-center justify-self-end flex">
+					Text here
+				</div>
+			{% endif %}
+
+			<div class="{{ component_class }}__hamburger-wrapper">
+				{% include '02-molecules/nav/hamburger/hamburger.twig' with {
+					parent_class: component_class
+				} only %}
+			</div>
+		</div>
+	</div>
+{% endspaceless %}

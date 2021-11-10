@@ -1,0 +1,38 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-statistics" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+    {% block main_payload %}
+        <div class="{{ component_class }}__repeater">
+            {% for item in section.repeater %}
+				{% include '02-molecules/cards/card-statistic/card-statistic.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					interval            : true,
+					index       		: loop.index,
+					add_class_on_anim   : true,
+				} only %}
+            {% endfor %}
+        </div>
+    {% endblock %}
+{% endspaceless %}

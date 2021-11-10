@@ -1,0 +1,12 @@
+## Inside repeater:
+
+{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	img                 : img,
+	interval            : true,
+	index       		: loop.index,
+	add_class_on_anim   : true,
+	version       		: index == 0 ? 'big',
+	resize_number 		: index == 0 ? 900 : 650
+} only %}

@@ -1,0 +1,129 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Cta Bar
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+
+
+////////////////////////////////
+// Organism Base Styling      //
+////////////////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.o-default-cta-bar {
+	&__title-wrapper {
+
+	}
+
+	&__title {
+
+	}
+
+	&__content {
+
+	}
+
+	&__button-wrapper {
+
+	}
+}
+
+
+/////////////////////////////
+// Organism Versions       //
+/////////////////////////////
+
+// This organism is most likely inheriting styles from the default-organism.scss file.
+// If needed, the look & feel of organism versions can be modified below.
+
+
+//////////////////////////////////////////
+// Organism Versions -- Alignments      //
+//////////////////////////////////////////
+
+// Covers scenario(s) where this organism has multiple alignments ..
+// "align-default" is the starting point and is required to style
+
+// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+.o-default-cta-bar--align-center {
+	.o-default-cta-bar {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-default-cta-bar--align-default,
+.o-default-cta-bar--align-left {
+	.o-default-cta-bar {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+
+/////////////////////////////////////////////
+// Organism Color Palette Versions         //
+/////////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-default-cta-bar--color-default,
+.o-default-cta-bar--color-dark {
+    .o-default-cta-bar {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-default-cta-bar--color-light {
+	.o-default-cta-bar {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Organism Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
+

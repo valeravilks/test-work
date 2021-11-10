@@ -1,0 +1,23 @@
+{% spaceless %}
+    <div class="{{ component_class }}">
+        <div class="l-container {{ component_class }}__container {{ component_class }}__container--last">
+			<ul class="{{ component_class }}__list">
+				{% for bar_link in bottom_bar.links %}
+					<li>
+						<a
+							class="{{ component_class }}__link"
+							href="{{ bar_link.link.url }}"
+							{% if bar_link.link.target %}target="{{ bar_link.link.target }}"{% endif %}
+						>
+							{{ bar_link.link.title }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+            <div class="{{ component_class }}__copy">
+                <span class="{{ component_class }}__copy-symbol">&copy;</span> 1823 - {{ 'now' | date( 'Y' ) }} {{ bottom_bar.copyright_text }}
+            </div>
+        </div>
+    </div>
+{% endspaceless %}

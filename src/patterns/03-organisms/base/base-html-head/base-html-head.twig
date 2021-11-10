@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 9]>
+<html class="no-js ie lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" {{ site.language_attributes }}> <!--<![endif]-->
+<head>
+	<meta charset="{{ site.charset }}"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="pingback" href="{{ site.pingback_url }}"/>
+	<link rel='stylesheet' id='font-awesome-css'
+		  href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all'/>
+	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/b71b6792-7a6b-4bee-a79d-76853e17c769.css"/>
+	<link rel="stylesheet" href="https://use.typekit.net/vtu1hrh.css">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ theme.link }}/src/static/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ theme.link }}/src/static/images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ theme.link }}/src/static/images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ theme.link }}/src/static/images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ theme.link }}/src/static/images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ theme.link }}/src/static/images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ theme.link }}/src/static/images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ theme.link }}/src/static/images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ theme.link }}/src/static/images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{{ theme.link }}/src/static/images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ theme.link }}/src/static/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ theme.link }}/src/static/images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ theme.link }}/src/static/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="{{ theme.link }}/src/static/images/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{{ theme.link }}/src/static/images/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- WP Head -->
+	{{ function('wp_head') }}
+	<!-- Critical path CSS: -->
+	<style>
+		#content,
+		.not-visible {
+			opacity: 0;
+		}
+	</style>
+
+	{% for tracking in options.custom_scripts_head %}
+		{{ tracking.code }}
+	{% endfor %}
+
+	{% block head %}{% endblock %}
+</head>

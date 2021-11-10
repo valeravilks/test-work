@@ -1,0 +1,89 @@
+{# Mock Data #}
+{% set item = {
+	title: "something 1",
+	content: "something content",
+	items: [
+		{
+			title: "something 1",
+			content: "something content",
+			category : "print",
+		},
+		{
+			title: "something 2",
+			content: "something content",
+			category_slug: "broadcast",
+		},
+	]
+} %}
+
+{# Mock Data: Terms for filtering #}
+{% set terms = function(
+	'get_terms',
+	{
+		'taxonomy' : taxonomy,
+		'hide_empty' : true,
+	}
+) %}
+
+{# Mock Data: Location for map #}
+{% set location = {
+	lat			  : 30.3079827,
+	lng			  : -97.893485,
+	zoom		  : 8,
+	title		  : 'Austin Texas',
+	address_line_1: 'test 1',
+	address_line_2: 'test 2',
+} %}
+
+{#{% set api_key ='AIzaSyBXSvVZ6CLvhZUJFR7qNF343UJUgsSIdkM' %}#}
+
+{% spaceless %}
+	{% extends '04-templates/base/base-page/base-page.twig' %}
+
+	{% block main %}
+		{% set component_class = "t-sample-components" %}
+		{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+		<div class="{{ component_class }} {{ version }}">
+			<div class="l-container {{ component_class }}__container" style="padding:100px 0px;">
+
+				<div class='mb-20'>
+				{% include '02-molecules/dropdown/dropdown.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					interval            : true,
+					add_class_on_anim   : true,
+				} only %}
+				</div>
+
+				{% include '02-molecules/map/map.twig' with {
+					parent_class		: component_class,
+					version				: version,
+					api_key				: api_key,
+					location			: location,
+					current_index		: 1
+				} only %}
+
+				<div class='mb-20 mt-20'>
+				{% include '02-molecules/modal/modal.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					number              : 1,
+					add_class_on_anim   : true,
+					button_modal        : true,
+				} only %}
+				</div>
+			</div>
+		</div>
+
+		{# Placing on separate line as this is an organism (and has it's own container) #}
+		{% include '03-organisms/default/default-filter/default-filter.twig' with {
+			parent_class 		: component_class,
+			items         		: items,
+			terms				: terms,
+			add_class_on_anim   : true
+		} only %}
+
+	{% endblock %}
+
+{% endspaceless %}

@@ -1,0 +1,33 @@
+{% set component_class = "m-nav" %}
+
+<nav class="{{ component_class }} {{ component_class }}--side" data-module="navSide">
+    <!-- Accordion -->
+    <ul id="accordion" class="accordion">
+        {% for item in menu_side_1.get_items %}
+            <li class="{{ item.classes | join(' ') }} {{ component_class }}__item {{ component_class }}__item--level-0">
+                {% if item.get_children %}
+
+                    <a class="{{ component_class }}__link {{ component_class }}__link--level-0"
+                       href="{{ item.get_link }}">{{ item.title }}</a>
+                    {% include '01-atoms/toggle/plus-toggle/plus-toggle.twig' with {
+                    parent_class     : component_class,
+                    js_hook          : "js-nav-side-toggle"
+                    } %}
+
+                    <ul class="{{ component_class }}__sub-menu">
+                        {% for child in item.get_children %}
+                            <li class="{{ child.classes | join(' ') }} {{ component_class }}__item {{ component_class }}__item--level-1">
+                                <a class="{{ component_class }}__link {{ component_class }}__link--level-1"
+                                   href="{{ child.get_link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <a class="{{ component_class }}__link {{ component_class }}__link--level-0"
+                       href="{{ item.get_link }}">{{ item.title }}</a>
+                {% endif %}
+
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

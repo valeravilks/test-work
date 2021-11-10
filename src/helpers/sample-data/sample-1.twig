@@ -1,0 +1,27 @@
+{# Single use. Nested Repeater #}
+{% set item = {
+	title: "something 1",
+	content: "something content",
+	items: [
+		{
+			title: "Title 1",
+			content: "something content"
+		},
+		{
+			title: "Title 2",
+			content: "something content"
+		},
+	]
+} %}
+
+{# Array. Used for repeaters. Has a nested array #}
+{% set items = [
+	{
+		title: "Title 1",
+		content: "something content",
+	},
+	{
+		title: "Title 2",
+		content: "something content"
+	},
+] %}

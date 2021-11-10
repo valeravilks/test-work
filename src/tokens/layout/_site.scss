@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////
+//                                              //
+//  SCSS Fragment                               //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+.l-site {
+
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+.l-site--post-overview {
+	// padding-top: 0;
+}
+
+.l-body {
+	// Ensuring content doesn't show up below the header
+	.h-content-starting-point--no-hero {
+		padding-top: $g-layout-header-height-desktop;
+		@include bpm-md {
+			padding-top: $g-layout-header-height-mob;
+		}
+	}
+}

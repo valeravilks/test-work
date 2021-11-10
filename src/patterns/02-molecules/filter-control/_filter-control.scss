@@ -1,0 +1,108 @@
+.m-filter-control {
+	&__title {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1;
+		@include bpm-md {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__fieldset {
+		&--version-desktop {
+			@include bpm-md {
+				display: none;
+			}
+		}
+
+		&--version-mobile {
+			@include bp-md {
+				display: none;
+			}
+		}
+	}
+
+	&__container {
+		position: relative;
+		display: block;
+		margin-top: 16px;
+		padding-left: 36px;
+		font-size: 16px;
+		line-height: 1.25;
+		cursor: pointer;
+		user-select: none;
+
+		input[type="checkbox"] {
+			position: absolute;
+			width: 0;
+			height: 0;
+			opacity: 0;
+			cursor: pointer;
+
+			&:checked ~ .m-filter-control__checkmark {
+				background-color: $g-brand-color-2;
+				border: 1px solid $g-brand-color-2;
+
+				&::after {
+					transform: rotate(45deg) scale(1);
+				}
+			}
+		}
+	}
+
+	&__checkmark {
+		@include absolute-general($top: 0, $left: 0);
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-color: transparent;
+		border: 1px solid $g-brand-color-2;
+		border-radius: 2px;
+		transition: $g-trans-base;
+
+		&::after {
+			content: "";
+			@include absolute-general($top: 2px, $left: 6px);
+			width: 7px;
+			height: 11px;
+			border: solid white;
+			border-width: 0 3px 3px 0;
+			transform: rotate(45deg) scale(0);
+			transition: $g-trans-base;
+		}
+	}
+
+	&__select-wrapper {
+		position: relative;
+
+		select {
+			position: relative;
+			margin-bottom: 0;
+			padding: 8px 40px 8px 12px;
+			cursor: pointer;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background-color: transparent;
+			z-index: $g-z10;
+
+			&::-ms-expand {
+				display: none;
+			}
+		}
+	}
+
+	&__select-icon {
+		@include absolute-general($top: 0, $bottom: 0, $right: 20px);
+		width: 10px;
+		height: 6px;
+		margin: auto 0;
+		z-index: $g-z1;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

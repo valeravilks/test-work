@@ -1,0 +1,14 @@
+{% spaceless %}
+    {% set component_class = "m-nav-category" %}
+    {% set version         = version ? component_class ~ "--" ~ version | join("") %}
+
+    <div class="{{ component_class }} {{ version }}" data-module="navigateCategory">
+        <div class="{{ component_class }}__mobile-current-item">
+            <span class="{{ component_class }}__mobile-current-item-txt"></span>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+
+        {% import 'components/objects-default/nav/nav-macro/nav-macro.twig' as nav %}
+        {{ nav.menu( current_menu.get_items, 'm-nav', '', component_class, false ) }}
+    </div>
+{% endspaceless %}

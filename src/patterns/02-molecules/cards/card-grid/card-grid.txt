@@ -1,0 +1,9 @@
+## Inside repeater:
+
+{% include '02-molecules/cards/card-grid/card-grid.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	interval            : true,
+	index       		: loop.index,
+	add_class_on_anim   : true,
+} only %}

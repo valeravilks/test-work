@@ -1,0 +1,32 @@
+{% spaceless %}
+	{% set component_class = "o-default-related-posts" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	<div class="{{ component_class }} {{ version }}">
+		<div class="{{component_class}}__container l-container">
+
+			<div class="{{component_class}}__repeater">
+
+				{% for item in items %}
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{% set item = TimberPost( item ) %}
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{% include '02-molecules/cards/card-post/card-post.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+				{% endfor %}
+
+			</div>
+
+		</div>
+	</div>
+
+{% endspaceless %}

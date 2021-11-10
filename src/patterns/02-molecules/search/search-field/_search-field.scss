@@ -1,0 +1,43 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Search Field                      //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-search-field {
+	margin-bottom: 20px;
+
+	&__form {
+		position: relative;
+	}
+
+	&__input-wrap {
+		position: relative;
+	}
+
+	input {
+		max-width: none;
+	}
+
+	&__icon {
+		position: absolute;
+		display: block;
+		right: 25px;
+		bottom: 15px;
+		z-index: 1;
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////

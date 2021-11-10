@@ -1,0 +1,41 @@
+{% spaceless %}
+	{#
+	* Renders the card image link component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  item                 Content object. Has at least a title and content
+	* @param  {object}  img                  Image object. Includes things like image URL, image alt etc
+	* @param  {boolean} interval 			 optional helper for animating items one by one
+	* @param  {number}  index  				 current number of the loop this card is in
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-card-image-static" %}
+	{% set version         		= version 			? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set interval        		= interval     		? "_" ~ index | join("") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
+
+	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
+		{% if item.add_link %}
+			<a
+				class="{{ component_class }}__item-link"
+				href="{{ item.link }}"
+			></a>
+		{% endif %}
+
+		{% if img %}
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class : component_class,
+				img          : img,
+				lazyload     : true,
+				srcset       : true,
+				wrapper      : true
+			} only %}
+		{% endif %}
+
+	</div>
+
+{% endspaceless %}

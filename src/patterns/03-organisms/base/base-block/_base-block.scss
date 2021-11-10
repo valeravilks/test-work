@@ -1,0 +1,42 @@
+.o-dbm {
+	position: relative;
+	display: block;
+	overflow: hidden;
+
+	&__pretitle,
+	&__title {
+		display: block;
+		position: relative;
+	}
+
+	&__title {
+		padding-bottom: 20px;
+	}
+
+	&__content {
+
+	}
+
+	&__pretitle-wrapper,
+	&__title-wrapper {
+		position: relative;
+		display: block;
+		overflow: hidden;
+	}
+
+	&__content {
+	}
+
+	&__button-wrapper {
+		padding-top: 30px;
+	}
+}
+
+// Making sure the code below is not included on the homepage.
+.l-body:not(.home) {
+	.o-dbm {
+		&__content {
+			@include main-content-styling-not-home;
+		}
+	}
+}

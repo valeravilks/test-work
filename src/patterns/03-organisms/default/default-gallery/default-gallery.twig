@@ -1,0 +1,43 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-gallery" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block main_payload %}
+
+	<div id="lightgallery" class="js-animated-thumbnails {{component_class}}__repeater" data-module="defaultGallery">
+		{% for item in section.repeater %}
+			{% set img = TimberImage(item) %}
+
+			<a class="{{ component_class }}__img no-barba {{ loop.index == 1 ? 'o-default-gallery__img--first' }} {{ loop.last ? 'o-default-gallery__img--last' }}"
+			   data-sub-html="{{ img.alt }}" href="{{ img.src }}">
+				{% if section.ratio_1 == 'yes' %}
+					<img class="{{component_class}}__thumbnail thumbnail" src="{{ img.src|resize(400, 225) }}"/>
+				{% else %}
+					<img class="{{component_class}}__thumbnail thumbnail" src="{{ img.src|resize(400, 300) }}"/>
+				{% endif %}
+			</a>
+		{% endfor %}
+	</div>
+
+	{% endblock %}
+{% endspaceless %}

@@ -1,0 +1,25 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# Organism: Base Hero Holder                                #}
+{#   					                                     #}
+{# Used to create variables for various hero settings        #}
+{# as well as abstract away boilerplate hero code            #}
+{#  														 #}
+{# Contact your development manager if you want to edit      #}
+{# this file.                                                #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{% spaceless %}
+    {% set component_class     = "o-hero" %}
+    {% set hero_type_version   = post.get_field('hero_type')                ? component_class ~ "--"                     ~ post.get_field('hero_type')                | join("") %}
+    {% set color               = post.get_field('hero_color')               ? component_class ~ "--color-"               ~ post.get_field('hero_color')               | join("") : component_class ~ "--color-default"              | join("") %}
+    {% set size                = post.get_field('hero_size')                ? component_class ~ "--size-"                ~ post.get_field('hero_size')                | join("") : component_class ~ "--size-large"                 | join("") %}
+    {% set align               = post.get_field('hero_alignment')           ? component_class ~ "--align-"               ~ post.get_field('hero_alignment')           | join("") : component_class ~ "--align-default"              | join("") %}
+    {% set info_container_size = post.get_field('hero_info_container_size') ? component_class ~ "--info-container-size-" ~ post.get_field('hero_info_container_size') | join("") : component_class ~ "--info-container-size-medium" | join("") %}
+    {% set parallax            = "js-parallax" | join("") %}
+
+    <section class="{{ component_class }} {{ component_class }}--{{ post.slug }} {{ hero_type_version }} {{ color }} {{ size }} {{ align }} {{ info_container_size }} {{ parallax }}">
+		{% include '03-organisms/base/base-hero/base-hero-data-layer/base-hero-data-layer.twig' %}
+    </section>
+{% endspaceless %}

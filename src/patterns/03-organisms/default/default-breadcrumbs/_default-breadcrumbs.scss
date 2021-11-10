@@ -1,0 +1,117 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Breadcrumbs
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+
+
+////////////////////////////////
+// Organism Base Styling      //
+////////////////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.o-default-breadcrumbs {
+	padding: 20px 0px;
+	background-color: #eee;
+
+}
+
+
+/////////////////////////////
+// Organism Versions       //
+/////////////////////////////
+
+// This organism is most likely inheriting styles from the default-organism.scss file.
+// If needed, the look & feel of organism versions can be modified below.
+
+
+//////////////////////////////////////////
+// Organism Versions -- Alignments      //
+//////////////////////////////////////////
+
+// Covers scenario(s) where this organism has multiple alignments ..
+// "align-default" is the starting point and is required to style
+
+// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+.o-default-breadcrumbs--align-center,
+.o-default-breadcrumbs--align-default {
+	.o-default-breadcrumbs {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-default-breadcrumbs--align-left {
+	.o-default-breadcrumbs {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+
+/////////////////////////////////////////////
+// Organism Color Palette Versions         //
+/////////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+//.o-default-breadcrumbs--color-default,
+//.o-default-breadcrumbs--color-dark {
+//    .o-default-breadcrumbs {
+//		&__title {
+//			color: $g-heading-dark;
+//		}
+//
+//		&__content {
+//			color: $g-body-dark;
+//		}
+//	}
+//}
+//
+//.o-default-breadcrumbs--color-light {
+//	.o-default-breadcrumbs {
+//		&__title,
+//		&__content {
+//			color: $g-body-light;
+//		}
+//	}
+//}
+
+
+//////////////////////////////////////////
+// Organism Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
+

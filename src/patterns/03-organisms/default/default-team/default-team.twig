@@ -1,0 +1,184 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class          = "o-default-team" %}
+	{% set container                = true %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+	{% set corporate_position_terms = function( 'get_terms', { 'taxonomy' : 'corporate-position' } ) %}
+	{% set team_members_options     = options.team_members_options %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+    {% block main_payload %}
+
+        {% if section.team_members %}
+            {% set team_members_posts = section.team_members %}
+        {% else %}
+            {% set team_members_posts = function( 'get_cpt_posts_by', 'staff' ) %}
+        {% endif %}
+
+        <div
+            class="{{ component_class }}__corporate-position-terms-wrapper"
+            data-module="defaultTeamMembers"
+            data-module-identifier="js-team-member"
+        >
+            <ul class="{{ component_class }}__corporate-position-terms-list">
+				<li class="{{ component_class }}__corporate-position-terms-list-item h-hide wow fadeInDown" data-wow-delay=".1s" data-filter="all">
+					{{ team_members_options.all_positions_text }}
+				</li>
+
+                {% for corporate_position in corporate_position_terms %}
+                    <li
+                        class="{{ component_class }}__corporate-position-terms-list-item h-hide wow fadeInDown"
+                        data-filter=".term-{{ corporate_position.term_id }}"
+                        data-wow-delay=".{{ loop.index + 1 }}s"
+                    >
+                        {{ corporate_position.name }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div
+            class="{{ component_class }}__members-wrapper h-hide wow fadeInUp"
+            data-wow-delay=".6s"
+            style="--tmc-img-overlay-color: {{ section.member_image_overlay_color ? section.member_image_overlay_color : options.theme_base_color }}"
+        >
+            {% for team_member in team_members_posts %}
+                {% set team_member_terms = team_member.terms( 'corporate-position' ) %}
+                {% set team_member_terms_obj = [] %}
+
+                {% for team_member_term in team_member_terms %}
+                    {% set team_member_terms_obj = team_member_terms_obj | merge( [ 'term-' ~ team_member_term.id ] ) %}
+                {% endfor %}
+
+                <div class="{{ component_class }}__member-wrapper mix {{ team_member_terms_obj | join( ' ' ) }}">
+                    <div class="{{ component_class }}__member-img">
+                        <a class="{{ component_class }}__member-img-link" href="#team-member-{{ loop.index }}"></a>
+
+                        {% include '01-atoms/images/image-default/image-default.twig' with {
+                            parent_class : component_class,
+                            img          : team_member.thumbnail,
+                            modifier     : "team-member",
+                            lazyload     : true,
+                            srcset       : true,
+                            wrapper      : true,
+                            parallax     : false
+                        } only %}
+                    </div>
+
+                    <div class="{{ component_class }}__member-info">
+                        <div class="{{ component_class }}__member-name">
+                            {{ team_member.get_field( 'team_member_name' ) | lower }}
+                        </div>
+
+                        <div class="{{ component_class }}__member-position-label">
+                            {{ team_member.get_field( 'team_member_position_label' ) | upper }}
+                        </div>
+                    </div>
+                </div>
+
+                <div id="team-member-{{ loop.index }}" class="{{ component_class }}__member-info-modal">
+                    <div class="{{ component_class }}__member-info-modal-inner">
+                        <button class="{{ component_class }}__member-info-modal-close-btn">
+                            <span class="{{ component_class }}__member-info-modal-close-btn-top"></span>
+                            <span class="{{ component_class }}__member-info-modal-close-btn-bottom"></span>
+                        </button>
+
+                        <div class="{{ component_class }}__member-info-modal-content">
+                            <div class="{{ component_class }}__member-info-wrapper {{ component_class }}__member-info-wrapper--left">
+                                {% include '01-atoms/images/image-default/image-default.twig' with {
+                                    parent_class : component_class,
+                                    img          : team_member.thumbnail,
+                                    modifier     : "team-member-modal",
+                                    lazyload     : true,
+                                    srcset       : true,
+                                    wrapper      : true,
+                                    parallax     : false
+                                } only %}
+
+                                {% if team_member.get_field( 'team_member_social_channels' ) %}
+                                    <ul class="{{ component_class }}__member-info-socials-list">
+                                        {% for social_channel in team_member.get_field( 'team_member_social_channels' ) %}
+                                            {% set social_link = social_channel.link %}
+                                            <li class="{{ component_class }}__member-info-socials-list-item">
+                                                <a
+                                                    class="{{ component_class }}__member-info-social-list-item-link"
+                                                    href="{{ social_link.url }}"
+                                                    target="{{ social_link.target ? social_link.target : '_self' }}"
+                                                >
+                                                    {{ social_link.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+
+                            <div class="{{ component_class }}__member-info-wrapper {{ component_class }}__member-info-wrapper--right">
+                                <div class="{{ component_class }}__member-info-gender-designation">
+                                    {{ team_member.get_field( 'team_member_gender_designation' ) }}
+                                </div>
+
+                                <div class="{{ component_class }}__member-info-full-name">
+                                    {{ team_member.title | lower }}
+                                </div>
+
+                                <div class="{{ component_class }}__member-info-position-label">
+                                    {{ team_member.get_field( 'team_member_position_label' ) | upper }}
+                                </div>
+
+                                <div class="{{ component_class }}__member-info-bio a-content">
+                                    {{ team_member.content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <button class="{{ component_class }}__members-view-more">
+                {{ team_members_options.view_more_text }}
+            </button>
+        </div>
+
+        {#{% if section.footer_call_to_action %}
+            {% set footer_cta_link = section.footer_call_to_action %}
+
+            <div class="{{ component_class }}__footer-cta-wrapper">
+                <div class="{{ component_class }}__footer-cta-title-wrapper">
+                    <h3 class="{{ component_class }}__footer-cta-title wow">
+                        {{ section.footer_title }}
+                    </h3>
+                </div>
+
+                <a
+                    class="{{ component_class }}__footer-cta-link wow"
+                    href="{{ footer_cta_link.url }}"
+                    target="{{ footer_cta_link.target ? footer_cta_link.target : '_self' }}"
+                >
+                    <span>{{ footer_cta_link.title }}</span>
+                </a>
+            </div>
+        {% endif %}#}
+    {% endblock %}
+{% endspaceless %}

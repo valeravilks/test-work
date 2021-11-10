@@ -1,0 +1,73 @@
+{% spaceless %}
+	{#############################################################}
+	{# --------------------------------------------------------- #}
+	{# Organism: Base Background                                 #}
+	{#   					                                     #}
+	{# Used to output background options shared among			 #}
+	{# most hero's												 #}
+	{# --------------------------------------------------------- #}
+	{#############################################################}
+
+	{#####################################}
+	{# 	Hero Background Option: Color    #}
+	{#####################################}
+	{% if post.hero_background == "color" %}
+		<div
+			class="{{ component_class }}__bg-color h-bg-color--custom"
+			style="background-color:{{ post.hero_bg_color ? post.hero_bg_color : options.theme_base_color }}"
+		></div>
+
+		{#####################################}
+		{# 	Hero Background Option: Image    #}
+		{#####################################}
+	{% elseif post.hero_background == "image" %}
+		{# Setup hero background images. Background images are either selected on a page basis OR coming from the site options #}
+		{% if post.use_custom_hero_bg_image == 1 or post.get_field( 'use_custom_hero_bg_image' ) == 1 %}
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set hero_bg_img = TimberImage( post.hero_bg_image ) %}
+		{% else %}
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set hero_bg_img = TimberImage( options.default_hero_image ) %}
+		{% endif %}
+
+		{% include '01-atoms/images/image-default/image-default.twig' with {
+			parent_class      	: component_class,
+			img               	: hero_bg_img,
+			version          	: "hero-bg-img",
+			parent_version      : "hero-bg-img",
+			lazyload          	: true,
+			srcset            	: true,
+			wrapper           	: true,
+			parallax          	: false,
+			extra_class_wrapper : "js-parallax__translate o-hero__img-wrapper--hero-bg-img"
+		} only %}
+
+		{#####################################}
+		{# 	Hero Background Option: Video    #}
+		{#####################################}
+	{% elseif post.hero_background == "video" %}
+		{% include '01-atoms/01-atoms/video/video.twig' with {
+			version        : "full",
+			autoplay       : true,
+			muted          : true,
+			loop           : true,
+			playsinline    : true,
+			controls       : false,
+			type           : post.hero_bg_video_type,
+			video_mp4      : TimberImage(post.hero_bg_video_file_mp4),
+			video_webm     : TimberImage(post.hero_bg_video_file_webm),
+			video_ext_mp4  : post.hero_bg_video_external_mp4,
+			video_ext_webm : post.hero_bg_video_external_webm,
+			video_embed    : post.hero_bg_video_embed,
+			video_cover    : TimberImage(post.hero_bg_video_cover)
+		} %}
+
+	{% endif %}
+
+	{#####################################}
+	{# 	Hero Gradients                   #}
+	{#####################################}
+	{% if post.hero_gradient == "overlay" %}
+		<span class="{{component_class}}__gradient" style="background-color: {{ post.hero_overlay_custom }}"></span>
+	{% endif %}
+{% endspaceless %}

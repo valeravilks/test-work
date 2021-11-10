@@ -1,0 +1,237 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Navigation Primary                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.o-header--light {
+	.m-nav--primary {
+		.m-nav {
+			&__link {
+				color: $g-heading-dark;
+				&:hover {
+					color: $g-heading-dark;
+				}
+			}
+		}
+	}
+}
+
+.m-nav--primary {
+	padding: 0;
+	list-style-type: none;
+	margin-bottom: 0px;
+	display: flex;
+
+	.c-menu__arrow {
+		position: absolute;
+		top: 2px;
+		right: -20px;
+		width: 15px;
+		color: inherit;
+
+	}
+
+	svg {
+		width: 15px;
+		height: 15px;
+		color: inherit;
+	}
+
+	path {
+		fill: inherit;
+		color: inherit;
+	}
+
+	.m-nav {
+		&__item {
+			list-style: none;
+			display: flex;
+			position: relative;
+			padding: 20px;
+			align-items: center;
+			height: 100%;
+			cursor: pointer;
+			@include bpm-lg {
+				margin-left: 6px;
+			}
+
+			&.current-menu-parent {
+				&:before {
+					top: calc(100% - 5px);
+					width: 100%;
+					height: 6px;
+					background-color: $g-body-dark;
+					transform: scaleX(1);
+				}
+
+				.m-nav__sub-menu {
+					.current-menu-item {
+						color: $g-body-dark;
+					}
+				}
+			}
+
+			&.menu-item-has-children {
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: -10px;
+					left: 0;
+					width: 100%;
+					height: 10px;
+				}
+
+				&:hover {
+					.m-nav__sub-menu {
+						visibility: visible;
+						opacity: 1;
+						transform: scale(1) translateY(0);
+
+						.m-nav__link {
+							opacity: 1;
+						}
+					}
+
+					.m-nav__arrow {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+
+		&__link {
+			color: $g-heading-dark;
+			z-index: 2;
+			padding: 0px 0px 2px 0px;
+			display: flex;
+			text-decoration: none;
+			font-weight: 500 !important;
+			font-size: 16px;
+			letter-spacing: 0px;
+			transition: $g-trans-base !important;
+			font-family: $g-body-font-family;
+			position: relative;
+			@include underline-special;
+
+			span {
+				transition: $g-trans-base;
+			}
+
+			//&:hover {
+			//    span {
+			//        color: rgba(#000,.6);
+			//    }
+			//}
+
+			&:before {
+				top: calc(100% + 2px);
+				height: 2px;
+				background-color: $g-brand-color-1;
+			}
+
+			&.current_page_item {
+				&::before {
+					width: 100%;
+					transform: scaleX(1);
+				}
+			}
+
+
+			&.menu-item-has-children {
+				&:before {
+					display: none;
+				}
+				.m-nav__arrow {
+					display: flex;
+					justify-content: center;
+					margin-left: 6px;
+					line-height: 18px;
+					transition: $g-trans-base;
+
+					i {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+
+		&__contain {
+			z-index: 1;
+			position: absolute;
+			top: 0%;
+			width: 100%;
+			height: 100%;
+			min-width: 200px;
+			left: 0;
+			transform: translateX(-1px);
+		}
+
+		&__sub-menu {
+			z-index: 1;
+			@include absolute-general($top: calc(100% + 10px), $left: 0);
+			min-width: 200px;
+			visibility: hidden;
+			opacity: 0;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0 0 4px 1px rgba(0,0,0,.05), 0 40px 34px -16px rgba(0,0,0,.08), 0 6px 4px -4px rgba(0,0,0,.06), 0 16px 16px -8px rgba(0,0,0,.12);
+			transform: scale(.95) translateY(-10px);
+			transition: all .15s;
+
+			.m-nav__item {
+				margin-right: 0;
+				padding: 4px 20px 4px 0;
+				margin-left: 0 !important;
+				display: block;
+
+				&:first-of-type {
+					.m-nav__link {
+						padding-top: 16px;
+					}
+				}
+
+				&:last-of-type {
+					.m-nav__link {
+						padding-bottom: 16px;
+					}
+				}
+
+				&::before {
+					display: none;
+				}
+			}
+
+			.m-nav__link {
+				display: block;
+				width: 100%;
+				padding: 4px 10px 4px 20px;
+				font-size: 15px;
+				font-weight: 500;
+				//border-bottom: 1px solid #ececec;
+				color: $g-heading-dark;
+				opacity: 0;
+				transition: $g-trans-base;
+
+				&:hover {
+					padding-left: 26px;
+					color:  rgba($g-body-dark,.8)
+				}
+
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+}

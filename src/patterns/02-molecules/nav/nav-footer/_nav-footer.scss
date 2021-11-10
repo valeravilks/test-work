@@ -1,0 +1,61 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Navigation Footer 	            //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-nav--footer {
+	.m-nav {
+		&__item {
+			display: block;
+			margin-left: 0;
+			padding-left: 0;
+			padding-bottom: 15px;
+			animation: none;
+			animation-delay: unset!important;
+			@include bpm-xs {
+				text-align: center;
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+
+		&__link {
+			font-family: $g-heading-font-family;
+			font-size: 20px;
+			font-weight: 400;
+			letter-spacing: normal;
+			color: $g-body-dark;
+			@include bpm-md {
+				font-size: 18px;
+				line-height: 1.55;
+			}
+
+			&:before {
+				top: calc(100% + 2px);
+				height: 2px;
+				z-index: $g-z10;
+			}
+
+			&:hover {
+				color: $g-brand-color-1;
+			}
+
+			&.current_page_item {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+}

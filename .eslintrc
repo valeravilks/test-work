@@ -1,0 +1,38 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"plugin:prettier/recommended",
+		"plugin:jquery/slim"
+	],
+	"plugins": ["prettier", "no-secrets", "simple-import-sort", "jquery"],
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"jquery": true,
+		"es6": true
+	},
+	"globals": {
+		"$": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-console": "off",
+		"eslint-disable-next-line": "off",
+		"react/display-name": "off",
+		"no-global-assign": "off",
+		"jsx-a11y/anchor-is-valid": "off",
+		"jsx-a11y/alt-text": "off",
+		"no-secrets/no-secrets":"error",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"strict": [
+			"error",
+			"global"
+		],
+		"curly": "warn"
+	}
+}

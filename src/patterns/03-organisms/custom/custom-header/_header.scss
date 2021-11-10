@@ -1,0 +1,212 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Header  		                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.o-header {
+	position: fixed;
+	width: 100%;
+	padding: 0;
+	transition: $g-trans-header;
+	z-index: $g-z100;
+	height: $g-layout-header-height-mob;
+	@include bp-md {
+		height: $g-layout-header-height-desktop;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		padding: 0px 20px;
+		background-color: #fff;
+		border-bottom: 1px solid #eee;
+		z-index: $g-z10;
+		position: relative;
+	}
+
+	&::before {
+		content: '';
+		@include absolute-tl;
+		width: 0;
+		height: calc(100% + 1px);
+		background-color: #000;
+		transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		padding: 20px 0px;
+	}
+
+	&__search-button {
+		cursor: pointer;
+		transition: $g-trans-base;
+		//margin-right: 20px;
+		//margin-left: 20px;
+		padding: 0px 15px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 2px solid #eee;
+		//box-shadow: 0 7px 34px rgba(0,0,0,.2), 0 11px 34px rgba(0,0,0,.13);
+		border-radius: 5px;
+		&:hover {
+			border: 2px solid $g-brand-color-1;
+			background-color: $g-brand-color-1;
+		}
+
+		@include bpm-md {
+			margin-right: 20px;
+		}
+		//visibility: hidden;
+		//opacity: 0;
+
+		&-icon {
+			height: 20px;
+		}
+
+		&--anim {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	&__logo-wrapper {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		display: flex;
+		justify-content: flex-start;
+		height: 80px;
+	}
+
+	&__icon {
+		position: relative;
+		display: block;
+		height: 100%;
+		padding-right: 7px;
+		opacity: 1;
+		transition: $g-trans-header;
+		@include bpm-md {
+			padding-right: 0;
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		&__img-wrapper {
+			height: 100%;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__nav-wrapper {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		flex:1;
+	}
+
+	&__nav {
+		@include bpm-md {
+			display: none;
+		}
+	}
+
+	&__hamburger-wrapper {
+		display: inline-flex;
+		height: 100%;
+		@include bp-md {
+			display: none;
+		}
+
+		.hamburger {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			outline: none;
+		}
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////
+.l-headroom--top {
+	.o-header__top-content-wrapper {
+		position: relative;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.l-headroom--not-top {
+	position: fixed;
+	background-color: rgba(#fff,.8) !important;
+	box-shadow: 11px 15px 29px 0 rgba(48,48,48,.07);
+	transition: $g-trans-header;
+	height: $g-layout-header-height-desktop-scroll;
+	@include bpm-md {
+
+	}
+}
+
+.o-header--hamburger-active {
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+		background-color: $g-body-dark;
+	}
+}
+
+////////////////////
+// Extra          //
+////////////////////
+
+.l-headroom {
+	will-change: transform;
+
+	&--unpinned {
+		transform: translateY(calc(-100% - 20px));
+	}
+
+	&--top {
+
+	}
+
+	&--not-top {
+
+	}
+}
+
+// remove pointer events conflicting in top bar
+.o-header {
+	a,
+	button {
+		pointer-events: all;
+	}
+}

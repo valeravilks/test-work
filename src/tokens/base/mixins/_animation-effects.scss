@@ -1,0 +1,218 @@
+//////////////////////////////////
+// Adds staggered animations    //
+//////////////////////////////////
+
+@mixin animationDelay($delay) {
+    animation-delay: $delay !important;
+}
+
+$interval: 0.1s;
+$classesToAdd: 24;
+
+@for $i from 1 to $classesToAdd + 1 {
+    ._#{$i} {
+        @include animationDelay($i * $interval);
+    }
+}
+
+@mixin anim-fade-default {
+    opacity: 0;
+	transition: $g-trans-base-2;
+
+    &.animated {
+        opacity: 1;
+    }
+}
+
+@mixin anim-top-default {
+    opacity: 0;
+    transform: translateY(-20px);
+	transition: $g-trans-base-2;
+
+    &.animated {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@mixin anim-bottom-default {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: $g-trans-base-2;
+
+    &.animated {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@mixin anim-left-default {
+    transform: translateX(-30px);
+    transition: transform 1s cubic-bezier(.25, .46, .45, .94), opacity 1s cubic-bezier(.25, .46, .45, .94);
+
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+@mixin anim-right-default {
+    transform: translateX(30px);
+    transition: transform 1s cubic-bezier(.25, .46, .45, .94), opacity 1s cubic-bezier(.25, .46, .45, .94);
+
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+@mixin underline-general($thickness, $color, $transform-origin, $transform-origin-hover) {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .75s ease-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        left: 0;
+        display: block;
+        height: $thickness;
+        background-color: $color;
+        transition: transform .25s ease-in;
+        transform: scaleX(0);
+        transform-origin: $transform-origin;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            transform-origin: $transform-origin-hover;
+        }
+    }
+}
+
+@mixin underline-special {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .75s ease-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 2px);
+        right: 0;
+        left: 0;
+		background-color: $g-brand-color-1;
+        display: block;
+        height: 2px;
+        transition: transform .25s ease-in;
+        transform: scaleX(0);
+        transform-origin: right center;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            transform-origin: left center;
+        }
+    }
+}
+
+// To use this mixin. You must include underline-special first. And only then include this mixin
+@mixin underline-special-reverse {
+	position: relative;
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform .75s ease-out;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(100% + 2px);
+		right: 0;
+		left: 0;
+		background-color: $g-brand-color-1;
+		display: block;
+		height: 2px;
+		transition: transform .25s ease-in;
+		transform: scale(1);
+		transform-origin: left center;
+	}
+
+    &:hover {
+        &::before {
+            transform: scaleX(0);
+            transform-origin: right center;
+        }
+    }
+}
+
+@keyframes bgColorSlideToRight {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+@keyframes unfoldIn {
+	0% {
+		transform: scaleY(.005) scaleX(0);
+	}
+	50% {
+		transform: scaleY(.005) scaleX(1);
+	}
+	100% {
+		transform: scaleY(1) scaleX(1);
+	}
+}
+
+@keyframes unfoldOut {
+	0% {
+		transform: scaleY(1) scaleX(1);
+	}
+	50% {
+		transform: scaleY(.005) scaleX(1);
+	}
+	100% {
+		transform: scaleY(.005) scaleX(0);
+	}
+}
+
+// Use this mixin to have gradient animation on any selector
+//@mixin selector-bg-gradient-animation($linear-gradient-params, $animation-size, $animation-speed, $scroll-angle-0-and-100, $scroll-angle-50) {
+//    background: linear-gradient($linear-gradient-params);
+//    background-size: $animation-size $animation-size;
+//
+//    -webkit-animation: BgGradientAnimation $animation-speed ease infinite;
+//       -moz-animation: BgGradientAnimation $animation-speed ease infinite;
+//         -o-animation: BgGradientAnimation $animation-speed ease infinite;
+//            animation: BgGradientAnimation $animation-speed ease infinite;
+//
+//    @-webkit-keyframes BgGradientAnimation {
+//        0%{background-position: $scroll-angle-0-and-100}
+//        50%{background-position:$scroll-angle-50}
+//        100%{background-position:$scroll-angle-0-and-100}
+//    }
+//
+//    @-moz-keyframes BgGradientAnimation {
+//        0%{background-position:$scroll-angle-0-and-100}
+//        50%{background-position:$scroll-angle-50}
+//        100%{background-position:$scroll-angle-0-and-100}
+//    }
+//
+//    @-o-keyframes BgGradientAnimation {
+//        0%{background-position:$scroll-angle-0-and-100}
+//        50%{background-position:$scroll-angle-50}
+//        100%{background-position:$scroll-angle-0-and-100}
+//    }
+//
+//    @keyframes BgGradientAnimation {
+//        0%{background-position:$scroll-angle-0-and-100}
+//        50%{background-position:$scroll-angle-50}
+//        100%{background-position:$scroll-angle-0-and-100}
+//    }
+//}

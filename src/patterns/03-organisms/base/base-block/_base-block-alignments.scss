@@ -1,0 +1,68 @@
+// Covers scenario(s) where this block has multiple alignments
+.o-dbm--align-left {
+	.o-dbm {
+		&__pretitle-wrapper,
+		&__pretitle,
+		&__title-wrapper,
+		&__title {
+			text-align: left;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		&__content {
+			max-width: 800px;
+			margin: 0 auto;
+			text-align: left;
+		}
+
+		&__button-wrapper {
+			margin: 0 auto;
+			max-width: 800px;
+			text-align: left;
+		}
+	}
+}
+
+.o-dbm--align-default,
+.o-dbm--align-center {
+	.o-dbm {
+		&__pretitle-wrapper,
+		&__pretitle,
+		&__title-wrapper,
+		&__title {
+			text-align: center;
+		}
+
+		&__content {
+			max-width: 800px;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+
+		&__title {
+			max-width: 800px;
+			margin: 0 auto;
+
+			&.a-title--small {
+				max-width: 620px;
+			}
+
+			&.a-title--default {
+				max-width: 720px;
+			}
+
+			&.a-title--wide {
+				max-width: 800px;
+			}
+		}
+
+		&__button-wrapper {
+			margin: 0 auto;
+			max-width: 800px;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

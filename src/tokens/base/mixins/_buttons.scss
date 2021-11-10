@@ -1,0 +1,90 @@
+//////////////////////////////////////////////////
+//                                              //
+// Button Mixin Module		                    //
+//                                              //
+// https://www.dreamersofday.co                  //
+//                                              //
+//////////////////////////////////////////////////
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+@mixin btn {
+	position: relative;
+	display: inline-flex;
+	overflow: hidden;
+	font-size: 16px;
+	padding: 13px 30px;
+	border-radius: 5px;
+	border: 0px;
+	color: $g-heading-dark;
+	transition: $g-trans-base;
+	font-family: $g-heading-font-family;
+	font-weight: 500;
+	text-transform: capitalize;
+	visibility: visible;
+	&:hover {
+		color: $g-heading-dark;
+	}
+}
+
+@mixin btn-closed {
+
+}
+
+@mixin btn-open {
+
+}
+
+@mixin btn-small {
+
+}
+
+@mixin btn-primary {
+	background-color: $g-brand-color-1;
+	&:hover {
+		background-color: rgba($g-brand-color-1,.7);
+	}
+}
+
+@mixin btn-secondary {
+
+}
+
+@mixin btn-tertiary {
+
+}
+
+@mixin btn-open-primary {
+	@include btn-open;
+}
+
+@mixin btn-open-secondary {
+	@include btn-open;
+}
+
+@mixin btn-open-tertiary {
+	@include btn-open;
+}
+
+@mixin btn-arrow {
+
+}
+
+@mixin btn-arrow-primary {
+
+}
+
+@mixin btn-arrow-tertiary {
+
+}
+
+@mixin btn-special {
+
+}

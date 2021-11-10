@@ -1,0 +1,11 @@
+{% spaceless %}
+{% set component_class = "a-plus-toggle" %}
+{% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
+
+<div class="{{ parent_class }}__toggle-wrapper {{ js_hook }}">
+    <div class="{{ component_class }} {{ parent_class }} {{ version}} {{ 'current_page_ancestor' in item.classes  or 'current-menu-item' in item.classes ? 'a-plus-toggle--opened' : '' }}">
+        <span class="{{ component_class }}__line"></span>
+    </div>
+</div>
+{% endspaceless %}
