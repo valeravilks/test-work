@@ -1,0 +1,33 @@
+{% spaceless %}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+	{% set component_class = "o-i360-comparison-table" %}
+
+	{% block main_payload %}
+		<div class="l-container {{ component_class }}__container">
+			<div class="{{ component_class }}__cards-wrapper">
+
+				{% include '/02-molecules/list/list.twig' with {
+					parent_class      : component_class,
+					list_title		  : section.cons_title,
+					list_items		  : section.cons_list,
+					lazyload          : true,
+					wrapper           : false,
+					add_class_on_anim : true,
+					extra_class		  :'o-i360-comparison-table__card--cons',
+					list_type		  :'cons',
+				} only %}
+
+				{% include '/02-molecules/list/list.twig' with {
+					parent_class      : component_class,
+					list_title		  : section.pros_title,
+					list_items		  : section.pros_list,
+					lazyload          : true,
+					wrapper           : false,
+					add_class_on_anim : true,
+					extra_class		  :'o-i360-comparison-table__card--pros',
+					list_type		  :'pros',
+				} only %}
+			</div>
+		</div>
+	{% endblock %}
+{% endspaceless %}
