@@ -1,0 +1,248 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Gate                      //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding classes below.
+
+.o-default-gate {
+	&__title {
+
+	}
+	&__content {
+
+	}
+	&__button-wrapper {
+
+	}
+
+	&__side-info-wrapper,
+	&__form-group-track {
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 50%;
+		@include bpm-md {
+			flex-basis: 100%;
+		}
+	}
+
+	&__side-info-wrapper {
+		padding-right: 20px;
+		@include bpm-md {
+			padding-right: 0;
+		}
+	}
+
+	&__services {
+		h1, h2, h3, h4, h5, h6 {
+			margin-bottom: 25px;
+			color: inherit;
+		}
+
+		a {
+			text-decoration: underline;
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin-bottom: 20px;
+
+			li {
+				position: relative;
+				margin-left: 0;
+				padding-bottom: 10px;
+				padding-left: 25px;
+
+				&::before {
+					content: "\f058";
+					@include absolute-general($top: 8px, $left: 0);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 15px;
+					height: 15px;
+					font-family: "FontAwesome";
+					color: $g-brand-color-1;
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		@include last-element-no-bm;
+	}
+
+	&__form-group-track {
+		position: relative;
+		padding-left: 20px;
+		@include bpm-md {
+			margin-top: 40px;
+			padding-left: 0;
+		}
+	}
+
+	&__form-group {
+		position: sticky;
+		top: 100px;
+		padding: 30px;
+		box-shadow: 11px 15px 29px 0 rgba(48,48,48,.07);
+		border: 1px solid rgba(34, 34, 34, .1);
+	}
+
+	&__form-title {
+		@include bp-md {
+			font-size: 40px;
+			line-height: 1;
+		}
+	}
+
+	&__form-row {
+		display: flex;
+		margin-top: 20px;
+		@include bpm-xs {
+			flex-wrap: wrap;
+		}
+
+		input[type='text'],
+		input[type='email'] {
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: 65%;
+			margin-bottom: 0;
+			@include bpm-xs {
+				flex-basis: 100%;
+			}
+		}
+
+		input[type="checkbox"] {
+			display: none;
+		}
+	}
+
+	&__form-label {
+		display: flex;
+		align-items: center;
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 35%;
+		cursor: default;
+		@include bpm-md {
+			font-size: 16px;
+		}
+		@include bpm-xs {
+			flex-basis: 100%;
+		}
+	}
+
+	&__form-checkmark-container {
+		position: relative;
+		padding-left: 35px;
+		font-size: 16px;
+		line-height: 1.2;
+
+		&:hover input[type="checkbox"] ~ .c-dod-gate__form-checkmark {
+			background-color: #ccc;
+		}
+
+		input[type="checkbox"]:checked ~ .c-dod-gate__form-checkmark {
+			background-color: $g-brand-color-1;
+
+			&::after {
+				transform: rotate(45deg) scale(1);
+			}
+		}
+	}
+
+	&__form-checkmark {
+		@include absolute-general($top:  2px, $left: 0);
+		width: 25px;
+		height: 25px;
+		background-color: #eee;
+		transition: $g-trans-base;
+
+		&::after {
+			content: "";
+			@include absolute-general($top: 5px, $left: 9px);
+			width: 7px;
+			height: 11px;
+			border: solid white;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg) scale(0);
+			transition: $g-trans-base;
+		}
+	}
+
+	&__form-btn {
+		margin-left: auto;
+	}
+}
+
+
+//////////////////////////
+// Block Versions       //
+//////////////////////////
+
+// This block is most likely inheriting styles from the default-block.tokens file.
+// If needed, the look & feel of block versions can be modified below.
+
+// Covers scenario(s) where this block has multiple alignments ..
+// "align-default" is the starting point and is required to style
+.o-default-gate--align-default {
+    .o-default-gate {
+        &__title,
+        &__content {
+
+        }
+    }
+}
+
+// Covers scenario(s) where this block has multiple text colors ..
+// "color-default" is the starting point and is required to style
+.o-default-gate--color-default,
+.o-default-gate--color-dark {
+    .o-default-gate {
+	    &__title,
+        &__content {
+
+	    }
+	}
+}
+
+.o-default-gate--color-light {
+	.o-default-gate {
+	    &__title,
+        &__content {
+
+	    }
+	}
+}
+
+// Covers this block having different backgrounds.
+// "bg-default" is the "default" option is required
+.o-default-gate.o-dbm--bg-default {
+	// Default background CSS here
+}
+
+// Component versions beyond color, background and alignment go here
+

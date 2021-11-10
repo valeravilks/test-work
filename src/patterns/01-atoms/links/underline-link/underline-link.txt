@@ -1,0 +1,16 @@
+## Outside repeater:
+
+{% include '01-atoms/links/underline-link/underline-link.twig' with {
+	parent_class 		: component_class,
+	button      		: section.link,
+	add_class_on_anim   : false
+} only %}
+
+
+## Inside repeater:
+
+{% include '01-atoms/links/underline-link/underline-link.twig' with {
+	parent_class 		: component_class,
+	button      		: item.link,
+	add_class_on_anim   : false
+} only %}

@@ -1,0 +1,132 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Navigation Side                       //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-nav--side {
+	margin-bottom: 20px;
+	.m-nav {
+		border-top: 1px solid #eeeded;
+		background-color: #fff;
+
+		&__list {
+			@include list-bare;
+		}
+
+		// The nav item wraps the nav link
+		&__item {
+			list-style: none;
+			position: relative;
+			background-color: #f9f8f8;
+			margin-left: 0;
+			padding-left: 0;
+			&--level-0 {
+			}
+			// Dropdown Item
+			&--level-1 {
+				background-color: #fff;
+			}
+		}
+
+		&__link {
+			cursor: pointer;
+			font-weight: 500;
+			font-size: 15px;
+			font-family: $g-body-font-family;
+			text-transform: uppercase;
+			position: relative;
+			transition: all 0.25s ease;
+			border-bottom: 2px solid #eeeded;
+			border-left: 2px solid #eeeded;
+			border-right: 2px solid #eeeded;
+			//color: $g-text-base;
+			display: block;
+			padding: 15px 15px 15px 20px;
+			letter-spacing: 0;
+			&--level-0 {
+				&:hover {
+					color: $g-brand-color-1;
+					padding-left: 25px;
+				}
+			}
+			&--level-1 {
+				padding-left: 25px;
+				&:hover {
+					color: $g-brand-color-1;
+					padding-left: 30px;
+				}
+			}
+		}
+
+		&__toggle-wrapper {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 60px;
+			height: 55px;
+			border-left: 2px solid #eeeded;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: $g-trans-base;
+			&:hover {
+				color: $g-brand-color-1;
+				background-color: #d6d5d5;
+			}
+		}
+
+		&__sub-menu {
+			padding-left: 0;
+			display: none;
+		}
+	}
+
+	// This ensures the active child in a submenu has it's submenu opened
+	.current_page_ancestor {
+		.m-nav__sub-menu {
+			display: block;
+		}
+		.m-nav__toggle {
+		}
+	}
+
+	// This ensures the active child in a submenu has extra markup
+	.current-menu-ancestor.menu-item-has-children,
+	.current-menu-item.menu-item-has-children {
+		.m-nav__sub-menu {
+			.m-nav__link {
+				border-bottom: 2px solid #eeeded;
+				border-left: 2px solid #eeeded;
+				border-right: 2px solid #eeeded;
+			}
+
+			.current-menu-item {
+				position: relative;
+
+				.m-nav__link {
+					&:before {
+						content: '';
+						position: absolute;
+						left: -1px;
+						width: 2px;
+						height: 100%;
+						background-color: $g-brand-color-1;
+						top: 0;
+					}
+				}
+			}
+		}
+	}
+}

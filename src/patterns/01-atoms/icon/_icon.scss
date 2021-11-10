@@ -1,0 +1,43 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Icon  				                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+.a-icon {
+	transition: $g-trans-base;
+
+	// Enables hardware driven animation for a smoother animations. More info: https://www.sitepoint.com/introduction-to-hardware-acceleration-css-animations/
+	will-change: transform;
+	@include bp-sm {
+	}
+
+	&__link {
+		display: block;
+		line-height: 0;
+	}
+
+	path {
+		transition: $g-trans-base;
+	}
+
+	&__src {
+		width: 100%;
+	}
+
+	&--footer-mob {
+		margin-bottom: 20px;
+		@include bp-md {
+			display: none;
+		}
+	}
+}

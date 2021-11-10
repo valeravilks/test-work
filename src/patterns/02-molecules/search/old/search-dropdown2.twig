@@ -1,0 +1,69 @@
+{% spaceless %}
+  {% set component_class = 'c-search-dropdown' %}
+  {% include '01-atoms/search-toolbar/search-toolbar.twig' with {
+      parent_class : component_class
+  } %}
+  <section class="l-site {{ component_class }}">
+			<div class="l-container">
+        {% if posts is empty %}
+          {% if post.search_keyword is empty %}
+              {% set notFoundText = "Please enter a search query" %}
+              {% set typedKeyword = "" %}
+          {% else %}
+              {% set notFoundText = "Sorry, we couldn&#39;t find any result matching: " %}
+              {% set typedKeyword = '&#34;' ~ post.search_keyword ~ '&#34;' %}
+          {% endif %}
+					<div class="{{ component_class }}__not-found-wrapper">
+						<i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+						<span class="{{ component_class }}__not-found-default-txt">
+							{{ notFoundText }}
+						</span>
+						<span class="{{ component_class }}__not-found-search-keyword">
+							{{ typedKeyword }}
+						</span>
+					</div>
+        {% else %}
+					<div class="{{ component_class }}__search-items-wrapper">
+            {% if posts %}
+                {% for post in posts %}
+
+                    {#  for category #}
+                    {% set testcategory = [] %}
+                    {% for post_category in post.terms('category') %}
+                        {% set testcategory = testcategory|merge([post_category.slug]) %}
+                    {% endfor %}
+
+                    {#  for tags #}
+                    {% set test_tag = [] %}
+                    {% for post_tags in post.terms('tags') %}
+                        {% set test_tag = test_tag|merge([post_tags.slug]) %}
+                    {% endfor %}
+                    {% set image = TimberImage(post.hero_image) %}
+                    {% include '02-molecules/cards/search-item/search-item.twig' with {
+                        parent_class        : component_class,
+                        title               : post.title,
+                        link                : post.link,
+                        date                : post.date | date("M j, Y"),
+                        content             : post.content | excerpt(20),
+                        image               : image,
+                        resize_number       : 560,
+                        author              : post.author.first_name ~ ' '  ~ post.author.last_name,
+                        link_text           : 'Read More',
+                        component_animation : 'wow fadeInUp _' ~ loop.index,
+                        mix 				: "mix",
+                        mix1 				: post.post_type,
+                        mix2 				: testcategory | join(' '),
+                        mix3 				: test_tag | join(' ')
+
+                    } only %}
+
+                {% endfor %}
+            {% endif %}
+
+
+
+					</div>
+        {% endif %}
+			</div>
+		</section>
+{% endspaceless %}

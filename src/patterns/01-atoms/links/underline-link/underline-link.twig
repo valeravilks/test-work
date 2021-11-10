@@ -1,0 +1,29 @@
+{% spaceless %}
+	{#
+	* Renders the link underline component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  default_block_class  CSS class shared by all repeatable blocks
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  button               Contains the button label, button link and button external link
+	* @param  {string}  extra_class          optional extra CSS class
+	* @param  {string}  extra_class_wrapper  optional extra CSS class assigned to the wrapper
+	#}
+
+	{% set component_class     = "a-underline-link" %}
+	{% set button_link     	   = button.link %}
+	{% set add_class_on_anim   = add_class_on_anim ? "wow" | join("") %}
+
+	<div class="{{ default_block_class ? default_block_class ~ "__link-wrapper" }} {{ parent_class }}__link-wrapper {{ extra_class_wrapper }} {{ add_class_on_anim }}">
+		<a
+			class="{{ parent_class }}__link {{ extra_class }} {{ button.style }}"
+			href="{{ button_link.url }}"
+			target="{{ button_link.target ? button_link.target : '_self' }}"
+		>
+			{{ button_link.title | striptags }}
+		</a>
+	</div>
+{% endspaceless %}
+

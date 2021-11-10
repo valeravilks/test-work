@@ -1,0 +1,18 @@
+////////////////////////////////////
+// Aspect Ratios                 //
+//////////////////////////////////
+
+@mixin aspect-ratio($width: 16, $height: 9) {
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-top: $height / $width * 100%;
+	}
+
+	> * {
+		@include absolute-full;
+	}
+}

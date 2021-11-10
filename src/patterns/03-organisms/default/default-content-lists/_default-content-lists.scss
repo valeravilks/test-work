@@ -1,0 +1,100 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Content Lists             //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-default-content-lists {
+
+}
+
+
+//////////////////////////////////////////
+// Block Alignment Versions             //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple alignments
+ * "align-default" is required and the starting point
+ * Both "align-center" and "align-left" are required to style
+ * ------------------------------------------------------------
+ */
+
+.o-default-content-lists--align-center,
+.o-default-content-lists--align-default {
+	.o-default-content-lists {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-default-content-lists--align-left {
+	.o-default-content-lists {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-default-content-lists--color-default,
+.o-default-content-lists--color-dark {
+	.o-default-content-lists {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-default-content-lists--color-light {
+	.o-default-content-lists {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

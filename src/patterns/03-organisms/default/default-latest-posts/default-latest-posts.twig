@@ -1,0 +1,61 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-latest-posts" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block main_payload %}
+
+		<div class="{{ component_class }}__repeater">
+			<!-- Grabbing recent posts. ACF relationship field chosen entries have right of way -->
+			{% if section.add_latest_posts %}
+				{% set items = section.latest_posts %}
+			{% else %}
+				{% set items = function( 'get_cpt_posts_by',
+					'post',
+					3,
+					'post_date',
+					'DESC',
+					post.ID
+				) %}
+			{% endif %}
+
+			{% for item in items %}
+				{# Accessing WordPress post and making them available to Twig templates #}
+				{% set item = TimberPost( item ) %}
+
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage( item.thumbnail ) %}
+
+				{% include '02-molecules/cards/card-post/card-post.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					img                 : img,
+					interval            : true,
+					index       		: loop.index,
+					add_class_on_anim   : true,
+				} only %}
+			{% endfor %}
+		</div>
+
+	{% endblock %}
+
+{% endspaceless %}

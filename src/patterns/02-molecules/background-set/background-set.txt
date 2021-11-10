@@ -1,0 +1,6 @@
+## Inside repeater:
+
+{% include '02-molecules/background-set/background-set.twig' with {
+	parent_class 		: component_class,
+	set         		: section.bg_set
+} only %}

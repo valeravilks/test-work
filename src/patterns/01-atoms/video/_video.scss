@@ -1,0 +1,44 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Video         	                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-video {
+	outline: none;
+
+	&--full {
+		@include absolute-full;
+		width: 100%;
+		height: 100%;
+
+		.a-video {
+			outline: none;
+
+			&__video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				outline: none;
+			}
+		}
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}

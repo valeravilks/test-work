@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Faq Repeater              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding classes below.
+
+.o-default-faq {
+	&__accordion {
+		max-width: 800px;
+		margin: 40px auto 0 auto;
+	}
+}

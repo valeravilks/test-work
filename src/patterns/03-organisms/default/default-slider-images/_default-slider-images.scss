@@ -1,0 +1,100 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Slider Images	            //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-default-slider-images {
+
+}
+
+
+//////////////////////////////////////////
+// Block Alignment Versions             //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple alignments
+ * "align-default" is required and the starting point
+ * Both "align-center" and "align-left" are required to style
+ * ------------------------------------------------------------
+ */
+
+.o-default-slider-images--align-center,
+.o-default-slider-images--align-default {
+	.o-default-slider-images {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-default-slider-images--align-left {
+	.o-default-slider-images {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-default-slider-images--color-default,
+.o-default-slider-images--color-dark {
+	.o-default-slider-images {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-default-slider-images--color-light {
+	.o-default-slider-images {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

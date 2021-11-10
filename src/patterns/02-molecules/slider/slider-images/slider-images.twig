@@ -1,0 +1,57 @@
+{% spaceless %}
+	{#
+	* Renders the slider component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-slider" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
+
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }} {{ component_class }}--{{ index }}">
+		<div class="{{ component_class }}__container swiper-container js-slider-swiper-images" data-module="sliderImages">
+			<div class="{{ component_class }}__wrapper swiper-wrapper">
+				{% for item in items %}
+					<div class="{{ component_class }}__slide-item swiper-slide">
+
+						{# Accessing WordPress image object and making them available to Twig templates #}
+						{% set img = TimberImage( item.image ) %}
+
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class      : component_class,
+							img               : img,
+							srcset            : false,
+							lazyload          : true,
+							wrapper           : true,
+							add_class_on_anim : true
+						} only %}
+
+						<div class="{{ component_class }}__slide-item-info">
+							{{ item.content }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="{{ component_class }}__pagination swiper-pagination js-slider-swiper-image-pagination"></div>
+
+			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+				parent_class        : component_class,
+				version             : "prev",
+				extra_class         : "js-slider-swiper-images-btn-prev"
+			} only %}
+
+			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+				parent_class        : component_class,
+				version             : "next",
+				extra_class         : "js-slider-swiper-images-btn-next"
+			} only %}
+		</div>
+	</div>
+{% endspaceless %}

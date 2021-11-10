@@ -1,0 +1,43 @@
+////////////////////////
+// Hiding Elements 	  //
+////////////////////////
+
+.h-hide {
+	visibility: hidden;
+}
+
+.h-hide--xxs {
+	@include bpm-xxs {
+		display: none;
+	}
+}
+
+.h-hide--xs {
+	@include bpm-xs {
+		display: none;
+	}
+}
+
+.h-hide--sm {
+	@include bpm-sm {
+		display: none;
+	}
+}
+
+.h-hide--md {
+	@include bpm-md {
+		display: none;
+	}
+}
+
+.h-hide--lg {
+	@include bpm-lg {
+		display: none;
+	}
+}
+
+.h-hide--xl {
+	@include bpm-xl {
+		display: none;
+	}
+}

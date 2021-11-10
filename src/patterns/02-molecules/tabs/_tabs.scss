@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Tabs
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Molecule Variables         //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.m-tabs {
+	&__title {
+
+	}
+	&__content {
+
+	}
+	&__button-wrapper {
+
+	}
+}
+
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+// Used to create additional versions of this molecule.
+
+.m-tabs {
+	&--default {
+
+	}
+}

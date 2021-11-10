@@ -1,0 +1,73 @@
+{% spaceless %}
+	{#
+	* Renders the image component
+	*
+	* When using the WordPress CMS ACF as image source:
+	* Use the "image" ACF field. Make sure to return an ID (not object) in ACF for the image
+	* Make sure to prefix all fields names. Do not prefill labels.
+	*
+	* @param  {boolean} wrapper              Adds a div around the image. Makes styling easier
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  wrapper_version      Optional version assigned to wrapper. Uses a BEM modifier
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {boolean} srcset           	 Creates multiple images SRC's (for different viewports) through WP core from the same image. NOTE: Cannot be used in combination with the resize parameter
+	* @param  {boolean} lazyload         	 Loads the image when in viewport for PERF reasons.
+	* @param  {number}  resize_number     	 Resizes the image per a defined number for PERF reasons. NOTE: Cannot be used in combination with the srcset parameter
+	* @param  {object}  img                  The actual image object. Coming from CMS or mock-data
+	* @param  {string}  extra_class          optional extra CSS class
+	* @param  {string}  extra_class_wrapper  optional extra CSS class assigned to the wrapper
+	#}
+
+	{% set component_class = "a-img" %}
+	{% set version         = version ? version : "default" %}
+
+
+	{#Applied to the actual img tag #}
+	{% set img_lazyload = lazyload ? component_class ~ "--" ~ "lazyload lazyload h-lazyload" | join("") %}
+	{% set img_srcset   = srcset   ? component_class ~ "--" ~ "srcset"          		     | join("") %}
+
+	{#Applied to the img wrapper#}
+	{% set img_wrapper_parallax = parallax ? parent_class   ~ "--" ~ "parallax"              | join("") %}
+
+	{# Image wrapper. Should be used in most cases #}
+	{% if wrapper %}
+		<div
+		class="{{ parent_class }}__img-wrapper {{ parent_class }}__img-wrapper--{{ version }} a-img-wrapper {{ add_class_on_anim ? "wow" : "" }} {{ img_wrapper_parallax }} {{ extra_class_wrapper }}"
+		>
+	{% endif %}
+
+	<img
+		{# Image alt description #}
+		{% if img.alt %}
+			alt="{{ img.alt }}"
+		{% endif %}
+
+		{# Image lazyload. Ensures images are only loaded when they are in viewport #}
+		{% if img_lazyload %}
+			data-src="{{ resize_number ? img.src | resize( resize_number ) : img.src }}"
+		{% else %}
+			src="{{ resize_number ? img.src | resize( resize_number ) : img.src }}"
+		{% endif %}
+
+		{# Image srcset for outputting responsive images #}
+		{% if img_srcset and img_lazyload %}
+			data-srcset="{{ img.srcset }}"
+		{% elseif img_srcset and img_lazyload is empty %}
+			srcset="{{ img.srcset }}"
+		{% endif %}
+
+		{# parallax effect. Requires the Rellay parallax library #}
+		{% if img_parallax %}
+			data-rellax-percentage="0.5" data-rellax-speed="{{ parallax_speed ? parallax_speed : -0.7 }}"
+		{% endif %}
+
+		class="{{ wrapper is empty and add_class_on_anim ? "wow" : "" }} {{ img_parallax }} {{ img_lazyload }} {{ img_srcset }} {{ parent_class }}__img {{ parent_class }}__img--{{ version }} {{ component_class }} {{ extra_class }}"
+	/>
+
+	{% if wrapper %}
+		</div>
+	{% endif %}
+
+{% endspaceless %}

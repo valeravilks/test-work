@@ -1,0 +1,25 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Hamburger 			                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.hamburger {
+    &.is-active {
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            //background-color: $g-brand-color-3;
+        }
+    }
+}

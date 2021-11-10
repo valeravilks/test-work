@@ -1,0 +1,68 @@
+{% spaceless %}
+	{#
+	* Renders the filter control component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {string}  title                Title
+	* @param  {string}  title_dropdown       Title that shows in the dropdown. Only visible on lower breakpoints
+	* @param  {array}   terms                The actual filter options. Has at least a number and a slug
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+	{% set component_class 		= "m-filter-control" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
+
+	<div class="{{ component_class }} {{ parent }} {{ extra_class }} {{ version }}">
+		<div class="{{ component_class }}__title">
+      		{{ title }}
+		</div>
+
+		<form>
+			<fieldset
+				class="{{ component_class }}__fieldset {{ component_class }}__fieldset--version-desktop"
+				data-filter-group
+			>
+				{% for term in terms %}
+					<label class="{{ component_class }}__container">
+						{{ term.name }}
+						<input type="checkbox" value=".slug-{{ term.slug }}">
+						<span class="{{ component_class }}__checkmark"></span>
+					</label>
+				{% endfor %}
+			</fieldset>
+
+			<fieldset
+				class="{{ component_class }}__fieldset {{ component_class }}__fieldset--version-mobile"
+				data-filter-group
+			>
+				<div class="{{ component_class }}__select-wrapper">
+					<select id="{{ component_class }}-sort-select">
+						<option value="">
+							{{ title_dropdown }}
+						</option>
+
+						{% for term in terms %}
+							<option value=".slug-{{ term.slug }}">
+								{{ term.name }}
+							</option>
+						{% endfor %}
+					</select>
+
+					<span class="{{ component_class }}__select-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6">
+							<g>
+								<g>
+									<path fill="#161616" d="M5 6L0 1 .7.3 5 4.6 9.3.3l.7.7z"/>
+								</g>
+							</g>
+						</svg>
+					</span>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+
+{% endspaceless %}

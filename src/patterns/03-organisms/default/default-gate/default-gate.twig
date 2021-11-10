@@ -1,0 +1,71 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-gate" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block before_pretitle %}
+		<div class="{{ component_class }}__side-info-wrapper">
+	{% endblock %}
+
+	{% block main_payload %}
+		<div class="{{ component_class }}__services">
+			{{ section.services_list }}
+		</div>
+		</div>
+
+		<div class="{{ component_class }}__form-group-track">
+			<div class="{{ component_class }}__form-group">
+				<h3 class="{{ component_class }}__form-title">
+					{{ form_group.title }}
+				</h3>
+
+				<div class="{{ component_class }}__form-wrapper">
+					{#				{{ form_group.code }}#}
+					<form class="{{ component_class }}__form">
+						<div class="{{ component_class }}__form-row">
+							<label class="{{ component_class }}__form-label" for="gate-form-email">Email *</label>
+							<input id="gate-form-email" type="email" placeholder="Company Email">
+						</div>
+
+						<div class="{{ component_class }}__form-row">
+							<label class="{{ component_class }}__form-label" for="gate-form-job-title">Job Title *</label>
+							<input id="gate-form-job-title" type="text">
+						</div>
+
+						<div class="{{ component_class }}__form-row">
+							<label class="{{ component_class }}__form-checkmark-container">
+								Yes, please send me news, product updates, and more from Mode. You can unsubscribe anytime.
+								<input type="checkbox" checked>
+								<span class="{{ component_class }}__form-checkmark"></span>
+							</label>
+						</div>
+
+						<div class="{{ component_class }}__form-row {{ component_class }}__form-row--btn-wrapper">
+							<button class="{{ component_class }}__form-btn c-btn c-btn--primary">Download now</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	{% endblock %}
+
+{% endspaceless %}

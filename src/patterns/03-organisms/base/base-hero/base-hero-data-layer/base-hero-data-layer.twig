@@ -1,0 +1,36 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# Organism: Base Hero Data Layer                            #}
+{#   					                                     #}
+{# Used to create variables for various hero settings        #}
+{# as well as abstract away boilerplate hero code            #}
+{#  														 #}
+{# Contact your development manager if you want to edit      #}
+{# this file.                                                #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{% spaceless %}
+	{# 	IMPORTANT. #}
+	{# 	IMPORTANT. #}
+	{# 	IMPORTANT. #}
+
+	{# 	Outputting the correct Hero Type below. Which are a combination of default AND custom heros. #}
+
+	{# 	IMPORTANT. #}
+	{# 	IMPORTANT. #}
+	{# 	IMPORTANT. #}
+
+	{#####################################}
+	{# 	Hero Type Switch                 #}
+	{#####################################}
+	{% if post.hero_type == "default-regular" %}
+		{% include '03-organisms/default/default-hero-types/default-hero-type-1/default-hero-type-1.twig' %}
+	{% elseif post.hero_type == "default-side-image" %}
+		{% include '03-organisms/default/default-hero-types/default-hero-type-2/default-hero-type-2.twig' %}
+	{% elseif post.hero_type == "default-side-half-image" %}
+		{% include '03-organisms/default/default-hero-types/default-hero-type-3/default-hero-type-3.twig' %}
+	{% elseif post.hero_type == "js-default" %}
+		{% include '03-organisms/custom/custom-hero-types/js-hero-default/js-hero-default.twig' %}
+	{% endif %}
+{% endspaceless %}

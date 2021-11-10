@@ -1,0 +1,9 @@
+<?php 
+/*
+ * Template Name: {{titleCase page-template}}
+ */
+
+$context         = Timber::get_context();
+$context['post'] = new TimberPost();
+
+Timber::render('pages/{{dashCase twig-page}}.twig', $context );

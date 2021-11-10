@@ -1,0 +1,123 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Accordion		                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-accordion {
+	&__group {
+		border-top: 1px solid #000000;
+		@include anim-fade-default;
+		display: flex;
+
+		&:last-child {
+			border-bottom: 1px solid #000000;
+		}
+	}
+
+	&__group-inner {
+		flex-grow: 1;
+		padding-right: 10px;
+	}
+
+	&__title {
+		background-color: transparent;
+		font-family: $g-body-font-family;
+		font-size: 22px;
+		font-weight: 700;
+		margin-bottom: 0;
+		line-height: 1;
+		text-align: left;
+		position: relative;
+		transition: $g-trans-base;
+		display: flex;
+		align-items: center;
+		padding: 25px 0;
+		cursor: pointer;
+
+		&:hover,
+		.is-active & {
+			background-color: transparent;
+			color: $g-brand-color-1;
+		}
+	}
+
+	&__circle {
+		position: sticky;
+		top: 100px;
+		width: 18px;
+		height: 18px;
+		background-color: transparent;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+
+	&__track {
+		padding: 25px 0;
+	}
+
+	&__control {
+		width: 20px;
+		height: 2px;
+		display: block;
+		background-color: $g-heading-dark;
+		top: 8px;
+		position: absolute;
+
+		&::before {
+			content: '';
+			width: 20px;
+			height: 2px;
+			background-color: $g-heading-dark;
+			display: block;
+			position: absolute;
+			transform: rotate(-90deg);
+			transition: transform 0.4s ease-in-out;
+
+			.m-accordion__group.is-active & {
+				transform: rotate(0);
+			}
+		}
+	}
+
+	&__content {
+		@include last-child-no-bm;
+		padding: 5px 0;
+		display: none;
+		text-align: left;
+		margin-bottom: 16px;
+
+		a {
+			position: relative;
+			display: inline-block;
+			color: $g-body-dark;
+
+			&::after {
+				content: '';
+				@include absolute-bl;
+				width: 100%;
+				height: 1px;
+				background-color: $g-brand-color-1;
+				transition: $g-trans-base;
+			}
+
+			&:hover {
+				&::after {
+					width: 0;
+				}
+			}
+		}
+	}
+}

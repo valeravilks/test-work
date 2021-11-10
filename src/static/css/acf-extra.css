@@ -1,0 +1,7 @@
+.acf-fields > .acf-field.acf-field-clone { padding: 0; }
+.acf-field.acf-field-clone > .acf-label { margin: 0; }
+.acf-field.acf-field-clone > .acf-label label { display: none; }
+.acf-field-clone .acf-clone-fields { border: none; }
+#plugins-by-dreihochzwo {
+    display: none;
+}

@@ -1,0 +1,90 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Map   				            //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-map {
+	$height-d: 400px;
+	$height-t: $height-d;
+	$height-m: 300px;
+
+	width: 100%;
+	height: $height-m;
+
+	@include bp-sm {
+		height: $height-t;
+	}
+
+	@include bp-md {
+		height: $height-d;
+	}
+
+	img {
+		max-width: inherit !important;
+	}
+	&__content {
+		padding-bottom: 20px;
+	}
+
+	&__group {
+		@include bp-md {
+			display: flex;
+		}
+	}
+
+	&__marker-info {
+		h6 {
+			margin-bottom: 0;
+		}
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+.m-map--align-default,
+.m-map--align-center {
+	.m-map {
+		&__title,
+		&__content,
+		&__button-wrapper {
+			text-align: center;
+		}
+
+		&__content,
+		&__button-wrapper {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	}
+}
+
+// Covers scenario(s) where this block has multiple color schemes .. "color-default" is required and the starting point
+.m-map--color-default,
+.m-map--color-dark {
+
+}
+
+.m-map--color-light {
+	.m-map {
+		&__title {
+			color: #fff;
+		}
+		&__content {
+			color: #fff;
+		}
+	}
+}

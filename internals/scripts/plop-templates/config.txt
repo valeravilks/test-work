@@ -1,0 +1,6 @@
+<?php
+
+$dbName = "{{name}}";
+$dbUser = "{{user}}";
+$dbPass = "{{pass}}";
+$dbHost = "{{host}}";

@@ -1,0 +1,345 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Variables and Settings                      //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+/**
+ * All of DOD's settings (Sass variables).
+ *
+ * The settings are broken into two categories:
+ *
+ * - 'Global'.....settings for the entire library.
+ * - 'Local'......settings for a particular partial.
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * 'Global' settings include a letter 'g' to easily identify them
+ *
+ * ----------------------------------------------------------------------------
+ *
+ *  CONTENTS:
+ *
+ *  1.  Base number (Global)
+ *  2.  Colors (Global)
+ *  3.  Typography (Global)
+ *  4.  Spacing (Global)
+ *  5.  Cosmetics (Global)
+ *  6.  Breakpoints (Global)
+ *  7.  Z-Index system (Global)
+ *  8.  HiDPI units (Global)
+ *  9.  HTML textual `<input>`s (Global)
+ *  10. Normalise and Reset (Local)
+ *  11. Base (Local)
+ *  12. Container (Local)
+ *  13. Grid (Local)
+ *  14. Helpers (Local)
+ */
+
+////////////////////
+// Base Number    //
+////////////////////
+
+/**
+ * The baseline number from which everything else is derived.
+ */
+
+$g-base-number: 16 !default;
+
+////////////////////
+// Colors         //
+////////////////////
+
+/**
+ * Global Brand Colors. g-brand-color-1 would be redd for McDonalds. g-brand-color-2 would be yellow.
+ */
+
+// Brand Colors
+$g-brand-color-1: #18b1a9;
+$g-brand-color-2: #067e79;
+$g-brand-color-3: #c8fa36;
+$g-brand-color-4:  #074757;
+$g-brand-color-5:  #f4f8f8;
+$g-brand-color-6:  #6b6b6b;
+
+// Social brand colors
+$facebook-brand-color: #3b5998;
+$instagram-brand-color: #C13584;
+$twitter-brand-color: #1da1f2;
+$linkedin-brand-color: #0077b5;
+$pinterest-brand-color: #E60023;
+
+// Other Common Colors
+$g-grey-color-1: $g-brand-color-6;
+$g-grey-color-light: #f4f8f8;
+
+// Font colors used as base color for the entire site. Dark versions
+$g-body-dark: $g-brand-color-6;
+$g-body-light: #fff;
+
+// Font colors used as base color for the entire site. Light versions
+$g-heading-dark: #074757;
+$g-heading-light: #fff;
+
+// Font colors used as base color for the entire site. Light versions
+$g-pretitle-dark: #000517;
+$g-pretitle-light: #fff;
+
+// Primary link color
+$g-link-color: $g-brand-color-1;
+$g-link-color--hover: rgba($g-brand-color-1, .5);
+
+// Various box shadows for buttons, icons etc. Try to keep a maximum of 3 versions
+$g-boxshadow-base-light: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$g-boxshadow-base-medium: 0 5px 15px -5px rgba(0, 0, 0, .10);
+$g-boxshadow-base-heavy: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+
+
+////////////////////
+// Fonts          //
+////////////////////
+
+// Default font family. Used for paragraphs etc
+$g-font-1: "Hero New - Regular", sans-serif;
+
+// Heading font family
+$g-font-2: "Hero New - Semi Bold", sans-serif;
+
+// Alternative font. Often used when a third font family is included in the design
+$g-font-3: "Hero New - Medium", sans-serif;
+
+$g-font-alt: $g-font-3;
+
+
+// Pretty cursive font family. Rarely used
+$g-font-script: cursive;
+
+// Body font settings
+$g-font-weight-base: 400;
+$g-line-height-base: 1.75;
+
+// Heading font settings.
+$g-font-weight-heading-base: 600;
+
+// Body font settings
+$g-body-font-family: $g-font-1;
+$g-body-font-size: 16px;
+$g-body-font-weight: $g-font-weight-base;
+$g-body-line-height: $g-line-height-base;
+
+// Heading font settings.
+$g-heading-font-family: $g-font-2;
+$g-heading-font-weight: $g-font-weight-heading-base;
+$g-heading-line-height: 1.33;
+$g-heading-padding-bottom: 20px;
+
+// Pretitle font settings.
+$g-pretitle-font-family: $g-heading-font-family;
+$g-pretitle-font-size: 20px;
+$g-pretitle-font-weight: 700;
+$g-pretitle-line-height: 1.33;
+$g-pretitle-padding-bottom: 10px;
+
+//////////////
+// Forms   //
+////////////
+
+$form-font-family: $g-body-font-family;
+$form-font-size: 14px;
+$form-color: $g-body-dark;
+$form-focus-border-color: $g-brand-color-1;
+$form-input-width: 100%;
+$form-input-max-width: 500px;
+$form-input-height: 50px;
+$form-input-bg-color: transparent;
+$form-textarea-max-height: 249px;
+$form-border-width: 1px;
+$form-border-style: solid;
+$form-border-color: #000;
+$form-border-radius: 0;
+$form-placeholder-color: #000;
+
+////////////////////
+// Header Layout  //
+////////////////////
+
+$g-layout-header-height-desktop: 100px;
+$g-layout-header-height-desktop-scroll: 80px;
+$g-layout-header-height-mob: 80px;
+$g-layout-header-height-mob-scroll: 80px;
+
+
+
+////////////////////
+// Site Layout
+////////////////////
+
+// Used to limit the width for the entire site (only used with a body wrapper to give site a magazine like look)
+$g-max-site-width: 1440px;
+
+// Used to limit the width for containers
+$g-max-content-width: 1250px;
+
+////////////////////
+// Spacing 	      //
+////////////////////
+
+//section helpers
+$g-pad-base: 40px;
+$g-pad-lg: floor($g-pad-base * 2);
+$g-pad-sm: floor($g-pad-base / 2);
+$g-space: 20px;
+
+// Gutter is used for paddings left and right on containers
+$g-gutter: 15px;
+
+////////////////////
+// Transitions    //
+////////////////////
+
+// All around transition. Used a lot
+$g-trans-base: all .4s ease-in-out;
+$g-trans-base-1: $g-trans-base;
+$g-trans-base-2: all .6s ease-in-out;
+$g-trans-base-3: opacity 1s cubic-bezier(.215,.61,.355,1), transform 1s cubic-bezier(.215,.61,.355,1), fill 1s cubic-bezier(.215,.61,.355,1);
+$g-trans-base-4: opacity .75s cubic-bezier(.215,.61,.355,1), transform .75s cubic-bezier(.215,.61,.355,1), fill .3s ease-in-out;
+$g-trans-base-5: all 1.5s ease-in-out;
+$g-trans-base-longer: all 1s cubic-bezier(.215,.61,.355,1);
+
+// Transition only the opacity
+$g-trans-opacity: opacity .4s ease-in-out;
+
+// Transition used for movement. Think moving a box from left to right
+$g-trans-transform: transform .3s ease-in-out;
+
+// Transition used for the header layout
+$g-trans-header: all .4s ease-in-out;
+
+// Fancy custom cubic-bezier transition
+$g-trans-cubic: all cubic-bezier(0.64, 0.09, 0.08, 1);
+
+////////////////////
+// ZIndex         //
+////////////////////
+
+/**
+ * A nice system that uses Sass maps to keep your project `z-index`s
+ * maintainable, sane, and free of those crazy `z-index: 99999;` occurrences!
+ *
+ * Be sure to read this to fully understand how the system works:
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ *
+ * Shell kicks it off by providing a standard stacking order that most projects
+ * would require, you can then update the Sass map in your project "Settings"
+ * partial, be sure to use nested maps to make this system aware of stacking
+ * contexts as having a flat map will soon become a headache to maintain.
+ *
+ * Applying `z-index`s with this system is done like this:
+ *
+    .c-header {
+        z-index: z(header);
+    }
+ *
+ * And for nested stacking contexts (defined via a nested map):
+ *
+    .c-dialog__close-button {
+        z-index: z(dialog-elements, close-button);
+    }
+ *
+ * N.B. as we're using a Sass map (and nested maps) we need to use a Sass
+ * function to make it easier to apply the map keys and to be able to
+ * retrieve nested map keys. The function lives in
+ * "Mixins/Functions -> Retrieve from maps".
+ *
+ * @credit
+ * http://www.sitepoint.com/better-solution-managing-z-index-sass/
+ */
+
+/**
+ * Starting from highest to lowest:
+ *
+    <body>
+        <dialog>
+            <dialog-close-button>
+        <dialog-underlay>
+        <header>
+        <main>
+        <footer>
+    </body>
+ */
+
+$g-z-1: -1;
+$g-z1: 1;
+$g-z10: 10;
+$g-z20: 20;
+$g-z30: 30;
+$g-z40: 40;
+$g-z50: 50;
+$g-z60: 60;
+$g-z70: 70;
+$g-z80: 80;
+$g-z90: 90;
+$g-z100: 100;
+$g-z500: 500;
+$g-zmax: 999;
+
+///////////////////////
+// Grid Breakpoints  //
+///////////////////////
+
+/**
+ * The breakdown of the breakpoints is based off this chart:
+ * http://static.lukew.com/unified_device_design.png
+ *
+ * Here's the thinking:
+ *
+ * - xxs ......... smart-phones and feature phones—anything that can fit into the palm of a hand (smaller size).
+ * - xs .......... smart-phones and feature phones—anything that can fit into the palm of a hand.
+ * - sm .......... typically tablets, notebooks and laptops—anything that is portable that doesn't include phones.
+ * - sm .......... smaller tablets/notebooks and e-readers e.g. Kindle.
+ * - md .......... larger tablets and laptops.
+ * - lg .......... desktop computers, TVs, etc.—anything that isn't portable.
+ * - xxl ......... larger desktop computer monitors, TVs, and who knows what else?
+ *
+ * The breakpoints:
+ *
+ * - xxs: 375px
+ * - xs: 544px
+ * - sm: 768px +
+ * - md: 992px +
+ * - lg: 1200px +
+ * - xl: 1400px +
+ * - xxl: 1800px +
+ */
+
+$g-bp-xxs: 375px;
+$g-bp-xs: 544px;
+$g-bp-sm: 768px;
+$g-bp-md: 992px;
+$g-bp-nav: 1140px;
+$g-bp-lg: 1200px;
+$g-bp-xl: 1400px;
+$g-bp-xxl: 1800px;
+
+/////////////////////
+// Animate SCSS    //
+/////////////////////
+
+// Setting used for the animate.css vendor files (essentially a plugin)
+$g-includeClasses: false;
+$g-webkit: false;
+
+// duration     Specifies how many seconds or milliseconds an animation takes to complete one cycle. Default 0
+// delay        Specifies when the animation will start. Default 0
+// function     Describes how the animation will progress over one cycle of its duration. Default "ease"
+// count        Specifies the number of times an animation is played. Default 1
+// fill-mode    Specifies if the effects of an animation are before the animation starts and after it ends.
+// visibility   Determines whether or not a transformed element is visible when it is not facing the screen.
+
+$countDefault: 1;
+$durationDefault: 1s;
+$delayDefault: 0s;
+$functionDefault: ease;
+$fillDefault: both;
+$visibilityDefault: hidden;

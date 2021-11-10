@@ -1,0 +1,55 @@
+{% spaceless %}
+	{#
+	* Renders the modal component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {object}  item                 content object. Has at least a title and content
+	* @param  {number}  number               Ensures each modal has a different ID. Ensures we can open multiple modals on a page
+	* @param  {boolean} button_modal     	 Adds an optional button that can be used to open the modal
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-modal" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
+
+	{% if button_modal %}
+		<div class="{{ component_class }}__button-wrapper">
+			<button class="{{ component_class }}__btn a-btn a-btn--primary"
+					type="button"
+					data-micromodal-trigger="modal-{{ number }}"
+			>
+				Open Modal
+			</button>
+		</div>
+	{% endif %}
+
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
+		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
+			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
+				<div class="{{ component_class }}__dialog text-center" role="dialog" aria-modal="true" aria-labelledby="modal-{{ number }}-title" >
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : item.title,
+						h                   : "4",
+						add_class_on_anim   : false
+					} only %}
+
+					{% include '01-atoms/content/content/content.twig' with {
+						parent_class        : component_class,
+						content             : item.content,
+						add_class_on_anim   : false
+					} only %}
+
+					<button aria-label="Close modal" data-micromodal-close class="a-button-wrapper__btn  a-btn a-btn--primary mt-6">
+						Close Modal
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endspaceless %}

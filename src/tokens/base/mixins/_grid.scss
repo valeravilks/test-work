@@ -1,0 +1,65 @@
+@mixin outlining-card-1-by-6 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	> .m-card {
+		width: 100%;
+		margin-bottom: 20px;
+		@include bp-sm {
+			width: 32%;
+			margin-bottom: 1%;
+		}
+		@include bp-md {
+			width: 19%;
+		}
+		@include bpm-sm {
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+@mixin outlining-card-1-by-3 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	> .m-card {
+		width: 100%;
+		margin-bottom: 20px;
+		@include bp-sm {
+			width: 49%;
+			margin-bottom: 2%;
+		}
+		@include bp-md {
+			width: 32%;
+			margin-bottom: 2%;
+		}
+		@include bpm-sm {
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+
+@mixin outlining-card-1-by-2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	> .m-card {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	@include bp-sm {
+		width: 49%;
+		margin-bottom: 2%;
+	}
+	@include bpm-sm {
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}

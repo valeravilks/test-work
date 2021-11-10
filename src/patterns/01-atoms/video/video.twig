@@ -1,0 +1,52 @@
+{% spaceless %}
+    {% set component_class = "a-video" %}
+    {% set version         = version      ? component_class ~ "--" ~ version | join("") %}
+    {% set parent          = parent_class ? parent_class    ~ "__" ~ component_class | replace( {"a-" : ""} ) | join("") %}
+
+    <div class="{{ parent }} {{ component_class }} {{ version }}">
+        {% if type == "file" %}
+            <video
+                {{ loop ? "loop" }}
+                {{ muted ? "muted" }}
+                {{ autoplay ? "autoplay" }}
+                {{ controls ? "controls" }}
+                {{ playsinline ? "playsinline" }}
+                poster="{{ video_cover.src }}"
+                {% if video_id %}id="{{ video_id }}"{% endif %}
+                class="{{component_class}}__video"
+            >
+                {% if video_mp4.src %}
+                    <source type="video/mp4" src="{{ video_mp4.src }}">
+                {% endif %}
+
+                {% if video_webm.src %}
+                    <source type="video/webm" src="{{ video_webm.src }}">
+                {% endif %}
+            </video>
+
+        {% elseif type == "external" %}
+            <video
+                {{ loop ? "loop" }}
+                {{ muted ? "muted" }}
+                {{ autoplay ? "autoplay" }}
+                {{ controls ? "controls" }}
+                {{ playsinline ? "playsinline" }}
+                poster="{{ video_cover.src }}"
+                {% if video_id %}id="{{ video_id }}"{% endif %}
+                class="{{component_class}}__video"
+            >
+                {% if video_ext_mp4 %}
+                    <source type="video/mp4" src="{{ video_ext_mp4 }}">
+                {% endif %}
+
+                {% if video_ext_webm %}
+                    <source type="video/webm" src="{{ video_ext_webm }}">
+                {% endif %}
+            </video>
+
+        {% elseif type == "embed" %}
+            {{ video_embed }}
+
+        {% endif %}
+    </div>
+{% endspaceless %}

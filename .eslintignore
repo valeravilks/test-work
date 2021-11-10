@@ -1,0 +1,13 @@
+build/
+node_modules/
+internals/generators/
+internals/scripts/
+package-lock.json
+yarn.lock
+README.md
+package.json
+wp-content
+scripts
+src/js/vendors
+src/js/util/polyfills.js
+src/js/util/modernizr.js

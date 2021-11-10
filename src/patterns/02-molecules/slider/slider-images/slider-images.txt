@@ -1,0 +1,19 @@
+Usage example:
+Outside a repeater
+				{% include '02-molecules/slider/slider-images/slider-images.twig' with {
+        			parent_class 		: component_class,
+        			version				: version,
+        			items         		: items,
+        			extra_class			: extra_class,
+        			index       		: 1,
+        			add_class_on_anim   : true
+        		} only %}
+Inside a repeater
+				{% include '02-molecules/slider/slider-images/slider-images.twig' with {
+        			parent_class 		: component_class,
+        			version				: version,
+        			items         		: items,
+        			extra_class			: extra_class,
+        			index       		: loop.index,
+        			add_class_on_anim   : true
+        		} only %}

@@ -1,0 +1,103 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Filter
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Molecule Variables         //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.o-default-filter {
+	padding: 100px 0;
+
+	&__container {
+		display: flex;
+		@include bpm-md {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__repeater {
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 100%;
+		@include bp-md {
+			flex-basis: 77%;
+			padding-right: 20px;
+		}
+
+		.o-default-filter {
+			&__card {
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&__sidebar {
+		position: relative;
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 100%;
+		@include bp-md {
+			flex-basis: 23%;
+		}
+		@include bpm-md {
+			order: -1;
+		}
+	}
+
+	&__sidebar-inner {
+		padding-bottom: 40px;
+		@include bp-md {
+			position: sticky;
+			top: 100px;
+			padding-bottom: 10px;
+			padding-left: 20px;
+			border-left: 1px solid #979797;
+		}
+	}
+
+	&__no-result {
+		padding: 30px;
+		background-color: $g-brand-color-1;
+		box-shadow: $g-boxshadow-base-medium;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+		transform: scale(0);
+		transition: transform .25s ease-out;
+
+		&--show {
+			transform: scale(1)
+		}
+	}
+}
+
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+// Used to create additional versions of this molecule.
+
+.o-default-filter {
+	&--default {
+
+	}
+}

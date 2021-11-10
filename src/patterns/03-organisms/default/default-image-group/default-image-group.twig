@@ -1,0 +1,59 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-default-image-group" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block main_payload %}
+		<div class="{{component_class}}__repeater {{component_class}}__repeater--{{ section.version }}">
+			{% for item in section.repeater %}
+				{% if item.desktop_size == 'ratio-16-9' %}
+					{% set resize_height = 315 %}
+				{% elseif item.desktop_size == 'ratio-4-3' %}
+					{% set resize_height = 420 %}
+				{% endif %}
+
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage(item.image) %}
+
+				<div class="{{ component_class }}__item {{ component_class }}__item-width--{{ item.image_width }} wow _{{ loop.index }}">
+					{% if img.post_mime_type != "image/png" and item.desktop_size != 'none' %}
+						<img
+							src="{{ resize_height ? img.src | resize( resize_width, resize_height ) : img.src | resize( resize_width ) }}"
+							class="{{component_class}}__img lazyload h-lazy--fade"
+							alt="{{ img.alt }}"
+						/>
+					{% else %}
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class        : component_class,
+							img                 : img,
+							lazyload            : true,
+							srcset              : true,
+							wrapper             : true
+						} only %}
+					{% endif %}
+
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+
+{% endspaceless %}

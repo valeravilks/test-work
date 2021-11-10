@@ -1,0 +1,77 @@
+{
+	"add_global_banner": "222",
+	"address_marker_icon": "222",
+	"blog_overview_cta_link_title": "Read More",
+	"call_to_action_selector_simple": "222",
+	"default_hero_image": "372",
+	"device_menu_closed_text": "222",
+	"device_menu_opened_text": "222",
+	"footer_bottom_bar": {
+		"links": [
+			{
+				"link": {
+					"title": "Test Blocks",
+					"url": "http://localhost/test-blocks/",
+					"target": "222"
+				}
+			},
+			{
+				"link": {
+					"title": "Sample Page",
+					"url": "http://localhost/sample-page/",
+					"target": "222"
+				}
+			},
+			{
+				"link": {
+					"title": "Hello world!",
+					"url": "http://localhost/2021/06/30/hello-world/",
+					"target": "222"
+				}
+			}
+		],
+		"copyright_text": "All rights reserved"
+	},
+	"footer_column_1": {
+		"title": "Sample Title",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"footer_column_2": {
+		"title": "Sample Title",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"footer_column_3": {
+		"title": "Sample Title",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"footer_column_4": {
+		"title": "Sample Title",
+		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	},
+	"footer_logo_link": "222",
+	"footer_logo_png": "222",
+	"footer_logo_svg": "222",
+	"google_map_api_key": "222",
+	"header_logo_png": "222",
+	"header_logo_svg": "222",
+	"header_top_bar_group": {
+		"show": "222",
+		"bg_color": "222"
+	},
+	"map_marker_icon": "222",
+	"show_global_cta": "1",
+	"single_blog_elements": {
+		"single_blog_parent_link": "222",
+		"single_news_parent_link": "222",
+		"single_blog_author_section_title": "222",
+		"single_blog_background_image": "222",
+		"single_blog_other_topics_section_title": "222"
+	},
+	"social_links": "222",
+	"team_members_options": {
+		"all_positions_text": "All",
+		"view_more_text": "View More"
+	},
+	"theme_base_color": "#aae8d8",
+	"user_default_avatar": "222"
+}

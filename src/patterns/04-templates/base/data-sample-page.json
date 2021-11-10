@@ -1,0 +1,17 @@
+{
+	"show_hero": "1",
+	"hero_type": "default-regular",
+	"hero_background": "image",
+	"hero_alignment": "center",
+	"hero_color": "dark",
+	"hero_size": "medium",
+	"hero_gradient": "overlay",
+	"hero_bg_color": "",
+	"hide_the_hero_title": "0",
+	"hero_title": "",
+	"hero_subtitle": "",
+	"hero_buttons": "",
+	"banner_type": "none",
+	"use_custom_hero_bg_image": "0",
+	"hero_overlay_custom": "rgba(10,10,10,0.59)"
+}

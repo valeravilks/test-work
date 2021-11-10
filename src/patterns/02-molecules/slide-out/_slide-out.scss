@@ -1,0 +1,108 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Slide Out 	                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-slide-out {
+	@include fixed-full;
+	overflow-y: auto;
+	pointer-events: none;
+	transition: opacity 0.4s ease, transform 1s cubic-bezier(0.19, 1, 0.22, 1),
+		-webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: 15;
+	padding: 150px 0 50px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	transform: translateX(-100%);
+
+	// Preparing nav items for animation
+	.m-nav__item {
+		opacity: 0;
+		transform: translateY(-20px);
+		transition: $g-trans-base-longer;
+	}
+
+	&--dark {
+		background-color: #000;
+		.m-nav__link {
+			color: $g-body-light;
+		}
+	}
+
+	&--light {
+		background-color: #fff;
+		.m-nav__link {
+			color: $g-body-dark;
+		}
+	}
+
+	&--active {
+		opacity: 1;
+		z-index: $g-z50;
+		pointer-events: inherit;
+		transform: translateX(0%);
+
+		// Animating the nav items to their proper position
+		.m-nav__item {
+			transform: translateY(0px);
+			opacity: 1;
+			transition-delay: 0.3s;
+			&-1 {
+				transition-delay: 0.4s;
+			}
+			&-2 {
+				transition-delay: 0.5s;
+			}
+			&-3 {
+				transition-delay: 0.6s;
+			}
+			&-4 {
+				transition-delay: 0.7s;
+			}
+			&-5 {
+				transition-delay: 0.5s;
+			}
+			&-6 {
+				transition-delay: 0.6s;
+			}
+			&-7 {
+				transition-delay: 0.7s;
+			}
+			&-8 {
+				transition-delay: 0.8s;
+			}
+		}
+	}
+
+	&__container {
+		margin: 0;
+	}
+
+	&__inner {
+		padding: 0 15px;
+		display: block;
+		width: 100%;
+		position: relative;
+		@include bp-md {
+			@media only screen and (max-height: 660px) {
+				padding-top: 0;
+			}
+		}
+	}
+
+	&__nav {
+		padding-bottom: 0;
+	}
+}

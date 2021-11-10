@@ -1,0 +1,41 @@
+{#############################################################}
+{# Start                                                     #}
+{#############################################################}
+
+<!-- Allow WP user to manually select the entries to output -->
+{% if section.manual_post_selector %}
+	{% set items = section.items %}
+
+<!-- No manual selection? Let's show the latest X amount of posts instead. In this case the blog posts -->
+{% else %}
+	{% set items = function( 'get_cpt_posts_by',
+		'post',
+		3,
+		'post_date',
+		'DESC',
+		post.ID
+	) %}
+{% endif %}
+
+<!-- Looping through either the manual selection or automatic selection -->
+{% for item in items %}
+
+	{# Accessing WordPress post and making them available to Twig templates #}
+	{% set item = TimberPost( item ) %}
+
+	{# Accessing WordPress image object and making them available to Twig templates #}
+	{% set img = TimberImage( item.thumbnail ) %}
+
+	{% include '02-molecules/default/cards/card-post/card-post.twig' with {
+		parent_class 		: component_class,
+		item         		: item,
+		img                 : img,
+		interval            : true,
+		index       		: loop.index,
+		add_class_on_anim   : true,
+	} only %}
+{% endfor %}
+
+{#############################################################}
+{# END                                                       #}
+{#############################################################}

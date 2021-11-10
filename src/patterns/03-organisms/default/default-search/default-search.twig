@@ -1,0 +1,68 @@
+{% spaceless %}
+	{% set component_class = "o-default-search" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	<div class="{{ component_class }} {{ version }}">
+		<div class="{{component_class}}__container l-container">
+			{% if results_count != 0 %}
+				<div class="{{ component_class }}__head">
+					<div class="{{ component_class }}__pretitle">
+						Your search results for:
+					</div>
+
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : search_query,
+						h                   : 1,
+						add_class_on_anim   : true
+					} only %}
+
+					<div class="{{ component_class }}__results-count">
+						{{ results_count }} results
+					</div>
+				</div>
+
+				{% if items %}
+					<div class="{{ component_class }}__content-container">
+						{% for item in items %}
+							{% set item = TimberPost(item) %}
+							{% include '02-molecules/cards/card-post/card-post.twig' with {
+								parent_class 		: component_class,
+								item         		: item,
+								img                 : img,
+								interval            : true,
+								index       		: loop.index,
+								add_class_on_anim   : true,
+							} only %}
+						{% endfor %}
+					</div>
+
+					<div class="{{ component_class }}__pagination-wrapper">
+						{% include '02-molecules/pagination/pagination.twig' with {
+							pagination: posts.pagination
+						} only %}
+					</div>
+
+				{% endif %}
+
+			{% else %}
+				<div class="{{ component_class }}__nothing-matches-message">
+
+					{% set not_found_title = 'Nothing matches your search for "' ~ search_query ~ '"'  %}
+
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : not_found_title,
+						h                   : 3,
+						add_class_on_anim   : true
+					} only %}
+
+					<div class="{{ component_class }}__advice-message">
+						But don't give up – check the spelling or try less specific search terms.
+					</div>
+
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endspaceless %}

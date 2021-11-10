@@ -1,0 +1,192 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Patterns (Components) Main File             //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+// Patterns -> 01-Atoms - Custom and Default   //
+/////////////////////////////////////////////////
+@import '01-atoms/buttons/button/button';
+@import '01-atoms/buttons/button-pagination/button-pagination';
+@import '01-atoms/content/content/content';
+@import '01-atoms/content/subtitle/subtitle';
+@import '01-atoms/content/title/title';
+@import '01-atoms/icon/icon';
+@import '01-atoms/images/image-default/image-default';
+@import '01-atoms/toggle/plus-toggle/plus-toggle';
+@import '01-atoms/video/video';
+@import '01-atoms/scroll-to-top/scroll-to-top';
+
+///////////////////////////////////////////
+// Patterns -> 02-Molecules - Default   //
+//////////////////////////////////////////
+@import '02-molecules/accordion/accordion';
+@import '02-molecules/map/map';
+@import '02-molecules/author/author';
+@import '02-molecules/social/social-share/social-share';
+@import '02-molecules/social/social-links/social-links';
+@import '02-molecules/nav/breadcrumbs/breadcrumbs';
+@import '02-molecules/nav/nav-category/nav-category';
+@import '02-molecules/nav/nav-footer/nav-footer';
+@import '02-molecules/nav/nav-mobile/nav-mobile';
+@import '02-molecules/nav/nav-primary/nav-primary';
+@import '02-molecules/nav/nav-mega-dropdown/nav-mega-dropdown';
+@import '02-molecules/nav/nav-side/nav-side';
+@import '02-molecules/nav/hamburger/hamburger';
+@import '02-molecules/search/search-bar/search-bar';
+@import '02-molecules/search/search-box/search-box';
+@import '02-molecules/search/search-field/search-field';
+@import '02-molecules/slide-out/slide-out';
+@import '02-molecules/cards/card-post/card-post';
+@import '02-molecules/cards/card-image-link/card-image-link';
+@import '02-molecules/cards/card-image-static/card-image-static';
+@import '02-molecules/cards/card-image-link-alt/card-image-link-alt';
+@import '02-molecules/cards/card-post-alt/card-post-alt';
+@import '02-molecules/cards/card-post-alt-horizontal/card-post-alt-horizontal';
+@import '02-molecules/filter-control/filter-control';
+@import '02-molecules/cards/card-statistic/card-statistic';
+@import '02-molecules/cards/card-grid/card-grid';
+@import '02-molecules/cards/card-icon-content/card-icon-content';
+@import '02-molecules/cards/card-list/card-list';
+@import '02-molecules/modal/modal';
+@import '02-molecules/slider/slider-images/slider-images';
+@import '02-molecules/dropdown/dropdown';
+@import '02-molecules/pagination/pagination';
+@import '02-molecules/list/list';
+
+///////////////////////////////////////
+// Patterns -> Molecules - Default   //
+///////////////////////////////////////
+
+
+//////////////////////////////////////////
+// Patterns -> 02-Molecules - Custom    //
+//////////////////////////////////////////
+
+
+
+//////////////////////////////////////////
+// Patterns -> 03-Organisms - Base      //
+//////////////////////////////////////////
+
+@import '03-organisms/base/base-hero/base-hero';
+@import '03-organisms/base/base-block/base-block';
+@import '03-organisms/base/base-block/base-block-animations';
+@import '03-organisms/base/base-block/base-block-spacing';
+@import '03-organisms/base/base-block/base-block-background';
+@import '03-organisms/base/base-block/base-block-alignments';
+
+
+//////////////////////////////////////////////////////////////
+// Patterns -> 03-Organisms - Default - Repeatable Blocks   //
+//////////////////////////////////////////////////////////////
+@import '03-organisms/default/default-image-cards/default-image-cards';
+@import '03-organisms/default/default-image-cards/default-image-cards-repeater';
+@import '03-organisms/default/default-form-or-embed/default-form-or-embed';
+@import '03-organisms/default/default-call-to-action/default-call-to-action';
+@import '03-organisms/default/default-slider-images/default-slider-images';
+@import '03-organisms/default/default-slider-images/default-slider-images-repeater';
+@import '03-organisms/default/default-testimonials/default-testimonials';
+@import '03-organisms/default/default-testimonials/default-testimonials-repeater';
+@import '03-organisms/default/default-quote/default-quote';
+@import '03-organisms/default/default-secondary-navbar/default-secondary-navbar';
+@import '03-organisms/default/default-secondary-navbar/default-secondary-navbar-repeater';
+@import '03-organisms/default/default-simple-grid/default-simple-grid';
+@import '03-organisms/default/default-simple-grid/default-simple-grid-repeater';
+@import '03-organisms/default/default-latest-posts/default-latest-posts';
+@import '03-organisms/default/default-latest-posts/default-latest-posts-repeater';
+@import '03-organisms/default/default-statistics/default-statistics';
+@import '03-organisms/default/default-statistics/default-statistics-repeater';
+@import '03-organisms/default/default-gallery/default-gallery';
+@import '03-organisms/default/default-gallery/default-gallery-repeater';
+@import '03-organisms/default/default-badges/default-badges';
+@import '03-organisms/default/default-badges/default-badges-repeater';
+@import '03-organisms/default/default-text-icons/default-text-icons';
+@import '03-organisms/default/default-text-icons/default-text-icons-repeater';
+@import '03-organisms/default/default-content-lists/default-content-lists';
+@import '03-organisms/default/default-content-lists/default-content-lists-repeater';
+@import '03-organisms/default/default-jobs/default-jobs';
+@import '03-organisms/default/default-jobs/default-jobs-repeater';
+@import '03-organisms/default/default-team/default-team';
+@import '03-organisms/default/default-team/default-team-repeater';
+@import '03-organisms/default/default-team/default-team-modal';
+@import '03-organisms/default/default-team/default-team-positions-bar';
+//@import '03-organisms/default/default-team/default-team-footer';
+@import '03-organisms/default/default-image-group/default-image-group-repeater';
+@import '03-organisms/default/default-image-group/default-image-group';
+@import '03-organisms/default/default-image-text/default-image-text';
+@import '03-organisms/default/default-text/default-text';
+@import '03-organisms/default/default-gate/default-gate';
+@import '03-organisms/default/default-faq/default-faq';
+@import '03-organisms/default/default-faq/default-faq-repeater';
+@import '03-organisms/default/default-filter/default-filter';
+
+///////////////////////////////////////////////////////////////////
+// Patterns -> 03-Organisms - Default - NONE Repeatable Blocks   //
+///////////////////////////////////////////////////////////////////
+@import '03-organisms/default/default-hero-types/default-hero-type-1/default-hero-type-1';
+@import '03-organisms/default/default-hero-types/default-hero-type-2/default-hero-type-2';
+@import '03-organisms/default/default-hero-types/default-hero-type-3/default-hero-type-3';
+@import '03-organisms/default/default-post/content-box/content-box';
+@import '03-organisms/default/default-post/content-box-sidebar/content-box-sidebar';
+@import '03-organisms/default/default-related-posts/default-related-posts';
+@import '03-organisms/default/default-article-overview/default-article-overview';
+@import '03-organisms/default/default-article-single/default-article-single';
+@import '03-organisms/default/default-search/default-search';
+@import '03-organisms/default/default-resource-menu/default-resource-menu';
+@import '03-organisms/default/default-breadcrumbs/default-breadcrumbs';
+
+/////////////////////////////////////////////////////////
+// Patterns Mixed - Elphie - REMOVE IN PRODUCTION      //
+/////////////////////////////////////////////////////////
+@import '02-molecules/elphie/logo/type-1/type-1';
+@import '02-molecules/elphie/menu-scrolling/type-1/type-1';
+@import '02-molecules/elphie/hamburger/type-1/type-1';
+@import '02-molecules/elphie/pagination/type-1/type-1';
+@import '02-molecules/elphie/social-links/type-1/type-1';
+@import '02-molecules/elphie/social-share/type-1/type-1';
+@import '03-organisms/elphie/globals/navigation-bar/type-1/type-1';
+@import '03-organisms/elphie/globals/viewer-pages/type-1/type-1';
+@import '03-organisms/elphie/call-to-actions/type-1/type-1';
+@import '03-organisms/elphie/contents/type-1/type-1';
+@import '03-organisms/elphie/footer/type-1/type-1';
+@import '03-organisms/elphie/forms/type-1/type-1';
+@import '03-organisms/elphie/gate/type-1/type-1';
+@import '03-organisms/elphie/grids-simple/type-1/type-1';
+@import '03-organisms/elphie/headers/type-1/type-1';
+@import '03-organisms/elphie/images/type-1/type-1';
+@import '03-organisms/elphie/misc/type-1/type-1';
+@import '03-organisms/elphie/people/type-1/type-1';
+@import '03-organisms/elphie/sliders/type-1/type-1';
+@import '03-organisms/elphie/statistics/type-1/type-1';
+@import '03-organisms/elphie/storytelling/type-1/type-1';
+@import '03-organisms/elphie/testimonials/type-1/type-1';
+@import '04-templates/elphie/page-builder/type-1/type-1';
+
+
+///////////////////////////////////////
+// Patterns -> Organisms - Custom    //
+///////////////////////////////////////
+
+@import '03-organisms/custom/custom-header/header';
+@import '03-organisms/custom/custom-footer/footer';
+@import '03-organisms/custom/custom-hero-types/js-hero-default/js-hero-default';
+@import '03-organisms/custom/custom-comparison/custom-comparison';
+////DO NOT ERASE OR PLOP IMPORTING WILL FAIL
+////IMPORT FROM PLOP
+@import '../patterns/01-atoms/logo/logo';
+@import '../patterns/02-molecules/tabs/tabs';
+@import '../patterns/03-organisms/default/default-cta-bar/default-cta-bar';
+
+
+///////////////////////////////////////
+// Patterns -> Pages - Default       //
+///////////////////////////////////////
+
+
+///////////////////////////////////////
+// Patterns -> Pages - Custom        //
+///////////////////////////////////////

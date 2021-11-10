@@ -1,0 +1,61 @@
+{% spaceless %}
+	{% set component_class = "o-header" %}
+	{% set logo_svg        = options.header_logo_svg %}
+
+	{# Accessing WordPress image object and making them available to Twig templates #}
+	{% set logo_png        = TimberImage( options.header_logo_png ) %}
+
+	{% set top_bar_group   = options.header_top_bar_group %}
+
+	<header class="{{ component_class }} js-header {{ color }}" id="header" data-module="header">
+		{% if top_bar_group.show %}
+			{% include '03-organisms/custom/custom-header/header-top-bar/header-top-bar.twig' %}
+		{% endif %}
+
+		{#	Wrapper used to ensure the search bar visually is hidden while sliding out (masking effect) #}
+		<div class="{{ component_class }}__inner">
+
+			<div class="{{ component_class }}__container">
+				{% if logo_svg or logo_png.id %}
+					<div class="{{component_class}}__logo-wrapper">
+						{% include '01-atoms/icon/icon.twig' with {
+							parent_class : component_class,
+							icon_svg     : logo_svg,
+							icon_image   : logo_png,
+							link         : site.link,
+							lazyload     : false,
+						} only %}
+					</div>
+				{% endif %}
+
+				<div class="{{ component_class }}__nav-wrapper">
+					{% set parent_class = component_class %}
+
+					{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
+					{{ nav.menu(menu_primary.get_items, 'm-nav', 'm-nav--primary', parent_class, false) }}
+				</div>
+
+				<div class="{{ component_class }}__search-button js-header-search-toggle">
+					<svg class="{{component_class}}__search-button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+						<g>
+							<g>
+								<path
+									d="M8.126 14.28c-2.762 0-5-2.346-5-5.25 0-2.9 2.234-5.25 5-5.25 2.762 0 5 2.347 5 5.25 0 2.9-2.235 5.25-5 5.25zm11.602 4.376l-3.895-4.089a.915.915 0 0 0-.664-.287h-.637a8.761 8.761 0 0 0 1.72-5.25c0-4.712-3.638-8.53-8.126-8.53C3.637.5 0 4.318 0 9.03c0 4.713 3.637 8.53 8.126 8.53a7.845 7.845 0 0 0 5-1.804v.669c0 .262.098.512.273.697l3.895 4.089a.903.903 0 0 0 1.325 0l1.105-1.16a1.024 1.024 0 0 0 .004-1.395z"></path>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+				<div class="{{ component_class }}__hamburger-wrapper">
+					{% include '02-molecules/nav/hamburger/hamburger.twig' with {
+						parent_class: "header"
+					} only %}
+				</div>
+			</div>
+		</div>
+
+		{% include '02-molecules/search/search-bar/search-bar.twig' with {
+			parent_class : component_class
+		} %}
+	</header>
+{% endspaceless %}

@@ -1,0 +1,48 @@
+{% spaceless %}
+	{#
+	* Renders the icon component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  link                 Contains a URL
+	#}
+	{% set component_class = "a-icon" %}
+	{% set parent_class    = parent_class ? parent_class ~ "__" ~ component_class | replace({"a-" : ""}) | join("") %}
+	{% set version         = version      ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+
+	{% set icon_size_class = icon_size ? parent_class ~ "--" ~ icon_size | join("") %}
+
+	{% if link %}
+		<a class="{{ parent_class }} {{ component_class }} {{ icon_size_class }} {{ version }}" href="{{ link }}">
+
+	{% else %}
+		<div class="{{ parent_class }} {{ component_class }} {{ icon_size_class }} {{ version }}">
+
+	{% endif %}
+
+	{# SVG is preferred over JPG/PNG images #}
+	{% if icon_svg %}
+		{{ icon_svg }}
+
+	{% else %}
+		{% include '01-atoms/images/image-default/image-default.twig' with {
+			parent_class : component_class,
+			img          : icon_image,
+			version      : "icon-img",
+			lazyload     : lazyload,
+			srcset       : false,
+			wrapper      : false
+		} only %}
+
+	{% endif %}
+
+	{% if link %}
+		</a>
+
+	{% else %}
+		</div>
+
+	{% endif %}
+{% endspaceless %}

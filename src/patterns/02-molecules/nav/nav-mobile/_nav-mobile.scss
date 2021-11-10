@@ -1,0 +1,158 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Navigation Mobile	                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-nav--mobile {
+	.m-nav__sub-menu {
+		display: none;
+	}
+
+	.m-nav {
+		// The nav item wraps the nav link
+		&__item {
+			list-style: none;
+			display: block;
+			position: relative;
+			overflow: hidden;
+			margin-left: 0px;
+			padding-left: 0px;
+			padding-right: 30px;
+			text-align: left;
+			z-index: 1;
+		}
+
+		&__link {
+			position: relative;
+			display: inline-block;
+			margin-bottom: 15px;
+			padding: 0 0 5px;
+			text-decoration: none;
+			font-family: $g-heading-font-family;
+			font-size: 38px;
+			font-weight: 400;
+			line-height: 1.2;
+			color: $g-body-light;
+			transition: $g-trans-base;
+			@include underline-special;
+			@include bpm-xs {
+				font-size: 30px;
+			}
+			@include bpm-xxs {
+				font-size: 26px;
+			}
+
+			&:before {
+				top: 100%;
+				height: 2px;
+				background-color: $g-brand-color-1;
+			}
+
+			&.current_page_item {
+				&::before {
+					width: 100%;
+					transform: scaleX(1);
+				}
+			}
+
+			&.menu-item-has-children {
+				.m-nav__arrow {
+					display: none;
+				}
+			}
+		}
+
+		&__toggle-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 7px;
+			right: 0;
+			cursor: pointer;
+			text-align: center;
+			z-index: 1;
+
+			&:hover {
+				.a-plus-toggle__line, .a-plus-toggle__line:before {
+					background: $g-brand-color-1;
+				}
+			}
+
+			.a-plus-toggle__line, .a-plus-toggle__line:before {
+				background: #000;
+			}
+		}
+
+		&__sub-menu {
+			position: relative;
+			padding: 0;
+			margin-bottom: 15px;
+
+			.m-nav__item {
+				&:first-of-type {
+					.m-nav__link {
+						padding-top: 20px;
+					}
+				}
+
+				&:last-of-type {
+					.m-nav__link {
+						padding-bottom: 20px;
+					}
+				}
+			}
+
+			.m-nav__link {
+				margin-bottom: 0;
+				padding: 10px;
+				font-size: 16px;
+
+				&:before {
+					display: none;
+				}
+
+				&:hover {
+					color: $g-brand-color-1;
+				}
+			}
+		}
+
+	}
+
+	// This ensures the active child in a submenu has it's submenu opened
+	.current_page_ancestor {
+		.m-nav__sub-menu {
+			display: block;
+
+			.m-nav__link {
+				&.current_page_item {
+					color: $g-brand-color-1;
+				}
+			}
+		}
+
+		.a-plus-toggle {
+			&__line:before {
+				transform: rotate(0deg);
+			}
+
+			&--opened{
+				span:before{
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+}

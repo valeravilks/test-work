@@ -1,0 +1,87 @@
+{
+    "key": "group_593c5424dca5e",
+    "title": "Overlays",
+    "fields": [
+        {
+            "key": "field_593c5eb64e862",
+            "label": "Add Overlay",
+            "name": "overlay",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "default": "Default",
+                "b1-heavy": "Blue Heavy",
+                "b1-medium": "Blue Medium",
+                "b1-light": "Blue Light",
+                "b1-fade": "Blue Fade",
+                "b2-heavy": "Blue Heavy",
+                "b2-medium": "Blue Medium",
+                "b2-light": "Blue Light",
+                "b2-fade": "Blue Fade",
+                "dark-heavy": "Dark Heavy",
+                "dark-medium": "Dark Medium",
+                "dark-light": "Dark Light",
+                "dark-fade": "Dark Fade",
+                "custom": "Custom"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c5a37701b62f",
+            "label": "Custom Overlay",
+            "name": "custom_overlay",
+            "type": "extended-color-picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_593c5eb64e862",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "color_palette": "",
+            "hide_palette": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1604613247
+}

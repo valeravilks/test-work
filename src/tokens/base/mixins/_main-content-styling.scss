@@ -1,0 +1,63 @@
+// Default content styling that should apply everywhere.
+@mixin main-content-styling {
+
+}
+
+// Default content styling that should apply in blocks only
+@mixin main-content-styling-block-only {
+
+}
+
+// Default content styling that should apply in the main WP content field only
+@mixin main-content-styling-main-wp-content-field-only {
+
+}
+
+
+// Default content styling that should apply everywhere BUT the homepage
+@mixin main-content-styling-not-home {
+
+}
+
+// Wysiwyg Editor content styling
+@mixin wysiwyg-content-styling {
+	h1, h2, h3, h4, h5, h6 {
+		color: initial;
+	}
+
+	a {
+		text-decoration: underline;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin-bottom: 20px;
+
+		li {
+			position: relative;
+			margin-left: 0;
+			padding-bottom: 10px;
+			padding-left: 15px;
+
+			&::before {
+				content: "";
+				@include absolute-general($top: 8px, $left: 0);
+				width: 5px;
+				height: 5px;
+				background-color: $g-body-dark;
+				border-radius: 50%;
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	@include last-element-no-bm;
+}

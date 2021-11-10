@@ -1,0 +1,32 @@
+{% spaceless %}
+    {% set component_class = "m-map" %}
+    {% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+    {% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+    <div
+        id="m-map-{{ current_index }}"
+        class="{{ component_class }} {{ parent }} {{version}} {{ extra_class}} js-map"
+        data-module="mapBlock"
+        data-lat="{{ location.lat }}"
+        data-lng="{{ location.lng }}"
+        data-zoom="{{ location.zoom }}"
+        data-key="{{ api_key }}"
+        data-active="{{ TimberImage(location.active_pin).src }}"
+        data-inactive="{{ TimberImage(location.inactive_pin).src }}"
+    >
+        <div
+            class="{{component_class}}__marker"
+            data-active="{{ TimberImage(location.active_pin).src }}"
+            data-inactive="{{ TimberImage(location.inactive_pin).src }}"
+            data-lat="{{ location.lat }}"
+            data-lng="{{ location.lng }}"
+        >
+            <div class="{{ component_class }}__marker-info">
+                <h6>{{ location.title }}</h6>
+
+                <div>{{ location.address_line_1 }}</div>
+                <div>{{ location.address_line_2 }}</div>
+            </div>
+        </div>
+    </div>
+{% endspaceless %}

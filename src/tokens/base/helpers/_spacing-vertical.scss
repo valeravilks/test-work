@@ -1,0 +1,49 @@
+//////////////////////
+// Spacing Vertical //
+//////////////////////
+
+// Sometimes spacing outside of a Component is handled by one of these
+// 'Spacing' Helpers, Beyond these helpers ALL spacing is downward facing hence only
+// `margin-bottom` being used.
+
+// Vertical Top
+.h-spacing-vertical--top-xs {
+	@include spacing-top-xs;
+}
+
+.h-spacing-vertical--top-sm {
+	@include spacing-top-sm;
+}
+
+.h-spacing-vertical--top-md {
+	@include spacing-top-md;
+}
+
+.h-spacing-vertical--top-lg {
+	@include spacing-top-lg;
+}
+
+.h-spacing-vertical--top-xl {
+	@include spacing-top-xl;
+}
+
+// Vertical Bottoms
+.h-spacing-vertical--bottom-xs {
+	@include spacing-bottom-xs;
+}
+
+.h-spacing-vertical--bottom-sm {
+	@include spacing-bottom-sm;
+}
+
+.h-spacing-vertical--bottom-md {
+	@include spacing-bottom-md;
+}
+
+.h-spacing-vertical--bottom-lg {
+	@include spacing-bottom-lg;
+}
+
+.h-spacing-vertical--bottom-xl {
+	@include spacing-bottom-xl;
+}

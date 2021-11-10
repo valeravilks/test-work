@@ -1,0 +1,121 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Button Pagination                     //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+$l-btn-pagination-size: 50px;
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-btn-pagination {
+	@include absolute-general($top: 50%);
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+	padding: 15px;
+	background: $g-brand-color-1;
+	cursor: pointer;
+	outline: none;
+	z-index: $g-z20;
+	transition: $g-trans-base;
+	overflow: hidden;
+	@include bpm-sm {
+		width: 38px;
+		height: 38px;
+		padding: 10px;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:before {
+		background-color: #000;
+		position: absolute;
+		content: '';
+		left: 0px;
+		top: 0px;
+		transition: $g-trans-base;
+		width: 100%;
+		height: 100%;
+	}
+
+	svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		position: relative;
+		transform: translateX(0%);
+		transition: $g-trans-base;
+
+		.st1 {
+			transition: $g-trans-base;
+		}
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+.a-btn-pagination--next {
+	svg {
+	}
+
+	&:before {
+		transform: translateX(-100%);
+	}
+
+	&:hover {
+		&:before {
+			transform: translateX(0%);
+		}
+
+		svg {
+			transform: translateX(2px);
+
+			.st1 {
+				//fill: $g-grey-dark;
+			}
+		}
+	}
+
+}
+
+
+.a-btn-pagination--prev {
+	 svg {
+		 transform: rotate(180deg);
+	 }
+
+	 &:before {
+		 transform: translateX(100%);
+	 }
+
+	 &:hover {
+		 &:before {
+			 transform: translateX(0%);
+		 }
+
+		 svg {
+			 transform: translateX(-2px) rotate(180deg);
+
+			 .st1 {
+				 //fill: $g-grey-dark;
+			 }
+		 }
+	 }
+ }

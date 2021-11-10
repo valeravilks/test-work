@@ -1,0 +1,94 @@
+{% spaceless %}
+	{% set component_class              = "c-single-blog-sidenav" %}
+	{% set post_featured_image          = TimberImage( post.thumbnail ) %}
+	{% set options_single_blog_elements = options.single_blog_elements %}
+	{% set headings                     = function ( "dod_get_content_headings", post.content, 'h2' ) %}
+
+	{% extends '/base-page.twig' %}
+
+	{% block main %}
+		<section class="l-site l-site--post-single {{ component_class }}">
+			<div class="l-container">
+				<div class="{{ component_class }}__breadcrumbs-wrapper h-hide wow fadeInUp">
+					{% include '02-molecules/nav/breadcrumbs/breadcrumbs.twig' with {
+						version: 'center'
+					} %}
+				</div>
+
+				<div class="{{ component_class }}__post-heading-wrapper h-hide wow fadeInUp" data-wow-delay=".3s">
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class : component_class,
+						version      : "center",
+						h            : 1,
+						title        : post.title
+					} only %}
+
+					<div class="{{ component_class }}__author-wrapper h-hide wow fadeInUp" data-wow-delay=".4s">
+						{% include '01-atoms/post/author/author.twig' with {
+							parent_class : component_class,
+							author       : post.author,
+							date         : post.post_date | date('M j, Y')
+						} only %}
+					</div>
+				</div>
+
+				{% if post_featured_image.file_loc %}
+					<div class="{{ component_class }}__featured-image-wrapper h-hide wow fadeInUp" data-wow-delay=".4s">
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class      : component_class,
+							img               : post_featured_image,
+							modifier          : "single-blog",
+							lazyload          : true,
+							srcset            : true,
+							wrapper           : true,
+							parallax          : false,
+							add_class_on_anim : true
+						} only %}
+					</div>
+				{% endif %}
+
+				<div class="{{component_class}}__main-content-wrapper h-hide wow fadeIn" data-wow-delay=".4s" data-module="defaultArticleSideNavigation">
+					{% if post.content %}
+
+						<div class="{{ component_class }}__sidebar">
+							<div class="{{ component_class }}__menu">
+								<span class="{{ component_class }}__menu-title">Table of Contents</span>
+								{% for key, heading in headings %}
+									{% if heading %}
+										<a class="{{component_class}}__menu-link" href="#{{ key }}">{{ heading }}</a>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+
+						{% include '01-atoms/content/content/content.twig' with {
+							content      : post.content,
+							parent_class : component_class
+						} only %}
+
+					{% endif %}
+				</div>
+			</div>
+
+			{% if post.get_field( 'blog_related_articles' ) %}
+				{% set related_posts = post.get_field( 'blog_related_articles' ) %}
+
+			{% else %}
+				{% set related_posts = function( 'get_cpt_posts_by', 'post', 6, 'post_date', 'DESC', post.ID ) %}
+
+			{% endif %}
+
+			{% include '01-atoms/post/related-articles/related-articles.twig' with {
+				parent_class         : component_class,
+				title                : options_single_blog_elements.single_blog_other_topics_section_title,
+				alignment            : 'center',
+				subtitle             : options_single_blog_elements.single_blog_other_topics_section_subtitle,
+				related_posts_object : related_posts,
+				blog_default_image   : options_single_blog_elements.single_blog_default_image
+			} only %}
+		</section>
+	{% endblock %}
+
+	{% block before_footer %}
+	{% endblock %}
+{% endspaceless %}

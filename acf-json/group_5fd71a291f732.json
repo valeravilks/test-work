@@ -1,0 +1,119 @@
+{
+    "key": "group_5fd71a291f732",
+    "title": "Banner Options",
+    "fields": [
+        {
+            "key": "field_60fcdcd727e0a",
+            "label": "Hide the global Banner",
+            "name": "hide_global_banner",
+            "type": "true_false",
+            "instructions": "If a global banner is set in the site options, you can disable the global banner here.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60fcdcc827e09",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_60fcdcc827e09",
+            "label": "Set a custom Banner for this page",
+            "name": "set_custom_page_banner",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5fd71a96baf19",
+            "label": "Banner",
+            "name": "banner",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60fcdcc827e09",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "banner"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "elements": "",
+            "min": "",
+            "max": 1,
+            "return_format": "id",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": {
+        "60fcde53754d7": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
+    "acfe_note": "",
+    "modified": 1627185948
+}

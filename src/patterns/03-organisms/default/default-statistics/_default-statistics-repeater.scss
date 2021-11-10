@@ -1,0 +1,27 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Statistics Repeater       //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-default-statistics {
+	&__repeater {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+}

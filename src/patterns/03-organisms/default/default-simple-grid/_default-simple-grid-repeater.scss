@@ -1,0 +1,27 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Simple Grid Repeater      //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-default-simple-grid {
+	&__repeater {
+		padding-top: 40px;
+		@include outlining-card-1-by-3;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+}
+

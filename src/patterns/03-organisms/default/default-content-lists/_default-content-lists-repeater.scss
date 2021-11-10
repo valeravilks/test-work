@@ -1,0 +1,28 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Content Lists Repeater    //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-default-content-lists {
+	&__repeater {
+		padding-top: 40px;
+		@include outlining-card-1-by-3;
+	}
+
+	&__card {
+		visibility: hidden;
+		margin-bottom: 60px !important;
+		@include fadeInUp;
+	}
+}
+

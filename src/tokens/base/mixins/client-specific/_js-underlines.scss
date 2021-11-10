@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Client Specific Mixin                       //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+@mixin underline-default {
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 14px;
+		left: 0;
+		width: 100%;
+		height: 8px;
+		transition: $g-trans-base-longer;
+		transition-delay: 1s !important;
+		background-color: $g-brand-color-1;
+		transform: translateX(0%);
+		z-index: -1;
+		@include bpm-md {
+			bottom: 6px;
+			height: 5px;
+		}
+	}
+}

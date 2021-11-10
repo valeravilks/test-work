@@ -1,0 +1,19 @@
+///////////////////////////
+// Backgrounds          //
+/////////////////////////
+
+@mixin bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+///////////////////////////
+// Background Image     //
+/////////////////////////
+
+@mixin bg-img($img-src: null, $bg_color: null, $repeat: null, $position: null, $bg_size: null, $bg_attachment: null) {
+  background: $bg_color url($img-src) $repeat $position;
+  background-size: $bg_size;
+  background-attachment: $bg_attachment;
+}

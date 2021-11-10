@@ -1,0 +1,19 @@
+{% spaceless %}
+	{#
+	* Renders the logo component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "a-logo" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim  ? "wow" | join(" ") %}
+
+	<div class="{{ component_class }} {{ parent_class }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}">
+	</div>
+{% endspaceless %}

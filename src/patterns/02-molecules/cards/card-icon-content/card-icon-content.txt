@@ -1,0 +1,14 @@
+## Inside repeater:
+
+{% set icon_svg   = item.get_field( 'svg_version' ) %}
+{% set icon_image = TimberImage( item.get_field( 'image_version' ) ) %}
+
+{% include '02-molecules/cards/card-icon-content/card-icon-content.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	icon_svg            : icon_svg,
+	icon_image          : icon_image,
+	interval            : true,
+	index       		: loop.index,
+	add_class_on_anim   : true,
+} only %}

@@ -1,0 +1,138 @@
+.c-related-articles {
+    position: relative;
+	padding: 60px 0;
+    @include bpm-md {
+        padding: 30px 0;
+    }
+
+    &__title-wrapper {
+        position: relative;
+		padding-bottom: 25px;
+    }
+
+    &__subtitle {
+        max-width: 750px;
+        margin: 0 auto;
+
+		@include last-element-no-bm;
+    }
+
+	&__slider-wrapper {
+		position: relative;
+
+        .m-card-news {
+            display: flex;
+            text-align: left;
+            margin: 0;
+            box-shadow: unset;
+
+			&__link-overlay {
+				transition: none;
+			}
+
+            &__img  {
+				backface-visibility: hidden;
+                transition: transform .5s ease-in-out;
+            }
+
+            &:hover {
+                transform: unset;
+
+                .m-card-news__img  {
+                    transform: scale(1.07);
+                }
+            }
+        }
+    }
+
+	&__slider-pagintaion {
+		display: none;
+		@include bpm-md {
+			position: static;
+			display: block;
+			padding: 30px 0;
+		}
+
+		.swiper-pagination-bullet {
+			width: 10px;
+			height: 10px;
+			background: #000;
+			opacity: 1;
+
+			&-active {
+				background: $g-brand-color-1;
+			}
+		}
+	}
+
+    &__slider-controls-holder {
+        @include absolute-general($top: 50%, $left: 0);
+        transform: translateY(-50%);
+        width: 100%;
+		@include bpm-md {
+			display: none;
+		}
+
+        .js-slider-prev,
+        .js-slider-next {
+            position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+            display: inline-flex;
+			justify-content: center;
+			align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+			cursor: pointer;
+            color: $g-brand-color-3;
+
+			svg  {
+				display: block;
+				width: 60%;
+				height: 60%;
+				transition: $g-trans-base;
+
+				path {
+					transition: $g-trans-base;
+				}
+			}
+
+            &:hover {
+                svg path {
+					stroke: $g-brand-color-1;
+				}
+            }
+
+			&.swiper-button-disabled {
+				pointer-events: none;
+
+				svg path {
+					stroke: #cbcbcb;
+				}
+			}
+        }
+
+        .js-slider-prev {
+            right: 100%;
+        }
+
+        .js-slider-next {
+            left: 100%;
+        }
+    }
+
+	&__slider-item {
+		&.m-card-post {
+			height: 100%;
+			margin-bottom: 0;
+		}
+
+		.m-card-post-alt--default {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: auto;
+			margin: 0;
+		}
+	}
+}

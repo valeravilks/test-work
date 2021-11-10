@@ -1,0 +1,26 @@
+{% spaceless %}
+	{#
+	* Renders the subtitle component. Basically the same as content component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  default_block_class  CSS class shared by all repeatable blocks
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {string}  content              The actual text. Coming from CMS or mock-data
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+    {% set component_class   = "a-subtitle" %}
+	{% set version         	 = version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent            = parent_class      ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
+	{% set add_class_on_anim = add_class_on_anim ? "wow" | join("") %}
+
+    {% if subtitle %}
+        <div
+            class="{{ default_block_class ? default_block_class ~ "__subtitle" }} {{ component_class }} {{ parent }} {{ add_class_on_anim }} a-content"
+        >
+            {{ subtitle }}
+        </div>
+    {% endif %}
+{% endspaceless %}

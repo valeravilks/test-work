@@ -1,0 +1,16 @@
+## Outside repeater:
+
+{% include '01-atoms/buttons/button/button.twig' with {
+	parent_class 		: component_class,
+	button      		: section.button,
+	add_class_on_anim   : false
+} only %}
+
+
+## Inside repeater:
+
+{% include '01-atoms/buttons/button/button.twig' with {
+	parent_class 		: component_class,
+	button      		: item.button,
+	add_class_on_anim   : false
+} only %}

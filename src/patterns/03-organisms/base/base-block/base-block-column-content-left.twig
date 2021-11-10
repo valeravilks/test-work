@@ -1,0 +1,141 @@
+{% spaceless %}
+
+    {# Block classes are listed below:  #}
+
+    {# Version   - XXXXXX or Default. Could be anything. Think homepage version or something. Always has a default. #}
+    {# Alignment - Center, Left, Right or Default #}
+    {# Color     - Light, Dark or Default #}
+
+    {% set default_block_class  = 'o-dbm' %}
+    {% set block_version        = section.version                           ? component_class ~ "--"                    ~ section.version                               | join("") %}
+    {% set block_align_custom   = section.alignment                         ? component_class ~ "--align-"              ~ section.alignment                             | join("") : component_class ~ "--align-default" %}
+    {% set block_color          = section.block_visuals.block_text_color    ? component_class ~ "--color-"              ~ section.block_visuals.block_text_color        | join("") : component_class ~ "--color-default" %}
+    {% set block_align_general  = section.alignment                         ? default_block_class ~ "--align-"          ~ section.alignment                             | join("") : default_block_class ~ "--align-default" %}
+    {% set block_bg             = section.block_visuals.block_background    ? default_block_class ~ "--bg-"             ~ section.block_visuals.block_background        | join("") : default_block_class ~ "--bg-default" %}
+    {% set block_image_align    = section.image_left_or_right               ? default_block_class ~ "--image-align-"    ~ section.image_left_or_right                   | join("") %}
+    {% set block_title_type     = section.title_type                        ? section.title_type                                                                        | join("") %}
+
+    <div class="{{ default_block_class }} {{ component_class }} {{ block_version }} {{ block_bg }} {{ block_border_top }} {{ block_border_bottom }} {{ block_align_general }} {{ block_align_custom }} {{default_block_class}}--padding-bottom-{{ section.block_visuals.block_padding_bottom }} {{default_block_class}}--padding-top-{{ section.block_visuals.block_padding_top }} {{ block_color }} {{ block_size }} {{ block_card_type }} {{ block_image_align }}" id="{{ section.block_id }}">
+        {% if section.block_visuals.block_background_image_add %}
+
+			{# Accessing WordPress image object and making them available to Twig templates #}
+            {% set block_background_image = TimberImage( section.block_visuals.block_background_image ) %}
+
+            <div class="{{ default_block_class }}__bg-image" style="background-image: url('{{ block_background_image.src }}')"></div>
+        {% endif %}
+
+        {% block before_container %}{% endblock %}
+
+        {% if container != false %}
+        <div class="l-container {{ component_class }}__container">
+            {% endif %}
+
+            {# Overwrite this in your block if you want a super custom block without any of the components below #}
+            {% block block_inner %}
+
+                {#Used to output images or shapes#}
+                {% block shape_top %}
+
+                {% endblock %}
+
+                {#Used to output optional pretitles#}
+                {% block pretitle %}
+                    {% if section.block_pretitle %}
+                        <div class="{{ default_block_class }}__pretitle-wrapper {{component_class}}__pretitle-wrapper wow">
+                            <span class="h3 {{ default_block_class }}__pretitle {{component_class}}__pretitle">{{ section.block_pretitle }}</span>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+                {# If you want a block that has the title, content, button, like the rest them but some other functionality in between content and button then you overide the after_content block#}
+                {% block before_title %}
+                {% endblock %}
+
+                {#Used to output the main block title#}
+                {% block title %}
+                    {% include '01-atoms/content/title/title.twig' with {
+                        default_block_class : default_block_class,
+                        title               : title ? title : section.block_title,
+                        type                : section.title_type,
+                        version             : section.title_width,
+                        parent_class        : component_class,
+                        h                   : block_title_type,
+                        shape               : section.title_decoration_hide,
+                        shape_color         : section.title_decoration_color,
+                        spacing_bottom      : section.title_padding_bottom
+                    } only %}
+                {% endblock %}
+
+                {#Used to output an optional subheader. Rarely used #}
+                {% block after_title %}
+                    {% if section.subheader %}
+                        <div class="{{component_class}}__subheader-wrapper wow">
+                            <h4 class="{{component_class}}__subheader h2">{{ section.subheader }}</h4>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+                {% block before_content %}{% endblock %}
+
+                {#Used to output the main content field of this block#}
+                {% block content %}
+                    {% include '01-atoms/content/content/content.twig' with {
+                        default_block_class : default_block_class,
+                        content             : content ? content : section.content,
+                        parent_class        : component_class,
+                    } only %}
+
+                    {% if section.add_heading_button %}
+                        <div class="{{default_block_class}}__heading-button-wrapper">
+                            {% include '01-atoms/buttons/button/button.twig' with {
+                                parent_class : component_class,
+                                button       : section.heading_button
+                            } only %}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+                {% block after_content %}{% endblock %}
+
+                {% block main_payload %}{% endblock %}
+
+                {% block after_main_payload %}
+                {% endblock %}
+
+                {% block before_button %}{% endblock %}
+
+                {#Used to output one or multiple buttons#}
+                {% block button %}
+                    {% if section.add_bottom_content %}
+                        <div class="{{default_block_class}}__bottom-content">
+                            {{ section.bottom_content }}
+                        </div>
+                    {% endif %}
+
+                    {% if section.add_button %}
+                        <div class="{{ default_block_class }}__button-wrapper">
+                            {% include '01-atoms/buttons/button/button.twig' with {
+                                parent_class : component_class,
+                                button       : section.button
+                            } only %}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+
+                {% block after_button %}
+                {% endblock %}
+
+                {% block shape_bottom %}
+
+                {% endblock %}
+
+            {% endblock %}
+
+            {# Blocks inside of the 'sidebar - content blocks' and 'under main content - content blocks' dont need a container with gutters / sizing helpers #}
+            {% if container != false %}
+        </div>
+        {% endif %}
+
+    </div>
+
+{% endspaceless %}

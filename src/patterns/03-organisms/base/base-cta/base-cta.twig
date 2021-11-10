@@ -1,0 +1,36 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# Organism: Base CTA                                        #}
+{#   					                                     #}
+{# Used to output a call to action banner above the footer.  #}
+{# The "default" call to action is set in the site options.  #}
+{# If needed, the user can overwrite this on a page by page. #}
+{# basis. 													 #}
+{#  														 #}
+{# Contact your development manager if you want to edit      #}
+{# this file.                                                #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{% spaceless %}
+	{% set component_class = "o-cta-holder" %}
+
+	{% block block_inner %}
+
+		{# If Global call to actions are used AND IF the global call to action is NOT set to HIDE AND IF a custom call to action is not set for this page. #}
+		{% if options.show_global_cta == true and post.meta('hide_global_cta') == false and post.meta('set_custom_page_cta') == false %}
+			{% set item = TimberPost(options.global_cta[0]) %}
+
+			{# A custom call to action is set for this page #}
+		{% elseif post.set_custom_page_cta == true or ( options.show_global_cta_page == false and post.set_custom_page_cta == true ) %}
+			{% set item = TimberPost(post.meta( 'call_to_action_selector' )[0]) %}
+		{% endif %}
+
+		{# Loop through selected CTA's #}
+		{% for section in item.meta( 'block' ) %}
+			{% include '03-organisms/base/base-block-repeater/base-block-repeater-import-list.twig' %}
+		{% endfor %}
+
+	{% endblock %}
+
+{% endspaceless %}

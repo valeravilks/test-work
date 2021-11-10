@@ -1,0 +1,139 @@
+{#############################################################}
+{# --------------------------------------------------------- #}
+{# This is the base page.                                    #}
+{# Every page on this site inherits from this page through   #}
+{# the various TWIG blocks below                             #}
+{# --------------------------------------------------------- #}
+{#############################################################}
+
+{#############################################################}
+{# HTML Header. Outputs meta entries, scripts, favicon etc   #}
+{#############################################################}
+{% block html_head_container %}
+	{% include '03-organisms/base/base-html-head/base-html-head.twig' %}
+{% endblock %}
+
+{% spaceless %}
+{#############################################################}
+{# Start of the Body                                         #}
+{#############################################################}
+<body
+	class="{{ body_class }} l-body js-body l-page l-page--{{ post.post_type }}"
+	style="--theme-base-color: {{ options.theme_base_color }}"
+	itemtype="http://schema.org/WebPage"
+>
+
+{#############################################################}
+{# Custom Scripts: AFTER OPENING BODY                        #}
+{#############################################################}
+{% for tracking in options.custom_scripts_after_opening_body %}
+	{{ tracking.code }}
+{% endfor %}
+
+{#############################################################}
+{# Header Sections                                           #}
+{#############################################################}
+{% block before_header %}
+	{% include '03-organisms/base/base-banner/base-banner.twig' %}
+{% endblock %}
+
+{% block header %}
+	{% include '03-organisms/custom/custom-header/header.twig' %}
+{% endblock %}
+
+{% block after_header %}{% endblock %}
+
+{#############################################################}
+{# Body Wrapper. Not the actual <body>                       #}
+{#############################################################}
+<main data-barba="container" data-barba-namespace="home" class="l-body-wrapper">
+
+	{#############################################################}
+	{# Hero Section                                              #}
+	{#############################################################}
+	{% block before_hero %}{% endblock %}
+
+	{% block hero %}
+		{% if post.meta( 'show_hero' ) %}
+			{% include '03-organisms/base/base-hero/base-hero-holder/base-hero-holder.twig' %}
+		{% endif %}
+	{% endblock %}
+
+	{% block scrollto %}{% endblock %}
+
+	{% block after_hero %}
+		<div
+			id="content-start"
+			class="h-content-starting-point {{ post.get_field( 'show_hero' ) is empty ? 'h-content-starting-point--no-hero' }}"
+		></div>
+	{% endblock %}
+
+	{################################################################}
+	{# ------------------------------------------------------------ #}
+	{# Main Content Section. Repeatable blocks are outputted here   #}
+	{# ------------------------------------------------------------ #}
+	{################################################################}
+	{% block before_main %}{% endblock %}
+
+	{% block main %}{% endblock %}
+
+	{% block after_main %}{% endblock %}
+
+	{#############################################################}
+	{# Footer Section                                            #}
+	{#############################################################}
+	{% block before_footer %}
+		{% include '03-organisms/base/base-cta/base-cta.twig' %}
+	{% endblock %}
+
+	{% block footer %}
+		{% include '03-organisms/custom/custom-footer/footer.twig' %}
+	{% endblock %}
+</main>
+
+{% block after_footer %}{% endblock %}
+
+{#############################################################}
+{# Scroll to Top button                                      #}
+{#############################################################}
+{% block scroll_to_top %}
+	{% include '01-atoms/scroll-to-top/scroll-to-top.twig' %}
+{% endblock %}
+
+{#############################################################}
+{# Mobile navigation / Slide out linked to the Hamburger     #}
+{#############################################################}
+{% block mobile_nav %}
+	{% include '02-molecules/slide-out/slide-out.twig' with {version: "light"} %}
+{% endblock %}
+
+{#############################################################}
+{# Wordpress Native Footer function.     .                   #}
+{# Outputs things like the footer scripts                    #}
+{#############################################################}
+{{ function('wp_footer') }}
+
+{#############################################################}
+{# Optional JSON Schema. Used for SEO                        #}
+{#############################################################}
+{% if post.schema_code %}
+	{{ post.schema_code[0] }}
+{% endif %}
+
+{#############################################################}
+{# Custom Scripts: BEFORE BODY CLOSE                         #}
+{#############################################################}
+{% for tracking in options.custom_scripts_before_closing_body %}
+	{{ tracking.code }}
+{% endfor %}
+
+{#############################################################}
+{# Body Close                                                #}
+{#############################################################}
+</body>
+
+{#############################################################}
+{# HTML Close                                                #}
+{#############################################################}
+</html>
+{% endspaceless %}

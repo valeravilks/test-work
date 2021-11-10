@@ -1,0 +1,153 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Dropdown
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Molecule Variables         //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.m-dropdown {
+	position: relative;
+	display: inline-block;
+
+	&__list {
+		border-radius: 4px;
+		box-shadow: 0 7px 34px 0 rgba(0, 0, 0, 0.2), 0 11px 34px 0 rgba(0, 0, 0, 0.13);
+		background-color: #ffffff;
+		list-style: none;
+		position: absolute;
+		top: 100%;
+		right: 0px;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: $g-trans-base;
+		transform: translateY(10px);
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, auto);
+		padding: 6px 0;
+		@include bpm-xs {
+			grid-template-columns: repeat(2,1fr);
+			grid-template-rows: repeat(4,1fr);
+		}
+
+		&--open {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			transform: translateY(0px);
+		}
+	}
+
+	&__inner {
+		padding: 8px 12px;
+		border-radius: 4px;
+		background-color: #1c2432;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+		letter-spacing: 0px;
+		font-size: 15px;
+		font-weight: 500;
+
+		&:hover {
+			background-color: $g-brand-color-1;
+			color: #fff;
+		}
+	}
+
+	&__arrow {
+		width: 0;
+		height: 0;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-top: 4px solid #fff;
+		margin-left: 5px;
+		transition: $g-trans-base;
+		transform: rotate(0deg);
+
+		&--active {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__item {
+		list-style: none;
+		display: block;
+		position: relative;
+		overflow: hidden;
+		margin-left: 0px;
+		padding-left: 0px;
+		padding-right: 12px;
+		text-align: left;
+		z-index: 1;
+		width: 166px;
+		@include bpm-xs {
+			width: 135px;
+			padding-right: 0;
+		}
+		@include bpm-xxs {
+			width: 120px;
+		}
+	}
+
+	&__link {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.6;
+		display: block;
+		position: relative;
+		letter-spacing: 0.6px;
+		padding: 10px 8px 10px 16px;
+		transition: $g-trans-base;
+		color: #333a46;
+		border-left: 4px solid transparent;
+		border-radius: 0 28px 28px 0;
+		@include bpm-xs {
+			padding: 10px;
+		}
+		@include bpm-xxs {
+			font-size: 13px;
+		}
+
+		&:hover {
+			border-left: 4px solid $g-brand-color-1;
+			padding-left: 20px;
+		}
+
+		&--active {
+			background-color: #ecf2f1;
+			border-left: 4px solid $g-brand-color-1;
+		}
+	}
+}
+
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+// Used to create additional versions of this molecule.
+
+//.m-dropdown {
+//	&--default {
+//
+//	}
+//}

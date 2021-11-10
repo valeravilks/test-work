@@ -1,0 +1,17 @@
+{% spaceless %}
+    {% set component_class = "m-search-box" %}
+	{% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
+	{% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
+
+    <div class="{{ component_class }} {{ parent }} {{version}} {{ extra_class}}">
+        <form role="search" method="get" class="{{ component_class }}__search-form" action="/">
+            <label class="{{ component_class }}__label">
+                <input type="search" class="{{ component_class }}__search-field"
+                    placeholder="Enter your search query" value="" name="s"/>
+            </label>
+            <button class="{{ component_class }}__btn a-btn a-btn--secondary" type="submit" value="Search">
+                Search
+            </button>
+        </form>
+    </div>
+{% endspaceless %}

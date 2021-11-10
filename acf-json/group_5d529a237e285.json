@@ -1,0 +1,101 @@
+{
+    "key": "group_5d529a237e285",
+    "title": "Block Heading",
+    "fields": [
+        {
+            "key": "field_5d529a3695dc2",
+            "label": "Title",
+            "name": "block_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5eac355441613",
+            "label": "Title Type",
+            "name": "title_type",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "default_value": 2,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 6,
+            "step": 1
+        },
+        {
+            "key": "field_5e4095d0ab66e",
+            "label": "Title Width",
+            "name": "title_width",
+            "type": "select",
+            "instructions": "The default maximum width of the title is 650px. At times, you may want to enlarge the maximum width of the title to ensure that the title in this block remains on 2 lines instead of 3.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "small": "Small (max-width: 620px)",
+                "default": "Default (max-width: 720px)",
+                "wide": "Wide (max-width: 780px)"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1610628133
+}

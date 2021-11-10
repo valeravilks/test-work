@@ -1,0 +1,83 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Resource Menu             //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-default-resource-menu{
+	padding: 50px 0px;
+	background-color: #eee;
+	border-bottom: 1px solid #eee;
+
+	&__dropdown {
+
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__link {
+		transition: $g-trans-base;
+		color: $g-heading-dark;
+		@include underline-special;
+		margin: 0px 10px;
+		font-size: 17px;
+		font-weight: 500;
+		&:hover {
+			color: $g-heading-dark;
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+//.o-default-resource-menu--color-default,
+//.o-default-resource-menu--color-dark {
+//	.o-default-resource-menu{
+//		&__title {
+//			//color: $g-body-dark;
+//		}
+//
+//		&__content {
+//			color: $g-body-dark;
+//		}
+//	}
+//}
+//
+//.o-default-resource-menu--color-light {
+//	.o-default-resource-menu{
+//		&__title,
+//		&__content {
+//			color: $g-body-light;
+//		}
+//	}
+//}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

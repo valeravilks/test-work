@@ -1,0 +1,47 @@
+.o-dbm--padding-bottom {
+	&-none {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	&-sm {
+		@include spacing-bottom-sm;
+	}
+
+	&-default,
+	&-md {
+		@include spacing-bottom-md;
+	}
+
+	&-lg {
+		@include spacing-bottom-lg;
+	}
+
+	&-xl {
+		@include spacing-bottom-xl;
+	}
+}
+
+.o-dbm--padding-top {
+	&-none {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+	&-sm {
+		@include spacing-top-sm;
+	}
+
+	&-default,
+	&-md {
+		@include spacing-top-md;
+	}
+
+	&-lg {
+		@include spacing-top-lg;
+	}
+
+	&-xl {
+		@include spacing-top-xl;
+	}
+}

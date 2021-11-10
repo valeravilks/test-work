@@ -1,0 +1,51 @@
+.o-custom-comparison-table {
+	&__container {
+		max-width: 980px;
+		width: 100%;
+	}
+
+	&__head {
+		max-width: 780px;
+		margin: 0 auto;
+	}
+
+	&__cards-wrapper {
+		display: grid;
+		grid-gap: 20px;
+		@include bp-sm {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__card {
+		&--cons {
+			background-color: $g-brand-color-5;
+
+			.m-list {
+				&__card-title {
+					font-weight: 400;
+					color: $g-body-dark;
+				}
+
+				&__card-list-item {
+					border: 1px solid #979797;
+				}
+			}
+		}
+
+		&--pros {
+			background-color: #e3f7ee;
+
+			.m-list {
+				&__card-title {
+					font-weight: 600;
+					color: $g-heading-dark;
+				}
+
+				&__card-list-item {
+					border: 1px solid #45c58e;
+				}
+			}
+		}
+	}
+}

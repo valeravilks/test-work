@@ -1,0 +1,95 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Social Links Share                //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+$l-social-share-size: 40px;
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-social-share {
+	display: flex;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 100px;
+		flex-direction: column;
+	}
+
+	&__title {
+		color: $g-heading-dark;
+		padding-bottom: 10px;
+	}
+
+	&__links-wrapper {
+		display: flex;
+		flex-direction: row;
+		@include bp-md {
+			flex-direction: column;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: $l-social-share-size;
+		height: $l-social-share-size;
+		border-radius: 50px;
+		background-color: $g-brand-color-1;
+		color: $g-body-dark;
+		box-shadow: 0 7px 34px rgba(0, 0, 0, .2), 0 11px 34px rgba(0, 0, 0, .13);
+		@include bpm-md {
+			margin: 0px 5px;
+		}
+		@include bp-md {
+			margin-bottom: 10px;
+		}
+
+		&:hover {
+			background-color: $g-brand-color-2;
+		}
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+
+		svg {
+			height: 22px;
+
+			path {
+				fill: $g-body-dark;
+				transition: $g-trans-base;
+			}
+		}
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+.m-social-share {
+	&--vertical {
+
+	}
+}

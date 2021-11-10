@@ -1,0 +1,11 @@
+build/
+node_modules/
+internals/generators/
+internals/scripts/
+package-lock.json
+yarn.lock
+package.json
+wp-content
+scripts
+src/scss/vendors
+src/static/vendors
