@@ -1,0 +1,30 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-text" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	{% block main_payload %}
+
+	{% endblock %}
+
+{% endspaceless %}
