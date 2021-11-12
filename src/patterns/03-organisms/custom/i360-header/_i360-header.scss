@@ -166,6 +166,11 @@
 		}
 	}
 
+	&__top-content-wrapper,
+	&__inner {
+		z-index: 2;
+	}
+
 	&__top-content-list {
 		list-style-type: none;
 		display: flex;
