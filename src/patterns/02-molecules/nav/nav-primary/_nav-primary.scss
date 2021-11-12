@@ -62,9 +62,6 @@
 			align-items: center;
 			height: 100%;
 			cursor: pointer;
-			@include bpm-lg {
-				margin-left: 6px;
-			}
 
 			&.current-menu-parent {
 				&:before {
