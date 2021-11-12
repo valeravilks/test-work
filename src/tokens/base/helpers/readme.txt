@@ -105,16 +105,16 @@
  *   that is part of a main nav link item—using the "Text truncate" Helper.
  *   The correct way to achieve this would be:
  *
-    <a href="some/url" class="o-header__nav-item">List &amp; Subscribers</a>
+    <a href="some/url" class="o-i360-header__nav-item">List &amp; Subscribers</a>
  *
-    .o-header__nav-item {
+    .o-i360-header__nav-item {
         […]
         @include h-text-truncate;
     }
  *
  *   Not:
  *
-    <a href="some/url" class="o-header__nav-item  h-text-truncate">List &amp;
+    <a href="some/url" class="o-i360-header__nav-item  h-text-truncate">List &amp;
     Subscribers</a>
  *
  * ----------------------------------------------------------------------------

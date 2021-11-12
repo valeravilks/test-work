@@ -14,7 +14,7 @@
 // Styling        //
 ////////////////////
 
-.o-header--light {
+.o-i360-header--light {
 	.m-nav--primary {
 		.m-nav {
 			&__link {
@@ -58,7 +58,7 @@
 			list-style: none;
 			display: flex;
 			position: relative;
-			padding: 20px;
+			//padding: 20px;
 			align-items: center;
 			height: 100%;
 			cursor: pointer;
@@ -113,20 +113,25 @@
 		&__link {
 			color: $g-heading-dark;
 			z-index: 2;
-			padding: 0px 0px 2px 0px;
+			//padding: 0px 0px 2px 0px;
 			display: flex;
 			text-decoration: none;
 			font-weight: 500 !important;
-			font-size: 16px;
-			letter-spacing: 0px;
+			font-size: 18px;
+			line-height: 1;
+			letter-spacing: normal;
 			transition: $g-trans-base !important;
 			font-family: $g-body-font-family;
 			position: relative;
-			@include underline-special;
+			//@include underline-special;
 
-			span {
-				transition: $g-trans-base;
+			&:hover {
+				color: $g-brand-color-1;
 			}
+
+			/*span {
+				transition: $g-trans-base;
+			}*/
 
 			//&:hover {
 			//    span {
@@ -134,11 +139,12 @@
 			//    }
 			//}
 
-			&:before {
-				top: calc(100% + 2px);
-				height: 2px;
+			/*&:before {
+				//top: calc(100% + 2px);
+				top: 100%;
+				height: 1px;
 				background-color: $g-brand-color-1;
-			}
+			}*/
 
 			&.current_page_item {
 				&::before {

@@ -25,7 +25,7 @@ import sliderImages from '../patterns/02-molecules/slider/slider-images/slider-i
 /*
  * Organisms
  */
-import header from '../patterns/03-organisms/custom/custom-header/header';
+import header from '../patterns/03-organisms/custom/i360-header/i360-header';
 import defaultFilter from '../patterns/03-organisms/default/default-filter/default-filter';
 import defaultGallery from '../patterns/03-organisms/default/default-gallery/default-gallery';
 import defaultSecondaryNavbar from '../patterns/03-organisms/default/default-secondary-navbar/default-secondary-navbar';
