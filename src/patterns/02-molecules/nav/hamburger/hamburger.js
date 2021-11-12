@@ -7,11 +7,11 @@
 let selector = '.js-hamburger';
 let activeClass = 'is-active';
 let bodyActiveClass = 'h-scroll-lock nav-active';
-let headerActiveClass = 'o-header--color-menu';
-let headerActiveClass2 = 'o-header--hamburger-active';
+let headerActiveClass = 'o-i360-header--color-menu';
+let headerActiveClass2 = 'o-i360-header--hamburger-active';
 let navMenu = '.js-slide-out';
 let navMenuActiveClass = 'm-slide-out--active';
-let headerSearchButton = 'o-header__search-button';
+let headerSearchButton = 'o-i360-header__search-button';
 let searchBar = 'm-search-bar';
 
 export function hamburger() {

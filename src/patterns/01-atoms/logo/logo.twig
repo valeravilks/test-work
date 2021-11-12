@@ -14,6 +14,37 @@
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join(" ") %}
 	{% set add_class_on_anim 	= add_class_on_anim  ? "wow" | join(" ") %}
 
-	<div class="{{ component_class }} {{ parent_class }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}">
-	</div>
+	{% set logo_size_class = logo_size ? parent_class ~ "--" ~ logo_size | join("") %}
+
+	{% if link %}
+		<a class="{{ component_class }} {{ parent_class }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}" href="{{ link }}">
+
+	{% else %}
+		<div class="{{ component_class }} {{ parent_class }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}">
+
+	{% endif %}
+
+		{# SVG is preferred over JPG/PNG images #}
+		{% if logo_svg %}
+			{{ logo_svg }}
+
+		{% else %}
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class : component_class,
+				img          : logo_image,
+				version      : "logo-img",
+				lazyload     : lazyload,
+				srcset       : false,
+				wrapper      : false
+			} only %}
+
+		{% endif %}
+
+	{% if link %}
+		</a>
+
+	{% else %}
+		</div>
+
+	{% endif %}
 {% endspaceless %}

@@ -134,9 +134,9 @@ jQuery(window).scroll(function() {
 	//
 	// if (scroll >= 10) {
 	// 	$('.l-banner').addClass('l-banner--not-top');
-	// 	$('.o-header').addClass('l-headroom--not-top');
+	// 	$('.o-i360-header').addClass('l-headroom--not-top');
 	// } else {
 	// 	$('.l-banner').removeClass('l-banner--not-top');
-	// 	$('.o-header').removeClass('l-headroom--not-top');
+	// 	$('.o-i360-header').removeClass('l-headroom--not-top');
 	// }
 });
