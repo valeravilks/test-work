@@ -18,11 +18,16 @@
 
 	<div class="{{ default_block_class ? default_block_class ~ "__button-wrapper" }} {{ parent_class }}__button-wrapper {{ extra_class_wrapper }} {{ add_class_on_anim }}">
 		<a
-			class="{{ parent_class }}__btn {{ extra_class }} {{ button.style }}"
+			class="{{ parent_class }}__btn {{ button.with_icon ? parent_class ~ "__btn--icon-" ~ button.icon_position }} {{ extra_class }} {{ button.style }}"
 			href="{{ button_link.url }}"
 			target="{{ button_link.target ? button_link.target : '_self' }}"
 		>
 			{{ button_link.title | striptags }}
+			{% if button.with_icon %}
+				<span class="{{ parent_class }}__btn-icon {{ component_class }}__btn-icon">
+					{{ button.icon_svg }}
+				</span>
+			{% endif %}
 		</a>
 	</div>
 {% endspaceless %}

@@ -10,45 +10,52 @@
 #
 #}
 {% spaceless %}
-    {% macro menu(menu, class, navClass, parent_class, drop, show_nested_menu = true) %}
-        {% import _self as nav %}
-        {% set class = class ? class : 'dod-menu' %}
+	{% macro menu(menu, class, navClass, parent_class, drop) %}
+		{% import _self as nav %}
+		{% set class = class ? class : 'dod-menu' %}
 
-        <ul class="{{ parent_class }}__nav {{ class }} {{ navClass }}">
-            {% for index, items in menu %}
-                {% set show_children = items.get_children and show_nested_menu ? true : false %}
-                {{ nav.item(items, class, drop, index, show_children) }}
-            {% endfor %}
-        </ul>
-    {% endmacro %}
-    {% macro item(item, class, drop, index, show_children) %}
-        {% import _self as nav %}
-        <li class="{{ class }}__item {{ class }}__item--level-{{ item.level }} {{ class }}__item-{{ index }} {{ item.classes|join(' ') }}">
-            {% if show_children %}
-                {{ nav.link(item, class, show_children) }}
-                {% if drop == true %}
-                    {% if ('current_page_ancestor' in item.classes) or ('current-menu-item' in item.classes) %}
-                        {% set active = 'a-plus-toggle--opened' %}
-                    {% endif %}
-                    <div class="{{ class }}__toggle-wrapper js-nav-drop">
-                        <div class="{{ class }}__plus-toggle a-plus-toggle js-plus-toggle">
-                            <span class="{{ class }}__plus-toggle__line a-plus-toggle__line"></span>
-                        </div>
-                    </div>
+		<ul class="{{ parent_class }}__nav {{ class }} {{ navClass }}">
+			{% for index, items in menu %}
+				{{ nav.item(items, class, drop, loop.index) }}
+			{% endfor %}
+		</ul>
+	{% endmacro %}
+	{% macro item(item, class, drop, index) %}
+		{% import _self as nav %}
+		<li
+			class="{{ class }}__item {{ class }}__item--level-{{ item.level }} {{ class }}__item-{{ index }} {{ item.classes|join(' ') }}"
+			style="transition-delay: {{ index < 10 ? '.' ~ index : index/10 }}s"
+		>
+			{% if item.get_children %}
+				{{ nav.link(item, class) }}
+				{% if drop == true %}
+					{% if ('current_page_ancestor' in item.classes) or ('current-menu-item' in item.classes) %}
+						{% set active = 'a-plus-toggle--opened' %}
+					{% endif %}
+					<div class="{{ class }}__toggle-wrapper js-nav-drop">
+						<div class="{{ class }}__plus-toggle a-plus-toggle js-plus-toggle">
+							<span class="{{ class }}__plus-toggle__line a-plus-toggle__line"></span>
+						</div>
+					</div>
 
-                {% endif %}
-                <ul class="{{ class }}__sub-menu {{ class }}__sub-menu--level-{{ item.level }}">
-                    {% for child in item.get_children %}
-                        {{ nav.item(child, class, drop) }}
-                    {% endfor %}
-                </ul>
-            {% else %}
-                {{ nav.link(item, class, show_children) }}
-            {% endif %}
-        </li>
-    {% endmacro %}
-    {% macro link(item, class, arrow, show_children) %}
-        <a href="{{ item.get_link }}" {{ item._menu_item_target ? "target='_blank'" }}
-           class="{{ class }}__link {{ class }}__link--level-{{ item.level }} js-nav-link {{ item.classes|join(' ') }}"><span class="{{ class }}__link-text">{{ item.title }}</span>{{ show_children ? '<span class="m-nav__arrow c-arrow-toggle"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>' : ''}}</a>
-    {% endmacro %}
+				{% endif %}
+				<ul class="{{ class }}__sub-menu {{ class }}__sub-menu--level-{{ item.level }}">
+					{% for child in item.get_children %}
+						{{ nav.item(child, class, drop) }}
+					{% endfor %}
+				</ul>
+			{% else %}
+				{{ nav.link(item, class) }}
+			{% endif %}
+		</li>
+	{% endmacro %}
+	{% macro link(item, class, arrow) %}
+		<a
+			href="{{ item.get_link }}" {{ item._menu_item_target ? "target='_blank'" }}
+			class="{{ class }}__link {{ class }}__link--level-{{ item.level }} js-nav-link {{ item.classes|join(' ') }}"
+		>
+			<span class="{{ class }}__link-text">{{ item.title }}</span>
+			{{ item.get_children ? '<span class="a-nav__arrow a-arrow-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><g><g><path fill="#074757" d="M9 .77L5.26 4.52a.372.372 0 0 1-.53 0L1 .77A.35.35 0 0 1 .899.361C1 .221 1.093.13 1.245.13h7.5c.152 0 .255.091.347.231A.361.361 0 0 1 9 .771z"/></g></g></svg></span>' : ''}}
+		</a>
+	{% endmacro %}
 {% endspaceless %}

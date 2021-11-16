@@ -11,7 +11,7 @@
 {#############################################################}
 
 {% spaceless %}
-    {% set component_class     = "o-hero" %}
+    {% set component_class     = "o-i360-hero" %}
     {% set hero_type_version   = post.get_field('hero_type')                ? component_class ~ "--"                     ~ post.get_field('hero_type')                | join("") %}
     {% set color               = post.get_field('hero_color')               ? component_class ~ "--color-"               ~ post.get_field('hero_color')               | join("") : component_class ~ "--color-default"              | join("") %}
     {% set size                = post.get_field('hero_size')                ? component_class ~ "--size-"                ~ post.get_field('hero_size')                | join("") : component_class ~ "--size-large"                 | join("") %}

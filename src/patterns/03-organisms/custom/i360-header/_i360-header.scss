@@ -156,6 +156,11 @@
 		}
 	}
 
+	&__top-content-wrapper,
+	&__inner {
+		z-index: 2;
+	}
+
 	&__top-content-wrapper {
 		position: relative;
 		padding: 6px 0 10px;
@@ -164,27 +169,28 @@
 		.o-i360-header__container {
 			padding: 0;
 		}
-	}
 
-	&__top-content-wrapper,
-	&__inner {
-		z-index: 2;
-	}
+		.m-nav {
+			&--top-content {
+				list-style-type: none;
+				display: flex;
+				margin-left: auto;
+			}
 
-	&__top-content-list {
-		list-style-type: none;
-		display: flex;
-		margin-left: auto;
-	}
+			&__item {
+				margin-left: 30px;
+				padding-left: 0;
+			}
 
-	&__top-content-list-item {
-		margin-left: 30px;
-		padding-left: 0;
-	}
+			&__link {
+				font-size: 12px;
+				color: $g-body-dark;
 
-	&__top-content-list-item-link {
-		font-size: 12px;
-		color: $g-body-dark;
+				&:hover {
+					color: $g-brand-color-1;
+				}
+			}
+		}
 	}
 }
 

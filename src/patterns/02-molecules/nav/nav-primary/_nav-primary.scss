@@ -33,26 +33,6 @@
 	margin-bottom: 0px;
 	display: flex;
 
-	.c-menu__arrow {
-		position: absolute;
-		top: 2px;
-		right: -20px;
-		width: 15px;
-		color: inherit;
-
-	}
-
-	svg {
-		width: 15px;
-		height: 15px;
-		color: inherit;
-	}
-
-	path {
-		fill: inherit;
-		color: inherit;
-	}
-
 	.m-nav {
 		&__item {
 			list-style: none;
@@ -100,8 +80,12 @@
 						}
 					}
 
-					.m-nav__arrow {
+					.a-nav__arrow {
 						transform: rotate(180deg);
+
+						svg path {
+							fill: $g-brand-color-1;
+						}
 					}
 				}
 			}
@@ -154,15 +138,29 @@
 				&:before {
 					display: none;
 				}
-				.m-nav__arrow {
+				.a-nav__arrow {
 					display: flex;
 					justify-content: center;
-					margin-left: 6px;
+					width: 10px;
+					height: 5px;
+					margin-top: auto;
+					margin-bottom: 4px;
+					margin-left: 13px;
 					line-height: 18px;
 					transition: $g-trans-base;
 
 					i {
 						font-size: 16px;
+					}
+
+					svg {
+						display: block;
+						width: 100%;
+						height: 100%;
+
+						path {
+							transition: $g-trans-base;
+						}
 					}
 				}
 			}
