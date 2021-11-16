@@ -24,30 +24,73 @@
 	padding: 65px 0;
 	background-color: $g-brand-color-4;
 
+	&__container-inner {
+		display: flex;
+		flex-direction: column;
+		@include bp-lg {
+			flex-direction: row;
+		}
+
+		&.animated {
+			.o-i360-cta-bar {
+				&__btn,
+				&__title {
+					@include bp-lg {
+						transform: translateY(0%);
+					}
+				}
+			}
+		}
+	}
+
 	&__deco {
 		@include absolute-tl;
 		height: 100%;
+		transition: $g-trans-base-5;
+		transform: scale(.9);
+		opacity: 0;
+		transition-delay: .5s;
+
+		&.animated {
+			transform: scale(1);
+			opacity: 1;
+		}
 
 		svg {
 			display: block;
 			width: 100%;
 			height: 100%;
+			opacity: .07;
 		}
 	}
 
 	&__column {
-		flex-shrink: 0;
-
 		&--1 {
-			flex-grow: 1;
-			flex-basis: 0;
-			padding-right: 25px;
+			@include bpm-lg {
+				text-align: center;
+			}
+			@include bp-lg {
+				width: 75%;
+			}
 		}
 
 		&--2 {
-			flex-grow: 0;
-			flex-basis: 280px;
-			margin-left: auto;
+			@include bpm-lg {
+				text-align: center;
+				justify-content: center;
+				align-content: center;
+				display: flex;
+			}
+			@include bp-lg {
+				width: 25%;
+			}
+		}
+	}
+
+	&__title-wrapper {
+		overflow: hidden;
+		@include bpm-lg {
+			margin-bottom: 20px;
 		}
 	}
 
@@ -56,12 +99,20 @@
 		line-height: 44px;
 		letter-spacing: -0.79px;
 		color: #fff;
+		transition: $g-trans-base-2;
+		@include bp-lg {
+			transform: translateY(100%);
+		}
 
 		span {
 			line-height: normal;
 			letter-spacing: normal;
 			color: $g-brand-color-3;
 		}
+	}
+
+	&__button-wrapper {
+		overflow: hidden;
 	}
 
 	&__btn {
@@ -76,6 +127,11 @@
 		line-height: 1;
 		letter-spacing: normal;
 		color: $g-brand-color-4;
+		transition: $g-trans-base-2;
+		@include bp-lg {
+			transform: translateY(100%);
+			transition-delay: .1s;
+		}
 
 		&:hover {
 			background-color: $g-brand-color-3;

@@ -92,24 +92,24 @@
 		.m-social-links__link {
 			width: 30px;
 			height: 30px;
-			margin-right: 10px;
-			background-color: $g-brand-color-4;
-			box-shadow: none;
-			color: $g-body-light;
-
-			&:hover {
-				&.facebook {
-					@apply bg-facebook;
-				}
-
-				&.twitter {
-					@apply bg-twitter;
-				}
-
-				&.linkedin {
-					@apply bg-linkedin;
-				}
-			}
+			//margin-right: 10px;
+			//background-color: $g-brand-color-4;
+			//box-shadow: none;
+			//color: $g-body-light;
+			//
+			//&:hover {
+			//	&.facebook {
+			//		@apply bg-facebook;
+			//	}
+			//
+			//	&.twitter {
+			//		@apply bg-twitter;
+			//	}
+			//
+			//	&.linkedin {
+			//		@apply bg-linkedin;
+			//	}
+			//}
 
 			&:last-child {
 				margin-right: 0;

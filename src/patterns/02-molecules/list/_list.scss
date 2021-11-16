@@ -8,9 +8,8 @@
 
 	&__card-title {
 		text-align: center;
-		letter-spacing: -0.29px;
 		visibility: hidden;
-		@include zoomIn($delay: .2s);
+		font-weight: 500;
 	}
 
 	&__card-list {

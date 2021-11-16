@@ -224,8 +224,8 @@
 				transition: $g-trans-base;
 
 				&:hover {
-					padding-left: 26px;
-					color:  rgba($g-body-dark,.8)
+					padding-left: 24px;
+					color: $g-heading-dark;
 				}
 
 				&::before {

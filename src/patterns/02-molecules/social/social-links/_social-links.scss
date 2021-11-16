@@ -27,8 +27,8 @@ $l-social-links-size: 50px;
 		height: $l-social-links-size;
 		margin: 0 0px;
 		transition: $g-trans-base;
-		background-color: $g-brand-color-1;
-		color: $g-body-dark;
+		background-color: $g-brand-color-2;
+		color: $g-body-light;
 		border-radius: 50px;
 		box-shadow: 0 7px 34px rgba(0,0,0,.2), 0 11px 34px rgba(0,0,0,.13);
 		margin-right: 5px;
@@ -49,36 +49,36 @@ $l-social-links-size: 50px;
 				transition: $g-trans-base;
 			}
 		}
-
-		&--facebook {
-			&:hover {
-				color: $facebook-brand-color;
-			}
-		}
-
-		&--instagram {
-			&:hover {
-				color: $instagram-brand-color;
-			}
-		}
-
-		&--twitter {
-			&:hover {
-				color: $twitter-brand-color;
-			}
-		}
-
-		&--linkedin {
-			&:hover {
-				color: $linkedin-brand-color;
-			}
-		}
-
-		&--pinterest {
-			&:hover {
-				color: $pinterest-brand-color;
-			}
-		}
+		//
+		//&--facebook {
+		//	&:hover {
+		//		color: $facebook-brand-color;
+		//	}
+		//}
+		//
+		//&--instagram {
+		//	&:hover {
+		//		color: $instagram-brand-color;
+		//	}
+		//}
+		//
+		//&--twitter {
+		//	&:hover {
+		//		color: $twitter-brand-color;
+		//	}
+		//}
+		//
+		//&--linkedin {
+		//	&:hover {
+		//		color: $linkedin-brand-color;
+		//	}
+		//}
+		//
+		//&--pinterest {
+		//	&:hover {
+		//		color: $pinterest-brand-color;
+		//	}
+		//}
 	}
 }
 
