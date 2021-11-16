@@ -161,22 +161,28 @@
 		.o-i360-header__container {
 			padding: 0;
 		}
-	}
 
-	&__top-content-list {
-		list-style-type: none;
-		display: flex;
-		margin-left: auto;
-	}
+		.m-nav {
+			&--top-content {
+				list-style-type: none;
+				display: flex;
+				margin-left: auto;
+			}
 
-	&__top-content-list-item {
-		margin-left: 30px;
-		padding-left: 0;
-	}
+			&__item {
+				margin-left: 30px;
+				padding-left: 0;
+			}
 
-	&__top-content-list-item-link {
-		font-size: 12px;
-		color: $g-body-dark;
+			&__link {
+				font-size: 12px;
+				color: $g-body-dark;
+
+				&:hover {
+					color: $g-brand-color-1;
+				}
+			}
+		}
 	}
 }
 

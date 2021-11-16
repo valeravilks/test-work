@@ -34,6 +34,7 @@ add_action('after_setup_theme', function () {
 			'menu_footer_1' => 'Footer Column 1',
 			'menu_footer_2' => 'Footer Column 2',
 			'menu_mobile' => 'Mobile Menu',
+			'menu_top' => 'Top Menu',
 		)
 	);
 

@@ -51,7 +51,12 @@
 	{#############################################################}
 	{# Hero Section                                              #}
 	{#############################################################}
-	{% block before_hero %}{% endblock %}
+	{% block before_hero %}
+		<div
+			id="content-start"
+			class="h-content-starting-point {{ post.get_field( 'show_hero' ) is empty ? 'h-content-starting-point--no-hero' }}"
+		></div>
+	{% endblock %}
 
 	{% block hero %}
 		{% if post.meta( 'show_hero' ) %}
@@ -62,10 +67,6 @@
 	{% block scrollto %}{% endblock %}
 
 	{% block after_hero %}
-		<div
-			id="content-start"
-			class="h-content-starting-point {{ post.get_field( 'show_hero' ) is empty ? 'h-content-starting-point--no-hero' }}"
-		></div>
 	{% endblock %}
 
 	{################################################################}
