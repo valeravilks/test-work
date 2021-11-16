@@ -45,4 +45,8 @@
 	&__subtitle {
 		@include last-element-no-bm;
 	}
+
+	&__button-wrapper {
+		padding-top: 20px;
+	}
 }
