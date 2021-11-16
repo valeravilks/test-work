@@ -47,7 +47,8 @@
                 "default-side-image": "Default - Hero Side Image(small)",
                 "default-side-half-image": "Default - Hero Side Image(50% and full height)",
                 "js-large": "JS - Hero Large (homepage)",
-                "js-default": "JS - Hero Inner (inner pages)"
+                "js-default": "JS - Hero Inner (inner pages)",
+                "i360-regular": "i360 - Hero Regular"
             },
             "default_value": "default-regular",
             "allow_null": 0,
@@ -183,6 +184,18 @@
                         "operator": "==",
                         "value": "default-regular"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    }
                 ]
             ],
             "wrapper": {
@@ -201,6 +214,8 @@
             "ui": 1,
             "ajax": 0,
             "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
             "placeholder": ""
         },
         {
@@ -222,6 +237,13 @@
                         "operator": "==",
                         "value": "default-regular"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    }
                 ]
             ],
             "wrapper": {
@@ -239,6 +261,8 @@
             "ui": 1,
             "ajax": 0,
             "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
             "placeholder": ""
         },
         {
@@ -302,7 +326,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_5e486f4053bf5",
@@ -733,14 +759,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "case-study"
+                "value": "all"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "event"
+                "value": "all"
             }
         ]
     ],
@@ -759,5 +785,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1634180329
+    "modified": 1637082149
 }
