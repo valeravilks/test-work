@@ -1,5 +1,5 @@
 <div class="{{ component_class }}__top-content-wrapper" style="background-color: {{ top_bar_group.bg_color ? top_bar_group.bg_color : 'transparent' }}">
-	<div class="l-container {{ component_class }}__container">
+	<div class="l-container l-container--large {{ component_class }}__container {{ component_class }}__container--top">
 		{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
 			{{ nav.menu(menu_top.get_items, 'm-nav', 'm-nav--top-content', parent_class, false) }}
 	</div>

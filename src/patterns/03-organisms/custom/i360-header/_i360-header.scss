@@ -28,7 +28,7 @@
 		align-items: center;
 		height: 100%;
 		width: 100%;
-		padding: 0px 20px;
+		//padding: 0px 20px;
 		background-color: #fff;
 		position: relative;
 	}
@@ -46,10 +46,13 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		width: 100%;
-		max-width: 1395px;
+		//width: 100%;
+		//max-width: 1395px;
 		margin: 0 auto;
-		padding: 15px 0 20px;
+		padding: 20px 0 20px;
+		&--top {
+			padding: 14px 0 14px;
+		}
 	}
 
 	&__search-button {
@@ -151,6 +154,11 @@
 			padding: 0;
 			outline: none;
 		}
+	}
+
+	&__top-content-wrapper,
+	&__inner {
+		z-index: 2;
 	}
 
 	&__top-content-wrapper {
