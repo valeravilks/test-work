@@ -19,31 +19,65 @@
 		}
 	}
 
-	&__card {
+	&__list {
 		&--cons {
-			background-color: $g-brand-color-5;
 
 			.m-list {
-				&__card-title {
+				&__bg {
+					background-color: $g-brand-color-5;
+				}
+
+				&__title {
 					color: $g-body-dark;
 				}
 
-				&__card-list-item {
+				&__list-item-inner {
 					border: 1px solid #979797;
+					@include bp-md {
+						&--1 {
+							transition-delay: 0.5s;
+						}
+						&--2 {
+							transition-delay: 1.5s;
+						}
+						&--3 {
+							transition-delay: 2.5s;
+						}
+						&--4 {
+							transition-delay: 3.5s;
+						}
+					}
 				}
 			}
 		}
 
 		&--pros {
-			background-color: #e3f7ee;
 
 			.m-list {
-				&__card-title {
+				&__bg {
+					background-color: #e3f7ee;
+				}
+
+				&__title {
 					color: $g-heading-dark;
 				}
 
-				&__card-list-item {
+				&__list-item-inner {
 					border: 1px solid #45c58e;
+					@include bp-md {
+						&--1 {
+							transition-delay: 1s;
+						}
+						&--2 {
+							transition-delay: 2s;
+						}
+						&--3 {
+							transition-delay: 3s;
+						}
+						&--4 {
+							transition-delay: 4s;
+						}
+					}
 				}
 			}
 		}

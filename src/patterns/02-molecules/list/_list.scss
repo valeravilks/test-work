@@ -1,44 +1,77 @@
 .m-list {
-	&__card {
-		padding: 20px;
-		border-radius: 30px;
-		visibility: hidden;
-		@include zoomIn();
+	padding: 20px;
+	border-radius: 30px;
+	position: relative;
+	overflow: hidden;
+	&.animated {
+		.m-list {
+			&__title {
+				transform: translateY(0%);
+			}
+
+			&__list-item-inner {
+				transform: translateY(0%);
+			}
+		}
 	}
 
-	&__card-title {
+	&__bg {
+
+	}
+
+	&__title-wrapper {
+		overflow: hidden;
+	}
+	&__title {
 		text-align: center;
-		visibility: hidden;
 		font-weight: 500;
+		transform: translateY(100%);
+		transition: $g-trans-base-longer;
 	}
 
-	&__card-list {
+	&__list {
 		list-style-type: none;
 	}
 
-	&__card-list-item {
-		position: relative;
+	&__list-item {
+		overflow: hidden;
 		margin-left: 0;
 		margin-bottom: 10px;
+	}
+
+	&__list-item-inner {
+		position: relative;
+		margin-left: 0;
 		padding: 15px 15px 15px 60px;
 		border-radius: 10px;
 		background-color: #fff;
-		visibility: hidden;
-		@include flipInX();
+		transition: $g-trans-base-2;
+		transform: translateY(100%);
+
+		&--1 {
+			transition-delay: 0.1s;
+		}
+		&--2 {
+			transition-delay: 0.2s;
+		}
+		&--3 {
+			transition-delay: 0.3s;
+		}
+		&--4 {
+			transition-delay: 0.3s;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
 		}
 	}
 
-	&__card-list-icon {
+	&__list-icon {
 		@include absolute-general($top: 50%, $left: 15px);
 		transform: translateY(-50%);
 		width: 31px;
 		height: 31px;
 		border-radius: 50%;
-		visibility: hidden;
-		@include fadeIn();
 
 		svg {
 			display: block;
@@ -47,9 +80,8 @@
 		}
 	}
 
-	&__card-list-txt {
+	&__list-txt {
 		display: inline-block;
-		visibility: hidden;
-		@include fadeInRight();
+
 	}
 }

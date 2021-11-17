@@ -14,16 +14,23 @@
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
 
-		<div class="{{ component_class }}__card wow {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }}">
-			<h4 class="{{ component_class }}__card-title wow">
-				{{ list_title }}
-			</h4>
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }}">
 
-			<ul class="{{ component_class }}__card-list">
-				{% for item in list_items %}
-					{% set delay_time = loop.index*3 %}
-					<li class="{{ component_class }}__card-list-item wow" data-wow-delay=".{{ delay_time }}s">
-						<span class="{{ component_class }}__card-list-icon wow" data-wow-delay=".{{ delay_time }}s">
+		<span class="{{ component_class }}__bg absolute top-0 right-0 bottom-0 w-full h-full"></span>
+
+		{% include '01-atoms/content/title/title.twig' with {
+			parent_class        : component_class,
+			title               : list_title,
+			h                   : '4',
+			add_class_on_anim   : false
+		} only %}
+
+		<ul class="{{ component_class }}__list">
+			{% for item in list_items %}
+
+				<li class="{{ component_class }}__list-item {{ component_class }}__list-item--{{ loop.index }}">
+					<div class='{{ component_class }}__list-item-inner {{ component_class }}__list-item-inner--{{ loop.index }}'>
+						<span class="{{ component_class }}__list-icon">
 							{% if list_type == 'cons' %}
 								<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
 									<g>
@@ -43,12 +50,13 @@
 							{% endif %}
 						</span>
 
-						<span class="{{ component_class }}__card-list-txt wow" data-wow-delay=".{{ delay_time }}s">
+						<span class="{{ component_class }}__list-txt" >
 							{{ item.list_item }}
 						</span>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 
 {% endspaceless %}
