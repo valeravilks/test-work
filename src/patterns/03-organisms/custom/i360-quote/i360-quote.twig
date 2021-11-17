@@ -1,0 +1,75 @@
+{% spaceless %}
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-quote" %}
+	{% set container       = true %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+	{% set version         = version ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set item            = section.relationship ? TimberPost( section.relationship | first ) %}
+	{% set text_color      = item.text_color      ? component_class ~ "--color-" ~ item.text_color | join("") %}
+	{% set alignment       = item.alignment       ? component_class ~ "--align-" ~ item.alignment  : component_class ~ "--align-default" %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	<div
+		class="{{ component_class }} {{ text_color }} {{ alignment }} {{ version }}"
+		{{ item.background_type == "color" ? 'style="background-color: ' ~ item.background_color ~ ';"' }}
+	>
+		{% if item.background_type == "image" %}
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set bg_img = TimberImage( item.background_image ) %}
+
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class        : component_class,
+				img                 : bg_img,
+				lazyload            : true,
+				srcset              : true,
+				wrapper             : true
+			} only %}
+		{% endif %}
+
+		{% if item.add_overlay %}
+			<div class="h-overlay" style="background-color: {{ item.get_field('overlay_color') }};"></div>
+		{% endif %}
+
+		<div class="{{ component_class }}__container l-container">
+			<div class="{{ component_class }}__content-group">
+
+				{% if item.title %}
+					{% include '01-atoms/content/title/title.twig' with {
+						title        : item.title,
+						parent_class : component_class,
+						h            : 2
+					} only %}
+				{% endif %}
+
+				{% if item.content %}
+					{% include '01-atoms/content/subtitle/subtitle.twig' with {
+						subtitle     : item.content,
+						parent_class : component_class
+					} only %}
+				{% endif %}
+
+				{% if item.add_button %}
+					{% set button =  item.get_field('button') %}
+
+					<div class="{{component_class}}__btn-wrapper">
+						{% include '01-atoms/buttons/button/button.twig' with {
+							parent_class : component_class,
+							button       : button
+						} only %}
+					</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+{% endspaceless %}

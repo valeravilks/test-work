@@ -1,0 +1,217 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Quote					            //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+$l-quote-block-large-height-desktop: 750px;
+$l-quote-block-large-height-tablet: inherit;
+$l-quote-block-large-height-mobile: inherit;
+
+$l-quote-block-medium-height-desktop: 600px;
+$l-quote-block-medium-height-tablet: inherit;
+$l-quote-block-medium-height-mobile: inherit;
+
+$l-quote-block-small-height-desktop: 350px;
+$l-quote-block-small-height-tablet: inherit;
+$l-quote-block-small-height-mobile: inherit;
+
+$l-quote-block-padding-mobile-tablet: 80px;
+
+////////////////////
+// Styling        //
+////////////////////
+
+.o-i360-quote {
+	position: relative;
+	overflow: hidden;
+	padding: 100px 0px;
+
+	&__img-wrapper {
+		z-index: $g-z1;
+	}
+
+	&__img-wrapper,
+	&__img {
+		@include absolute-full;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__img {
+		object-fit: cover;
+	}
+
+	&__container {
+		height: 100%;
+		z-index: $g-z20;
+	}
+
+	&__title-wrapper {
+
+	}
+
+	&__title {
+
+	}
+
+	&__subtitle {
+
+	}
+
+	&__content-group {
+		z-index: 1;
+		position: relative;
+		@include bp-md {
+			max-width: 500px;
+		}
+		& * {
+			@include bp-md {
+				max-width: 500px;
+			}
+		}
+	}
+
+	&__content {
+		z-index: $g-z20;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+		padding: 0 15px;
+
+		> * {
+			max-width: 600px;
+		}
+	}
+
+	.h-overlay {
+		@include absolute-full;
+		z-index: $g-z10;
+	}
+}
+
+////////////////////
+// Versions       //
+////////////////////
+
+// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+.o-i360-quote {
+	&--align-left {
+		.o-i360-quote__content {
+			align-items: baseline;
+			text-align: left;
+		}
+	}
+
+	&--align-default,
+	&--align-center {
+		.o-i360-quote__content,
+		.o-i360-quote__content-group {
+			align-items: center;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		.o-i360-quote__content-group {
+			margin: 0 auto;
+		}
+
+		.o-i360-quote__btn-wrapper {
+			text-align: center;
+		}
+
+		.o-i360-quote__btn {
+			width: auto;
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-quote {
+	&--color-light {
+		.o-i360-quote {
+			color: $g-body-light;
+
+			&__title,
+			&__subtitle,
+			&__content {
+				color: $g-body-light;
+			}
+		}
+	}
+
+	&--color-dark,
+	&--color-default {
+		color: $g-body-dark;
+
+		.o-i360-quote {
+			&__title,
+			&__subtitle,
+			&__content  {
+				color: $g-body-dark;
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
+
+.o-i360-quote {
+	&--large {
+		.o-i360-quote__content {
+			height: $l-quote-block-large-height-mobile;
+
+			@include bp-sm {
+				height: $l-quote-block-large-height-tablet;
+			}
+
+			@include bp-md {
+				height: $l-quote-block-large-height-desktop;
+			}
+		}
+	}
+	&--medium {
+		.o-i360-quote {
+		}
+	}
+	&--small {
+		.o-i360-quote {
+		}
+		.o-i360-quote__content {
+			height: $l-quote-block-small-height-mobile;
+
+			@include bp-sm {
+				height: $l-quote-block-small-height-tablet;
+			}
+
+			@include bp-md {
+				height: $l-quote-block-small-height-desktop;
+			}
+		}
+	}
+}
