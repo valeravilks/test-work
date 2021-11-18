@@ -25,8 +25,6 @@
 	{% block main_payload %}
 		<div class="{{ component_class }}__repeater">
 
-			{# Dependent on the block version, we're outputting different types of cards.
-				Both options mostly have visual differences #}
 			{% for item in section.repeater %}
 				{% set icon_svg = item.icon_svg %}
 				{% set icon_image = TimberImage( item.image ) %}
@@ -43,13 +41,6 @@
 
 			{% endfor %}
 		</div>
-
-		{#		{% if section.show_more and section.repeater | length > 6 %}#}
-		{#			<div class="{{ component_class }}__show-more-btn-wrapper">#}
-		{#				<button class="{{ component_class }}__show-more-btn">Show More</button>#}
-		{#			</div>#}
-		{#		{% endif %}#}
-
 
 	{% endblock %}
 
