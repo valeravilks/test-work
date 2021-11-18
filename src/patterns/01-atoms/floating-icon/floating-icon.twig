@@ -13,7 +13,9 @@
 	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
 	{% set js_hook          = "js-floating-icon" %}
 
-	<div class="{{ component_class }} {{ js_hook }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
-        <span class="{{ component_class }}-text">Let's Talk</span>
-    </div>
+	{% if options.live_chat_text %}
+		<div class="{{ component_class }} {{ js_hook }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
+			<span class="{{ component_class }}-text">{{ options.live_chat_text }}</span>
+		</div>
+	{% endif %}
 {% endspaceless %}
