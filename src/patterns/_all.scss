@@ -12,6 +12,7 @@
 @import '01-atoms/buttons/button/button';
 @import '01-atoms/buttons/button-pagination/button-pagination';
 @import '01-atoms/content/content/content';
+@import '01-atoms/content/pretitle/pretitle';
 @import '01-atoms/content/subtitle/subtitle';
 @import '01-atoms/content/title/title';
 @import '01-atoms/icon/icon';
@@ -148,6 +149,8 @@
 @import '03-organisms/custom/i360-image-text/i360-image-text';
 @import '03-organisms/custom/i360-text/i360-text';
 @import '03-organisms/custom/i360-comparison/i360-comparison';
+@import '03-organisms/custom/i360-cards-simple/i360-cards-simple';
+@import '03-organisms/custom/i360-cards-simple/i360-cards-simple-repeater';
 @import '03-organisms/custom/i360-cta-bar/i360-cta-bar';
 @import '03-organisms/custom/i360-footer/i360-footer';
 ////DO NOT ERASE OR PLOP IMPORTING WILL FAIL

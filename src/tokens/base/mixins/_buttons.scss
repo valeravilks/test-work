@@ -19,19 +19,16 @@
 	position: relative;
 	display: inline-flex;
 	overflow: hidden;
-	font-size: 16px;
-	padding: 13px 30px;
-	border-radius: 5px;
-	border: 0px;
-	color: $g-heading-dark;
+	font-size: 18px;
+	border-radius: 25px;
+	border: 0;
 	transition: $g-trans-base;
 	font-family: $g-heading-font-family;
-	font-weight: 500;
+	font-weight: 600;
 	text-transform: capitalize;
+	line-height: 1;
+	letter-spacing: normal;
 	visibility: visible;
-	&:hover {
-		color: $g-heading-dark;
-	}
 }
 
 @mixin btn-closed {
@@ -48,13 +45,30 @@
 
 @mixin btn-primary {
 	background-color: $g-brand-color-1;
+	color: $g-body-light;
+
 	&:hover {
-		background-color: rgba($g-brand-color-1,.7);
+		background-color: rgba($g-brand-color-1, .7);
+		color: $g-body-light;
+	}
+
+	svg path {
+		fill: $g-body-light;
 	}
 }
 
 @mixin btn-secondary {
+	background-color: $g-brand-color-3;
+	color: $g-brand-color-4;
 
+	&:hover {
+		background-color: rgba($g-brand-color-3, .7);
+		color: $g-brand-color-4;
+	}
+
+	svg path {
+		fill: $g-brand-color-4;
+	}
 }
 
 @mixin btn-tertiary {

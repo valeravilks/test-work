@@ -20,6 +20,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_6194976e378f7",
+            "label": "Pretitle",
+            "name": "pretitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5fc8aff19b5f7",
             "label": "Add Button",
             "name": "add_button",
@@ -107,9 +126,7 @@
                 "image": "Image",
                 "none": "None"
             },
-            "default_value": [
-                "color"
-            ],
+            "default_value": "color",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -270,9 +287,7 @@
                 "light": "Light",
                 "dark": "Dark"
             },
-            "default_value": [
-                "default"
-            ],
+            "default_value": "default",
             "allow_null": 1,
             "multiple": 0,
             "ui": 1,
@@ -316,9 +331,7 @@
                 "center": "Center",
                 "left": "Left"
             },
-            "default_value": [
-                "default"
-            ],
+            "default_value": "default",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -342,7 +355,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
     "acfe_display_title": "",
     "acfe_autosync": [
@@ -351,5 +364,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1608540610
+    "modified": 1637128070
 }
