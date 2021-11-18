@@ -62,7 +62,7 @@
 
 // 2: Links
 .a-link {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 600;
 	line-height: 28px;
 	color: $g-brand-color-1;
@@ -72,7 +72,7 @@
 		@include underline-special-reverse;
 
 		&::before {
-			top: calc(100% - 6px);
+			top: calc(100% - 3px);
 			height: 1px;
 			background-color: $g-brand-color-1;
 		}
