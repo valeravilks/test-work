@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Floating Icon  	                    //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+$floating-icon-size: 80px;
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-floating-icon {
+	position: fixed;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: $floating-icon-size;
+	height: $floating-icon-size;
+	padding: 0 22px;
+	right: 27px;
+	bottom: $g-pad-base;
+	border-radius: 50%;
+	overflow: hidden;
+	z-index: 25;
+	transition: .5s ease-in-out;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	background-image: linear-gradient(180deg, #074757 0%, #022731 100%);
+
+	&-text {
+		color: #ffffff;
+		font-family: $g-font-2;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 19px;
+	}
+}
