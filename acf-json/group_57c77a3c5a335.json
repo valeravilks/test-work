@@ -144,7 +144,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_61968da6bca73",
+            "key": "field_61968f585357e",
             "label": "Live Chat Text",
             "name": "live_chat_text",
             "type": "text",
@@ -331,7 +331,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -358,115 +358,13 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "color_palette": "",
                     "hide_palette": 0
-                }
-            ]
-        },
-        {
-            "key": "field_6195662a8da9f",
-            "label": "Header Right Button",
-            "name": "header_right_button",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "acfe_seamless_style": 0,
-            "acfe_group_modal": 0,
-            "sub_fields": [
-                {
-                    "key": "field_6195662a8daa0",
-                    "label": "Add",
-                    "name": "add",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_6195662a8daa1",
-                    "label": "Style",
-                    "name": "style",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6195662a8daa0",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "40",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "a-btn a-btn--primary": "Closed Primary Color",
-                        "a-btn a-btn--secondary": "Closed Secondary Color",
-                        "a-btn a-btn--tertiary": "Closed Tertiary Color",
-                        "a-btn a-btn--open-primary": "Opened Primary Color",
-                        "a-btn a-btn--open-secondary": "Opened Secondary Color",
-                        "a-btn a-btn--open-tertiary": "Opened Tertiary Color",
-                        "a-link--underline": "Underline Link",
-                        "a-link--basic": "Normal Link"
-                    },
-                    "default_value": "a-btn a-btn--primary",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "allow_custom": 0,
-                    "search_placeholder": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_6195689368615",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_6195662a8daa0",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "40",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
                 }
             ]
         },
@@ -1475,5 +1373,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637256661
+    "modified": 1637257086
 }
