@@ -161,8 +161,9 @@
 
 	&__top-content-wrapper {
 		position: relative;
-		padding: 6px 0 10px;
+		padding: 5px 0 5px;
 		background-image: linear-gradient(to right, #ffffff 0%, #efefef 100%);
+		height: 30px;
 
 		.o-i360-header__container {
 			padding: 0;
