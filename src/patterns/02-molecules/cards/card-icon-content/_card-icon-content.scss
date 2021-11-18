@@ -15,14 +15,15 @@
 ////////////////////
 
 .m-card-icon-content {
-	&__title-wrapper {
-
-	}
+	padding: 45px 25px 25px;
+	background-color: #fff;
+	border: 1px solid #979797;
+	border-radius: 10px;
 
 	&__icon {
 		width: 80px;
 		height: 80px;
-		margin-bottom: 30px;
+		margin: 0 auto 30px;
 		@include bpm-xs {
 			width: 50px;
 			height: 50px;
@@ -40,5 +41,16 @@
 			font-size: 16px;
 			letter-spacing: -0.36px;
 		}
+	}
+
+	&__content {
+		text-align: center;
+
+		span {
+			font-weight: 600;
+			color: $g-brand-color-4;
+		}
+
+		@include wysiwyg-content-styling;
 	}
 }

@@ -1,0 +1,16 @@
+## Outside repeater:
+
+{% include '01-atoms/content/pretitle/pretitle.twig' with {
+	parent_class        : component_class,
+	title               : section.pretitle,
+	add_class_on_anim   : true
+} only %}
+
+
+## Inside repeater:
+
+{% include '01-atoms/content/pretitle/pretitle.twig' with {
+	parent_class        : component_class,
+	title               : item.pretitle,
+	add_class_on_anim   : true
+} only %}

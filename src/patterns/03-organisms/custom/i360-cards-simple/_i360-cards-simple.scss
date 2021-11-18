@@ -1,0 +1,144 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: i360 Cards Simple                  //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-i360-cards-simple {
+	&__pretitle,
+	&__title {
+		padding-bottom: 35px;
+	}
+
+	&__title {
+		@include h1;
+
+		span {
+			color: #45c58e;
+		}
+	}
+
+	&__subheader-wrapper {
+		max-width: 780px;
+		margin: 0 auto 55px;
+	}
+
+	&__subheader {
+		padding-bottom: 0;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 28px;
+		letter-spacing: -0.2px;
+	}
+
+	&__content {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 32px;
+		letter-spacing: -0.21px;
+
+		@include wysiwyg-content-styling;
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Alignment Versions             //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple alignments
+ * "align-default" is required and the starting point
+ * Both "align-center" and "align-left" are required to style
+ * ------------------------------------------------------------
+ */
+
+.o-i360-cards-simple--align-center,
+.o-i360-cards-simple--align-default {
+	.o-i360-cards-simple {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__pretitle,
+		&__subheader {
+			text-align: center;
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-i360-cards-simple--align-left {
+	.o-i360-cards-simple {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-cards-simple--color-default,
+.o-i360-cards-simple--color-dark {
+	.o-i360-cards-simple {
+		&__pretitle,
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-i360-cards-simple--color-light {
+	.o-i360-cards-simple {
+		&__pretitle,
+		&__subheader {
+			color: $g-brand-color-5;
+		}
+
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
