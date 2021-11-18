@@ -133,29 +133,6 @@
 	&__button-wrapper {
 		padding-top: 35px;
 	}
-
-	&__btn {
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 28px;
-		letter-spacing: normal;
-		color: $g-brand-color-1;
-		@include underline-special;
-		@include underline-special-reverse;
-
-		&::before {
-			top: calc(100% - 3px);
-			height: 1px;
-			background-color: $g-brand-color-1;
-		}
-
-		&:hover {
-			&::before {
-				background-color: rgba($g-brand-color-1, .5);
-			}
-		}
-	}
 }
 
 //////////////////////////////////////////

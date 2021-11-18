@@ -42,18 +42,17 @@
 
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__content-group">
-
-				{% if item.title %}
-					{% include '01-atoms/content/title/title.twig' with {
-						title        : item.title,
+				{% if item.pretitle %}
+					{% include '01-atoms/content/pretitle/pretitle.twig' with {
+						pretitle     : item.pretitle,
 						parent_class : component_class,
-						h            : 2
+						h            : 6
 					} only %}
 				{% endif %}
 
 				{% if item.content %}
-					{% include '01-atoms/content/subtitle/subtitle.twig' with {
-						subtitle     : item.content,
+					{% include '01-atoms/content/content/content.twig' with {
+						content     : item.content,
 						parent_class : component_class
 					} only %}
 				{% endif %}

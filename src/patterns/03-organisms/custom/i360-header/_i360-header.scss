@@ -26,9 +26,8 @@
 	&__inner {
 		display: flex;
 		align-items: center;
-		height: 100%;
+		height: 55px;
 		width: 100%;
-		//padding: 0px 20px;
 		background-color: #fff;
 		position: relative;
 	}
@@ -46,10 +45,8 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		//width: 100%;
-		//max-width: 1395px;
 		margin: 0 auto;
-		padding: 20px 0 20px;
+		padding: 0;
 		&--top {
 			padding: 14px 0 14px;
 		}
@@ -61,10 +58,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 22px;
-		height: 22px;
-		margin-left: 30px;
-		border-radius: 5px;
+		width: 55px;
+		height: 100%;
+		background-color: $g-brand-color-5;
 
 		&:hover {
 			svg path {
@@ -79,8 +75,8 @@
 
 		svg {
 			display: block;
-			width: 100%;
-			height: 100%;
+			width: 25px;
+			height: 25px;
 
 			path {
 				transition: $g-trans-base;
@@ -132,6 +128,7 @@
 		align-items: center;
 		margin-left: auto;
 		flex:1;
+		padding: 20px 25px 20px 0;
 	}
 
 	&__nav {
@@ -143,6 +140,7 @@
 	&__hamburger-wrapper {
 		display: inline-flex;
 		height: 100%;
+		margin-left: 20px;
 		@include bp-md {
 			display: none;
 		}
@@ -163,8 +161,9 @@
 
 	&__top-content-wrapper {
 		position: relative;
-		padding: 6px 0 10px;
+		padding: 5px 0 5px;
 		background-image: linear-gradient(to right, #ffffff 0%, #efefef 100%);
+		height: 30px;
 
 		.o-i360-header__container {
 			padding: 0;
@@ -190,6 +189,40 @@
 					color: $g-brand-color-1;
 				}
 			}
+		}
+	}
+
+	&__btn-connect {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 50px 0 17px;
+		background-image: linear-gradient(to right, #1fac6f 0%, #45c58e 100%);
+		font-size: 12px;
+		font-weight: 600;
+		color: #fff;
+
+		&:hover {
+			color: #fff;
+
+			.o-i360-header__btn-connect-icon {
+				transform: translateX(3px);
+			}
+		}
+	}
+
+	&__btn-connect-icon {
+		@include absolute-general($top: 0, $right: 17px, $bottom: 0);
+		width: 15px;
+		height: 15px;
+		margin: auto 0;
+		transition: $g-trans-base;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
 		}
 	}
 }

@@ -90,9 +90,11 @@
 				{# Used to output optional pretitles #}
 				{% block pretitle %}
 					{% if section.block_pretitle %}
-						<div class="{{ default_block_class }}__pretitle-wrapper {{component_class}}__pretitle-wrapper wow">
-							<span class="h3 {{ default_block_class }}__pretitle {{component_class}}__pretitle">{{ section.block_pretitle }}</span>
-						</div>
+						{% include '01-atoms/content/pretitle/pretitle.twig' with {
+							pretitle     : section.block_pretitle,
+							parent_class : component_class,
+							h            : 6
+						} only %}
 					{% endif %}
 				{% endblock %}
 

@@ -31,7 +31,7 @@ $l-quote-block-padding-mobile-tablet: 80px;
 .o-i360-quote {
 	position: relative;
 	overflow: hidden;
-	padding: 100px 0px;
+	padding: 100px 0;
 
 	&__img-wrapper {
 		z-index: $g-z1;
@@ -53,28 +53,15 @@ $l-quote-block-padding-mobile-tablet: 80px;
 		z-index: $g-z20;
 	}
 
-	&__title-wrapper {
-
-	}
-
-	&__title {
-
-	}
-
-	&__subtitle {
-
+	&__pretitle {
+		margin-bottom: 15px;
 	}
 
 	&__content-group {
 		z-index: 1;
 		position: relative;
 		@include bp-md {
-			max-width: 500px;
-		}
-		& * {
-			@include bp-md {
-				max-width: 500px;
-			}
+			max-width: 570px;
 		}
 	}
 
@@ -85,16 +72,23 @@ $l-quote-block-padding-mobile-tablet: 80px;
 		justify-content: center;
 		flex-direction: column;
 		height: 100%;
-		padding: 0 15px;
 
-		> * {
-			max-width: 600px;
+		h2 {
+			span {
+				color: $g-brand-color-2;
+			}
 		}
+
+		@include wysiwyg-content-styling;
 	}
 
 	.h-overlay {
 		@include absolute-full;
 		z-index: $g-z10;
+	}
+
+	&__btn-wrapper {
+		margin-top: 35px;
 	}
 }
 
@@ -109,9 +103,37 @@ $l-quote-block-padding-mobile-tablet: 80px;
 			align-items: baseline;
 			text-align: left;
 		}
+
+		.o-i360-quote__content-group {
+			@include bp-md {
+				padding-left: 80px;
+			}
+		}
 	}
 
-	&--align-default,
+	&--align-default{
+		.o-i360-quote__content {
+			align-items: baseline;
+			text-align: left;
+		}
+
+		.o-i360-quote__content-group {
+			text-align: left;
+			margin-left: auto;
+			@include bp-md {
+				padding-right: 80px;
+			}
+		}
+
+		.o-i360-quote__btn-wrapper {
+			text-align: left;
+		}
+
+		.o-i360-quote__btn {
+			width: auto;
+		}
+	}
+
 	&--align-center {
 		.o-i360-quote__content,
 		.o-i360-quote__content-group {

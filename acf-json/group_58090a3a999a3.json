@@ -22,8 +22,8 @@
                 "a-btn a-btn--open-primary": "Opened Primary Color",
                 "a-btn a-btn--open-secondary": "Opened Secondary Color",
                 "a-btn a-btn--open-tertiary": "Opened Tertiary Color",
-                "a-link--underline": "Underline Link",
-                "a-link--basic": "Normal Link"
+                "a-link a-link--underline": "Underline Link",
+                "a-link a-link--basic": "Normal Link"
             },
             "default_value": "a-btn a-btn--primary",
             "allow_null": 0,
@@ -153,5 +153,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637078351
+    "modified": 1637158354
 }
