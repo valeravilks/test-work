@@ -240,53 +240,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_5e41824e26c16",
-            "label": "Header Logo SVG",
-            "name": "header_logo_svg",
-            "type": "acfe_code_editor",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "mode": "text\/html",
-            "lines": 1,
-            "indent_unit": 4,
-            "maxlength": "",
-            "rows": "",
-            "max_rows": "",
-            "return_entities": false
-        },
-        {
-            "key": "field_5e41824e26c17",
-            "label": "Header Logo PNG",
-            "name": "header_logo_png",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_601fa38d5d6a0",
             "label": "Header Top Bar",
             "name": "header_top_bar_group",
@@ -312,7 +265,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -339,13 +292,74 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
                     "color_palette": "",
                     "hide_palette": 0
+                }
+            ]
+        },
+        {
+            "key": "field_6196837a5f56f",
+            "label": "Header Call to action",
+            "name": "header_call_to_action_group",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_619683a15f570",
+                    "label": "Show call to action",
+                    "name": "show",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_619683d25f571",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_619683a15f570",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         },
@@ -364,55 +378,6 @@
             },
             "placement": "left",
             "endpoint": 0
-        },
-        {
-            "key": "field_5e3bceac0ee25",
-            "label": "Footer Logo SVG",
-            "name": "footer_logo_svg",
-            "type": "acfe_code_editor",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "mode": "text\/html",
-            "lines": 1,
-            "indent_unit": 4,
-            "maxlength": "",
-            "rows": "",
-            "max_rows": "",
-            "return_entities": false
-        },
-        {
-            "key": "field_60fcc5cfa5e83",
-            "label": "Footer Logo PNG",
-            "name": "footer_logo_png",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "uploader": "",
-            "acfe_thumbnail": 0,
-            "return_format": "id",
-            "preview_size": "medium",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "library": "all"
         },
         {
             "key": "field_5fa7aaa044ece",
@@ -1328,7 +1293,7 @@
             ]
         },
         {
-            "key": "field_619737e2b54f8",
+            "key": "field_61980dfc21899",
             "label": "Floating CTA Button",
             "name": "floating_cta_button",
             "type": "group",
@@ -1345,7 +1310,7 @@
             "acfe_group_modal": 0,
             "sub_fields": [
                 {
-                    "key": "field_619737fbb54fb",
+                    "key": "field_61980e102189c",
                     "label": "Link",
                     "name": "link",
                     "type": "link",
@@ -1388,5 +1353,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637300241
+    "modified": 1637355043
 }
