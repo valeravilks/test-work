@@ -5,8 +5,6 @@
 	{% set column_3        = options.footer_column_3 %}
 	{% set column_4        = options.footer_column_4 %}
 	{% set column_5        = options.footer_column_5 %}
-	{% set logo_svg        = options.footer_logo_svg %}
-	{% set logo_png        = TimberImage( options.footer_logo_png ) %}
 
 	{% set top_bar_group   = options.header_top_bar_group %}
 
@@ -14,11 +12,9 @@
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__columns-wrapper">
 				<div class="{{ component_class }}__column {{ component_class }}__column--logo">
-					{% if logo_svg or logo_png.id %}
-						<div class="{{component_class}}__logo-wrapper">
-							{% include '01-atoms/logo/logo-footer/logo-footer.twig' %}
-						</div>
-					{% endif %}
+					<div class="{{component_class}}__logo-wrapper">
+						{% include '01-atoms/logo/logo-footer/logo-footer.twig' %}
+					</div>
 				</div>
 
 				<div class="{{ component_class }}__column {{ component_class }}__column--1">
