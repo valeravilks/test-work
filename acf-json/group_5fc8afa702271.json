@@ -39,6 +39,46 @@
             "maxlength": ""
         },
         {
+            "key": "field_61979897e2227",
+            "label": "Title",
+            "name": "title",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5d529a237e285"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_61979927beec8",
+            "label": "Content",
+            "name": "quote_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5fc8aff19b5f7",
             "label": "Add Button",
             "name": "add_button",
@@ -210,6 +250,11 @@
                         "field": "field_5fd0d72396016",
                         "operator": "==",
                         "value": "image"
+                    },
+                    {
+                        "field": "field_6197f1ec482cb",
+                        "operator": "!=",
+                        "value": "1"
                     }
                 ]
             ],
@@ -218,7 +263,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
             "message": "",
             "default_value": 0,
             "ui": 1,
@@ -249,6 +293,63 @@
             "acfe_permissions": "",
             "default_value": "",
             "color_palette": "RGBA",
+            "hide_palette": 1
+        },
+        {
+            "key": "field_6197f1ec482cb",
+            "label": "Add Gradient",
+            "name": "add_gradient",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd0d72396016",
+                        "operator": "==",
+                        "value": "image"
+                    },
+                    {
+                        "field": "field_5fd0d80a96019",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6197f204482cc",
+            "label": "Gradient Color",
+            "name": "gradient_color",
+            "type": "extended-color-picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6197f1ec482cb",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "color_palette": "hex",
             "hide_palette": 1
         },
         {
@@ -354,7 +455,9 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "acfe_display_title": "",
@@ -364,5 +467,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637128070
+    "modified": 1637347953
 }

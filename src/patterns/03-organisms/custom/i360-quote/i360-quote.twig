@@ -40,6 +40,17 @@
 			<div class="h-overlay" style="background-color: {{ item.get_field('overlay_color') }};"></div>
 		{% endif %}
 
+		{% if item.add_gradient %}
+			{% if item.alignment ==  "left" %}
+				{% set gradient_style = 'background: linear-gradient(-90deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
+			{% elseif item.alignment ==  "default" %}
+				{% set gradient_style = 'background: linear-gradient(90deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
+			{% else %}
+				{% set gradient_style = 'background: linear-gradient(180deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
+			{% endif %}
+			<div class="h-overlay" style="{{ gradient_style }}"></div>
+		{% endif %}
+
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__content-group">
 				{% if item.pretitle %}
@@ -49,10 +60,17 @@
 						h            : 6
 					} only %}
 				{% endif %}
+				{% if item.block_title %}
+					{% include '01-atoms/content/title/title.twig' with {
+						title        : item.block_title,
+						parent_class : component_class,
+						h			 : item.title_type
+					} only %}
+				{% endif %}
 
-				{% if item.content %}
+				{% if item.quote_content %}
 					{% include '01-atoms/content/content/content.twig' with {
-						content     : item.content,
+						content      : item.quote_content,
 						parent_class : component_class
 					} only %}
 				{% endif %}

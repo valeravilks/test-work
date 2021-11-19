@@ -16,12 +16,7 @@
 				<div class="{{ component_class }}__column {{ component_class }}__column--logo">
 					{% if logo_svg or logo_png.id %}
 						<div class="{{component_class}}__logo-wrapper">
-							{% include '01-atoms/logo/logo.twig' with {
-								logo_svg     : logo_svg,
-								logo_image   : logo_png,
-								link         : site.link,
-								lazyload     : false,
-							} only %}
+							{% include '01-atoms/logo/logo-footer/logo-footer.twig' %}
 						</div>
 					{% endif %}
 				</div>

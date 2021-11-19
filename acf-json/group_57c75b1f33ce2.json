@@ -243,6 +243,11 @@
                         "field": "field_5c59d0dcbcd88",
                         "operator": "==",
                         "value": "i360-regular"
+                    },
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
                     }
                 ]
             ],
@@ -253,7 +258,8 @@
             },
             "choices": {
                 "none": "None",
-                "overlay": "Overlay"
+                "overlay": "Overlay",
+                "gradient": "Gradient"
             },
             "default_value": "none",
             "allow_null": 0,
@@ -289,6 +295,23 @@
                         "operator": "==",
                         "value": "overlay"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    },
+                    {
+                        "field": "field_5e3f57ecbb34d",
+                        "operator": "==",
+                        "value": "overlay"
+                    }
                 ]
             ],
             "wrapper": {
@@ -298,6 +321,58 @@
             },
             "default_value": "",
             "color_palette": "",
+            "hide_palette": 0
+        },
+        {
+            "key": "field_6197d3df411f0",
+            "label": "Hero Gradient Custom",
+            "name": "hero_gradient_custom_color",
+            "type": "extended-color-picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "default-regular"
+                    },
+                    {
+                        "field": "field_5e3f57ecbb34d",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    },
+                    {
+                        "field": "field_5e3f57ecbb34d",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "color_palette": "RGB",
             "hide_palette": 0
         },
         {
@@ -759,14 +834,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "all"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "all"
+                "value": "post"
             }
         ]
     ],
@@ -785,5 +853,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637082149
+    "modified": 1637341128
 }

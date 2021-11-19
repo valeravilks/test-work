@@ -9,14 +9,16 @@
 	position: relative;
 	overflow: hidden;
 
+	&__gradient {
+		@include absolute-tr;
+		width: 100%;
+		height: 100%;
+	}
+
 	&__img-wrapper {
 		@include absolute-tr;
 		width: 100%;
 		height: 100%;
-		@include bp-lg {
-			right: -102px;
-			width: calc(100% + 102px);
-		}
 	}
 
 	&__img {
@@ -24,7 +26,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: right;
 	}
 
 	&__info-wrapper {
