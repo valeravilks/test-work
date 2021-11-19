@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Atom: Floating Icon  	                    //
+//  Atom: Floating CTA Button                   //
 //                                              //
-//  https://www.dreamersofday.co                 //
+//  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
 
@@ -10,20 +10,20 @@
 // Default variables        //
 //////////////////////////////
 
-$floating-icon-size: 80px;
+$floating-cta-button-size: 80px;
 
 ////////////////////
 // Styling        //
 ////////////////////
 
-.a-floating-icon {
+.a-floating-cta-button {
 	position: fixed;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: $floating-icon-size;
-	height: $floating-icon-size;
+	width: $floating-cta-button-size;
+	height: $floating-cta-button-size;
 	padding: 0 22px;
 	right: 27px;
 	bottom: $g-pad-base;
@@ -34,7 +34,7 @@ $floating-icon-size: 80px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	background-image: linear-gradient(180deg, #074757 0%, #022731 100%);
 
-	&-text {
+	&-link {
 		color: #ffffff;
 		font-family: $g-font-2;
 		text-align: center;

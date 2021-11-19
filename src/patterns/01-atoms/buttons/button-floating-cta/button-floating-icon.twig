@@ -1,6 +1,6 @@
 {% spaceless %}
 	{#
-	* Renders floating icon
+	* Renders Floating CTA Button
 	*
 	* @param  {string}  component_class      The CSS class of this component
 	* @param  {string}  version              Optional version. Uses a BEM modifier
@@ -8,14 +8,20 @@
 	* @param  {string}  extra_class          optional extra CSS class
 	#}
 
-	{% set component_class  = "a-floating-icon" %}
+	{% set component_class  = "a-floating-cta-button" %}
 	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
-	{% set js_hook          = "js-floating-icon" %}
+	{% set floating_button  = options.floating_cta_button %}
 
-	{% if options.live_chat_text %}
+	{% if floating_button.link %}
 		<div class="{{ component_class }} {{ js_hook }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
-			<span class="{{ component_class }}-text">{{ options.live_chat_text }}</span>
+			<a
+				class="{{ component_class }}-link"
+				href="{{ floating_button.link.url }}"
+				target="{{ floating_button.target ? floating_button.target : '_self' }}"
+			>
+				{{ floating_button.link.title | striptags }}
+			</a>
 		</div>
 	{% endif %}
 {% endspaceless %}
