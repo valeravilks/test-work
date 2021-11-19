@@ -1,0 +1,27 @@
+{% spaceless %}
+	{#
+	* Renders Floating CTA Button
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class  = "a-floating-cta-button" %}
+	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
+	{% set floating_button  = options.floating_cta_button %}
+
+	{% if floating_button.link %}
+		<div class="{{ component_class }} {{ js_hook }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
+			<a
+				class="{{ component_class }}-link"
+				href="{{ floating_button.link.url }}"
+				target="{{ floating_button.target ? floating_button.target : '_self' }}"
+			>
+				{{ floating_button.link.title | striptags }}
+			</a>
+		</div>
+	{% endif %}
+{% endspaceless %}

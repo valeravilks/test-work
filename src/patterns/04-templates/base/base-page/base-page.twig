@@ -98,7 +98,14 @@
 {# Scroll to Top button                                      #}
 {#############################################################}
 {% block scroll_to_top %}
-	{% include '01-atoms/scroll-to-top/scroll-to-top.twig' %}
+	{# {% include '01-atoms/scroll-to-top/scroll-to-top.twig' %} #}
+{% endblock %}
+
+{#############################################################}
+{# Floating Icon                                             #}
+{#############################################################}
+{% block floating_icon %}
+	{% include '01-atoms/buttons/button-floating-cta/button-floating-icon.twig' %}
 {% endblock %}
 
 {#############################################################}
