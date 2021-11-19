@@ -69,5 +69,9 @@
 	{#####################################}
 	{% if post.hero_gradient == "overlay" %}
 		<span class="{{component_class}}__gradient" style="background-color: {{ post.hero_overlay_custom }}"></span>
+
+	{% elseif post.hero_gradient == "gradient" %}
+		{% set gradient_custom_color = post.hero_gradient_custom_color %}
+		<span class="{{component_class}}__gradient" style="background:linear-gradient(-90deg,{{ gradient_custom_color }}00 35%, {{ gradient_custom_color }}80 50%, {{ gradient_custom_color }}f8 75%)"></span>
 	{% endif %}
 {% endspaceless %}

@@ -49,10 +49,17 @@
 						h            : 6
 					} only %}
 				{% endif %}
+				{% if item.block_title %}
+					{% include '01-atoms/content/title/title.twig' with {
+						title        : item.block_title,
+						parent_class : component_class,
+						h			 : item.title_type
+					} only %}
+				{% endif %}
 
-				{% if item.content %}
+				{% if item.quote_content %}
 					{% include '01-atoms/content/content/content.twig' with {
-						content     : item.content,
+						content      : item.quote_content,
 						parent_class : component_class
 					} only %}
 				{% endif %}
