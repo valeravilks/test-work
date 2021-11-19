@@ -1,9 +1,5 @@
 {% spaceless %}
 	{% set component_class = "o-i360-header" %}
-	{% set logo_svg        = options.header_logo_svg %}
-
-	{# Accessing WordPress image object and making them available to Twig templates #}
-	{% set logo_png        = TimberImage( options.header_logo_png ) %}
 
 	{% set top_bar_group   = options.header_top_bar_group %}
 	{% set cta_group       = options.header_call_to_action_group %}
@@ -17,11 +13,9 @@
 		<div class="{{ component_class }}__inner">
 
 			<div class="{{ component_class }}__container l-container l-container--large">
-				{% if logo_svg or logo_png.id %}
 					<div class="{{component_class}}__logo-wrapper">
 						{% include '01-atoms/logo/logo-header/logo-header.twig' %}
 					</div>
-				{% endif %}
 
 				<div class="{{ component_class }}__nav-wrapper">
 					{% set parent_class = component_class %}
