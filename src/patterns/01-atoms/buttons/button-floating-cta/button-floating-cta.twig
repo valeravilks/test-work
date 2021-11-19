@@ -12,9 +12,10 @@
 	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
 	{% set floating_button  = options.floating_cta_button %}
+	{% set js_hook          = "js-floating-cta-button" %}
 
 	{% if floating_button.link %}
-		<div class="{{ component_class }} {{ js_hook }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
+		<div class="{{ component_class }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}">
 			<span class='{{component_class}}__bg'></span>
 			<a
 				class="{{ component_class }}__link"

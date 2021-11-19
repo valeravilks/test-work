@@ -8,6 +8,7 @@ import 'magnific-popup';
  * Atoms
  */
 import scrollToTop from '../patterns/01-atoms/scroll-to-top/scroll-to-top';
+import floatingCta from '../patterns/01-atoms/buttons/button-floating-cta/button-floating-cta';
 /*
  * Molecules
  */
@@ -60,6 +61,7 @@ const app = {
 	navigateCategory,
 	searchBar,
 	scrollToTop,
+	floatingCta,
 	socialShare,
 	hamburger,
 	defaultSlideOut,
