@@ -53,6 +53,7 @@ $floating-cta-button-size: 80px;
 		z-index: 0;
 		transform: scale(1);
 		transition: .5s ease-in-out;
+		pointer-events: none;
 	}
 
 	&__link {
@@ -63,5 +64,6 @@ $floating-cta-button-size: 80px;
 		font-weight: 600;
 		line-height: 19px;
 		z-index: 1;
+		position: relative;
 	}
 }
