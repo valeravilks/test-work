@@ -16,13 +16,13 @@
 
 	{% if floating_button.link %}
 		<div class="{{ component_class }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}" data-module="floatingCta">
+			<span class='{{component_class}}__bg'></span>
 			<a
 				class="{{ component_class }}__link"
 				href="{{ floating_button.link.url }}"
 				target="{{ floating_button.link.target ? floating_button.link.target : '_self' }}"
 			>
-				<span class='{{ component_class }}__text'>{{ floating_button.link.title | striptags }}</span>
-				<span class='{{component_class}}__bg'></span>
+				{{ floating_button.link.title | striptags }}
 			</a>
 		</div>
 	{% endif %}
