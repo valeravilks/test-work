@@ -6,23 +6,23 @@
 	* @param  {string}  version              Optional version. Uses a BEM modifier
 	* @param  {string}  parent_class     	 CSS class of the parent component
 	* @param  {string}  extra_class          optional extra CSS class
+	* @param  {object}  button      		 Contains the button label, button link and button external link
 	#}
 
 	{% set component_class  = "a-floating-cta-button" %}
 	{% set version         	= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set parent           = parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"a-" : ""}) | join("") %}
-	{% set floating_button  = options.floating_cta_button %}
 	{% set js_hook          = "js-floating-cta-button" %}
 
-	{% if floating_button.link %}
+	{% if button.link %}
 		<div class="{{ component_class }} {{ js_hook }} {{ version }} {{ parent }} {{ extra_class }}" data-module="floatingCta">
 			<span class='{{component_class}}__bg'></span>
 			<a
 				class="{{ component_class }}__link"
-				href="{{ floating_button.link.url }}"
-				target="{{ floating_button.link.target ? floating_button.link.target : '_self' }}"
+				href="{{ button.link.url }}"
+				target="{{ button.link.target ? button.link.target : '_self' }}"
 			>
-				<span class='{{ component_class }}__label'>{{ floating_button.link.title | striptags }}</span>
+				<span class='{{ component_class }}__label'>{{ button.link.title | striptags }}</span>
 			</a>
 		</div>
 	{% endif %}
