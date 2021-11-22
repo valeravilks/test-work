@@ -20,7 +20,10 @@
 
 .l-body {
 	.h-content-starting-point {
-		padding-top: 85px;
+		padding-top: 75px;
+		@include bp-md {
+			padding-top: 85px;
+		}
 	}
 
 	// Ensuring content doesn't show up below the header

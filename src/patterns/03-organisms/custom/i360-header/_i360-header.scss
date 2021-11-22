@@ -24,12 +24,15 @@
 	background-color: #fff;
 
 	&__inner {
+		position: relative;
 		display: flex;
 		align-items: center;
-		height: 55px;
 		width: 100%;
+		height: 75px;
 		background-color: #fff;
-		position: relative;
+		@include bp-md {
+			height: 55px;
+		}
 	}
 
 	&::before {
@@ -53,14 +56,17 @@
 	}
 
 	&__search-button {
-		cursor: pointer;
-		transition: $g-trans-base;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 55px;
-		height: 100%;
-		background-color: $g-brand-color-5;
+		display: none;
+		@include bp-md {
+			cursor: pointer;
+			transition: $g-trans-base;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 55px;
+			height: 100%;
+			background-color: $g-brand-color-5;
+		}
 
 		&:hover {
 			svg path {
@@ -88,9 +94,15 @@
 		position: relative;
 		display: flex;
 		justify-content: flex-start;
-		max-width: 241px;
-		margin-top: -25px;
+		max-width: 162px;
 		z-index: 10;
+		@include bp-md {
+			max-width: 185px;
+		}
+		@include bp-lg {
+			max-width: 241px;
+			margin-top: -25px;
+		}
 	}
 
 	&__logo {
@@ -127,8 +139,11 @@
 		justify-content: flex-end;
 		align-items: center;
 		margin-left: auto;
-		flex:1;
-		padding: 20px 25px 20px 0;
+		flex: 1;
+		padding: 18px 18px 18px 0;
+		@include bp-lg {
+			padding: 18px 25px 18px 0;
+		}
 	}
 
 	&__nav {
@@ -160,10 +175,14 @@
 	}
 
 	&__top-content-wrapper {
-		position: relative;
-		padding: 5px 0 5px;
-		background-image: linear-gradient(to right, #ffffff 0%, #efefef 100%);
-		height: 30px;
+		display: none;
+		@include bp-md {
+			position: relative;
+			display: block;
+			padding: 5px 0 5px;
+			background-image: linear-gradient(to right, #ffffff 0%, #efefef 100%);
+			height: 30px;
+		}
 
 		.o-i360-header__container {
 			padding: 0;
@@ -193,15 +212,18 @@
 	}
 
 	&__btn-connect {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		height: 100%;
-		padding: 0 50px 0 17px;
-		background-image: linear-gradient(to right, #1fac6f 0%, #45c58e 100%);
-		font-size: 12px;
-		font-weight: 600;
-		color: #fff;
+		display: none;
+		@include bp-md {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			height: 100%;
+			padding: 0 50px 0 17px;
+			background-image: linear-gradient(to right, #1fac6f 0%, #45c58e 100%);
+			font-size: 12px;
+			font-weight: 600;
+			color: #fff;
+		}
 
 		&:hover {
 			color: #fff;
