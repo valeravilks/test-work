@@ -66,38 +66,38 @@
 			} only %}
 
 
-			<div class="{{ component_class }}__author">
-				{% if item.author.avatar %}
-					<div class="{{ component_class }}__author-avatar">
-						{% include '01-atoms/images/image-default/image-default.twig' with {
-							parent_class        : component_class,
-							img                 : item.author.avatar,
-							modifier            : "avatar",
-							lazyload            : true,
-							srcset              : false,
-							wrapper             : true
-						} only %}
-					</div>
-				{% endif %}
+{#			<div class="{{ component_class }}__author">#}
+{#				{% if item.author.avatar %}#}
+{#					<div class="{{ component_class }}__author-avatar">#}
+{#						{% include '01-atoms/images/image-default/image-default.twig' with {#}
+{#							parent_class        : component_class,#}
+{#							img                 : item.author.avatar,#}
+{#							modifier            : "avatar",#}
+{#							lazyload            : true,#}
+{#							srcset              : false,#}
+{#							wrapper             : true#}
+{#						} only %}#}
+{#					</div>#}
+{#				{% endif %}#}
 
-				<div class="{{ component_class }}__meta-info">
-					<div class="{{ component_class }}__author-fullname">
-						{{ item.author.display_name }}
-					</div>
+{#				<div class="{{ component_class }}__meta-info">#}
+{#					<div class="{{ component_class }}__author-fullname">#}
+{#						{{ item.author.display_name }}#}
+{#					</div>#}
 
-					{% if item.post_date %}
-						<div class="{{ component_class }}__date">
-							{{ item.post_date | date( 'M j, Y' ) }}
-						</div>
-					{% endif %}
+{#					{% if item.post_date %}#}
+{#						<div class="{{ component_class }}__date">#}
+{#							{{ item.post_date | date( 'M j, Y' ) }}#}
+{#						</div>#}
+{#					{% endif %}#}
 
-					{% if item.reading_duration %}
-						<div class="{{ component_class }}__reading-duration">
-							<span>{{ item.reading_duration }} min read</span>
-						</div>
-					{% endif %}
-				</div>
-			</div>
+{#					{% if item.reading_duration %}#}
+{#						<div class="{{ component_class }}__reading-duration">#}
+{#							<span>{{ item.reading_duration }} min read</span>#}
+{#						</div>#}
+{#					{% endif %}#}
+{#				</div>#}
+{#			</div>#}
 		</div>
 	</div>
 {% endspaceless %}
