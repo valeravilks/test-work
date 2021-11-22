@@ -106,14 +106,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "case-study"
+                "value": "whitepaper"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "event"
+                "value": "case-studies"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
             }
         ]
     ],
@@ -132,5 +139,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1627185661
+    "modified": 1637622004
 }

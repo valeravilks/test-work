@@ -9748,7 +9748,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "case-studies"
             }
         ],
         [
@@ -9781,5 +9781,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637616835
+    "modified": 1637621975
 }
