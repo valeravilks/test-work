@@ -14,6 +14,7 @@
 	{# Block general settings                               #}
 	{########################################################}
 	{% set component_class = "o-i360-case-studies" %}
+	{% set container       = true %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -29,25 +30,31 @@
 			{% set items = section.relationship %}
 		{% endif %}
 
-		<!-- Looping through either the manual selection or automatic selection -->
-		{% for item in items %}
+		<div class='{{component_class}}__repeater grid grid-cols-4 gap-4'>
 
-			{# Accessing WordPress post and making them available to Twig templates #}
-			{% set item = TimberPost( item ) %}
+			<!-- Looping through either the manual selection or automatic selection -->
+			{% for item in items %}
+			<div class='{{component_class}}__column'>
 
-			{# Accessing WordPress image object and making them available to Twig templates #}
-			{% set img = TimberImage( item.thumbnail ) %}
+				{# Accessing WordPress post and making them available to Twig templates #}
+				{% set item = TimberPost( item ) %}
 
-			{% include '02-molecules/default/cards/card-post/card-post.twig' with {
-				parent_class 		: component_class,
-				item         		: item,
-				img                 : img,
-				interval            : true,
-				index       		: loop.index,
-				add_class_on_anim   : true,
-			} only %}
-		{% endfor %}
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage( item.thumbnail ) %}
 
-    {% endblock %}
+				{% include '02-molecules/cards/card-post/card-post.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					img                 : img,
+					interval            : true,
+					index       		: loop.index,
+					add_class_on_anim   : true,
+				} only %}
+				{% endfor %}
+			</div>
+
+		</div>
+
+	{% endblock %}
 
 {% endspaceless %}
