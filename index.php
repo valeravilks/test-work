@@ -35,7 +35,7 @@ if ( is_single() ) :
 	$template = '04-templates/default/default-article-single/default-article-single.twig';
 
 	//Conditionally change the template for individual post types
-	if ( is_singular( 'case-study' ) ) :
+	if ( is_singular( 'case-studies' ) ) :
 		$template = '04-templates/base/base-page-template-blocks/base-page-template-blocks.twig';
     elseif ( is_singular('event' )) :
 		$template = '04-templates/default/default-page-single/default-page-single.twig';
@@ -113,7 +113,7 @@ elseif ( is_archive() ) :
 	/*
 	 * Case Study Overview Page
 	*/
- 	elseif (is_post_type_archive('case-study')) :
+ 	elseif (is_post_type_archive('case-studies')) :
 		$context['taxonomy']     = "case-studies-categories";
         $context['post']->title = get_the_archive_title();
 		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
