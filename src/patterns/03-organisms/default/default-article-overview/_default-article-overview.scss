@@ -13,6 +13,11 @@
 // Block Base Styling         //
 ////////////////////////////////
 .o-default-article-overview {
+	overflow: hidden;
+	background-color: #F4F8F8;
+	position: relative;
+	display: block;
+
 	&__repeater {
 		margin-top: 40px;
 		@include outlining-card-1-by-3;
