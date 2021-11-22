@@ -22,16 +22,12 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 
-	<!-- Allow WP user to manually select the entries to output -->
-	{% if section.relationship %}
-		{% set items = section.relationship %}
-	{% endif %}
-
-	{#############################################################}
-	{# END                                                       #}
-	{#############################################################}
-
 	{% block after_content %}
+
+		<!-- Allow WP user to manually select the entries to output -->
+		{% if section.relationship %}
+			{% set items = section.relationship %}
+		{% endif %}
 
 		<!-- Looping through either the manual selection or automatic selection -->
 		{% for item in items %}

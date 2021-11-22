@@ -3,7 +3,7 @@
  * Register Post Type: Case Study
  * Linked to custom taxonomy: Case Study Category
 */
-function dod_register_case_studies_post_type()
+function dod_register_cs_post_type()
 {
 	$labels = array(
 		'name' => 'Case Studies',
@@ -44,10 +44,11 @@ function dod_register_case_studies_post_type()
 			'excerpt'
 		) ,
 		'hierarchical' => false,
-		'public' => false,
+		'public' => true,
+		'show_ui' => true,
 		'rewrite' => array(
 			'slug' => 'case-studies',
-			'with_front' => false
+			'with_front' => true
 		) ,
 		'menu_position' => 20,
 		'menu_icon' => 'dashicons-analytics',
@@ -58,6 +59,6 @@ function dod_register_case_studies_post_type()
 			'case-studies-categories'
 		)
 	);
-	register_post_type('case_study', $args);
+	register_post_type('case-studies', $args);
 }
-add_action('init', 'dod_register_case_studies_post_type', 0);
+add_action('init', 'dod_register_cs_post_type', 0);
