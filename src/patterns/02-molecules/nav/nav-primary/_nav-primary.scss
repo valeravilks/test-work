@@ -38,10 +38,12 @@
 			list-style: none;
 			display: flex;
 			position: relative;
-			//padding: 20px;
 			align-items: center;
 			height: 100%;
 			cursor: pointer;
+			@include bpm-lg {
+				padding-left: 0;
+			}
 
 			&.current-menu-parent {
 				&:before {
@@ -98,13 +100,16 @@
 			display: flex;
 			text-decoration: none;
 			font-weight: 500 !important;
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 1;
 			letter-spacing: normal;
 			transition: $g-trans-base !important;
 			font-family: $g-body-font-family;
 			position: relative;
 			@include underline-special;
+			@include bp-lg {
+				font-size: 18px;
+			}
 
 			&:hover {
 				color: $g-brand-color-1;
@@ -222,6 +227,9 @@
 				color: $g-heading-dark;
 				opacity: 0;
 				transition: $g-trans-base;
+				@include bpm-lg {
+					font-size: 14px;
+				}
 
 				&:hover {
 					padding-left: 24px;
