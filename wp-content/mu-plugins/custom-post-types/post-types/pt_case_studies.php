@@ -58,6 +58,6 @@ function dod_register_case_studies_post_type()
 			'case-studies-categories'
 		)
 	);
-	register_post_type('case-study', $args);
+	register_post_type('case_study', $args);
 }
 add_action('init', 'dod_register_case_studies_post_type', 0);
