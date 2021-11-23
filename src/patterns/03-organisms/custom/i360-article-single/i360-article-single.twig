@@ -1,0 +1,70 @@
+{% spaceless %}
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-article-single" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+	{% set options_single_blog_elements = options.single_blog_elements %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	<div class="{{ component_class }} {{ version }}">
+		<div class="l-container {{ component_class }}__container">
+
+			<div class="{{ component_class }}__post-heading-wrapper">
+				{% include '01-atoms/content/title/title.twig' with {
+					parent_class : component_class,
+					version      : "center",
+					h            : 1,
+					title        : post.title
+				} only %}
+
+				{% include '02-molecules/author/author.twig' with {
+					parent_class : component_class,
+					author       : post.author,
+					date         : post.post_date | date('M j, Y')
+				} only %}
+			</div>
+
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set image = TimberImage( post.thumbnail ) %}
+
+			{% if image %}
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class      : component_class,
+					img               : image,
+					modifier          : "single-article",
+					lazyload          : true,
+					srcset            : true,
+					wrapper           : true,
+					parallax          : false,
+					add_class_on_anim : true
+				} only %}
+			{% endif %}
+
+			<div class="{{component_class}}__main-content-wrapper">
+				{% if post.content %}
+					{% include '01-atoms/content/content/content.twig' with {
+						content      : post.content,
+						parent_class : component_class
+					} only %}
+
+					<div class="{{ component_class }}__social-share-wrapper">
+						{% include '02-molecules/social/social-share/social-share.twig' with {
+							parent_class : component_class,
+							version      : "default"
+						} only %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endspaceless %}
