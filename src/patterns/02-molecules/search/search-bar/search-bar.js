@@ -32,14 +32,6 @@ function searchBar() {
 		}, 600);
 	});
 
-	//don't allow enter key
-	$('.m-search-bar__search-field, .js-search-field-mob').keypress(function(
-		e,
-	) {
-		if (e.which === 13) {
-			e.preventDefault();
-		}
-	});
 }
 
 export default searchBar;

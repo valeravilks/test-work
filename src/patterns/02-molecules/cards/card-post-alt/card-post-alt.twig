@@ -39,6 +39,13 @@
 		{% endif %}
 
 		<div class="{{ component_class }}__info">
+			<div class="{{ component_class }}__meta-info">
+				{% if item.post_date %}
+					<div class="{{ component_class }}__date">
+						{{ item.post_date | date( 'M j, Y' ) }}
+					</div>
+				{% endif %}
+			</div>
 			<div class="{{ component_class }}__title-link-wrapper">
 				<a
 					class="{{ component_class }}__title-link"
