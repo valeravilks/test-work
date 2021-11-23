@@ -1,61 +1,10 @@
 {% spaceless %}
-	{% set component_class              = "t-default-article-single" %}
+	{% set component_class  = "t-default-article-single" %}
 
 	{% extends '04-templates/base/base-page/base-page.twig' %}
 
 	{% block main %}
-		<section class="o-i360-text-heavy" style="background-color: #f4f8f8;">
-			<div class="l-container">
-				<h1>Terms of Use</h1>
-
-				<div class="o-i360-text-heavy__repeater-items">
-					<div class="o-i360-text-heavy__repeater-item">
-						<h5 class="o-i360-text-heavy__repeater-item-title">
-							Overview
-						</h5>
-
-						<div class="o-i360-text-heavy__repeater-item-content">
-							PLEASE READ THESE TERMS OF USE CAREFULLY BEFORE ACCESSING OR USING THE SITE. THESE TERMS OF USE GOVERN YOUR USE OF THE SITE AND AFFECT YOUR LEGAL RIGHTS AND OBLIGATIONS.
-
-							These Terms of Use were last modified  January 1, 2020.
-						</div>
-					</div>
-
-					<div class="o-i360-text-heavy__repeater-item">
-						<h5 class="o-i360-text-heavy__repeater-item-title">
-							1. Your Acceptance
-						</h5>
-
-						<div class="o-i360-text-heavy__repeater-item-content">
-							Important
-
-							These Terms of Use (these “Terms of Use”) form a legal agreement between ELAP Services, LLC (“Company,” “we,” “our,” or “us”), which owns and operates the elapservices.com website and other interactive applications and any other services and pages that display or link to these Terms of Use (collectively, the “Site”), and you (“you” or “You”), a user of the Site. By accessing or using the Site in any way, including without limitation browsing the Site, using any information, and/or submitting any content or personal information via the Site, you agree to and are bound by these Terms of Use, including without limitation conducting transactions electronically, certain third-party terms and conditions, disclaimers of warranties, damage and remedy exclusions and limitations, binding arbitration, venue selection, and a choice of Pennsylvania law. If you choose not to agree with any of these terms, you may not use the Site. We may revise and update these Terms of Use at any time.
-
-							THE SITE AND ALL CONTENT THEREIN ARE DESIGNED FOR INFORMATIONAL PURPOSES AND PERSONAL USE ONLY. COMPANY DOES NOT WARRANT OR GUARANTEE THE ACCURACY OR COMPLETENESS OF INFORMATION OR DATA THAT MAY BE MADE AVAILABLE THROUGH THE SITE. Any content that may be provided through the Site is not intended to be relied upon in situations where precise and accurate information is needed or where erroneous, inaccurate, or incomplete data may lead to death, personal injury, property, or environmental damage.
-						</div>
-					</div>
-
-					<div class="o-i360-text-heavy__repeater-item">
-						<h5 class="o-i360-text-heavy__repeater-item-title">
-							2. Site
-						</h5>
-
-						<div class="o-i360-text-heavy__repeater-item-content">
-							A. Subject to your compliance with these Terms of Use, Company hereby grants you permission to use the Site, provided that:
-
-							• 	(i) your use of the Site is solely permitted for your personal use, and you are not permitted to resell, redistribute, sublicense, enable any timesharing or service bureau use of the Site, charge others for use of or access to the Site, or use the Site in any other manner inconsistent with these Terms of Use;
-
-							• 	(ii) you do not duplicate, transfer, give access to, copy, distribute or make available any part of the Site in any medium without Company’s prior written authorization;
-
-							• 	(iii) you do not attempt to reverse engineer, decompile, disassemble, attempt to derive the source code of, modify, create derivative works of, alter or modify any part of the Site; and
-
-							• 	(iv) you fully comply with the terms and conditions of these Terms of Use in all respects
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
+		{% include '03-organisms/custom/i360-text-heavy/i360-text-heavy.twig' %}
 	{% endblock %}
 
 {% endspaceless %}
