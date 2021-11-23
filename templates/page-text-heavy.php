@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Page Terms and conditions
+ * Template Name: Text Heavy Page Template
  */
 
 $context         = Timber::get_context();
