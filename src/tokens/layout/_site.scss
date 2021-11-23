@@ -20,17 +20,17 @@
 
 .l-body {
 	.h-content-starting-point {
-		padding-top: 75px;
+		padding-top: $g-layout-header-height-mob;
 		@include bp-md {
-			padding-top: 85px;
+			padding-top: $g-layout-header-height-desktop;
 		}
 	}
 
 	// Ensuring content doesn't show up below the header
 	.h-content-starting-point--no-hero {
-		padding-top: $g-layout-header-height-desktop;
-		@include bpm-md {
-			padding-top: $g-layout-header-height-mob;
+		padding-top: $g-layout-header-height-mob;
+		@include bp-md {
+			padding-top: $g-layout-header-height-desktop;
 		}
 	}
 }

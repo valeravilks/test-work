@@ -17,6 +17,7 @@
 // 1: Normal Button
 .a-btn {
 	@include btn;
+	padding: 16px 72px 16px 27px;
 
 	&:hover {
 		.a-btn__btn-icon {
@@ -25,7 +26,7 @@
 	}
 
 	&__btn-icon {
-		@include absolute-general($top: 0,  $bottom: 0);
+		@include absolute-general($top: 0, $right: 24px, $bottom: 0);
 		width: 20px;
 		height: 20px;
 		margin: auto 0;
@@ -39,23 +40,6 @@
 			path {
 				transition: $g-trans-base;
 			}
-		}
-	}
-
-	&--icon-left {
-		padding: 16px 27px 16px 72px;
-		justify-content: flex-end;
-
-		.a-btn__btn-icon {
-			left: 24px;
-		}
-	}
-
-	&--icon-right {
-		padding: 16px 72px 16px 27px;
-
-		.a-btn__btn-icon {
-			right: 24px;
 		}
 	}
 }

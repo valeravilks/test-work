@@ -18,14 +18,20 @@
 
 	<div class="{{ default_block_class ? default_block_class ~ "__button-wrapper" }} {{ parent_class }}__button-wrapper {{ extra_class_wrapper }} {{ add_class_on_anim }}">
 		<a
-			class="{{ parent_class }}__btn {{ button.with_icon ? component_class ~ "--icon-" ~ button.icon_position }} {{ extra_class }} {{ button.style }}"
+			class="{{ parent_class }}__btn {{ extra_class }} {{ button.style }}"
 			href="{{ button_link.url }}"
 			target="{{ button_link.target ? button_link.target : '_self' }}"
 		>
 			{{ button_link.title | striptags }}
 			{% if button.with_icon %}
 				<span class="{{ parent_class }}__btn-icon {{ component_class }}__btn-icon">
-					{{ button.icon_svg }}
+					<svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17">
+						<g>
+							<g>
+								<path fill="#074757" d="M19.918 9.325l-7.031 7.031a1.172 1.172 0 0 1-1.658-1.657l5.031-5.03H1.902a1.172 1.172 0 1 1 0-2.345H16.26l-5.03-5.03A1.172 1.172 0 0 1 12.887.636l7.031 7.032c.458.458.458 1.2 0 1.657z"/>
+							</g>
+						</g>
+					</svg>
 				</span>
 			{% endif %}
 		</a>
