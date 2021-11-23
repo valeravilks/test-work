@@ -5,49 +5,143 @@
 //////////////////////////////////////////////////////////////////////
 //
 //// Client specific hero type. Each hero type has it's own alignment + text color options
-.o-i360-shape {
-	position: relative;
-	overflow: hidden;
+.o-i360-hero--i360-shape {
+	.o-i360-hero {
+		position: relative;
+		overflow: hidden;
 
-	&__gradient {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
+		&__bg-color {
+			@include absolute-full;
+		}
 
-	&__img-wrapper {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
+		&__gradient {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
 
-	&__img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+		&__img-wrapper {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
 
-	&__info-wrapper {
-		max-width: 630px;
-		padding: 140px 0;
-	}
+		&__img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 
-	&__title {
-		letter-spacing: -0.81px;
+		&__deco-wrapper {
+			@include absolute-general($top: -50px, $right: -42px);
+			width: 423px;
+			height: 423px;
 
-		span {
-			line-height: normal;
-			letter-spacing: normal;
-			color: $g-brand-color-1;
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__info-wrapper {
+			max-width: 530px;
+			padding: 60px 0;
+		}
+
+		&__pretitle  {
+			margin-bottom: 30px;
+			font-size: 10px;
+			letter-spacing: 3.13px;
+			opacity: .8;
+		}
+
+		&__title {
+			letter-spacing: -0.81px;
+
+			span {
+				line-height: normal;
+				letter-spacing: normal;
+				color: $g-brand-color-1;
+			}
+		}
+
+		&__subtitle {
+			@include last-element-no-bm;
+		}
+
+		&__button-wrapper {
+			padding-top: 20px;
 		}
 	}
+}
 
-	&__subtitle {
-		@include last-element-no-bm;
-	}
 
-	&__button-wrapper {
-		padding-top: 20px;
+////////////////////
+// Versions       //
+////////////////////
+
+// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+.o-i360-hero--i360-shape {
+	&.o-i360-hero {
+		&--align-center {
+			.o-i360-hero__info-wrapper {
+				margin: 0 auto;
+				text-align: center;
+			}
+		}
 	}
 }
+
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-hero--i360-shape {
+	&.o-i360-hero {
+		&--color-light,
+		&--color-default {
+			.o-i360-hero {
+				&__title {
+					color: $g-body-light;
+				}
+
+				&__pretitle,
+				&__subtitle {
+					color: $g-grey-color-light;
+				}
+			}
+		}
+
+		&--color-dark {
+			.o-i360-hero {
+				&__title {
+					color: $g-brand-color-4;
+				}
+
+				&__pretitle,
+				&__subtitle {
+					color: $g-body-dark;
+				}
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

@@ -23,8 +23,11 @@
 		<div class="{{ component_class }} {{ version }}">
 			<div class="{{component_class}}__container l-container">
 
-				<div class="{{component_class}}__menu">
-					<div class="{{component_class}}__menu-pretitle">Additional resources</div>
+				<div class="{{component_class}}__list">
+					<div class="{{component_class}}__list-title">
+						Additional resources
+					</div>
+
 					{# We're only showing the first 5 #}
 					{% for category_term in category_terms|slice(0, 5) %}
 

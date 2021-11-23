@@ -17,6 +17,7 @@
 	background-color: #F4F8F8;
 	position: relative;
 	display: block;
+	padding: 70px 0 80px;
 
 	&__repeater {
 		margin-top: 40px;
@@ -26,6 +27,41 @@
 	&__card {
 		visibility: hidden;
 		@include fadeInUp;
+
+		&.m-card-post-alt {
+			overflow: hidden;
+			background-color: #fff;
+			border: 1px solid #979797;
+			border-radius: 10px;
+
+			.m-card-post-alt {
+				&__img-link-wrapper {
+					margin-bottom: 0;
+				}
+
+				&__info {
+					padding: 30px;
+				}
+
+				&__meta-info {
+					padding-left: 0;
+					padding-bottom: 25px;
+				}
+
+				&__date {
+					text-transform: uppercase;
+					font-size: 10px;
+					font-weight: 600;
+					letter-spacing: 3.13px;
+					color: rgba(107, 107, 107, 0.6);
+				}
+
+				&__contnet {
+					font-size: 14px;
+					line-height: 22px;
+				}
+			}
+		}
 	}
 
 	&__pagination-wrapper {
