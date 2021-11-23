@@ -37,12 +37,14 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		flex-basis: calc(16.666% - 20px);
-		padding-top: 20px;
 		@include bp-sm {
 			margin-left: 20px;
 		}
+		@include bp-lg {
+			padding-top: 20px;
+		}
 		@include bpm-lg {
-			flex-basis: calc(25% - 20px);
+			flex-basis: calc(33.33% - 20px);
 			text-align: center;
 		}
 		@include bpm-sm {
@@ -53,14 +55,25 @@
 
 		&--logo {
 			padding-top: 0;
+			margin-bottom: 15px;
+			@include bp-sm {
+				margin-bottom: 0;
+			}
 		}
 
 		&--1,
 		&--2,
 		&--3 {
 			display: none;
+			margin-bottom: 40px;
 			@include bp-sm {
 				display: block;
+			}
+			@include bp-lg {
+				margin-bottom: 0;
+			}
+			@include bpm-lg {
+				order: -1;
 			}
 		}
 
@@ -87,7 +100,9 @@
 				padding-left: 25px;
 			}
 			@include bpm-lg {
-				margin-top: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 			@include bpm-sm {
 				order: 2;
@@ -98,9 +113,6 @@
 		&--4 {
 			@include bp-lg {
 				padding-left: 35px;
-			}
-			@include bpm-lg {
-				margin-top: 20px;
 			}
 			@include bpm-sm {
 				order: 1;
