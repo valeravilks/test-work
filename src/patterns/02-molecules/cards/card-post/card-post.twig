@@ -49,11 +49,6 @@
 				</a>
 			{% endif %}
 
-			{% if item.get_field( 'date' ) %}
-				<div class="{{ component_class }}__date">
-					{{ item.get_field( 'date' ) | date( 'l, F j, Y' ) }}
-				</div>
-			{% endif %}
 
 			{% if item.excerpt %}
 				{% set content = item.excerpt %}
@@ -67,11 +62,16 @@
 				add_class_on_anim   : false
 			} only %}
 
-			<div class="{{ component_class }}__link-wrapper">
+			{% if item.post_date %}
+				<div class="{{ component_class }}__date">
+					{{ item.post_date | date( 'F j, Y' )}}
+				</div>
+			{% endif %}
+		{#	<div class="{{ component_class }}__link-wrapper">
 				<a class="{{ component_class }}__link" href="{{ item.link }}">
 					Read More
 				</a>
-			</div>
+			</div>#}
 		</div>
 	</div>
 {% endspaceless %}

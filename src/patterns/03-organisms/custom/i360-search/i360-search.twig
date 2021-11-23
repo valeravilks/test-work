@@ -4,11 +4,10 @@
 
 	<div class="{{ component_class }} {{ version }}">
 		<div class="{{component_class}}__container l-container">
+			{% include '/02-molecules/search/search-field/search-field.twig' %}
+
 			{% if results_count != 0 %}
 				<div class="{{ component_class }}__head">
-
-					{% include '/02-molecules/search/search-field/search-field.twig' %}
-
 					<div class="{{ component_class }}__results-count">
 						{{ results_count }} results
 					</div>
