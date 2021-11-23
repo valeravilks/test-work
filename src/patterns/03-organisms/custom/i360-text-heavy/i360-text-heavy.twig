@@ -9,6 +9,7 @@
 	{# --------------------------------------------------- #}
 	{#######################################################}
 	{% set section =  post.meta( 'text_heavy_block' ) %}
+	
 	{% extends '03-organisms/base/base-block/base-block.twig' %}
 
 	{########################################################}
@@ -41,7 +42,7 @@
 								parent_class        : component_class,
 								content             : item.content,
 								add_class_on_anim   : true,
-								extra_class	 : "o-i360-text-heavy__repeater-item-content"
+								extra_class	 	    : "o-i360-text-heavy__repeater-item-content"
 							} only %}
 						</div>
 					{% endfor %}
