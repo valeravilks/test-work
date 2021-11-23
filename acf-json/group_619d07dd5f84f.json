@@ -52,7 +52,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
+                    "layout": "row",
                     "button_label": "",
                     "hide_collapse": 0,
                     "collapse_all_repeater": 0,
@@ -293,5 +293,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637685650
+    "modified": 1637687164
 }
