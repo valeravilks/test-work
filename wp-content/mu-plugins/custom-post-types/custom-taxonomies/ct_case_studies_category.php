@@ -3,7 +3,7 @@
  * Register Taxonomy: Case Study Category
  * Taxonomy linked to: Case Study
 */
-function dod_register_case_studies_category()
+function dod_register_cs_category()
 {
 	// Add new taxonomy, make it hierarchical like categories
 	$labels = array(
@@ -35,4 +35,4 @@ function dod_register_case_studies_category()
 		) ,
 	));
 }
-add_action('init', 'dod_register_case_studies_category', 0);
+add_action('init', 'dod_register_cs_category', 0);

@@ -117,14 +117,14 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "event"
+                "value": "all"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "case-study"
+                "value": "all"
             }
         ]
     ],
@@ -140,9 +140,8 @@
     "acfe_autosync": [
         "json"
     ],
-    "acfe_permissions": "",
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1608199779
+    "modified": 1637621898
 }

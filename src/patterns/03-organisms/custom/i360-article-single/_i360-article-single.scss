@@ -1,0 +1,286 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Article Single            //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-default-article-single {
+	padding-top: 60px;
+	@include bpm-md {
+		padding-top: 30px;
+	}
+
+	&__breadcrumbs-wrapper {
+		padding-bottom: 30px;
+	}
+
+	&__title-wrapper {
+		padding-bottom: 20px;
+	}
+
+	&__post-heading-wrapper {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 30px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__author-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10px;
+	}
+
+	&__subtitle {
+		text-align: center;
+		color: $g-brand-color-1;
+
+		&-info-author {
+			font-weight: 600;
+		}
+
+		&-info-separator {
+			color: $g-body-dark;
+		}
+	}
+
+	&__featured-image-wrapper {
+		padding-top: 60px;
+	}
+
+	&__img-wrapper {
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__main-content-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
+		padding: 60px 0;
+		@include bpm-lg {
+			padding-bottom: 40px;
+		}
+		@include bpm-md {
+			flex-wrap: wrap;
+		}
+
+		.o-default-article-single__content {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 80%;
+			@include bpm-md {
+				flex-basis: 100%;
+			}
+		}
+
+		.o-default-article-single__social-share-wrapper {
+			position: relative;
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 20%;
+			@include bpm-md {
+				flex-basis: 100%;
+			}
+		}
+
+		.o-default-article-single__social-share {
+			position: sticky;
+			top: 90px;
+			left: 0;
+			display: flex;
+			@include bp-md {
+				flex-direction: column;
+			}
+			@include bpm-md {
+				justify-content: center;
+				padding: 15px 0;
+			}
+
+			.m-social-share__link {
+				@include bp-md {
+					margin: 0 0 20px 0;
+				}
+
+				&:last-child {
+					@include bp-md {
+						margin: 0;
+					}
+				}
+			}
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			padding-bottom: 30px;
+
+			a {
+				text-decoration: underline;
+				color: $g-body-dark;
+				transition: $g-trans-base;
+
+				&:hover {
+					text-decoration: none;
+					color: $g-brand-color-2;
+				}
+			}
+		}
+
+		p {
+			margin: 0 0 25px;
+
+			a {
+				text-decoration: underline;
+				color: $g-body-dark;
+				transition: $g-trans-base;
+
+				&:hover {
+					text-decoration: none;
+					color: $g-brand-color-1;
+				}
+			}
+
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			@include last-element-no-bm;
+		}
+
+		.gallery {
+			@include bp-xs {
+				display: flex;
+				margin-bottom: 25px;
+			}
+
+			.gallery-item {
+				flex-grow: 1;
+				flex-shrink: 1;
+				margin: 0 7px;
+				@include bpm-xs {
+					width: 100%;
+					margin: 0 0 25px;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+
+			.gallery-icon {
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					transition: $g-trans-base;
+
+					&:hover {
+						opacity: .8;
+					}
+				}
+
+				img {
+					display: block;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		ul {
+			margin-bottom: 25px;
+			list-style-type: none;
+
+			li {
+				position: relative;
+				margin: 0 0 15px;
+				padding-left: 30px;
+				@include bpm-sm {
+					margin-bottom: 15px;
+					padding-left: 25px;
+				}
+
+				&::before {
+					content: "";
+					width: 8px;
+					height: 8px;
+					display: block;
+					position: absolute;
+					top: 8px;
+					left: 0;
+					border-radius: 50%;
+					background: $g-brand-color-1
+				}
+			}
+		}
+
+		@include last-element-no-bm;
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+//.o-default-resource-menu--color-default,
+//.o-default-resource-menu--color-dark {
+//	.o-default-resource-menu{
+//		&__title {
+//			//color: $g-body-dark;
+//		}
+//
+//		&__content {
+//			color: $g-body-dark;
+//		}
+//	}
+//}
+//
+//.o-default-resource-menu--color-light {
+//	.o-default-resource-menu{
+//		&__title,
+//		&__content {
+//			color: $g-body-light;
+//		}
+//	}
+//}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

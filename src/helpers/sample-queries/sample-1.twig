@@ -26,7 +26,7 @@
 	{# Accessing WordPress image object and making them available to Twig templates #}
 	{% set img = TimberImage( item.thumbnail ) %}
 
-	{% include '02-molecules/default/cards/card-post/card-post.twig' with {
+	{% include '02-molecules/cards/card-post/card-post.twig' with {
 		parent_class 		: component_class,
 		item         		: item,
 		img                 : img,

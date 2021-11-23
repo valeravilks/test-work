@@ -1,0 +1,51 @@
+{% spaceless %}
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-article-overview" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	<div class="{{ component_class }} {{ version }}">
+		<div class="l-container {{ component_class }}__container">
+
+			<div class="{{ component_class }}__repeater">
+				{# posts should be coming from a PHP file (page template or index.php etc)#}
+				{% for index, item in posts %}
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{% set item = TimberPost( item ) %}
+
+					{# We're keeping the TimberImage outside the card to ensure the card can be used in other places #}
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+						version       		: index == 0 ? 'big',
+						resize_number 		: index == 0 ? 900 : 650
+					} only %}
+				{% endfor %}
+			</div>
+
+			<div class="{{ component_class }}__pagination-wrapper">
+				{% include '02-molecules/pagination/pagination.twig' %}
+			</div>
+
+		</div>
+	</div>
+{% endspaceless %}

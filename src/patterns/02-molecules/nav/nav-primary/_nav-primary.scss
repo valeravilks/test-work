@@ -41,7 +41,7 @@
 			align-items: center;
 			height: 100%;
 			cursor: pointer;
-			@include bpm-lg {
+			@include bpm-md {
 				padding-left: 0;
 			}
 
@@ -107,7 +107,7 @@
 			font-family: $g-body-font-family;
 			position: relative;
 			@include underline-special;
-			@include bp-lg {
+			@include bp-md {
 				font-size: 18px;
 			}
 

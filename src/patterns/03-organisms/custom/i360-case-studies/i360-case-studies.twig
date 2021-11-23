@@ -1,0 +1,61 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-case-studies" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	{% block after_content %}
+
+		<!-- Allow WP user to manually select the entries to output -->
+		{% if section.relationship %}
+			{% set items = section.relationship %}
+		{% endif %}
+
+		<div class='{{component_class}}__repeater grid grid-cols-2 gap-4'>
+
+			<!-- Looping through either the manual selection or automatic selection -->
+			{% for item in items %}
+				<div class='{{component_class}}__column {{component_class}}__column--{{ loop.index }}'>
+
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{% set item = TimberPost( item ) %}
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{% include '02-molecules/cards/card-post/card-post.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+				</div>
+			{% endfor %}
+
+		</div>
+
+	{% endblock %}
+
+{% endspaceless %}

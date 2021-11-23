@@ -105,7 +105,9 @@
 {# Floating Icon                                             #}
 {#############################################################}
 {% block floating_icon %}
-	{% include '01-atoms/buttons/button-floating-cta/button-floating-cta.twig' %}
+	{% include '01-atoms/buttons/button-floating-cta/button-floating-cta.twig' with {
+		button: options.floating_cta_button
+	} only %}
 {% endblock %}
 
 {#############################################################}

@@ -35,7 +35,7 @@ if ( is_single() ) :
 	$template = '04-templates/default/default-article-single/default-article-single.twig';
 
 	//Conditionally change the template for individual post types
-	if ( is_singular( 'case-study' ) ) :
+	if ( is_singular( 'case-studies' ) ) :
 		$template = '04-templates/base/base-page-template-blocks/base-page-template-blocks.twig';
     elseif ( is_singular('event' )) :
 		$template = '04-templates/default/default-page-single/default-page-single.twig';
@@ -67,7 +67,7 @@ elseif ( is_home() ) :
 
 	$context['posts'] = new Timber\PostQuery( $args );
 
-	$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+	$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 /*
 * Search results Template
@@ -101,22 +101,22 @@ elseif ( is_archive() ) :
 	if( is_category() ) :
 		$context['taxonomy']     = "category";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * Blog Overview Page
 	*/
  	elseif (is_post_type_archive('blog')) :
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * Case Study Overview Page
 	*/
- 	elseif (is_post_type_archive('case-study')) :
+ 	elseif (is_post_type_archive('case-studies')) :
 		$context['taxonomy']     = "case-studies-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * Case Study Category Overview Page
@@ -124,7 +124,7 @@ elseif ( is_archive() ) :
 	elseif ( is_tax( 'case-study-categories' ) ) :
 		$context['taxonomy']     = "case-studies-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * White Paper Overview Page
@@ -132,7 +132,7 @@ elseif ( is_archive() ) :
  	elseif (is_post_type_archive('whitepaper')) :
  		$context['taxonomy']     = "whitepaper-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * White Paper Category Overview Page
@@ -140,7 +140,7 @@ elseif ( is_archive() ) :
 	elseif ( is_tax( 'whitepaper-categories' ) ) :
 		$context['taxonomy']     = "whitepaper-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * Event Overview Page
@@ -148,7 +148,7 @@ elseif ( is_archive() ) :
  	elseif (is_post_type_archive('event')) :
  		$context['taxonomy']     = "event-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	/*
 	 * Event Category Overview Page
@@ -156,12 +156,12 @@ elseif ( is_archive() ) :
 	elseif ( is_tax( 'event-categories' ) ) :
 		$context['taxonomy']     = "event-categories";
         $context['post']->title = get_the_archive_title();
-		$template = '04-templates/default/default-article-overview/default-article-overview.twig';
+		$template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 
 	elseif ( is_tag() ) :
         $context['post']->title = get_the_archive_title();
-        $template = '04-templates/default/default-article-overview/default-article-overview.twig';
+        $template = '04-templates/custom/i360-article-overview/i360-article-overview.twig';
 
 	elseif ( is_author() ) :
 		$context['post']['title'] = 'Posts by: ' . get_the_author();
