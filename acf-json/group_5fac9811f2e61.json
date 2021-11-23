@@ -4000,14 +4000,14 @@
                     "acfe_flexible_modal_edit_size": false,
                     "acfe_flexible_category": false
                 },
-                "layout_619d084810bb9": {
-                    "key": "layout_619d084810bb9",
-                    "name": "i360_text_heavy",
-                    "label": "i360 - Text Heavy",
+                "layout_619d2f6abb348": {
+                    "key": "layout_619d2f6abb348",
+                    "name": "i360_case_studies",
+                    "label": "i360 - Case Studies",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_619d084810bba",
+                            "key": "field_619d2f6abb349",
                             "label": "Block Content",
                             "name": "",
                             "type": "tab",
@@ -4023,7 +4023,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_619d084810bbb",
+                            "key": "field_619d2f6abb34a",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -4049,7 +4049,7 @@
                             "acfe_clone_modal_size": "large"
                         },
                         {
-                            "key": "field_619d084810bbc",
+                            "key": "field_619d2f6abb34b",
                             "label": "Content",
                             "name": "content",
                             "type": "wysiwyg",
@@ -4068,7 +4068,39 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_619d084810bbf",
+                            "key": "field_619d2f6abb34c",
+                            "label": "Case Studies",
+                            "name": "case_studies",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "case-studies"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": "",
+                            "max": "",
+                            "return_format": "object",
+                            "acfe_bidirectional": {
+                                "acfe_bidirectional_enabled": "0"
+                            }
+                        },
+                        {
+                            "key": "field_619d2f6abb34e",
                             "label": "Add Button",
                             "name": "add_button",
                             "type": "true_false",
@@ -4087,7 +4119,7 @@
                             "ui_off_text": ""
                         },
                         {
-                            "key": "field_619d084810bc0",
+                            "key": "field_619d2f6abb34f",
                             "label": "Button",
                             "name": "button",
                             "type": "clone",
@@ -4096,7 +4128,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_619d084810bbf",
+                                        "field": "field_619d2f6abb34e",
                                         "operator": "==",
                                         "value": "1"
                                     }
@@ -4121,7 +4153,7 @@
                             "acfe_clone_modal_size": "large"
                         },
                         {
-                            "key": "field_619d084810bc1",
+                            "key": "field_619d2f6abb350",
                             "label": "Block Alignment",
                             "name": "",
                             "type": "tab",
@@ -4137,7 +4169,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_619d084810bc2",
+                            "key": "field_619d2f6abb351",
                             "label": "Block Alignment",
                             "name": "alignment",
                             "type": "select",
@@ -4165,7 +4197,7 @@
                             "search_placeholder": ""
                         },
                         {
-                            "key": "field_619d084810bc3",
+                            "key": "field_619d2f6abb352",
                             "label": "Block Version",
                             "name": "",
                             "type": "tab",
@@ -4181,7 +4213,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_619d084810bc4",
+                            "key": "field_619d2f6abb353",
                             "label": "Block Version",
                             "name": "version",
                             "type": "select",
@@ -4210,7 +4242,7 @@
                             "search_placeholder": ""
                         },
                         {
-                            "key": "field_619d084810bc5",
+                            "key": "field_619d2f6abb354",
                             "label": "Block Attributes",
                             "name": "",
                             "type": "tab",
@@ -4226,7 +4258,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_619d084810bc6",
+                            "key": "field_619d2f6abb355",
                             "label": "Block ID",
                             "name": "block_id",
                             "type": "text",
@@ -4245,7 +4277,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_619d084810bc7",
+                            "key": "field_619d2f6abb356",
                             "label": "Block Visual Settings",
                             "name": "",
                             "type": "tab",
@@ -4261,7 +4293,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_619d084810bc8",
+                            "key": "field_619d2f6abb357",
                             "label": "Block Visuals",
                             "name": "block_visuals",
                             "type": "clone",
@@ -9752,5 +9784,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637681300
+    "modified": 1637691783
 }
