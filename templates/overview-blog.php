@@ -26,4 +26,4 @@ $context['taxonomy']     = "category";
 $context['posts']        = new Timber\PostQuery( $args );
 $context[ 'pagination' ] = Timber::get_pagination();
 
-Timber::render('04-templates/default/default-article-overview/default-article-overview.twig', $context );
+Timber::render('04-templates/custom/i360-article-overview/i360-article-overview.twig', $context );

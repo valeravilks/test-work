@@ -1,0 +1,77 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Article Overview          //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-i360-article-overview {
+	overflow: hidden;
+	background-color: #F4F8F8;
+	position: relative;
+	display: block;
+
+	&__repeater {
+		margin-top: 40px;
+		@include outlining-card-1-by-3;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+
+	&__pagination-wrapper {
+		margin-bottom: 40px;
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+//.o-i360-resource-menu--color-default,
+//.o-i360-resource-menu--color-dark {
+//	.o-i360-resource-menu{
+//		&__title {
+//			//color: $g-body-dark;
+//		}
+//
+//		&__content {
+//			color: $g-body-dark;
+//		}
+//	}
+//}
+//
+//.o-i360-resource-menu--color-light {
+//	.o-i360-resource-menu{
+//		&__title,
+//		&__content {
+//			color: $g-body-light;
+//		}
+//	}
+//}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
