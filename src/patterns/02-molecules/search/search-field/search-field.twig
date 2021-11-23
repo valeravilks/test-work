@@ -15,7 +15,7 @@
 		<form class="{{ component_class }}__form js-search-field">
 			<span class="{{ component_class }}__icon fa fa-search"></span>
 			<div class="{{ component_class }}__input-wrap">
-				<input type="text" name="s" placeholder="search"/>
+				<input type="text" placeholder="search"  value="{{ function('get_search_query') }}" name="s" id="s"/>
 			</div>
 		</form>
 	</div>

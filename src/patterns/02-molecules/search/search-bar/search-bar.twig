@@ -6,15 +6,16 @@
 	<div class="{{ component_class }} {{ version }} {{ parent }} {{ extra_class }}" data-module="searchBar">
 		<div class="{{ component_class }}__container">
 
-			<form role="search" method="get" class="{{ component_class }}__search-form" action="/">
+			<form role="search" method="get" class="{{ component_class }}__search-form" action="/" id="searchform">
 
 				<label class="{{ component_class }}__label">
 					<span class="{{ component_class }}__indicator screen-reader-text">Search for:</span>
 					<input type="search" class="{{ component_class }}__search-field"
-						   placeholder="Enter your search term&hellip;" value="" name="s"/>
+						   placeholder="Enter your search term&hellip;"
+						   value="{{ function('get_search_query') }}" name="s" id="s"/>
 				</label>
 
-				<input class="{{ component_class }}__search-submit" type="submit" value="Search"/>
+				<input class="{{ component_class }}__search-submit" id="searchsubmit" type="submit" value="Search"/>
 
 			</form>
 

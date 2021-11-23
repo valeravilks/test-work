@@ -46,9 +46,8 @@
                 "default-regular": "Default - Hero Regular",
                 "default-side-image": "Default - Hero Side Image(small)",
                 "default-side-half-image": "Default - Hero Side Image(50% and full height)",
-                "js-large": "JS - Hero Large (homepage)",
-                "js-default": "JS - Hero Inner (inner pages)",
-                "i360-regular": "i360 - Hero Regular"
+                "i360-regular": "i360 - Hero Regular",
+                "i360-shape": "i360 - Hero with shape"
             },
             "default_value": "default-regular",
             "allow_null": 0,
@@ -120,7 +119,7 @@
                 "center": "Center",
                 "right": "Right"
             },
-            "default_value": "center",
+            "default_value": "left",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -681,6 +680,40 @@
             "mime_types": ""
         },
         {
+            "key": "field_619ccec583936",
+            "label": "Hero Pretitle",
+            "name": "hero_pretitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360 - shape"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c8af4292d7a8",
             "label": "Hide the Hero Title",
             "name": "hide_the_hero_title",
@@ -827,7 +860,7 @@
             {
                 "param": "page_template",
                 "operator": "!=",
-                "value": "templates\/elphie.php"
+                "value": "default"
             }
         ],
         [
@@ -835,20 +868,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "whitepaper"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "case-studies"
             }
         ]
     ],
@@ -867,5 +886,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637621954
+    "modified": 1637666764
 }

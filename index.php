@@ -86,7 +86,7 @@ elseif ( is_search() ) :
 		}
 	endif;
 	$context['pagination' ] = Timber::get_pagination();
-	$template = '04-templates/default/default-search-results/default-search-results.twig';
+	$template = '04-templates/custom/i360-search-results/i360-search-results.twig';
 
 /*
  * Archive Templates
