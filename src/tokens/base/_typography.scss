@@ -28,7 +28,12 @@ h6, .h6 {
 
 h1, .h1 {
 	@include h1;
-	line-height: 60px;
+	line-height: 44px;
+	letter-spacing: -0.62px;
+	@include bp-md {
+		line-height: 60px;
+		letter-spacing: -0.81px;
+	}
 }
 
 h2, .h2 {
