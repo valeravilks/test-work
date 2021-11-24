@@ -63,25 +63,20 @@
 			} only %}
 
 			<div class="{{ component_class }}__meta">
-				<span class="{{ component_class }}__meta-tag">
+{#				<span class="{{ component_class }}__meta-tag">
 					Solutions
 				</span>
 				|
 				<span class="{{ component_class }}__meta-tag">
 					Reference-based pricing
 				</span>
-				|
+				|#}
 				{% if item.post_date %}
 					<span class="{{ component_class }}__date">
 						{{ item.post_date | date( 'F j, Y' )}}
 					</span>
 				{% endif %}
 			</div>
-		{#	<div class="{{ component_class }}__link-wrapper">
-				<a class="{{ component_class }}__link" href="{{ item.link }}">
-					Read More
-				</a>
-			</div>#}
 		</div>
 	</div>
 {% endspaceless %}
