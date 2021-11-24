@@ -9,6 +9,7 @@
 	* @param  {object}  item                 content object. Has at least a title and content
 	* @param  {object}  img                  Image object. Includes things like image URL, image alt etc
 	* @param  {boolean} interval 			 optional helper for animating items one by one
+	* @param  {boolean} meta     			 Add optional meta text (search results etc)
 	* @param  {boolean} date     			 Add optional date
 	* @param  {number}  index  				 current number of the loop this card is in
 	* @param  {string}  extra_class          optional extra CSS class
@@ -64,21 +65,25 @@
 			} only %}
 
 			<div class="{{ component_class }}__meta">
-				<span class="{{ component_class }}__meta-tag">
+
+				{% if meta %}
+					<span class="{{ component_class }}__meta-tag">
 					Solutions
 				</span>
-				|
-				<span class="{{ component_class }}__meta-tag">
+					|
+					<span class="{{ component_class }}__meta-tag">
 					Reference-based pricing
 				</span>
-				|
+					|
+				{% endif %}
+
 				{% if item.post_date and date %}
 					<span class="{{ component_class }}__date">
 						{{ item.post_date | date( 'F j, Y' )}}
 					</span>
 				{% endif %}
 			</div>
-		{#	<div class="{{ component_class }}__link-wrapper">
+			{#	<div class="{{ component_class }}__link-wrapper">
 				<a class="{{ component_class }}__link" href="{{ item.link }}">
 					Read More
 				</a>
