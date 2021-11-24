@@ -26,8 +26,8 @@
 	{% block after_content %}
 
 		<!-- Allow WP user to manually select the entries to output -->
-		{% if section.relationship %}
-			{% set items = section.relationship %}
+		{% if section.case_studies %}
+			{% set items = section.case_studies %}
 		{% endif %}
 
 		<div class='{{component_class}}__repeater grid grid-cols-2 gap-4'>
@@ -41,6 +41,8 @@
 
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( item.thumbnail ) %}
+
+					{#SONA: Add case studies taxonomy TERMS here. And then pass to card below#}
 
 					{% include '02-molecules/cards/card-post/card-post.twig' with {
 						parent_class 		: component_class,
