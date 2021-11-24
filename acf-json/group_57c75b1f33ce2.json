@@ -115,11 +115,12 @@
                 "id": ""
             },
             "choices": {
+                "default": "Default",
                 "left": "Left",
                 "center": "Center",
                 "right": "Right"
             },
-            "default_value": "left",
+            "default_value": "default",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -886,5 +887,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637666764
+    "modified": 1637777373
 }
