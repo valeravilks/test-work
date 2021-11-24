@@ -30,6 +30,7 @@ add_action('after_setup_theme', function () {
 	register_nav_menus(
 		array(
 			'menu_primary' => 'Primary Menu',
+			'menu_secondary' => 'Secondary Menu',
             'menu_footer' => 'Footer',
 			'menu_footer_1' => 'Footer Column 1',
 			'menu_footer_2' => 'Footer Column 2',

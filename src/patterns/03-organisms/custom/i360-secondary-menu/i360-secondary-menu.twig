@@ -1,0 +1,25 @@
+{% spaceless %}
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-secondary-menu" %}
+	{% set version         = version      ? component_class ~ "--" ~ version       | join("") %}
+
+	{########################################################}
+	{# Block specific settings                              #}
+	{########################################################}
+	<div class="{{ component_class }} {{ version }}">
+		<div class="{{component_class}}__container l-container">
+
+			<div class="{{component_class}}__list">
+				<div class="{{component_class}}__list-title">
+					Additional resources
+				</div>
+				{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
+				{{ nav.menu(menu_secondary.get_items, 'm-nav', 'm-nav--secondary', parent_class, false) }}
+			</div>
+
+		</div>
+	</div>
+
+{% endspaceless %}
