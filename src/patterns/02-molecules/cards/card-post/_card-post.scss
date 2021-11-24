@@ -46,7 +46,6 @@
 
 	&__info {
 		padding: 35px 0;
-		border-bottom: 1px solid $g-body-dark;
 	}
 
 	&__title,
@@ -89,5 +88,13 @@
 		font-size: 12px;
 		font-weight: 300;
 		letter-spacing: -0.15px;
+	}
+}
+
+.m-card-post--search {
+	.m-card-post {
+		&__info {
+			border-bottom: 1px solid $g-body-dark;
+		}
 	}
 }
