@@ -1,5 +1,8 @@
 .o-i360-comparison-table {
-	padding: 0 0 70px;
+	padding: 25px 0 55px;
+	@include bp-sm {
+		padding: 0 0 70px;
+	}
 
 	&__container {
 		max-width: 980px;
@@ -12,16 +15,31 @@
 	}
 
 	&__cards-wrapper {
-		display: grid;
-		grid-gap: 20px;
+		display: flex;
+		flex-wrap: wrap;
 		@include bp-sm {
-			grid-template-columns: repeat(2, 1fr);
+			margin-left: -20px;
+		}
+
+		.m-list {
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: 100%;
+			margin-bottom: 20px;
+			@include bp-sm {
+				flex-basis: calc(50% - 20px);
+				margin-left: 20px;
+				margin-bottom: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
 	&__list {
 		&--cons {
-
 			.m-list {
 				&__bg {
 					background-color: $g-brand-color-5;
@@ -52,7 +70,6 @@
 		}
 
 		&--pros {
-
 			.m-list {
 				&__bg {
 					background-color: #e3f7ee;

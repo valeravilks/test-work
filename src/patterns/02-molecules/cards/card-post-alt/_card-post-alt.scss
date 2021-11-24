@@ -15,11 +15,13 @@
 ////////////////////
 
 .m-card-post-alt {
+	overflow: hidden;
 	margin-bottom: 30px;
 	background-color: #fff;
+	border-radius: 10px;
+
 	&__img-link-wrapper {
 		position: relative;
-		margin-bottom: 20px;
 		&:hover {
 			img {
 				transform: scale(1.1);
@@ -79,12 +81,20 @@
 		overflow: hidden;
 	}
 
+	&__info {
+		padding: 32px;
+		border-radius: 0 0 10px 10px;
+		border-right: 1px solid #979797;
+		border-bottom: 1px solid #979797;
+		border-left: 1px solid #979797;
+	}
+
 	&__meta-info {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		flex-grow: 1;
-		padding-left: 10px;
+		padding-bottom: 18px;
 	}
 
 	&__author-fullname {
@@ -105,6 +115,15 @@
 
 	&__date {
 		flex-grow: 0;
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: 3.13px;
+	}
+
+	&__contnet {
+		font-size: 14px;
+		line-height: 22px;
 	}
 
 	&__reading-duration {

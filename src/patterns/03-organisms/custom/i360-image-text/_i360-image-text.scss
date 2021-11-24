@@ -18,31 +18,28 @@
 
 	&__container {
 		max-width: 1210px;
+		@include bpm-xs {
+			width: 100%;
+		}
 	}
 
 	&__content-wrapper {
 		position: relative;
-		display: flex;
 		overflow: hidden;
 		background-color: $g-brand-color-5;
 		border-radius: 30px;
-		@include bpm-sm {
-			flex-direction: column-reverse;
-		}
 
 		&--img-left {
-			@include bp-sm {
-				flex-direction: row-reverse;
-			}
-
 			.o-i360-image-text {
 				&__group-text {
 					@include bp-sm {
 						padding-left: 0;
+						margin-left: auto;
 					}
 				}
 				&__group-img {
 					@include bp-sm {
+						@include absolute-tl;
 						padding-right: 0;
 					}
 				}
@@ -50,18 +47,17 @@
 		}
 
 		&--img-right {
-			@include bp-sm {
-				flex-direction: row;
-			}
-
 			.o-i360-image-text {
 				&__group-text {
 					@include bp-sm {
 						padding-right: 0;
+						margin-right: auto;
 					}
 				}
 				&__group-img {
 					@include bp-sm {
+						@include absolute-tr;
+						transform: scaleX(-1); // remove, just for show
 						padding-left: 0;
 					}
 				}
@@ -75,9 +71,6 @@
 
 	&__group-text {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 		z-index: $g-z1;
 		@include bp-sm {
 			width: 50%;
@@ -88,12 +81,16 @@
 		}
 		@include bpm-sm {
 			width: 100%;
-			padding: 20px;
+			padding: 40px 20px;
+			text-align: center;
 		}
 	}
 
 	&__title {
 		letter-spacing: -0.43px;
+		@include bpm-xs {
+			line-height: 1.375;
+		}
 
 		span {
 			color: #18b1a9;
@@ -114,8 +111,11 @@
 	}
 
 	&__group-img {
-		@include absolute-tl;
-		height: 100%;
+		display: none;
+		@include bp-sm {
+			display: block;
+			height: 100%;
+		}
 	}
 
 	&__img-wrapper {
@@ -131,7 +131,10 @@
 	}
 
 	&__button-wrapper {
-		padding-top: 35px;
+		padding-top: 55px;
+		@include bp-sm {
+			padding-top: 35px;
+		}
 	}
 }
 
@@ -149,15 +152,21 @@
 .o-i360-image-text--align-left {
 	.o-i360-image-text {
 		&__title {
-			text-align: left;
+			@include bp-sm {
+				text-align: left;
+			}
 		}
 
 		&__content {
-			text-align: left;
+			@include bp-sm {
+				text-align: left;
+			}
 		}
 
 		&__button-wrapper {
-			justify-content: flex-start;
+			@include bp-sm {
+				justify-content: flex-start;
+			}
 		}
 	}
 }

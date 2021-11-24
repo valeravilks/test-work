@@ -14,7 +14,10 @@
 }
 
 @mixin h3 {
-	font-size: 36px;
+	font-size: 32px;
+	@include bp-sm {
+		font-size: 36px;
+	}
 }
 
 @mixin h4 {
