@@ -13,9 +13,18 @@
 
 	<div class="{{ component_class }} {{ parent }} {{version}} {{ extra_class}}">
 		<form class="{{ component_class }}__form js-search-field">
-			<span class="{{ component_class }}__icon fa fa-search"></span>
+			<span class="{{ component_class }}__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+					<g>
+						<g>
+							<path fill="#074757" d="M3.054 10.052a6.998 6.998 0 1 1 6.998 6.998C6.19 17 3.058 13.915 3.054 10.052zm18.32 9.673L17.42 15.77c3.026-3.896 2.5-9.472-1.198-12.771-3.699-3.227-9.297-3.052-12.785.436C-.051 6.923-.227 12.52 3 16.22c3.298 3.699 8.875 4.224 12.77 1.2l3.955 3.953c.275.299.725.417 1.13.31.405-.108.721-.424.829-.829.107-.405-.011-.855-.31-1.13z"/>
+						</g>
+					</g>
+				</svg>
+			</span>
+
 			<div class="{{ component_class }}__input-wrap">
-				<input type="text" placeholder="search"  value="{{ function('get_search_query') }}" name="s" id="s"/>
+				<input type="text" placeholder="Search"  value="{{ function('get_search_query') }}" name="s" id="s"/>
 			</div>
 		</form>
 	</div>

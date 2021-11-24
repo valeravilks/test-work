@@ -17,12 +17,15 @@
 // 1: Normal Button
 .a-btn {
 	@include btn;
-	padding: 16px 72px 16px 27px;
 
 	&:hover {
 		.a-btn__btn-icon {
 			transform: translateX(3px);
 		}
+	}
+
+	&--with-icon {
+		padding: 16px 72px 16px 27px;
 	}
 
 	&__btn-icon {

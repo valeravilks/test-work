@@ -17,15 +17,14 @@
 ////////////////////
 
 .a-logo {
+	display: inline-block;
 	transition: $g-trans-base;
 
 	// Enables hardware driven animation for a smoother animations. More info: https://www.sitepoint.com/introduction-to-hardware-acceleration-css-animations/
 	will-change: transform;
 
 	&:hover {
-		.a-logo__img {
-			opacity: .8;
-		}
+		opacity: .8;
 	}
 
 	&__img {
@@ -49,15 +48,6 @@
 
 	&__src {
 		width: 100%;
-	}
-
-	&--header,
-	&--footer {
-		display: inline-block;
-
-		&:hover {
-			opacity: .8;
-		}
 	}
 }
 

@@ -82,6 +82,9 @@
 
 	&__list-txt {
 		display: inline-block;
-
+		font-weight: 600;
+		@include bpm-sm {
+			font-size: 14px;
+		}
 	}
 }

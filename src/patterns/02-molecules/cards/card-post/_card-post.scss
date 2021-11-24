@@ -15,14 +15,7 @@
 ////////////////////
 
 .m-card-post {
-	display: flex;
-	flex-direction: column;
 	transition: $g-trans-base;
-	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
-
-	&:hover {
-		box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
-	}
 
 	&__img-wrapper {
 		position: relative;
@@ -52,19 +45,17 @@
 	}
 
 	&__info {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		padding: 30px;
+		padding: 35px 0;
+		border-bottom: 1px solid $g-body-dark;
 	}
 
 	&__title,
 	&__title-link {
-		color: #000;
-		padding-bottom: 15px;
+		color: $g-brand-color-4;
 	}
 
 	&__title {
+		padding-bottom: 5px;
 		transition: $g-trans-base;
 		&:hover {
 			color: $g-brand-color-1;
@@ -92,5 +83,11 @@
 		&:hover {
 			color: $g-heading-dark;
 		}
+	}
+
+	&__meta {
+		font-size: 12px;
+		font-weight: 300;
+		letter-spacing: -0.15px;
 	}
 }

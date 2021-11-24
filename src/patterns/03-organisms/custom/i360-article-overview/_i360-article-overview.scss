@@ -17,10 +17,11 @@
 	background-color: #F4F8F8;
 	position: relative;
 	display: block;
+	padding: 70px 0 80px;
 
 	&__repeater {
 		margin-top: 40px;
-		@include outlining-card-1-by-3;
+		@include flex-outlining-card-1-by-3(20px);
 	}
 
 	&__card {

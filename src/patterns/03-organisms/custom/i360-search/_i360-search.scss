@@ -1,0 +1,39 @@
+.o-i360-search {
+	&__container {
+		max-width: 1010px;
+	}
+
+	&__field-holder {
+		padding: 70px 0 65px;
+		background-color: $g-brand-color-5;
+	}
+
+	&__results-wrapper {
+		padding: 40px 0 120px;
+	}
+
+	&__head {
+		margin-bottom: 10px;
+	}
+
+	&__pagination-wrapper {
+		margin-top: 60px;
+
+		.o-i360-search {
+			&__container {
+				display: flex;
+				align-items: center;
+			}
+
+			&__results-count {
+				display: inline-block;
+			}
+		}
+
+		.m-pagination {
+			display: inline-flex;
+			margin-right: 15px;
+			margin-left: auto;
+		}
+	}
+}

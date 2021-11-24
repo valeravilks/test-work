@@ -15,8 +15,6 @@
 ////////////////////
 
 .m-search-field {
-	margin-bottom: 20px;
-
 	&__form {
 		position: relative;
 	}
@@ -27,14 +25,38 @@
 
 	input {
 		max-width: none;
+		height: 60px;
+		margin-bottom: 0;
+		padding: 16px 16px 16px 60px;
+		background-color: #fff;
+		border: none;
+		border-radius: 10px;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 1.4;
+		letter-spacing: normal;
+
+		&::placeholder {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 1.4;
+			letter-spacing: normal;
+		}
 	}
 
 	&__icon {
-		position: absolute;
+		@include absolute-general($top: 0, $bottom: 0, $left: 18px);
 		display: block;
-		right: 25px;
-		bottom: 15px;
-		z-index: 1;
+		margin: auto 0;
+		width: 22px;
+		height: 22px;
+		z-index: $g-z1;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 

@@ -41,12 +41,11 @@
 
 	{% block main_payload %}
 		{% if section.add_button %}
-			<div class="{{ default_block_class }}__button-wrapper {{component_class}}__button-wrapper {{component_class}}__btn-wrapper wow">
 				{% include '01-atoms/buttons/button/button.twig' with {
-					parent_class : component_class,
-					button       : section.button
+					parent_class 		: component_class,
+					button      		: section.button,
+					add_class_on_anim	: true
 				} only %}
-			</div>
 		{% endif %}
 		</div>
 		{% if section.image_ratio == 'ratio-16-9' %}
