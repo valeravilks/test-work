@@ -9,6 +9,7 @@
 	* @param  {object}  item                 content object. Has at least a title and content
 	* @param  {object}  img                  Image object. Includes things like image URL, image alt etc
 	* @param  {boolean} interval 			 optional helper for animating items one by one
+	* @param  {boolean} date     			 Add optional date
 	* @param  {number}  index  				 current number of the loop this card is in
 	* @param  {string}  extra_class          optional extra CSS class
 	#}
@@ -71,7 +72,7 @@
 					Reference-based pricing
 				</span>
 				|
-				{% if item.post_date %}
+				{% if item.post_date and date %}
 					<span class="{{ component_class }}__date">
 						{{ item.post_date | date( 'F j, Y' )}}
 					</span>
