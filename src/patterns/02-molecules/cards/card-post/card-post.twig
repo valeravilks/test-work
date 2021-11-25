@@ -36,6 +36,10 @@
 		{% endif %}
 
 		<div class="{{ component_class }}__info">
+			{% if term %}
+				<div class="a-pretitle a-content">{{ term }}</div>
+			{% endif %}
+
 			{% if item.title %}
 				<a
 					class="{{ component_class }}__title-link"
@@ -72,7 +76,7 @@
 					Reference-based pricing
 				</span>
 				|#}
-				{% if item.post_date %}
+				{% if item.post_date  and date %}
 					<span class="{{ component_class }}__date">
 						{{ item.post_date | date( 'F j, Y' )}}
 					</span>
