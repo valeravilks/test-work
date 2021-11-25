@@ -20,9 +20,15 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding classes below.
 
 .o-i360-cards-simple {
+	padding: 70px 0;
+
 	&__repeater {
-		padding-top: 55px;
-		@include outlining-card-1-by-3;
+		padding-top: 70px;
+		@include flex-outlining-card-1-by-3(20px);
+		justify-content: center;
+		@include bp-md {
+			padding-top: 50px;
+		}
 	}
 
 	&__card {

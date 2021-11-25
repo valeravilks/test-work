@@ -15,7 +15,7 @@
 .o-i360-cards-simple {
 	&__pretitle,
 	&__title {
-		padding-bottom: 35px;
+		padding-bottom: 30px;
 	}
 
 	&__title {
@@ -28,7 +28,10 @@
 
 	&__subheader-wrapper {
 		max-width: 780px;
-		margin: 0 auto 55px;
+		margin: 0 auto 30px;
+		@include bp-md {
+			margin: 0 auto 45px;
+		}
 	}
 
 	&__subheader {
@@ -40,10 +43,15 @@
 	}
 
 	&__content {
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: 600;
-		line-height: 32px;
-		letter-spacing: -0.21px;
+		line-height: normal;
+		letter-spacing: -0.25px;
+		@include bp-md {
+			font-size: 24px;
+			line-height: 32px;
+			letter-spacing: -0.21px;
+		}
 
 		@include wysiwyg-content-styling;
 	}
