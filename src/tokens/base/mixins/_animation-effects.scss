@@ -122,11 +122,6 @@ $classesToAdd: 24;
 
 // To use this mixin. You must include underline-special first. And only then include this mixin
 @mixin underline-special-reverse {
-	position: relative;
-	text-decoration: none;
-	cursor: pointer;
-	transition: transform .75s ease-out;
-
 	&::before {
 		content: "";
 		position: absolute;
@@ -179,6 +174,17 @@ $classesToAdd: 24;
 	}
 	100% {
 		transform: scaleY(.005) scaleX(0);
+	}
+}
+
+@keyframes heroDecoZoomIn {
+	0% {
+		opacity: 0;
+		transform: scale(.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
 

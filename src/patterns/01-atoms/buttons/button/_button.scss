@@ -26,6 +26,9 @@
 
 	&--with-icon {
 		padding: 16px 72px 16px 27px;
+		@include bpm-sm {
+			padding: 15px 60px 15px 25px;
+		}
 	}
 
 	&__btn-icon {
@@ -49,7 +52,7 @@
 
 // 2: Links
 .a-link {
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 600;
 	line-height: 28px;
 	color: $g-brand-color-1;
