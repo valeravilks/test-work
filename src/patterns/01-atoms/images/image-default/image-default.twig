@@ -40,7 +40,7 @@
 	<picture>
 		{% if img_mob %}
 			<!--[if IE 9]><video style="display: none;"><![endif]-->
-			<source srcset="{{ resize_number ? img_mob.src | resize( resize_number ) : img_mob.src }}" media="(max-width: 543px)">
+			<source srcset="{{ img_mob.src }}" media="(max-width: 543px)">
 			<!--[if IE 9]></video><![endif]-->
 		{% endif %}
 		<img

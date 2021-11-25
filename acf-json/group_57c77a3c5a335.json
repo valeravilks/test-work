@@ -78,6 +78,32 @@
             "mime_types": ""
         },
         {
+            "key": "field_619fc07e5cdce",
+            "label": "Hero Image Mobile",
+            "name": "default_hero_image_mobile",
+            "type": "image",
+            "instructions": "These is the default image showing when no custom background image has been selected.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
+        },
+        {
             "key": "field_5e461899a2dae",
             "label": "User Default Avatar",
             "name": "user_default_avatar",
@@ -1353,5 +1379,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637355043
+    "modified": 1637859465
 }
