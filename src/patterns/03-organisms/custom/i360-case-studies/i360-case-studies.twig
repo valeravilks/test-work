@@ -42,13 +42,14 @@
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( item.thumbnail ) %}
 
-					{#SONA: Add case studies taxonomy TERMS here. And then pass to card below#}
+					{% set terms = item.terms('case-studies-categories')|join(', ')  %}
 
 					{% include '02-molecules/cards/card-post/card-post.twig' with {
 						parent_class 		: component_class,
 						item         		: item,
 						img                 : img,
 						interval            : true,
+						term				: terms,
 						date  				: false,
 						meta				: false,
 						index       		: loop.index,
