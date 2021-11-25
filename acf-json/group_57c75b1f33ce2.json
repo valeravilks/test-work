@@ -152,10 +152,11 @@
                 "id": ""
             },
             "choices": {
+                "default": "Default",
                 "light": "Light",
                 "dark": "Dark"
             },
-            "default_value": "dark",
+            "default_value": "default",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -512,6 +513,50 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_619fbf601dfae",
+            "label": "Hero Custom Background Image Mobile",
+            "name": "hero_bg_image_mobile",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5e3f515ac56ab",
+                        "operator": "==",
+                        "value": "image"
+                    },
+                    {
+                        "field": "field_5c5a2a692b366",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
         },
         {
             "key": "field_5eaafca1a80f2",
@@ -887,5 +932,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637777373
+    "modified": 1637859376
 }

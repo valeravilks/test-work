@@ -26,10 +26,12 @@
 		{% if item.background_type == "image" %}
 			{# Accessing WordPress image object and making them available to Twig templates #}
 			{% set bg_img = TimberImage( item.background_image ) %}
+			{% set bg_img_mob = TimberImage( item.background_image_mobile ) %}
 
 			{% include '01-atoms/images/image-default/image-default.twig' with {
 				parent_class        : component_class,
 				img                 : bg_img,
+				img_mob             : bg_img_mob,
 				lazyload            : true,
 				srcset              : true,
 				wrapper             : true

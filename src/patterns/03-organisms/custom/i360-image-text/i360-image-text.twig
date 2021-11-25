@@ -58,6 +58,7 @@
 			<div class="{{component_class}}__group-img">
 				{# Accessing WordPress image object and making them available to Twig templates #}
 				{% set img = TimberImage( section.image ) %}
+				{% set img_mob = TimberImage( section.image_mobile ) %}
 
 				<!-- Crop image -->
 				{% if img.post_mime_type != "image/png" and section.image_ratio != 'none' %}
@@ -69,7 +70,8 @@
 					{% include '01-atoms/images/image-default/image-default.twig' with {
 						parent_class      : component_class,
 						img               : img,
-						version          : "single",
+						img_mob           : img_mob,
+						version           : "single",
 						lazyload          : true,
 						wrapper           : true,
 						add_class_on_anim : true

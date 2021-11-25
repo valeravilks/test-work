@@ -13,7 +13,7 @@
 
 			<div class="{{component_class}}__list">
 				<div class="{{component_class}}__list-title">
-					Additional resources
+					{{ menu_title }}
 				</div>
 				{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
 				{{ nav.menu(menu_secondary.get_items, 'm-nav', 'm-nav--secondary', parent_class, false) }}

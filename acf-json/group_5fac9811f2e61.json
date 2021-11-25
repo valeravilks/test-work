@@ -3727,6 +3727,32 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_619fbf0449baa",
+                            "label": "Image mobile",
+                            "name": "image_mobile",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "wp",
+                            "acfe_thumbnail": 0,
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_618c146ab7c06",
                             "label": "Image Ratio",
                             "name": "image_ratio",
@@ -9784,5 +9810,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637691783
+    "modified": 1637859141
 }
