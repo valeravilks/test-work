@@ -15,10 +15,13 @@
 ////////////////////
 
 .m-card-icon-content {
-	padding: 45px 25px 25px;
+	padding: 30px 15px;
 	background-color: #fff;
 	border: 1px solid #979797;
 	border-radius: 10px;
+	@include bp-md {
+		padding: 40px 25px;
+	}
 
 	&__icon {
 		width: 80px;
@@ -43,8 +46,14 @@
 		}
 	}
 
+	&__title,
 	&__content {
 		text-align: center;
+	}
+
+	&__content {
+		font-size: 14px;
+		line-height: 1.6;
 
 		span {
 			font-weight: 600;
