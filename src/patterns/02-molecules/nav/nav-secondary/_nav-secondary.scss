@@ -13,32 +13,26 @@
 ////////////////////
 // Styling        //
 .m-nav--secondary {
-	.m-nav{
+	.m-nav {
 		&__item {
 			display: inline;
 			list-style-type: none;
 		}
+
 		&__link {
 			margin-left: 55px;
+		}
 
-			span{
-				font-size: 18px;
-				font-weight: 400;
-				line-height: 28px;
-				text-decoration: underline;
-				color: $g-body-dark;
-				@include underline-special;
-				@include underline-special-reverse;
-			}
+		&__link-text {
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 28px;
+			color: $g-body-dark;
+			@include underline-special;
+			@include underline-special-reverse;
 
-			&:hover {
-				span::before {
-					background-color: $g-brand-color-1;
-				}
-			}
-
-			span::before {
-				top: calc(100% - 7px);
+			&::before {
+				top: calc(100% - 4px);
 				height: 1px;
 				background-color: $g-body-dark;
 			}

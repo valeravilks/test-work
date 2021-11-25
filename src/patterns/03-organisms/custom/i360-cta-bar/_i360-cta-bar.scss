@@ -21,8 +21,11 @@
 
 .o-i360-cta-bar {
 	position: relative;
-	padding: 65px 0;
+	padding: 85px 0 65px;
 	background-color: $g-brand-color-4;
+	@include bp-sm {
+		padding: 65px 0;
+	}
 
 	&__container-inner {
 		display: flex;
@@ -50,6 +53,12 @@
 		transform: scale(.9);
 		opacity: 0;
 		transition-delay: .5s;
+		@include bpm-lg {
+			top: -120px;
+			left: -85px;
+			width: 400px;
+			height: 465px;
+		}
 
 		&.animated {
 			transform: scale(1);
@@ -88,9 +97,10 @@
 	}
 
 	&__title-wrapper {
+		margin-bottom: 50px;
 		overflow: hidden;
-		@include bpm-lg {
-			margin-bottom: 20px;
+		@include bp-lg {
+			margin-bottom: 0;
 		}
 	}
 
@@ -102,6 +112,9 @@
 		transition: $g-trans-base-2;
 		@include bp-lg {
 			transform: translateY(100%);
+		}
+		@include bpm-sm {
+			font-size: 36px;
 		}
 
 		span {
