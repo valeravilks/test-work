@@ -37,34 +37,53 @@
 		class="{{ parent_class }}__img-wrapper {{ parent_class }}__img-wrapper--{{ version }} a-img-wrapper {{ add_class_on_anim ? "wow" : "" }} {{ img_wrapper_parallax }} {{ extra_class_wrapper }}"
 		>
 	{% endif %}
+	<picture>
+		{% if img_mob %}
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="{{ resize_number ? img_mob.src | resize( resize_number ) : img_mob.src }}" media="(max-width: 543px)">
+			<!--[if IE 9]></video><![endif]-->
+		{% endif %}
+		<img
+			srcset="{{ resize_number ? img.src | resize( resize_number ) : img.src }}"
 
-	<img
-		{# Image alt description #}
+			{% if img.alt %}
+				alt="{{ img.alt }}"
+			{% endif %}
+
+			{% if img_parallax %}
+				data-rellax-percentage="0.5" data-rellax-speed="{{ parallax_speed ? parallax_speed : -0.7 }}"
+			{% endif %}
+
+			class="{{ wrapper is empty and add_class_on_anim ? "wow" : "" }} {{ img_parallax }} {{ img_lazyload }} {{ img_srcset }} {{ parent_class }}__img {{ parent_class }}__img--{{ version }} {{ component_class }} {{ extra_class }}"
+		/>
+	</picture>
+	{#<img
+		#}{# Image alt description #}{#
 		{% if img.alt %}
 			alt="{{ img.alt }}"
 		{% endif %}
 
-		{# Image lazyload. Ensures images are only loaded when they are in viewport #}
+		#}{# Image lazyload. Ensures images are only loaded when they are in viewport #}{#
 		{% if img_lazyload %}
 			data-src="{{ resize_number ? img.src | resize( resize_number ) : img.src }}"
 		{% else %}
 			src="{{ resize_number ? img.src | resize( resize_number ) : img.src }}"
 		{% endif %}
 
-		{# Image srcset for outputting responsive images #}
+		#}{# Image srcset for outputting responsive images #}{#
 		{% if img_srcset and img_lazyload %}
 			data-srcset="{{ img.srcset }}"
 		{% elseif img_srcset and img_lazyload is empty %}
 			srcset="{{ img.srcset }}"
 		{% endif %}
 
-		{# parallax effect. Requires the Rellay parallax library #}
+		#}{# parallax effect. Requires the Rellay parallax library #}{#
 		{% if img_parallax %}
 			data-rellax-percentage="0.5" data-rellax-speed="{{ parallax_speed ? parallax_speed : -0.7 }}"
 		{% endif %}
 
 		class="{{ wrapper is empty and add_class_on_anim ? "wow" : "" }} {{ img_parallax }} {{ img_lazyload }} {{ img_srcset }} {{ parent_class }}__img {{ parent_class }}__img--{{ version }} {{ component_class }} {{ extra_class }}"
-	/>
+	/>#}
 
 	{% if wrapper %}
 		</div>
