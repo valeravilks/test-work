@@ -1,7 +1,8 @@
 {% spaceless %}
 	{#
-	* Renders the image component
+	* Renders the image manual responsive component
 	*
+	* This image atom is different from the default image as it allows a separate image to be set for mobile devices
 	* When using the WordPress CMS ACF as image source:
 	* Use the "image" ACF field. Make sure to return an ID (not object) in ACF for the image
 	* Make sure to prefix all fields names. Do not prefill labels.
@@ -15,7 +16,8 @@
 	* @param  {boolean} srcset           	 Creates multiple images SRC's (for different viewports) through WP core from the same image. NOTE: Cannot be used in combination with the resize parameter
 	* @param  {boolean} lazyload         	 Loads the image when in viewport for PERF reasons.
 	* @param  {number}  resize_number     	 Resizes the image per a defined number for PERF reasons. NOTE: Cannot be used in combination with the srcset parameter
-	* @param  {object}  img                  The actual image object. Coming from CMS or mock-data
+	* @param  {object}  img_mob              The actual image object. Coming from CMS or mock-data. For mobile
+	* @param  {object}  img                  The actual image object. Coming from CMS or mock-data. For desktop
 	* @param  {string}  extra_class          optional extra CSS class
 	* @param  {string}  extra_class_wrapper  optional extra CSS class assigned to the wrapper
 	#}
