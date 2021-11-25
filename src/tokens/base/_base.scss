@@ -36,6 +36,9 @@ html {
 	color: $g-body-dark;
 	-webkit-font-smoothing: antialiased; //-moz-osx-font-smoothing: grayscale; // todo: uncomment? @Musa
 	text-rendering: optimizeLegibility;
+	@include bpm-md {
+		font-size: 14px;
+	}
 }
 
 ////////////////////////////////////

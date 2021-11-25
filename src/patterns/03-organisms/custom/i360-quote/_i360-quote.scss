@@ -30,8 +30,12 @@ $l-quote-block-padding-mobile-tablet: 80px;
 
 .o-i360-quote {
 	position: relative;
+	display: flex;
 	overflow: hidden;
-	padding: 100px 0;
+	@include bp-md {
+		display: block;
+		padding: 100px 0;
+	}
 
 	&__img-wrapper {
 		z-index: $g-z1;
@@ -39,9 +43,11 @@ $l-quote-block-padding-mobile-tablet: 80px;
 
 	&__img-wrapper,
 	&__img {
-		@include absolute-full;
-		width: 100%;
-		height: 100%;
+		@include bp-md {
+			@include absolute-full;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__img {
@@ -58,16 +64,25 @@ $l-quote-block-padding-mobile-tablet: 80px;
 	}
 
 	&__title {
+		@include bpm-md {
+			font-size: 40px;
+		}
+
 		span {
 			color: $g-brand-color-1;
 		}
 	}
 
 	&__content-group {
-		z-index: 1;
 		position: relative;
-		@include bp-md {
+		padding: 40px 0;
+		z-index: 1;
+		@include bp-sm {
+			max-width: 62%;
+		}
+		@include bp-lg {
 			max-width: 570px;
+			padding: 0;
 		}
 	}
 
@@ -83,12 +98,19 @@ $l-quote-block-padding-mobile-tablet: 80px;
 	}
 
 	.h-overlay {
-		@include absolute-full;
-		z-index: $g-z10;
+		display: none;
+		@include bp-md {
+			@include absolute-full;
+			display: block;
+			z-index: $g-z10;
+		}
 	}
 
 	&__btn-wrapper {
 		margin-top: 35px;
+		@include bpm-md {
+			text-align: center;
+		}
 	}
 }
 
@@ -99,34 +121,45 @@ $l-quote-block-padding-mobile-tablet: 80px;
 // Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
 .o-i360-quote {
 	&--align-left {
+		background-color: $g-brand-color-5; // maybe set from cms? remove!!
+
+		@include bpm-md {
+			flex-direction: column-reverse;
+		}
+
 		.o-i360-quote__content {
 			align-items: baseline;
-			text-align: left;
 		}
 
 		.o-i360-quote__content-group {
-			@include bp-md {
+			@include bp-lg {
 				padding-left: 80px;
+			}
+			@include bpm-md {
+				margin: 0 auto;
+				text-align: center;
 			}
 		}
 	}
 
 	&--align-default {
+		@include bpm-md {
+			flex-direction: column;
+		}
+
 		.o-i360-quote__content {
 			align-items: baseline;
-			text-align: left;
 		}
 
 		.o-i360-quote__content-group {
-			text-align: left;
 			margin-left: auto;
-			@include bp-md {
+			@include bp-lg {
 				padding-right: 80px;
 			}
-		}
-
-		.o-i360-quote__btn-wrapper {
-			text-align: left;
+			@include bpm-md {
+				margin: 0 auto;
+				text-align: center;
+			}
 		}
 
 		.o-i360-quote__btn {
@@ -135,6 +168,10 @@ $l-quote-block-padding-mobile-tablet: 80px;
 	}
 
 	&--align-center {
+		@include bpm-md {
+			flex-direction: column;
+		}
+
 		.o-i360-quote__content,
 		.o-i360-quote__content-group {
 			align-items: center;
