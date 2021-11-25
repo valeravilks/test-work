@@ -25,6 +25,31 @@
 		{% if post.use_custom_hero_bg_image == 1 or post.get_field( 'use_custom_hero_bg_image' ) == 1 %}
 			{# Accessing WordPress image object and making them available to Twig templates #}
 			{% set hero_bg_img = TimberImage( post.hero_bg_image ) %}
+		{% else %}
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set hero_bg_img = TimberImage( options.default_hero_image ) %}
+		{% endif %}
+
+		{% include '01-atoms/images/image-default/image-default.twig' with {
+			parent_class      	: component_class,
+			img               	: hero_bg_img,
+			version          	: "hero-bg-img",
+			parent_version      : "hero-bg-img",
+			lazyload          	: true,
+			srcset            	: true,
+			wrapper           	: true,
+			parallax          	: false,
+			extra_class_wrapper : "js-parallax__translate o-hero__img-wrapper--hero-bg-img"
+		} only %}
+
+		{########################################################################}
+		{# 	Hero Background Option: Image with manual mobile image selection    #}
+		{########################################################################}
+	{% elseif post.hero_background == "image-responsive"  %}
+		{# Setup hero background images. Background images are either selected on a page basis OR coming from the site options #}
+		{% if post.use_custom_hero_bg_image == 1 or post.get_field( 'use_custom_hero_bg_image' ) == 1 %}
+			{# Accessing WordPress image object and making them available to Twig templates #}
+			{% set hero_bg_img = TimberImage( post.hero_bg_image ) %}
 			{% set hero_bg_img_mob = TimberImage( post.hero_bg_image_mobile ) %}
 		{% else %}
 			{# Accessing WordPress image object and making them available to Twig templates #}
@@ -32,7 +57,7 @@
 			{% set hero_bg_img_mob = TimberImage( options.default_hero_image_mobile ) %}
 		{% endif %}
 
-		{% include '01-atoms/images/image-default/image-default.twig' with {
+		{% include '01-atoms/images/image-manual-responsive/image-manual-responsive.twig' with {
 			parent_class      	: component_class,
 			img               	: hero_bg_img,
 			img_mob            	: hero_bg_img_mob,

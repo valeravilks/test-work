@@ -83,6 +83,7 @@
             "choices": {
                 "color": "Background Color",
                 "image": "Background Image",
+                "image-responsive": "Background Image with alternate mobile image",
                 "video": "Background Video"
             },
             "default_value": "image",
@@ -91,6 +92,8 @@
             "ui": 1,
             "ajax": 0,
             "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
             "placeholder": ""
         },
         {
@@ -98,7 +101,7 @@
             "label": "Hero Alignment",
             "name": "hero_alignment",
             "type": "select",
-            "instructions": "By default, this hero centers all text to the left. Optionally, the hero text alignment can be set to the center.",
+            "instructions": "Optionally, the hero text aligment can be manually set here. Default is the starting point.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -135,7 +138,7 @@
             "label": "Hero Text Color",
             "name": "hero_color",
             "type": "select",
-            "instructions": "Setting a custom hero text color is not required. But can be changed here.",
+            "instructions": "Optionally, the hero text color can be manually set here. Default is the starting point.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -459,6 +462,18 @@
                         "operator": "==",
                         "value": "image"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5e3f515ac56ab",
+                        "operator": "==",
+                        "value": "image-responsive"
+                    }
                 ]
             ],
             "wrapper": {
@@ -496,6 +511,23 @@
                         "operator": "==",
                         "value": "1"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5e3f515ac56ab",
+                        "operator": "==",
+                        "value": "image-responsive"
+                    },
+                    {
+                        "field": "field_5c5a2a692b366",
+                        "operator": "==",
+                        "value": "1"
+                    }
                 ]
             ],
             "wrapper": {
@@ -503,16 +535,18 @@
                 "class": "",
                 "id": ""
             },
+            "uploader": "",
+            "acfe_thumbnail": 0,
             "return_format": "id",
             "preview_size": "thumbnail",
-            "library": "all",
             "min_width": "",
             "min_height": "",
             "min_size": "",
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "library": "all"
         },
         {
             "key": "field_619fbf601dfae",
@@ -531,7 +565,7 @@
                     {
                         "field": "field_5e3f515ac56ab",
                         "operator": "==",
-                        "value": "image"
+                        "value": "image-responsive"
                     },
                     {
                         "field": "field_5c5a2a692b366",
@@ -932,5 +966,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637859376
+    "modified": 1637863573
 }
