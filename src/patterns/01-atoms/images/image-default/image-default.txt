@@ -12,7 +12,6 @@ Make sure to prefix all fields names. Do not prefill labels.
 {% include '01-atoms/images/image-default/image-default.twig' with {
 	parent_class      : component_class,
 	img               : img,
-	img_mob           : img_mob,
 	lazyload          : true,
 	srcset            : true,
 	wrapper           : true,
