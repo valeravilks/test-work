@@ -20,12 +20,32 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-case-studies {
-	&__repeater {
-		max-width: 980px;
-		margin: 0 auto;
+	&__container {
+		max-width: 1010px;
 	}
+
+	&__repeater {
+		display: flex;
+		flex-wrap: wrap;
+		@include bp-sm {
+			margin-left: -20px;
+		}
+	}
+
 	&__column {
-		max-width: 480px;
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 100%;
+		margin-bottom: 20px;
+		@include bp-sm {
+			flex-basis: calc(50% - 20px);
+			margin-left: 20px;
+		}
+		@include bpm-sm {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
