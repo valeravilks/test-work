@@ -9,61 +9,64 @@
 			</div>
 		</div>
 
-		{% if items %}
-			<div class="{{ component_class }}__results-wrapper">
-				{% if results_count != 0 %}
-					<div class="{{ component_class }}__head">
-						<div class="{{component_class}}__container l-container">
-							<div class="{{ component_class }}__results-count">
-								Showing {{ items|length }} of {{ results_count }} results
-							</div>
-						</div>
-					</div>
+		<div class="{{ component_class }}__results-wrapper">
+			{% if results_count != 0 %}
+				<div class="{{ component_class }}__head">
 					<div class="{{component_class}}__container l-container">
-						{% for item in items %}
-							{% set item = TimberPost(item) %}
-							{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
-								parent_class 		: component_class,
-								item         		: item,
-								date				: true,
-								meta				: true,
-								version				: "search",
-								interval            : true,
-								index       		: loop.index,
-								add_class_on_anim   : true,
-							} only %}
-						{% endfor %}
-					</div>
-					<div class="{{ component_class }}__pagination-wrapper">
-						<div class="{{component_class}}__container l-container">
-							<div class="{{ component_class }}__results-count">
-								Showing {{ items|length }} of {{ results_count }} results
-							</div>
-
-							{% include '02-molecules/pagination/pagination.twig' with {
-								posts: items
-							} only %}
+						<div class="{{ component_class }}__results-count">
+							Showing {{ items|length }} of {{ results_count }} results
 						</div>
 					</div>
-				{% endif %}
-			</div>
-		{% else %}
-			<div class="{{ component_class }}__nothing-matches-message">
-
-				{% set not_found_title = 'Nothing matches your search for "' ~ search_query ~ '"'  %}
-
-				{% include '01-atoms/content/title/title.twig' with {
-					parent_class        : component_class,
-					title               : not_found_title,
-					h                   : 3,
-					add_class_on_anim   : true
-				} only %}
-
-				<div class="{{ component_class }}__advice-message">
-					But don't give up – check the spelling or try less specific search terms.
 				</div>
 
-			</div>
-		{% endif %}
+				<div class="{{component_class}}__container l-container">
+					{% for item in items %}
+						{% set item = TimberPost(item) %}
+						{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
+							parent_class 		: component_class,
+							item         		: item,
+							img                 : img,
+							date				: true,
+							meta				: true,
+							version				: "search",
+							interval            : true,
+							index       		: loop.index,
+							add_class_on_anim   : true,
+						} only %}
+					{% endfor %}
+				</div>
+
+				<div class="{{ component_class }}__pagination-wrapper">
+					<div class="{{component_class}}__container l-container">
+						<div class="{{ component_class }}__results-count">
+							Showing {{ items|length }} of {{ results_count }} results
+						</div>
+
+						{% include '02-molecules/pagination/pagination.twig' with {
+							posts: items
+						} only %}
+					</div>
+				</div>
+
+			{% else %}
+				<div class="{{component_class}}__container l-container">
+					<div class="{{ component_class }}__nothing-matches-message">
+						{% set not_found_title = 'Nothing matches your search for "' ~ search_query ~ '"'  %}
+
+						{% include '01-atoms/content/title/title.twig' with {
+							parent_class        : component_class,
+							title               : not_found_title,
+							h                   : 3,
+							add_class_on_anim   : true
+						} only %}
+
+						<div class="{{ component_class }}__advice-message">
+							But don't give up – check the spelling or try less specific search terms.
+						</div>
+
+					</div>
+				</div>
+			{% endif %}
+		</div>
 	</div>
 {% endspaceless %}
