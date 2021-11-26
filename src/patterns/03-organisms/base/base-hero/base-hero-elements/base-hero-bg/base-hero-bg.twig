@@ -17,9 +17,13 @@
 			style="background-color:{{ post.hero_bg_color ? post.hero_bg_color : options.theme_base_color }}"
 		></div>
 
-		{#####################################}
-		{# 	Hero Background Option: Image    #}
-		{#####################################}
+		{########################################################################}
+		{# 	Hero Background Option: Image    								    #}
+		{# 								    									#}
+		{# 	Two sub-versions are included here: 						 		#}
+		{# 	User chooses a single image OR user chooses a separate image        #}
+		{# 	for desktop and mobile							    				#}
+		{########################################################################}
 	{% elseif post.hero_background == "image" or  post.hero_background == "image-responsive"%}
 		{# Setup hero background images. Background images are either selected on a page basis OR coming from the site options #}
 		{% if post.use_custom_hero_bg_image == 1 or post.get_field( 'use_custom_hero_bg_image' ) == 1 %}
@@ -35,11 +39,11 @@
 		{% endif %}
 
 		{######################################################################}
-		{# 															          #}
+		{# 	Sub option 1:    										          #}
+		{# 				     										          #}
 		{#  Outputting a non-different image for mobile and desktop.          #}
 		{# 	SRCSET will ensure that an image will be created for multiple     #}
-		{# 	 viewports														  #}
-		{# 															          #}
+		{# 	viewports														  #}
 		{######################################################################}
 		{% if post.hero_background == "image" %}
 			{% include '01-atoms/images/image-default/image-default.twig' with {
@@ -55,10 +59,10 @@
 			} only %}
 
 		{######################################################################}
-		{# 															          #}
+		{# 	Sub option 2:    										          #}
+		{# 				     										          #}
 		{#  Almost exactly the same as the option above. Only difference is   #}
 		{#  the outputting of a separate mobile VS desktop image              #}
-		{# 															          #}
 		{######################################################################}
 		{% elseif post.hero_background == "image-responsive"  %}
 			{% include '01-atoms/images/image-manual-responsive/image-manual-responsive.twig' with {
