@@ -33,6 +33,14 @@
 			{% set hero_bg_img     = TimberImage( options.default_hero_image ) %}
 			{% set hero_bg_img_mob = TimberImage( options.default_hero_image_mobile ) %}
 		{% endif %}
+
+		{######################################################################}
+		{# 															          #}
+		{#  Outputting a non-different image for mobile and desktop.          #}
+		{# 	SRCSET will ensure that an image will be created for multiple     #}
+		{# 	 viewports														  #}
+		{# 															          #}
+		{######################################################################}
 		{% if post.hero_background == "image" %}
 			{% include '01-atoms/images/image-default/image-default.twig' with {
 				parent_class      	: component_class,
