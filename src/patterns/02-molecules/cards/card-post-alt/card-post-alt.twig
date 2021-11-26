@@ -19,33 +19,8 @@
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
 
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
-		{% if img %}
-			<div class="{{ component_class }}__img-link-wrapper">
-				<a
-					class="{{ component_class }}__img-link"
-					href="{{ item.link }}"
-				></a>
-
-				{% include '01-atoms/images/image-default/image-default.twig' with {
-					parent_class        : component_class,
-					img                 : img,
-					modifier            : "thumbnail",
-					resize_number       : resize_number,
-					lazyload            : true,
-					srcset              : false,
-					wrapper             : true
-				} only %}
-			</div>
-		{% endif %}
-
 		<div class="{{ component_class }}__info">
-			<div class="{{ component_class }}__meta-info">
-				{% if item.post_date %}
-					<div class="{{ component_class }}__date">
-						{{ item.post_date | date( 'M j, Y' ) }}
-					</div>
-				{% endif %}
-			</div>
+
 			<div class="{{ component_class }}__title-link-wrapper">
 				<a
 					class="{{ component_class }}__title-link"
@@ -72,6 +47,21 @@
 				add_class_on_anim   : false
 			} only %}
 
+			<div class="{{ component_class }}__meta">
+				{#				<span class="{{ component_class }}__meta-tag">
+					Solutions
+				</span>
+				|
+				<span class="{{ component_class }}__meta-tag">
+					Reference-based pricing
+				</span>
+				|#}
+				{% if item.post_date  and date %}
+					<span class="{{ component_class }}__date">
+						{{ item.post_date | date( 'F j, Y' )}}
+					</span>
+				{% endif %}
+			</div>
 
 {#			<div class="{{ component_class }}__author">#}
 {#				{% if item.author.avatar %}#}
@@ -91,12 +81,6 @@
 {#					<div class="{{ component_class }}__author-fullname">#}
 {#						{{ item.author.display_name }}#}
 {#					</div>#}
-
-{#					{% if item.post_date %}#}
-{#						<div class="{{ component_class }}__date">#}
-{#							{{ item.post_date | date( 'M j, Y' ) }}#}
-{#						</div>#}
-{#					{% endif %}#}
 
 {#					{% if item.reading_duration %}#}
 {#						<div class="{{ component_class }}__reading-duration">#}
