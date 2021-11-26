@@ -36,8 +36,8 @@
 		{% endif %}
 
 		<div class="{{ component_class }}__info">
-			{% if term %}
-				<div class="a-pretitle a-content">{{ term }}</div>
+			{% if pretitle %}
+				<div class="a-pretitle {{ component_class }}__pretitle">{{ pretitle }}</div>
 			{% endif %}
 
 			{% if item.title %}
