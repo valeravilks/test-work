@@ -28,14 +28,25 @@
 			{% set bg_img = TimberImage( item.background_image ) %}
 			{% set bg_img_mob = TimberImage( item.background_image_mobile ) %}
 
-			{% include '01-atoms/images/image-default/image-default.twig' with {
-				parent_class        : component_class,
-				img                 : bg_img,
-				img_mob             : bg_img_mob,
-				lazyload            : true,
-				srcset              : true,
-				wrapper             : true
-			} only %}
+			{% if bg_img_mob != '' %}
+				{% include '01-atoms/images/image-manual-responsive/image-manual-responsive.twig' with {
+					parent_class        : component_class,
+					img                 : bg_img,
+					img_mob             : bg_img_mob,
+					lazyload            : true,
+					srcset              : true,
+					wrapper             : true
+				} only %}
+
+			{% else %}
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class        : component_class,
+					img                 : bg_img,
+					lazyload            : true,
+					srcset              : true,
+					wrapper             : true
+				} only %}
+			{% endif %}
 		{% endif %}
 
 		{% if item.add_overlay %}

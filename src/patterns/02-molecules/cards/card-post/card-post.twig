@@ -74,7 +74,21 @@
 				add_class_on_anim   : false
 			} only %}
 
-
+			<div class="{{ component_class }}__meta">
+{#				<span class="{{ component_class }}__meta-tag">
+					Solutions
+				</span>
+				|
+				<span class="{{ component_class }}__meta-tag">
+					Reference-based pricing
+				</span>
+				|#}
+				{% if item.post_date  and date %}
+					<span class="{{ component_class }}__date">
+						{{ item.post_date | date( 'F j, Y' )}}
+					</span>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endspaceless %}
