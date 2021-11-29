@@ -20,39 +20,7 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-case-studies {
-	&__card {
-		&.m-card-post {
-			overflow: hidden;
-			border-radius: 10px;
-
-			.m-card-post {
-				&__info {
-					padding: 40px 30px;
-					border-radius: 0 0 10px 10px;
-					border-right: 1px solid rgba(#979797,.2);
-					border-bottom: 1px solid rgba(#979797,.2);
-					border-left: 1px solid rgba(#979797,.2);
-				}
-
-				&__title  {
-					padding-bottom: 15px;
-					font-size: 36px;
-					letter-spacing: -0.43px;
-				}
-
-				&__content {
-					padding-bottom: 0;
-				}
-			}
-
-			.a-pretitle {
-				padding-bottom: 15px;
-				font-size: 10px;
-				letter-spacing: 3.13px;
-				color: rgba(107, 107, 107, 0.6);
-			}
-		}
-	}
+	
 }
 
 

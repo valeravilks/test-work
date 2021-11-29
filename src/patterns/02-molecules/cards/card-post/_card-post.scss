@@ -15,17 +15,14 @@
 ////////////////////
 
 .m-card-post {
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 10px;
 	transition: $g-trans-base;
 
-	&__img-wrapper {
-		position: relative;
-		height: 275px;
-		background-color: rgba(0, 0, 0, 0.8);
-	}
-
 	&__img-link {
-		line-height: 0;
 		overflow: hidden;
+
 		&:hover {
 			.m-card-post {
 				&__img {
@@ -40,65 +37,97 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: $g-trans-base-longer !important;
-		transform: scale(1);
+		transition: $g-trans-base-longer!important;
 	}
 
-	&__title,
+	&__info {
+		border-right: 1px solid #979797;
+		border-bottom: 1px solid #979797;
+		border-left: 1px solid #979797;
+		border-radius: 0 0 10px 10px;
+	}
+
+	&__pretitle {
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 3.13px;
+		color: rgba(107, 107, 107, 0.6);
+	}
+
 	&__title-link {
-		color: $g-brand-color-4;
+		display: inline-block;
+
+		&:hover {
+			.m-card-post__title {
+				color: $g-brand-color-1;
+			}
+		}
 	}
 
 	&__title {
+		padding-bottom: 0;
+		line-height: 1;
 		transition: $g-trans-base;
-		&:hover {
-			color: $g-brand-color-1;
+	}
+
+	// Card Post styles depending on organism
+	&.o-i360-article-overview__card {
+		.m-card-post {
+			&__img-wrapper {
+				height: 250px;
+			}
+
+			&__info {
+				padding: 32px;
+			}
+
+			&__pretitle {
+				margin-bottom: 25px;
+			}
+
+			&__title-link {
+				margin-bottom: 20px;
+			}
+
+			&__title {
+				font-size: 24px;
+				letter-spacing: -0.21px;
+			}
+
+			&__content {
+				font-size: 14px;
+			}
 		}
 	}
 
-	&__title-link {
-		display: inline-block;
-	}
+	&.o-i360-case-studies__card {
+		.m-card-post {
+			&__img-wrapper {
+				height: 275px;
+			}
 
-	&__description,
-	&__link {
-	}
+			&__info {
+				padding: 40px 32px;
+			}
 
-	&__content {
-		padding-bottom: 15px;
-	}
+			&__pretitle {
+				margin-bottom: 20px;
+			}
 
-	&__link-wrapper {
-		margin-top: 20px;
-	}
+			&__title-link {
+				margin-bottom: 25px;
+			}
 
-	&__link {
-		position: relative;
-		display: inline-block;
-		font-weight: 700;
-		color: $g-heading-dark;
-		@include underline-special-reverse;
-		&:hover {
-			color: $g-heading-dark;
-		}
-	}
+			&__title {
+				font-size: 36px;
+				letter-spacing: -0.43px;
+			}
 
-	&__meta {
-		font-size: 12px;
-		font-weight: 300;
-		letter-spacing: -0.15px;
-	}
-}
-
-.m-card-post--search {
-	.m-card-post {
-		&__info {
-			padding: 32px 0;
-			border-bottom: 1px solid $g-body-dark;
-		}
-
-		&__title  {
-			padding-bottom: 5px;
+			&__content {
+				letter-spacing: -0.2px;
+			}
 		}
 	}
 }

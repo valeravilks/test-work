@@ -36,16 +36,16 @@
 		{% endif %}
 
 		<div class="{{ component_class }}__info">
-			<div class="{{ component_class }}__meta-info">
-				{% if item.post_date and date %}
-					<div class="a-pretitle {{ component_class }}__pretitle">
-						{{ item.post_date | date( 'M j, Y' ) }}
-					</div>
-				{% endif %}
-				{% if term %}
-					<div class="a-pretitle {{ component_class }}__pretitle">{{ term }}</div>
-				{% endif %}
-			</div>
+			{% if item.post_date and date %}
+				<div class="a-pretitle {{ component_class }}__pretitle">
+					{{ item.post_date | date( 'M j, Y' ) }}
+				</div>
+			{% endif %}
+			{% if term %}
+				<div class="a-pretitle {{ component_class }}__pretitle">
+					{{ term }}
+				</div>
+			{% endif %}
 
 			{% if item.title %}
 				<a
@@ -73,22 +73,6 @@
 				content             : content,
 				add_class_on_anim   : false
 			} only %}
-
-			<div class="{{ component_class }}__meta">
-{#				<span class="{{ component_class }}__meta-tag">
-					Solutions
-				</span>
-				|
-				<span class="{{ component_class }}__meta-tag">
-					Reference-based pricing
-				</span>
-				|#}
-				{% if item.post_date  and date %}
-					<span class="{{ component_class }}__date">
-						{{ item.post_date | date( 'F j, Y' )}}
-					</span>
-				{% endif %}
-			</div>
 		</div>
 	</div>
 {% endspaceless %}
