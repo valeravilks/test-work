@@ -24,7 +24,7 @@
 
 	&__repeater {
 		padding-top: 70px;
-		@include flex-outlining-card-1-by-3(20px);
+		@include flex-outlining-card-1-by-3(20px, '.m-card');
 		justify-content: center;
 		@include bp-md {
 			padding-top: 50px;

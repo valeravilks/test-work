@@ -25,27 +25,7 @@
 	}
 
 	&__repeater {
-		display: flex;
-		flex-wrap: wrap;
-		@include bp-sm {
-			margin-left: -20px;
-		}
-	}
-
-	&__column {
-		flex-grow: 0;
-		flex-shrink: 1;
-		flex-basis: 100%;
-		margin-bottom: 20px;
-		@include bp-sm {
-			flex-basis: calc(50% - 20px);
-			margin-left: 20px;
-		}
-		@include bpm-sm {
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
+		@include flex-outlining-card-1-by-2(20px, '.o-i360-case-studies__column');
 	}
 
 	&__card {

@@ -64,14 +64,14 @@
 	}
 }
 
-@mixin flex-outlining-card-1-by-5($gap) {
+@mixin flex-outlining-card-1-by-5($gap, $gridChildSelector) {
 	display: flex;
 	flex-wrap: wrap;
 	@include bp-sm {
 		margin-left: -$gap;
 	}
 
-	> .m-card {
+	> #{$gridChildSelector} {
 		flex-grow: 0;
 		flex-shrink: 1;
 		flex-basis: 100%;
@@ -94,14 +94,14 @@
 	}
 }
 
-@mixin flex-outlining-card-1-by-4($gap) {
+@mixin flex-outlining-card-1-by-4($gap, $gridChildSelector) {
 	display: flex;
 	flex-wrap: wrap;
 	@include bp-sm {
 		margin-left: -$gap;
 	}
 
-	> .m-card {
+	> #{$gridChildSelector} {
 		flex-grow: 0;
 		flex-shrink: 1;
 		flex-basis: 100%;
@@ -124,14 +124,14 @@
 	}
 }
 
-@mixin flex-outlining-card-1-by-3($gap) {
+@mixin flex-outlining-card-1-by-3($gap, $gridChildSelector) {
 	display: flex;
 	flex-wrap: wrap;
 	@include bp-sm {
 		margin-left: -$gap;
 	}
 
-	> .m-card {
+	> #{$gridChildSelector} {
 		flex-grow: 0;
 		flex-shrink: 1;
 		flex-basis: 100%;
@@ -151,14 +151,14 @@
 	}
 }
 
-@mixin flex-outlining-card-1-by-2($gap) {
+@mixin flex-outlining-card-1-by-2($gap, $gridChildSelector) {
 	display: flex;
 	flex-wrap: wrap;
 	@include bp-sm {
 		margin-left: -$gap;
 	}
 
-	> .m-card {
+	> #{$gridChildSelector} {
 		flex-grow: 0;
 		flex-shrink: 1;
 		flex-basis: 100%;
