@@ -30,7 +30,7 @@
 			{% set items = section.case_studies %}
 		{% endif %}
 
-		<div class='{{component_class}}__repeater grid grid-cols-2 gap-4'>
+		<div class='{{component_class}}__repeater'>
 
 			<!-- Looping through either the manual selection or automatic selection -->
 			{% for item in items %}
@@ -41,7 +41,6 @@
 
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( item.thumbnail ) %}
-
 					{% set terms = item.terms('case-studies-categories')|join(', ')  %}
 
 					{% include '02-molecules/cards/card-post/card-post.twig' with {
@@ -51,7 +50,6 @@
 						interval            : true,
 						term				: terms,
 						date  				: false,
-						meta				: false,
 						index       		: loop.index,
 						add_class_on_anim   : true,
 					} only %}

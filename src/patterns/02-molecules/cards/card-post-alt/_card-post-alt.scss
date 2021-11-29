@@ -15,132 +15,30 @@
 ////////////////////
 
 .m-card-post-alt {
-	overflow: hidden;
-	margin-bottom: 30px;
-	background-color: #fff;
-	border-radius: 10px;
+	padding: 32px 0;
+	border-bottom: 1px solid $g-grey-color-1;
 
-	&__img-link-wrapper {
-		position: relative;
+	&__title-link {
+		display: inline-block;
+		margin-bottom: 5px;
+
 		&:hover {
-			img {
-				transform: scale(1.1);
-			}
-		}
-	}
-
-	&__img-link {
-		@include absolute-full;
-		z-index: $g-z10;
-	}
-
-	&__img-wrapper {
-		width: 100%;
-		height: 100%;
-		line-height: 0;
-		overflow: hidden;
-		@include aspect-ratio(16,9);
-	}
-
-	&__img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transform: scale(1);
-		transition: all 1.4s ease !important;
-	}
-
-	&__title-link-wrapper {
-		position: relative;
-		&:hover {
-			.m-card-post-alt {
-				&__title {
-					color: $g-brand-color-1;
-				}
+			.m-card-post-alt__title {
+				color: $g-brand-color-1;
 			}
 		}
 	}
 
 	&__title {
+		padding-bottom: 0;
 		transition: $g-trans-base;
 	}
 
-	&__author {
-		display: flex;
-		align-items: center;
-		margin-top: 20px;
-	}
-
-	&__author-avatar {
-		flex-grow: 0;
-		flex-shrink: 0;
-		flex-basis: 35px;
-		height: 35px;
-		border-radius: 50%;
-		overflow: hidden;
-	}
-
-	&__info {
-		padding: 32px;
-		border-radius: 0 0 10px 10px;
-		border-right: 1px solid rgba(#979797,.2);
-		border-bottom: 1px solid rgba(#979797,.2);
-		border-left: 1px solid rgba(#979797,.2);
-	}
-
-	&__meta-info {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		flex-grow: 1;
-		padding-bottom: 18px;
-	}
-
-	&__author-fullname {
-		flex-grow: 1;
-		flex-shrink: 1;
-		flex-basis: 100%;
-		font-size: 16px;
-		font-weight: 700;
-		padding-bottom: 3px;
-		color: $g-brand-color-1;
-	}
-
-	&__date,
-	&__reading-duration {
-		flex-shrink: 1;
-		font-size: 14px;
-	}
-
-	&__date {
-		flex-grow: 0;
-		text-transform: uppercase;
-		font-size: 10px;
-		font-weight: 600;
-		letter-spacing: 3.13px;
-	}
-
-	&__contnet {
-		font-size: 14px;
-		line-height: 22px;
-	}
-
-	&__reading-duration {
-		position: relative;
-		flex-grow: 1;
-		padding-left: 14px;
-
-		&::before {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 5px;
-			transform: translateY(-50%);
-			width: 3px;
-			height: 3px;
-			background-color: #000;
-			border-radius: 50%;
-		}
+	&__meta {
+		margin-top: 25px;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 1;
+		letter-spacing: -0.15px;
 	}
 }

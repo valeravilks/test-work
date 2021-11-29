@@ -20,12 +20,17 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-case-studies {
-	&__repeater {
-		max-width: 980px;
-		margin: 0 auto;
+	&__container {
+		max-width: 1010px;
 	}
-	&__column {
-		max-width: 480px;
+
+	&__repeater {
+		@include flex-outlining-card-1-by-2(20px, '.o-i360-case-studies__column');
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
 	}
 }
 

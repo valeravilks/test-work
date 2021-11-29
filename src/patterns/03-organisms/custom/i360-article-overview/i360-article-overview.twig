@@ -29,11 +29,12 @@
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( item.thumbnail ) %}
 
-					{% include '02-molecules/cards/card-post-alt/card-post-alt.twig' with {
+					{% include '02-molecules/cards/card-post/card-post.twig' with {
 						parent_class 		: component_class,
 						item         		: item,
 						img                 : img,
 						interval            : true,
+						date				: true,
 						index       		: loop.index,
 						add_class_on_anim   : true,
 						version       		: index == 0 ? 'big',
