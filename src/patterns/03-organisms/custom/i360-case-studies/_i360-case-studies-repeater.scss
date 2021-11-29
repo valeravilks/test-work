@@ -47,6 +47,11 @@
 			}
 		}
 	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
 }
 
 
