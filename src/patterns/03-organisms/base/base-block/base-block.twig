@@ -81,9 +81,10 @@
 				{% block pretitle %}
 					{% if section.block_pretitle %}
 						{% include '01-atoms/content/pretitle/pretitle.twig' with {
-							pretitle     : section.block_pretitle,
-							parent_class : component_class,
-							h            : 6
+							default_block_class : default_block_class,
+							pretitle     		: section.block_pretitle,
+							parent_class 		: component_class,
+							h            		: 6
 						} only %}
 					{% endif %}
 				{% endblock %}
