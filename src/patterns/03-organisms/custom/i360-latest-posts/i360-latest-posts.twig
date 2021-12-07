@@ -26,16 +26,8 @@
 
 		<div class="{{ component_class }}__repeater">
 			<!-- Grabbing recent posts. ACF relationship field chosen entries have right of way -->
-			{% if section.add_latest_posts %}
-				{% set items = section.latest_posts %}
-			{% else %}
-				{% set items = function( 'get_cpt_posts_by',
-					'post',
-					3,
-					'post_date',
-					'DESC',
-					post.ID
-				) %}
+			{% if section.relationship %}
+				{% set items = section.relationship %}
 			{% endif %}
 
 			{% for item in items %}
