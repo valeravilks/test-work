@@ -16,35 +16,78 @@
 .a-title {
 	position: relative;
 	display: block;
-}
 
-////////////////////
-// Versions       //
-////////////////////
-.a-title--bottom {
-	&-none {
-		padding-bottom: 0;
-		margin-bottom: 0;
+	////////////////////////////////////
+	// Versions - Spacing Bottom      //
+	////////////////////////////////////
+	&--bottom {
+		&-none {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		&-xs {
+			@include space-bottom-xs;
+		}
+
+		&-sm {
+			@include space-bottom-sm;
+		}
+
+		&-md,
+		&-default {
+			@include space-bottom-md;
+		}
+
+		&-lg {
+			@include space-bottom-lg;
+		}
+
+		&-xl {
+			@include space-bottom-xl;
+		}
 	}
 
-	&-xs {
-		@include space-bottom-xs;
+	//////////////////////////////////
+	// Versions - Title Types       //
+	//////////////////////////////////
+	&--h1 {
+		@include h1;
 	}
 
-	&-sm {
-		@include space-bottom-sm;
+	&--h2 {
+		@include h3;
 	}
 
-	&-md,
-	&-default {
-		@include space-bottom-md;
+	&--h3 {
+		@include h4;
 	}
 
-	&-lg {
-		@include space-bottom-lg;
+	&--h4 {
+		@include h4;
 	}
 
-	&-xl {
-		@include space-bottom-xl;
+	&--h5 {
+		@include h5;
+	}
+
+	&--h6 {
+		@include h6;
+	}
+
+
+	&--default {
+
+	}
+
+	&--pretitle,
+	&--pretitle-1 {
+		font-size: 16px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	&--pretitle-2 {
+
 	}
 }

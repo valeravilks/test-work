@@ -8,21 +8,24 @@
 	* @param  {string}  spacing_bottom       Type of version. Uses a BEM modifier
 	* @param  {string}  parent_class     	 CSS class of the parent component
 	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
-	* @param  {string}  content              The actual text. Coming from CMS or mock-data
+	* @param  {string}  title                The actual text. Coming from CMS or mock-data
 	* @param  {string}  extra_class          optional extra CSS class
 	* @param  {string}  extra_class_wrapper  optional extra CSS class assigned to the wrapper
-	* @param  {string}  h  					 type of HTML heading. H1, H2, H3 etc
+	* @param  {string}  h  					 type of HTML heading. H1, H2, H3 etc. Changes the HTML
+	* @param  {string}  style  				 Title style. H1, H2, H3, pretitle etc. Does not change the HTML. Uses a BEM modifier
+	* @param  {string}  width 				 Title width. Uses a BEM modifier
 	#}
 
 	{% set component_class   = "a-title" %}
-	{% set type              = type              ? component_class ~ "--" ~ type | join("") %}
-	{% set version         	 = version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set version         	 = version 			 ? component_class ~ "--" ~ version | join("") %}
+	{% set width         	 = width 			 ? component_class ~ "--" ~ width | join("") %}
+	{% set style	    	 = style 		     ? component_class ~ "--" ~ style | join("") %}
 	{% set add_class_on_anim = add_class_on_anim ? "wow" | join("") %}
 	{% set spacing_bottom    = spacing_bottom    ? component_class ~ "--bottom-" ~ spacing_bottom | join("") %}
 
 	{% if title %}
 		<div class="{{ default_block_class ? default_block_class ~ "__title-wrapper" }} {{ parent_class }}__title-wrapper {{ extra_class_wrapper }}">
-			<h{{ h ? h|replace({"b": ""}) : '2' }} class="{{ default_block_class ? default_block_class ~ "__title" }} {{ parent_class }}__title {{ add_class_on_anim }} {{ component_class }} {{ type }} {{ version }} {{ spacing_bottom }} {{ extra_class }}">
+			<h{{ h ? h|replace({"b": ""}) : '2' }} class="{{ default_block_class ? default_block_class ~ "__title" }} {{ parent_class }}__title {{ add_class_on_anim }} {{ component_class }} {{ style }} {{ width }} {{ type }} {{ version }} {{ spacing_bottom }} {{ extra_class }}">
 				{{ title }}
 			</h{{ h ? h|replace({"b": ""}) : '2' }}>
 		</div>

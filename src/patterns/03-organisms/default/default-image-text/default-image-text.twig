@@ -23,6 +23,7 @@
 	{% set container       = false %}
 	{% set resize_width    = 560 %}
 
+	{# Two out of four block versions don't have a container #}
 	{% if section.version == 'container-img-right' or section.version == 'container-img-left' %}
 		{% set container    = true %}
 	{% endif %}
@@ -34,55 +35,69 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 
-	{% block before_title %}
-		<div class="{{ component_class }}__content-wrapper {{ component_class ~ '__content-wrapper--img-' ~ img_position }}">
-		<div class="{{ component_class }}__group-text">
-	{% endblock %}
+	{% block block_inner %}
+		<div class="{{ component_class }}__content-wrapper">
+			<div class="{{ component_class }}__group-text">
 
-	{% block main_payload %}
-		{% if section.add_button %}
-			<div class="{{ default_block_class }}__button-wrapper {{component_class}}__button-wrapper {{component_class}}__btn-wrapper wow">
-				{% include '01-atoms/buttons/button/button.twig' with {
-					parent_class : component_class,
-					button       : section.button
+				{% include '01-atoms/content/title/title.twig' with {
+					default_block_class : default_block_class,
+					parent_class        : component_class,
+					title               : section.block_title,
+					type                : section.title_type,
+					version             : section.title_width,
+					h                   : block_title_type,
+					spacing_bottom      : section.title_padding_bottom,
+					add_class_on_anim   : true
 				} only %}
-			</div>
-		{% endif %}
-		</div>
-		{% if section.image_ratio == 'ratio-16-9' %}
-			{% set resize_height = 315 %}
-		{% elseif section.image_ratio == 'ratio-4-3' %}
-			{% set resize_height = 420 %}
-		{% endif %}
 
-		{% if section.image %}
-			<div class="{{component_class}}__group-img">
-				{# Accessing WordPress image object and making them available to Twig templates #}
-				{% set img = TimberImage( section.image ) %}
+				{% include '01-atoms/content/content/content.twig' with {
+					default_block_class : default_block_class,
+					parent_class        : component_class,
+					content             : section.content,
+					add_class_on_anim   : true
+				} only %}
 
-				<!-- Crop image -->
-				{% if img.post_mime_type != "image/png" and section.image_ratio != 'none' %}
-					<img
-						src="{{ img.src | resize( resize_width, resize_height ) }}"
-						class="{{component_class}}__img lazyload h-lazy--fade"
-					/>
-				{% else %}
-					{% include '01-atoms/images/image-default/image-default.twig' with {
-						parent_class      : component_class,
-						img               : img,
-						version          : "single",
-						lazyload          : true,
-						wrapper           : true,
-						add_class_on_anim : true
+				{% if section.add_button %}
+					{% include '01-atoms/buttons/button/button.twig' with {
+						parent_class : component_class,
+						button       : section.button
 					} only %}
 				{% endif %}
 			</div>
-		{% endif %}
+
+			{# Offering the user a number of ratios #}
+			{% if section.image_ratio == 'ratio-16-9' %}
+				{% set resize_height = 315 %}
+			{% elseif section.image_ratio == 'ratio-4-3' %}
+				{% set resize_height = 420 %}
+			{% endif %}
+
+			{% if section.image %}
+				<div class="{{component_class}}__group-img">
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( section.image ) %}
+
+					<!-- For an unknown reason, we're doing this if the image is PNG. Ask Sona why-->
+					{% if img.post_mime_type != "image/png" and section.image_ratio != 'none' %}
+						<img
+							alt="{{ img.alt }}"
+							src="{{ img.src | resize( resize_width, resize_height ) }}"
+							class="{{component_class}}__img lazyload h-lazy--fade"
+						/>
+					{% else %}
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class      : component_class,
+							img               : img,
+							lazyload          : true,
+							wrapper           : true,
+							add_class_on_anim : true
+						} only %}
+					{% endif %}
+				</div>
+			{% endif %}
 		</div>
 
-	{% endblock %}
-
-	{% block button %}
 	{% endblock %}
 
 {% endspaceless %}

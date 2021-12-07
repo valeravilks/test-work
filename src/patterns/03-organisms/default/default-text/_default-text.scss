@@ -34,8 +34,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-text--align-center,
-.o-default-text--align-default {
+.o-default-text.o-dbm--align-center,
+.o-default-text.o-dbm--align-default {
 	.o-default-text {
 		&__title-wrapper,
 		&__title,
@@ -49,7 +49,7 @@
 	}
 }
 
-.o-default-text--align-left {
+.o-default-text.o-dbm--align-left {
 	.o-default-text {
 		&__title-wrapper,
 		&__title,
@@ -74,8 +74,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-text--color-default,
-.o-default-text--color-dark {
+.o-default-text.o-dbm--color-default,
+.o-default-text.o-dbm--color-dark {
 	.o-default-text {
 		&__title {
 			color: $g-heading-dark;
@@ -87,7 +87,7 @@
 	}
 }
 
-.o-default-text--color-light {
+.o-default-text.o-dbm--color-light {
 	.o-default-text {
 		&__title,
 		&__content {
