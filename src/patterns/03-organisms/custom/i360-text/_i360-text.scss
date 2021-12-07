@@ -74,8 +74,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-text--color-default,
-.o-i360-text--color-dark {
+.o-i360-text.o-dbm--color-default,
+.o-i360-text.o-dbm--color-dark {
 	.o-i360-text {
 		&__title {
 			color: $g-heading-dark;
@@ -87,7 +87,7 @@
 	}
 }
 
-.o-i360-text--color-light {
+.o-i360-text.o-dbm--color-light {
 	.o-i360-text {
 		&__title,
 		&__content {
