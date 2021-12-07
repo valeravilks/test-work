@@ -75,9 +75,12 @@
 				{% endif %}
 				{% if item.block_title %}
 					{% include '01-atoms/content/title/title.twig' with {
-						title        : item.block_title,
-						parent_class : component_class,
-						h			 : item.title_type
+						parent_class        : component_class,
+						title               : item.block_title,
+						version             : item.title_width,
+						h                   : item.title_type,
+						style               : item.title_style,
+						spacing_bottom      : item.title_padding_bottom
 					} only %}
 				{% endif %}
 
