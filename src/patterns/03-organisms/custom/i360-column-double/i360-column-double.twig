@@ -1,16 +1,4 @@
 {% spaceless %}
-	{#######################################################}
-	{# --------------------------------------------------- #}
-	{# Extending one of the Base Block Layout Types        #}
-	{# 													   #}
-	{# The block wrapper, title, content, button		   #}
-	{# and container are declared inside the 		       #}
-	{# base block layout          						   #}
-	{# --------------------------------------------------- #}
-	{#######################################################}
-	{% extends '03-organisms/base/base-block/base-block.twig' %}
-
-
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
@@ -23,7 +11,7 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	{% block block_inner %}
+	<div class="{{ component_class }}">
 
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__container-inner wow">
@@ -49,5 +37,5 @@
 
 			</div>
 		</div>
-	{% endblock %}
+	</div>
 {% endspaceless %}
