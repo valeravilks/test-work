@@ -55,7 +55,9 @@
 @import '02-molecules/cards/card-icon-content/card-icon-content';
 @import '02-molecules/cards/card-list/card-list';
 @import '02-molecules/modal/modal';
+@import '02-molecules/gallery/gallery';
 @import '02-molecules/slider/slider-images/slider-images';
+@import '02-molecules/slider/slider-testimonials/slider-testimonials';
 @import '02-molecules/dropdown/dropdown';
 @import '02-molecules/pagination/pagination';
 @import '02-molecules/list/list';
@@ -93,7 +95,6 @@
 @import '03-organisms/default/default-slider-images/default-slider-images';
 @import '03-organisms/default/default-slider-images/default-slider-images-repeater';
 @import '03-organisms/default/default-testimonials/default-testimonials';
-@import '03-organisms/default/default-testimonials/default-testimonials-repeater';
 @import '03-organisms/default/default-quote/default-quote';
 @import '03-organisms/default/default-secondary-navbar/default-secondary-navbar';
 @import '03-organisms/default/default-secondary-navbar/default-secondary-navbar-repeater';
@@ -133,8 +134,9 @@
 @import '03-organisms/default/default-hero-types/default-hero-type-1/default-hero-type-1';
 @import '03-organisms/default/default-hero-types/default-hero-type-2/default-hero-type-2';
 @import '03-organisms/default/default-hero-types/default-hero-type-3/default-hero-type-3';
-@import '03-organisms/default/default-post/content-box/content-box';
-@import '03-organisms/default/default-post/content-box-sidebar/content-box-sidebar';
+@import '03-organisms/default/default-post/default-content-box/default-content-box';
+@import '03-organisms/default/default-post/default-content-box/default-content-box';
+@import '03-organisms/default/default-post/default-content-box-sidebar/default-content-box-sidebar';
 @import '03-organisms/default/default-related-posts/default-related-posts';
 @import '03-organisms/default/default-article-overview/default-article-overview';
 @import '03-organisms/default/default-article-single/default-article-single';
