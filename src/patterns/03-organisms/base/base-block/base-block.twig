@@ -22,7 +22,6 @@
 		Styles associated with alignment are / should be defined inside the SCSS file for your block.
 		We set 2 CSS classes here. One with the base block CSS class. Other custom to the component (component_class).
 	#}
-	{% set block_align_custom  = section.alignment                      ? component_class ~ "--align-"           ~ section.alignment                            | join("") : component_class ~ "--align-default" %}
 	{% set block_align_general = section.alignment                      ? default_block_class ~ "--align-"       ~ section.alignment                            | join("") : default_block_class ~ "--align-default" %}
 
 	{# 	Set a color palette for this block.
@@ -33,12 +32,6 @@
 	{% set block_color         = section.block_visuals.block_text_color ? component_class ~ "--color-"           ~ section.block_visuals.block_text_color       | join("") : component_class ~ "--color-default" %}
 
 	{#
-	Other misc settings that provide helpful classes to the block wrapper. Only used for specific blocks or scenarios
-	#}
-	{% set block_image_align   = section.image_left_or_right            ? default_block_class ~ "--image-align-" ~ section.image_left_or_right                  | join("") %}
-	{% set block_title_type    = section.title_type                     ? section.title_type                                                                     %}
-
-	{#
 	Wrapper of the block. Used to output a large number of block specific classes
 	#}
 	<div
@@ -47,7 +40,6 @@
 		{{ component_class }}
 		{{ block_version }}
 		{{ block_align_general }}
-		{{ block_align_custom }}
 		{{default_block_class}}--padding-bottom-{{ section.block_visuals.block_padding_bottom }}
 		{{default_block_class}}--padding-top-{{ section.block_visuals.block_padding_top }}
 		{{ block_color }}
