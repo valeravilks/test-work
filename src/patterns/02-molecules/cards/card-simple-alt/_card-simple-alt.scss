@@ -1,0 +1,44 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Card Post Alt			                //
+//                                              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-card-post-alt {
+	padding: 32px 0;
+	border-bottom: 1px solid $g-grey-color-1;
+
+	&__title-link {
+		display: inline-block;
+		margin-bottom: 5px;
+
+		&:hover {
+			.m-card-post-alt__title {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+
+	&__title {
+		padding-bottom: 0;
+		transition: $g-trans-base;
+	}
+
+	&__meta {
+		margin-top: 25px;
+		font-size: 12px;
+		font-weight: 300;
+		line-height: 1;
+		letter-spacing: -0.15px;
+	}
+}

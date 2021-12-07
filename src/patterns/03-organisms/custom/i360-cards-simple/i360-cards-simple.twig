@@ -26,16 +26,49 @@
 		<div class="{{ component_class }}__repeater">
 
 			{% for item in section.repeater %}
-				{% set icon_svg = item.icon_svg %}
 
-				{% include '02-molecules/cards/card-icon-content/card-icon-content.twig' with {
-					parent_class 		: component_class,
-					item         		: item,
-					icon_svg            : icon_svg,
-					interval            : true,
-					index       		: loop.index,
-					add_class_on_anim   : true,
-				} only %}
+				{% if section.version == "default" %}
+
+					{% set icon_svg = item.icon_svg %}
+
+					{% include '02-molecules/cards/card-icon-content/card-icon-content.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						icon_svg            : icon_svg,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+                {# Used for the cards that have a vertical line between them (design: Reference based pricing) #}
+				{% elseif section.version == "alt" %}
+
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{% include '02-molecules/cards/card-simple-alt/card-simple-alt.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						img                 : img,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+				{# Used for the cards that are transparent and have a border (design: your health plan) #}
+				{% elseif section.version == "transparent" %}
+
+					{% include '02-molecules/cards/card-transparent/card-transparent.twig' with {
+						parent_class 		: component_class,
+						item         		: item,
+						icon_svg            : icon_svg,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+
+				{% endif %}
 
 			{% endfor %}
 		</div>
