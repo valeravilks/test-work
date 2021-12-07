@@ -1,0 +1,104 @@
+{% spaceless %}
+	{#
+	* Renders the card image post alternative component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {object}  item                 content object. Has at least a title and content
+	* @param  {array}   filters              Optional filter options. Only used if this card is part of a filter
+	* @param  {object}  img                  Image object. Includes things like image URL, image alt etc
+	* @param  {boolean} interval 			 optional helper for animating items one by one
+	* @param  {number}  index  				 current number of the loop this card is in
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= 'm-card-horizontal-icon' %}
+	{% set version         		= version 			? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set interval        		= interval     		? "_" ~ index | join("") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
+
+	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }} {% for filter in filters %} slug-{{ filter.slug }}{% endfor %}">
+		{% if img %}
+			<div class="{{ component_class }}__img-link-wrapper">
+				<a
+					class="{{ component_class }}__img-link"
+					href="{{ item.link }}"
+				></a>
+
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class        : component_class,
+					img                 : img,
+					modifier            : "thumbnail",
+					resize_number       : resize_number,
+					lazyload            : true,
+					srcset              : false,
+					wrapper             : true
+				} only %}
+			</div>
+		{% endif %}
+
+		<div class="{{ component_class }}__info">
+			<div class="{{ component_class }}__title-link-wrapper">
+				<a
+					class="{{ component_class }}__title-link"
+					href="{{ item.link }}"
+				>
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : item.title,
+						h                   : "4",
+						add_class_on_anim   : false
+					} only %}
+				</a>
+			</div>
+
+			{% if item.excerpt %}
+				{% set content = item.excerpt %}
+			{% elseif item.content %}
+				{% set content = item.content | excerpt( 20 ) %}
+			{% endif %}
+
+			{% include '01-atoms/content/content/content.twig' with {
+				parent_class        : component_class,
+				content             : content,
+				add_class_on_anim   : false
+			} only %}
+
+
+			<div class="{{ component_class }}__author">
+				{% if item.author.avatar %}
+					<div class="{{ component_class }}__author-avatar">
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class        : component_class,
+							img                 : item.author.avatar,
+							modifier            : "avatar",
+							lazyload            : true,
+							srcset              : false,
+							wrapper             : true
+						} only %}
+					</div>
+				{% endif %}
+
+				<div class="{{ component_class }}__meta-info">
+					<div class="{{ component_class }}__author-fullname">
+						{{ item.author.display_name }}
+					</div>
+
+					{% if item.post_date %}
+						<div class="{{ component_class }}__date">
+							{{ item.post_date | date( 'M j, Y' ) }}
+						</div>
+					{% endif %}
+
+					{% if item.reading_duration %}
+						<div class="{{ component_class }}__reading-duration">
+							<span>{{ item.reading_duration }} min read</span>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endspaceless %}
