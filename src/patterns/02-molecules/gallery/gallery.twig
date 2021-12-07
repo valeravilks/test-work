@@ -1,0 +1,35 @@
+{% spaceless %}
+	{#
+	* Renders the gallery component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {array}   items      			 Array with each child having at least an image
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-gallery" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
+	{% set js_hook          	= "js-gallery" %}
+	{% set js_hook_child       	= "js-gallery-img" %}
+
+	<div id="lightgallery" class="{{ js_hook }} {{component_class}}" data-module="gallery">
+		{% for item in items %}
+			{% set img = TimberImage(item) %}
+
+			<a class="{{ component_class }}__img {{ component_class }}__img--{{ loop.index}} {{ js_hook_child }} no-barba {{ loop.index == 1 ? 'm-gallery__img--first' }} {{ loop.last ? 'm-gallery__img--last' }}"
+			   data-sub-html="{{ img.alt }}" href="{{ img.src }}">
+				{% if section.ratio_1 == 'yes' %}
+					<img class="{{component_class}}__thumbnail thumbnail" src="{{ img.src|resize(400, 225) }}"/>
+				{% else %}
+					<img class="{{component_class}}__thumbnail thumbnail" src="{{ img.src|resize(400, 300) }}"/>
+				{% endif %}
+			</a>
+		{% endfor %}
+	</div>
+
+{% endspaceless %}

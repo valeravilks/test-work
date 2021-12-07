@@ -111,17 +111,13 @@
 			right: 0;
 		}
 	}
+
+	/////////////////////////////
+	// Molecule Versions       //
+	/////////////////////////////
+
+	// Used to create additional versions of this molecule.
+	&--default {
+
+	}
 }
-
-
-/////////////////////////////
-// Molecule Versions       //
-/////////////////////////////
-
-// Used to create additional versions of this molecule.
-
-//.m-slider {
-//	&--default {
-//
-//	}
-//}

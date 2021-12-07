@@ -1,0 +1,56 @@
+{% spaceless %}
+	{#
+	* Renders the slider component
+	*
+	* @param  {string}  component_class      The CSS class of this component
+	* @param  {string}  version              Optional version. Uses a BEM modifier
+	* @param  {string}  parent_class     	 CSS class of the parent component
+	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
+	* @param  {array}   items      			 Array with each child having text and terms
+	* @param  {string}  extra_class          optional extra CSS class
+	#}
+
+	{% set component_class 		= "m-slider-testimonials" %}
+	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
+	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
+	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}
+
+	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }} {{ component_class }}--{{ index }}">
+		<div class="{{ component_class }}__stories" data-module="sliderTestimonials">
+			<div class="{{ component_class }}__stories-slider-container swiper-container js-slider-swiper-testimonials">
+				<div class="{{ component_class }}__stories-wrapper swiper-wrapper">
+
+					{% for slide in items %}
+						{% set statement_author   = slide.terms( 'statement-author' ) | first %}
+						{% set statement_company  = slide.terms( 'statement-organization' ) | first %}
+						{% set statement_position = slide.terms( 'statement-position' ) | first %}
+
+						<div class="{{ component_class }}__stories-slide-item swiper-slide">
+							<div class="{{ component_class }}__stories-slide-item-content">
+								{{ slide.content }}
+							</div>
+
+							<h6 class="{{ component_class }}__stories-slide-item-author h6--bold">
+								— {{ statement_author }}, {{ statement_position }}, {{ statement_company }}
+							</h6>
+						</div>
+					{% endfor %}
+				</div>
+
+				<div class="{{ component_class }}__stories-slider-pagination swiper-pagination js-slider-swiper-testimonials-pagination"></div>
+			</div>
+
+			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+				parent_class        : component_class,
+				version             : "prev",
+				extra_class         : "js-slider-swiper-testimonials-btn-prev m-slider-testimonials__stories-slider-btn-prev"
+			} only %}
+
+			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+				parent_class        : component_class,
+				version             : "next",
+				extra_class         : "js-slider-swiper-testimonials-btn-next m-slider-testimonials__stories-slider-btn-next"
+			} only %}
+		</div>
+	</div>
+{% endspaceless %}

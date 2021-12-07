@@ -27,6 +27,11 @@
 	{% block block_inner %}
 		<div class="l-container {{ component_class }}__container" {% if section.max_width %}style="max-width:{{ section.max_width }}px"{% endif %}>
 
+		    {#Used for the title on left and content/button on right version#}
+			{% if section.version == "columns" %}
+				<div class='{{component_class}}__column {{component_class}}__column--1'>
+			{% endif %}
+
 			{% include '01-atoms/content/title/title.twig' with {
 				default_block_class : default_block_class,
 				parent_class        : component_class,
@@ -37,6 +42,12 @@
 				spacing_bottom      : section.title_padding_bottom,
 				add_class_on_anim   : true
 			} only %}
+
+			{#Used for the title on left and content/button on right version#}
+			{% if section.version == "columns" %}
+				</div>
+				<div class='{{component_class}}__column {{component_class}}__column--2'>
+			{% endif %}
 
 			{% include '01-atoms/content/content/content.twig' with {
 				default_block_class : default_block_class,
@@ -52,6 +63,11 @@
 					button      		: section.button,
 					add_class_on_anim   : true
 				} only %}
+			{% endif %}
+
+			{#Used for the title on left and content/button on right version#}
+			{% if section.version == "columns" %}
+				<div class='{{component_class}}__column {{component_class}}__column--2'>
 			{% endif %}
 
 		</div>

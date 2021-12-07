@@ -22,17 +22,17 @@ import navMob from '../patterns/02-molecules/nav/nav-mobile/nav-mobile';
 import searchBar from '../patterns/02-molecules/search/search-bar/search-bar';
 import { defaultSlideOut } from '../patterns/02-molecules/slide-out/slide-out';
 import socialShare from '../patterns/02-molecules/social/social-share/social-share';
+import gallery from '../patterns/02-molecules/gallery/gallery';
 import sliderImages from '../patterns/02-molecules/slider/slider-images/slider-images';
+import sliderTestimonials from '../patterns/02-molecules/slider/slider-testimonials/slider-testimonials';
 import debugControls from '../patterns/02-molecules/debug-controls/debug-controls';
 /*
  * Organisms
  */
 import header from '../patterns/03-organisms/custom/i360-header/i360-header';
 import defaultFilter from '../patterns/03-organisms/default/default-filter/default-filter';
-import defaultGallery from '../patterns/03-organisms/default/default-gallery/default-gallery';
 import defaultSecondaryNavbar from '../patterns/03-organisms/default/default-secondary-navbar/default-secondary-navbar';
 import defaultTeamMembers from '../patterns/03-organisms/default/default-team/default-team';
-import defaultTestimonials from '../patterns/03-organisms/default/default-testimonials/default-testimonials.js';
 import defaultArticleSideNavigation from '../patterns/04-templates/default/default-article-scrolling-nav-single/default-article-scrolling-nav-single';
 /*
  * Misc
@@ -72,10 +72,10 @@ const app = {
 	defaultArticleSideNavigation,
 	defaultTeamMembers,
 	defaultSecondaryNavbar,
-	defaultTestimonials,
+	sliderTestimonials,
 	defaultFilter,
 	dropdown,
-	defaultGallery,
+	gallery,
 };
 
 let calledModulesNames = [];

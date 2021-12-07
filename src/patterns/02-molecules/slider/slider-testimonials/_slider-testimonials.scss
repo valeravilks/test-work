@@ -1,0 +1,120 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule : Slider Testimonials              //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.m-slider-testimonials {
+
+	&__stories {
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+
+		.l-container {
+			@include bpm-xs {
+				width: 100%;
+			}
+		}
+	}
+
+	&__stories-slider-container {
+		display: block;
+		max-width: 716px;
+		margin: 0 auto;
+		padding: 50px 48px 0px 48px;
+		@include bpm-sm {
+			padding: 50px 35px 0px 35px;
+		}
+		@include bpm-xs {
+			padding: 0;
+		}
+	}
+
+	&__stories-slider-wrapper {
+		align-items: center;
+		transition-timing-function: ease-in-out;
+
+		&--disabled {
+			.m-slider-testimonials__stories-slider-item {
+				flex-shrink: 1;
+			}
+		}
+	}
+
+	&__stories-slide-item {
+		text-align: center;
+	}
+
+	&__stories-slide-item-content {
+		padding: 0 15px;
+	}
+
+	&__stories-slide-item-author {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 2px;
+		line-height: 21px;
+		text-transform: uppercase;
+	}
+
+	&__stories-slider-btn-prev,
+	&__stories-slider-btn-next {
+		pointer-events: auto;
+		opacity: 1;
+		&--disabled,
+		&.swiper-button-disabled {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	&__stories-slider-btn-prev {
+		right: 100%;
+		@include bpm-lg {
+			right: calc(100% - 48px);
+		}
+		@include bpm-sm {
+			right: calc(100% - 35px);
+		}
+	}
+
+	&__stories-slider-btn-next {
+		left: 100%;
+		@include bpm-lg {
+			left: calc(100% - 48px);
+		}
+		@include bpm-sm {
+			left: calc(100% - 35px);
+		}
+	}
+
+	&__stories-slider-pagination {
+		position: static;
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		.swiper-pagination-bullet-active {
+			background-color: $g-brand-color-1;
+		}
+	}
+
+	/////////////////////////////
+	// Molecule Versions       //
+	/////////////////////////////
+
+	// Used to create additional versions of this molecule.
+	&--default {
+
+	}
+}
