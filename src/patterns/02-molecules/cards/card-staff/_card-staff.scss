@@ -1,0 +1,133 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Card Post				                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-card-staff {
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 10px;
+	transition: $g-trans-base;
+
+	&__img-link {
+		overflow: hidden;
+
+		&:hover {
+			.m-card-staff {
+				&__img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: $g-trans-base-longer!important;
+	}
+
+	&__info {
+		border-right: 1px solid rgba(#979797,.2);
+		border-bottom: 1px solid rgba(#979797,.2);
+		border-left: 1px solid rgba(#979797,.2);
+		border-radius: 0 0 10px 10px;
+	}
+
+	&__pretitle {
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 3.13px;
+		color: rgba(107, 107, 107, 0.6);
+	}
+
+	&__title-link {
+		display: inline-block;
+
+		&:hover {
+			.m-card-staff__title {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+
+	&__title {
+		padding-bottom: 0;
+		line-height: 1;
+		transition: $g-trans-base;
+	}
+
+	// Card Post styles depending on organism
+	&.o-i360-article-overview__card {
+		.m-card-staff {
+			&__img-wrapper {
+				height: 250px;
+			}
+
+			&__info {
+				padding: 32px;
+			}
+
+			&__pretitle {
+				margin-bottom: 25px;
+			}
+
+			&__title-link {
+				margin-bottom: 20px;
+			}
+
+			&__title {
+				font-size: 24px;
+				letter-spacing: -0.21px;
+			}
+
+			&__content {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&.o-i360-case-studies__card {
+		.m-card-staff {
+			&__img-wrapper {
+				height: 275px;
+			}
+
+			&__info {
+				padding: 40px 32px;
+			}
+
+			&__pretitle {
+				margin-bottom: 20px;
+			}
+
+			&__title-link {
+				margin-bottom: 25px;
+			}
+
+			&__title {
+				font-size: 36px;
+				letter-spacing: -0.43px;
+			}
+
+			&__content {
+				letter-spacing: -0.2px;
+			}
+		}
+	}
+}

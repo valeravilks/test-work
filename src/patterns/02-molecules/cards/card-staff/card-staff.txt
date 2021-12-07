@@ -1,0 +1,15 @@
+## Inside repeater:
+
+{% set item = TimberPost( item ) %}
+
+{# Keeping image sourcing ourside the card to ensure the card can be used in other places (by defining a different image source) #}
+{% set img = TimberImage( item.thumbnail ) %}
+
+{% include '02-molecules/cards/card-post/card-post.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	img                 : img,
+	interval            : true,
+	index       		: loop.index,
+	add_class_on_anim   : true,
+} only %}
