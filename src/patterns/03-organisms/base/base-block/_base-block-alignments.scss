@@ -6,19 +6,19 @@
 		&__title-wrapper,
 		&__title {
 			text-align: left;
-			max-width: 800px;
+			max-width: 780px;
 			margin: 0 auto;
 		}
 
 		&__content {
-			max-width: 800px;
+			max-width: 780px;
 			margin: 0 auto;
 			text-align: left;
 		}
 
 		&__button-wrapper {
 			margin: 0 auto;
-			max-width: 800px;
+			max-width: 780px;
 			text-align: left;
 		}
 	}
@@ -35,14 +35,14 @@
 		}
 
 		&__content {
-			max-width: 800px;
+			max-width: 780px;
 			margin-right: auto;
 			margin-left: auto;
 			text-align: center;
 		}
 
 		&__title {
-			max-width: 800px;
+			max-width: 780px;
 			margin: 0 auto;
 
 			&.a-title--small {
@@ -54,13 +54,13 @@
 			}
 
 			&.a-title--wide {
-				max-width: 800px;
+				max-width: 780px;
 			}
 		}
 
 		&__button-wrapper {
 			margin: 0 auto;
-			max-width: 800px;
+			max-width: 780px;
 			display: flex;
 			justify-content: center;
 		}
