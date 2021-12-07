@@ -148,8 +148,8 @@
  * ------------------------------------------------------------
  */
 
-.o-i360-image-text--align-default,
-.o-i360-image-text--align-left {
+.o-i360-image-text.o-dbm--align-default,
+.o-i360-image-text.o-dbm--align-left {
 	.o-i360-image-text {
 		&__title {
 			@include bp-sm {
@@ -171,7 +171,7 @@
 	}
 }
 
-.o-i360-image-text--align-center {
+.o-i360-image-text.o-dbm--align-center {
 	.o-i360-image-text {
 		&__title {
 
@@ -201,8 +201,8 @@
  * ------------------------------------------------------------
  */
 
-.o-i360-image-text--color-default,
-.o-i360-image-text--color-dark {
+.o-i360-image-text.o-dbm.o-dbm--color-default,
+.o-i360-image-text.o-dbm.o-dbm--color-dark {
 	.o-i360-image-text {
 		&__title {
 			color: $g-brand-color-4;
@@ -214,7 +214,7 @@
 	}
 }
 
-.o-i360-image-text--color-light {
+.o-i360-image-text.o-dbm.o-dbm--color-light {
 	.o-i360-image-text {
 		&__title {
 			color: $g-heading-light;

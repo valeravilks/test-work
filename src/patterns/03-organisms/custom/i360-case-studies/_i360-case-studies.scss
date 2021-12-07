@@ -20,7 +20,7 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-case-studies {
-	
+
 }
 
 
@@ -40,8 +40,8 @@
 // "align-default" is the starting point and is required to style
 
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-case-studies--align-center,
-.o-i360-case-studies--align-default {
+.o-i360-case-studies.o-dbm--align-center,
+.o-i360-case-studies.o-dbm--align-default {
 	.o-i360-case-studies {
 		&__title-wrapper,
 		&__title,
@@ -55,7 +55,7 @@
 	}
 }
 
-.o-i360-case-studies--align-left {
+.o-i360-case-studies.o-dbm--align-left {
 	.o-i360-case-studies {
 		&__title-wrapper,
 		&__title,
@@ -81,8 +81,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-case-studies--color-default,
-.o-i360-case-studies--color-dark {
+.o-i360-case-studies.o-dbm--color-default,
+.o-i360-case-studies.o-dbm--color-dark {
     .o-i360-case-studies {
 		&__title {
 			color: $g-heading-dark;
@@ -94,7 +94,7 @@
 	}
 }
 
-.o-i360-case-studies--color-light {
+.o-i360-case-studies.o-dbm--color-light {
 	.o-i360-case-studies {
 		&__title,
 		&__content {

@@ -68,8 +68,8 @@
  * ------------------------------------------------------------
  */
 
-.o-i360-cards-simple--align-center,
-.o-i360-cards-simple--align-default {
+.o-i360-cards-simple.o-dbm--align-center,
+.o-i360-cards-simple.o-dbm--align-default {
 	.o-i360-cards-simple {
 		&__title-wrapper,
 		&__title,
@@ -88,7 +88,7 @@
 	}
 }
 
-.o-i360-cards-simple--align-left {
+.o-i360-cards-simple.o-dbm--align-left {
 	.o-i360-cards-simple {
 		&__title-wrapper,
 		&__title,
@@ -113,8 +113,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-cards-simple--color-default,
-.o-i360-cards-simple--color-dark {
+.o-i360-cards-simple.o-dbm--color-default,
+.o-i360-cards-simple.o-dbm--color-dark {
 	.o-i360-cards-simple {
 		&__pretitle,
 		&__title {
@@ -127,7 +127,7 @@
 	}
 }
 
-.o-i360-cards-simple--color-light {
+.o-i360-cards-simple.o-dbm--color-light {
 	.o-i360-cards-simple {
 		&__pretitle,
 		&__subheader {
