@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Organism: Cta Bar
+//  Organism: Code Only
 //  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
@@ -19,123 +19,21 @@
 // Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
-.o-i360-cta-bar {
-	position: relative;
-	padding: 85px 0 65px;
-	background-color: $g-brand-color-4;
-	@include bp-sm {
-		padding: 65px 0;
-	}
-
-	&__container-inner {
-		display: flex;
-		flex-direction: column;
-		@include bp-lg {
-			flex-direction: row;
-		}
-
-		&.animated {
-			.o-i360-cta-bar {
-				&__btn,
-				&__title {
-					@include bp-lg {
-						transform: translateY(0%);
-					}
-				}
-			}
-		}
-	}
-
-	&__deco {
-		@include absolute-tl;
-		height: 100%;
-		transition: $g-trans-base-5;
-		transform: scale(.9);
-		opacity: 0;
-		transition-delay: .5s;
-		@include bpm-lg {
-			top: -120px;
-			left: -85px;
-			width: 400px;
-			height: 465px;
-		}
-
-		&.animated {
-			transform: scale(1);
-			opacity: 1;
-		}
-
-		svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-			opacity: .07;
-		}
-	}
-
-	&__column {
-		&--1 {
-			@include bpm-lg {
-				text-align: center;
-			}
-			@include bp-lg {
-				width: 75%;
-			}
-		}
-
-		&--2 {
-			@include bpm-lg {
-				text-align: center;
-				justify-content: center;
-				align-content: center;
-				display: flex;
-			}
-			@include bp-lg {
-				width: 25%;
-			}
-		}
-	}
-
+.o-default-code-only {
 	&__title-wrapper {
-		margin-bottom: 50px;
-		overflow: hidden;
-		@include bp-lg {
-			margin-bottom: 0;
-		}
+
 	}
 
 	&__title {
-		padding-bottom: 0;
-		line-height: 44px;
-		letter-spacing: -0.79px;
-		color: #fff;
-		transition: $g-trans-base-2;
-		max-width: initial !important;
-		@include bp-lg {
-			transform: translateY(100%);
-		}
-		@include bpm-sm {
-			font-size: 36px;
-		}
 
-		span {
-			line-height: normal;
-			letter-spacing: normal;
-			color: $g-brand-color-3;
-		}
+	}
+
+	&__content {
+
 	}
 
 	&__button-wrapper {
-		overflow: hidden;
-	}
 
-	&__btn {
-		margin-left: auto;
-		transition: $g-trans-base-2;
-		@include bp-lg {
-			transform: translateY(100%);
-			transition-delay: .1s;
-		}
 	}
 }
 
@@ -156,8 +54,9 @@
 // "align-default" is the starting point and is required to style
 
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-cta-bar.o-dbm--align-center {
-	.o-i360-cta-bar {
+.o-default-code-only.o-dbm--align-center,
+.o-default-code-only.o-dbm--align-default {
+	.o-default-code-only {
 		&__title-wrapper,
 		&__title,
 		&__content {
@@ -170,9 +69,8 @@
 	}
 }
 
-.o-i360-cta-bar.o-dbm--align-default,
-.o-i360-cta-bar.o-dbm--align-left {
-	.o-i360-cta-bar {
+.o-default-code-only.o-dbm--align-left {
+	.o-default-code-only {
 		&__title-wrapper,
 		&__title,
 		&__content {
@@ -197,24 +95,24 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-cta-bar.o-dbm--color-default,
-.o-i360-cta-bar.o-dbm--color-dark {
-    .o-i360-cta-bar {
+.o-default-code-only.o-dbm--color-default,
+.o-default-code-only.o-dbm--color-dark {
+    .o-default-code-only {
 		&__title {
-			//color: $g-heading-dark;
+			color: $g-heading-dark;
 		}
 
 		&__content {
-			//color: $g-body-dark;
+			color: $g-body-dark;
 		}
 	}
 }
 
-.o-i360-cta-bar.o-dbm--color-light {
-	.o-i360-cta-bar {
+.o-default-code-only.o-dbm--color-light {
+	.o-default-code-only {
 		&__title,
 		&__content {
-			//color: $g-body-light;
+			color: $g-body-light;
 		}
 	}
 }

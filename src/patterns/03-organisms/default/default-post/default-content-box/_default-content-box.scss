@@ -1,4 +1,4 @@
-.o-content-box {
+.o-default-content-box {
 	padding: 100px 0;
 
 	&__container {
@@ -18,9 +18,5 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	&__content {
-		@include wysiwyg-content-styling;
 	}
 }

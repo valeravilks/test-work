@@ -27,8 +27,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-image-cards--align-center,
-.o-default-image-cards--align-default {
+.o-default-image-cards.o-dbm--align-center,
+.o-default-image-cards.o-dbm--align-default {
 	.o-default-image-cards {
 		&__title-wrapper,
 		&__title,
@@ -42,7 +42,7 @@
 	}
 }
 
-.o-default-image-cards--align-left {
+.o-default-image-cards.o-dbm--align-left {
 	.o-default-image-cards {
 		&__title-wrapper,
 		&__title,
@@ -67,8 +67,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-image-cards--color-default,
-.o-default-image-cards--color-dark {
+.o-default-image-cards.o-dbm--color-default,
+.o-default-image-cards.o-dbm--color-dark {
 	.o-default-image-cards {
 		&__title {
 			color: $g-heading-dark;
@@ -80,7 +80,7 @@
 	}
 }
 
-.o-default-image-cards--color-light {
+.o-default-image-cards.o-dbm--color-light {
 	.o-default-image-cards {
 		&__title,
 		&__content {

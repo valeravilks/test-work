@@ -12,7 +12,7 @@
 ////////////////////////////////
 // Block Base Styling         //
 ////////////////////////////////
-.o-default-text {
+.o-default-testimonials {
 
 }
 
@@ -27,9 +27,9 @@
  * ------------------------------------------------------------
  */
 
-.o-default-text--align-center,
-.o-default-text--align-default {
-	.o-default-text {
+.o-default-testimonials.o-dbm--align-center,
+.o-default-testimonials.o-dbm--align-default {
+	.o-default-testimonials {
 		&__title-wrapper,
 		&__title,
 		&__content {
@@ -42,8 +42,8 @@
 	}
 }
 
-.o-default-text--align-left {
-	.o-default-text {
+.o-default-testimonials.o-dbm--align-left {
+	.o-default-testimonials {
 		&__title-wrapper,
 		&__title,
 		&__content {
@@ -67,11 +67,11 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-text--color-default,
-.o-default-text--color-dark {
-	.o-default-text {
+.o-default-testimonials.o-dbm--color-default,
+.o-default-testimonials.o-dbm--color-dark {
+	.o-default-testimonials {
 		&__title {
-			//color: $g-body-dark;
+			color: $g-heading-dark;
 		}
 
 		&__content {
@@ -80,12 +80,17 @@
 	}
 }
 
-.o-default-text--color-light {
-	.o-default-text {
+.o-default-testimonials.o-dbm--color-light {
+	.o-default-testimonials {
 		&__title,
 		&__content {
 			color: $g-body-light;
 		}
+
+	}
+
+	.m-slider-testimonials__stories-slide-item-author {
+		color: $g-body-light;
 	}
 }
 

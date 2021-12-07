@@ -32,9 +32,13 @@
 			<div class="{{ component_class }}__container-inner wow">
 				<div class="{{ component_class }}__column {{ component_class }}__column--1">
 					{% include '01-atoms/content/title/title.twig' with {
-						title        : section.block_title,
-						parent_class : component_class,
-						h            : 3
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						title               : section.block_title,
+						width               : section.title_width,
+						style               : section.title_style,
+						h                   : section.title_type,
+						spacing_bottom      : section.title_padding_bottom
 					} only %}
 				</div>
 

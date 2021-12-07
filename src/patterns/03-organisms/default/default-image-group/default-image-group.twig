@@ -24,6 +24,7 @@
 	{#################################################################################}
 	{% block main_payload %}
 		<div class="{{component_class}}__repeater {{component_class}}__repeater--{{ section.version }}">
+
 			{% for item in section.repeater %}
 				{% if item.desktop_size == 'ratio-16-9' %}
 					{% set resize_height = 315 %}

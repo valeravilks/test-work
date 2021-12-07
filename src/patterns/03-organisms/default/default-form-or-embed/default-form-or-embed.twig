@@ -14,7 +14,7 @@
 	{# Block general settings                               #}
 	{########################################################}
 	{% set component_class = "o-default-form-or-embed" %}
-	{% set container       = true %}
+	{% set container       = false %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -23,14 +23,45 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 
-	{% block main_payload %}
+	{# Overwriting block_inner as max_width is not part of the base-block #}
+	{% block block_inner %}
+		<div class="l-container {{ component_class }}__container" {% if section.max_width %}style="max-width:{{ section.max_width }}px"{% endif %}>
 
-		{# Custom code is outputted here. WP users can still use the WYSIWIG which is outputted above #}
-		{% if section.code_area %}
-		<div class="{{ component_class }}__code-box">
-			{{ section.code_area }}
+			{% include '01-atoms/content/title/title.twig' with {
+				default_block_class : default_block_class,
+				parent_class        : component_class,
+				title               : section.block_title,
+				type                : section.title_type,
+				version             : section.title_width,
+				h                   : block_title_type,
+				spacing_bottom      : section.title_padding_bottom,
+				add_class_on_anim   : true
+			} only %}
+
+			{% include '01-atoms/content/content/content.twig' with {
+				default_block_class : default_block_class,
+				parent_class        : component_class,
+				content             : section.content,
+				add_class_on_anim   : true
+			} only %}
+
+			{# Custom code is outputted here. WP users can still use the WYSIWIG for regular text which is outputted above #}
+			{% if section.code_area %}
+				<div class="{{ component_class }}__code-area">
+					{{ section.code_area }}
+				</div>
+			{% endif %}
+
+			{% if section.add_button %}
+				{% include '01-atoms/buttons/button/button.twig' with {
+					default_block_class : default_block_class,
+					parent_class 		: component_class,
+					button      		: section.button,
+					add_class_on_anim   : true
+				} only %}
+			{% endif %}
+
 		</div>
-		{% endif %}
 	{% endblock %}
 
 {% endspaceless %}

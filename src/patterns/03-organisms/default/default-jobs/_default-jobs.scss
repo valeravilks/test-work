@@ -27,8 +27,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-jobs--align-center,
-.o-default-jobs--align-default {
+.o-default-jobs.o-dbm--align-center,
+.o-default-jobs.o-dbm--align-default {
 	.o-default-jobs {
 		&__title-wrapper,
 		&__title,
@@ -42,7 +42,7 @@
 	}
 }
 
-.o-default-jobs--align-left {
+.o-default-jobs.o-dbm--align-left {
 	.o-default-jobs {
 		&__title-wrapper,
 		&__title,
@@ -67,8 +67,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-jobs--color-default,
-.o-default-jobs--color-dark {
+.o-default-jobs.o-dbm.o-dbm--color-default,
+.o-default-jobs.o-dbm.o-dbm--color-dark {
 	.o-default-jobs {
 		&__title {
 			color: $g-heading-dark;
@@ -80,12 +80,20 @@
 	}
 }
 
-.o-default-jobs--color-light {
+.o-default-jobs.o-dbm.o-dbm--color-light {
 	.o-default-jobs {
 		&__title,
 		&__content {
 			color: $g-body-light;
 		}
+	}
+
+	.m-accordion__title {
+		color: $g-body-light;
+	}
+
+	.m-accordion__content {
+		color: $g-body-light;
 	}
 }
 

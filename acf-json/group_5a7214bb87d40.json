@@ -19,6 +19,22 @@
             "endpoint": 0
         },
         {
+            "key": "field_61afb3253f91f",
+            "label": "Pixel Tracker (copy)",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
             "key": "field_5a7214bba0907",
             "label": "Add Pixel Tracker",
             "name": "has_tracker",
@@ -117,14 +133,21 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "all"
+                "value": "whitepaper"
             }
         ],
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "all"
+                "value": "case-studies"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
             }
         ]
     ],
@@ -143,5 +166,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637621898
+    "modified": 1638904635
 }

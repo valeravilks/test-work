@@ -54,7 +54,7 @@
 // "align-default" is the starting point and is required to style
 
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-default-cta-bar--align-center {
+.o-default-cta-bar.o-dbm--align-center {
 	.o-default-cta-bar {
 		&__title-wrapper,
 		&__title,
@@ -68,8 +68,8 @@
 	}
 }
 
-.o-default-cta-bar--align-default,
-.o-default-cta-bar--align-left {
+.o-default-cta-bar.o-dbm--align-default,
+.o-default-cta-bar.o-dbm--align-left {
 	.o-default-cta-bar {
 		&__title-wrapper,
 		&__title,
@@ -95,8 +95,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-cta-bar--color-default,
-.o-default-cta-bar--color-dark {
+.o-default-cta-bar.o-dbm--color-default,
+.o-default-cta-bar.o-dbm--color-dark {
     .o-default-cta-bar {
 		&__title {
 			color: $g-heading-dark;
@@ -108,7 +108,7 @@
 	}
 }
 
-.o-default-cta-bar--color-light {
+.o-default-cta-bar.o-dbm--color-light {
 	.o-default-cta-bar {
 		&__title,
 		&__content {

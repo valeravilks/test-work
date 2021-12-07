@@ -15,9 +15,8 @@
 
 .o-default-statistics {
 	&__repeater {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		padding-top: 40px;
+		@include outlining-card-1-by-3;
 	}
 
 	&__card {

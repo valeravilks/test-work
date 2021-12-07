@@ -1,7 +1,7 @@
 {% spaceless %}
-    {% set component_class = "o-content-box" %}
+    {% set component_class = "o-default-content-box" %}
     {% set version         = version      ? component_class ~ "--" ~ version                              | join("") %}
-    {% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"c-" : ""}) | join("") %}
+    {% set parent          = parent_class ? parent_class    ~ "__" ~ component_class|replace({"o-" : ""}) | join("") %}
 
     <div class="{{ parent }} {{ component_class }} {{ version }}">
 		<div class="{{component_class}}__container l-container">
@@ -12,7 +12,7 @@
 					{% include 'objects-default/images/image-default/image-default.twig' with {
 						parent_class      : component_class,
 						img               : featured_image,
-						modifier          : "single-default",
+						version	          : "single-default",
 						lazyload          : true,
 						srcset            : true,
 						wrapper           : true,

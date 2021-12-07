@@ -10,11 +10,12 @@
 		&__title {
 		}
 
-		&__content {
+		&__container {
 			align-items: center;
 			height: 100%;
 			padding-top: 35px;
 			padding-bottom: 35px;
+			display: flex;
 			@include bpm-md {
 				flex-wrap: wrap;
 			}
@@ -22,7 +23,7 @@
 			&--aside-image-right {
 				flex-direction: row;
 
-				.o-hero__info-wrapper {
+				.o-hero__container-inner {
 					@include bp-md {
 						padding: 20px 50px 20px 0;
 					}
@@ -32,7 +33,7 @@
 			&--aside-image-left {
 				flex-direction: row-reverse;
 
-				.o-hero__info-wrapper {
+				.o-hero__container-inner {
 					@include bp-md {
 						padding: 20px 0 20px 50px;
 					}
@@ -40,13 +41,13 @@
 			}
 		}
 
-		&__info-wrapper,
+		&__container-inner,
 		&__img-wrapper--hero-aside-img {
 			flex-grow: 0;
 			flex-shrink: 1;
 		}
 
-		&__info-wrapper {
+		&__container-inner {
 			flex-basis: 50%;
 			@include bpm-md {
 				flex-grow: 1;
@@ -75,38 +76,35 @@
 		&__subtitle {
 		}
 
-		&__button {
+		&__btn {
 		}
 	}
 
 	////////////////////////////////////////////////////
-	// Additional options within this hero type       //
+	// Hero Alignment							      //
 	////////////////////////////////////////////////////
-	// Hero with content aligned to the left\
+	// Hero with content aligned to the left
 	&.o-hero--align-default,
 	&.o-hero--align-left {
 		text-align: left;
 
 		.o-hero {
-			&__info-wrapper {
+			&__container-inner {
 				align-items: flex-start;
 				text-align: left;
 			}
 
 			&__title,
-			&__subtitle,
 			&__content {
 				text-align: left;
 			}
 
 			&__button-wrapper {
-				.a-button-wrapper__btn {
-					margin-right: 10px;
-					margin-bottom: 10px;
+				margin-right: 10px;
+				margin-bottom: 10px;
 
-					&:last-child {
-						margin-right: 0;
-					}
+				&:last-child {
+					margin-right: 0;
 				}
 			}
 		}
@@ -117,7 +115,7 @@
 		text-align: center;
 
 		.o-hero {
-			&__info-wrapper {
+			&__container-inner {
 				align-items: center;
 			}
 
@@ -128,11 +126,9 @@
 			}
 
 			&__button-wrapper {
-				.a-button-wrapper__btn {
-					margin-right: 5px;
-					margin-bottom: 10px;
-					margin-left: 5px;
-				}
+				margin-right: 5px;
+				margin-bottom: 10px;
+				margin-left: 5px;
 			}
 		}
 	}
@@ -142,7 +138,7 @@
 		text-align: right;
 
 		.o-hero {
-			&__info-wrapper {
+			&__container-inner {
 				align-items: flex-end;
 			}
 
@@ -153,19 +149,19 @@
 			}
 
 			&__button-wrapper {
-				.a-button-wrapper__btn {
-					margin-bottom: 10px;
-					margin-left: 10px;
+				margin-bottom: 10px;
+				margin-left: 10px;
 
-					&:first-child {
-						margin-left: 0;
-					}
+				&:first-child {
+					margin-left: 0;
 				}
 			}
 		}
 	}
 
-	// Hero with dark text
+	////////////////////////////////////////////////////
+	// Hero Text Colors        						  //
+	////////////////////////////////////////////////////
 	&.o-hero--color-default,
 	&.o-hero--color-dark {
 		.o-hero {
@@ -185,7 +181,7 @@
 				}
 			}
 
-			&__info-wrapper {
+			&__container-inner {
 				color: $g-body-dark;
 			}
 		}
@@ -210,9 +206,13 @@
 				}
 			}
 
-			&__info-wrapper {
+			&__container-inner {
 				color: $g-body-light;
 			}
 		}
 	}
+
+	////////////////////////////////////////////////////
+	// Additional Hero versions here    			  //
+	////////////////////////////////////////////////////
 }

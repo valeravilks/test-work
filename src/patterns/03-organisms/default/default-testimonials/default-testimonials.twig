@@ -24,45 +24,13 @@
 	{#################################################################################}
 
 	{% block main_payload %}
+		{% set testimonials = section.relationship %}
 
-		<div class="{{ component_class }}__stories" data-module="defaultTestimonials">
-			<div class="{{ component_class }}__stories-slider-container swiper-container">
-				<div class="{{ component_class }}__stories-wrapper swiper-wrapper">
-					{% set testimonials = section.relationship %}
-
-					{% for testimonial in testimonials %}
-						{% set statement_author   = testimonial.terms( 'statement-author' ) | first %}
-						{% set statement_company  = testimonial.terms( 'statement-organization' ) | first %}
-						{% set statement_position = testimonial.terms( 'statement-position' ) | first %}
-
-						<div class="{{ component_class }}__stories-slide-item swiper-slide">
-							<div class="{{ component_class }}__stories-slide-item-content">
-								{{ testimonial.content }}
-							</div>
-
-							<h6 class="{{ component_class }}__stories-slide-item-author h6--bold">
-								— {{ statement_author }}, {{ statement_position }}, {{ statement_company }}
-							</h6>
-						</div>
-					{% endfor %}
-				</div>
-
-				<div class="{{ component_class }}__stories-slider-pagination swiper-pagination"></div>
-			</div>
-
-			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
-				parent_class        : component_class,
-				version             : "prev",
-				extra_class         : "o-default-testimonials__stories-slider-btn-prev"
-			} only %}
-
-			{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
-				parent_class        : component_class,
-				version             : "next",
-				extra_class         : "o-default-testimonials__stories-slider-btn-next"
-			} only %}
-		</div>
-
+		{% include '02-molecules/slider/slider-testimonials/slider-testimonials.twig' with {
+			parent_class 		: component_class,
+			items         		: testimonials,
+			add_class_on_anim   : true
+		} only %}
 	{% endblock %}
 
 {% endspaceless %}

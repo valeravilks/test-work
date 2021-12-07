@@ -27,8 +27,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-slider-images--align-center,
-.o-default-slider-images--align-default {
+.o-default-slider-images.o-dbm--align-center,
+.o-default-slider-images.o-dbm--align-default {
 	.o-default-slider-images {
 		&__title-wrapper,
 		&__title,
@@ -42,7 +42,7 @@
 	}
 }
 
-.o-default-slider-images--align-left {
+.o-default-slider-images.o-dbm--align-left {
 	.o-default-slider-images {
 		&__title-wrapper,
 		&__title,
@@ -67,8 +67,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-slider-images--color-default,
-.o-default-slider-images--color-dark {
+.o-default-slider-images.o-dbm--color-default,
+.o-default-slider-images.o-dbm--color-dark {
 	.o-default-slider-images {
 		&__title {
 			color: $g-heading-dark;
@@ -80,7 +80,7 @@
 	}
 }
 
-.o-default-slider-images--color-light {
+.o-default-slider-images.o-dbm--color-light {
 	.o-default-slider-images {
 		&__title,
 		&__content {

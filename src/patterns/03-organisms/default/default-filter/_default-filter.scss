@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Molecule: Filter
+//  Organism: Filter
 //  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
@@ -90,14 +90,84 @@
 }
 
 
-/////////////////////////////
-// Molecule Versions       //
-/////////////////////////////
+//////////////////////////////////////////
+// Block Alignment Versions             //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple alignments
+ * "align-default" is required and the starting point
+ * Both "align-center" and "align-left" are required to style
+ * ------------------------------------------------------------
+ */
 
-// Used to create additional versions of this molecule.
+.o-default-filter.o-dbm--align-center,
+.o-default-filter.o-dbm--align-default {
+	.o-default-filter {
+		&__title-wrapper,
+		&__title,
+		&__content {
 
-.o-default-filter {
-	&--default {
+		}
 
+		&__button-wrapper {
+
+		}
 	}
 }
+
+.o-default-filter.o-dbm--align-left {
+	.o-default-filter {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-default-filter.o-dbm--color-default,
+.o-default-filter.o-dbm--color-dark {
+	.o-default-filter {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-default-filter.o-dbm--color-light {
+	.o-default-filter {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */

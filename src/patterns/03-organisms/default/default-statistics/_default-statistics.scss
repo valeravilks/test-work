@@ -28,8 +28,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-statistics--align-center,
-.o-default-statistics--align-default {
+.o-default-statistics.o-dbm--align-center,
+.o-default-statistics.o-dbm--align-default {
 	.o-default-statistics {
 		&__title-wrapper,
 		&__title,
@@ -43,7 +43,7 @@
 	}
 }
 
-.o-default-statistics--align-left {
+.o-default-statistics.o-dbm--align-left {
 	.o-default-statistics {
 		&__title-wrapper,
 		&__title,
@@ -68,8 +68,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-statistics--color-default,
-.o-default-statistics--color-dark {
+.o-default-statistics.o-dbm--color-default,
+.o-default-statistics.o-dbm--color-dark {
 	.o-default-statistics {
 		&__title {
 			color: $g-heading-dark;
@@ -81,12 +81,16 @@
 	}
 }
 
-.o-default-statistics--color-light {
+.o-default-statistics.o-dbm--color-light {
 	.o-default-statistics {
 		&__title,
 		&__content {
 			color: $g-body-light;
 		}
+	}
+
+	.m-card-statistic__content {
+		color: $g-body-light;
 	}
 }
 

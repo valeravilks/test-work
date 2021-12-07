@@ -35,8 +35,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-badges--align-center,
-.o-default-badges--align-default {
+.o-default-badges.o-dbm--align-center,
+.o-default-badges.o-dbm--align-default {
 	.o-default-badges {
 		&__title-wrapper,
 		&__title,
@@ -50,7 +50,7 @@
 	}
 }
 
-.o-default-badges--align-left {
+.o-default-badges.o-dbm--align-left {
 	.o-default-badges {
 		&__title-wrapper,
 		&__title,
@@ -75,8 +75,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-badges--color-default,
-.o-default-badges--color-dark {
+.o-default-badges.o-dbm--color-default,
+.o-default-badges.o-dbm--color-dark {
 	.o-default-badges {
 		&__title {
 			color: $g-heading-dark;
@@ -88,7 +88,7 @@
 	}
 }
 
-.o-default-badges--color-light {
+.o-default-badges.o-dbm--color-light {
 	.o-default-badges {
 		&__title,
 		&__content {

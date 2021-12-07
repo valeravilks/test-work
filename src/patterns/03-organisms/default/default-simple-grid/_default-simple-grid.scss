@@ -27,8 +27,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-simple-grid--align-center,
-.o-default-simple-grid--align-default {
+.o-default-simple-grid.o-dbm--align-center,
+.o-default-simple-grid.o-dbm--align-default {
 	.o-default-simple-grid {
 		&__title-wrapper,
 		&__title,
@@ -42,7 +42,7 @@
 	}
 }
 
-.o-default-simple-grid--align-left {
+.o-default-simple-grid.o-dbm--align-left {
 	.o-default-simple-grid {
 		&__title-wrapper,
 		&__title,
@@ -67,8 +67,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-simple-grid--color-default,
-.o-default-simple-grid--color-dark {
+.o-default-simple-grid.o-dbm--color-default,
+.o-default-simple-grid.o-dbm--color-dark {
 	.o-default-simple-grid {
 		&__title {
 			color: $g-heading-dark;
@@ -80,12 +80,20 @@
 	}
 }
 
-.o-default-simple-grid--color-light {
+.o-default-simple-grid.o-dbm--color-light {
 	.o-default-simple-grid {
 		&__title,
 		&__content {
 			color: $g-body-light;
 		}
+	}
+
+	.m-card-grid__title {
+		color: #fff;
+	}
+
+	.m-card-grid__content {
+		color: #fff;
 	}
 }
 

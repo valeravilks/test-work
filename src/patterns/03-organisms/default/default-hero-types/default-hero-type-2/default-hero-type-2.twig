@@ -3,9 +3,10 @@
 	{% include '03-organisms/base/base-hero/base-hero-elements/base-hero-bg/base-hero-bg.twig' %}
 
 	{# Wrapper div that functions as container and "flexbox #}
-	<div class="{{ component_class }}__content {{ post.set_aside_image ? component_class ~ '__content--aside-image-' ~ post.aside_image_position }} l-container">
-		<div class="{{ component_class }}__info-wrapper">
+	<div class="{{ component_class }}__container {{ post.set_aside_image ? component_class ~ '__container--aside-image-' ~ post.aside_image_position }} l-container">
+		<div class="{{ component_class }}__container-inner">
 
+			{# Choosing the hero title. Manually created titles have presendence over programmatically (WordPress) created titles. #}
 			{% if post.get_field('hero_title') and post.hide_the_hero_title == false %}
 				{% set title = post.get_field('hero_title')|replace({'<p>': "", '</p>': ""}) %}
 			{% elseif post.title and post.hide_the_hero_title == false %}
@@ -16,27 +17,21 @@
 				{% set title = false %}
 			{% endif %}
 
-			{% if title %}
-				{% include '01-atoms/content/title/title.twig' with {
-					parent_class : component_class,
-					title        : title,
-					h            : 1
-				} only %}
-			{% endif %}
+			{% include '01-atoms/content/title/title.twig' with {
+				parent_class : component_class,
+				title        : title,
+				h            : 1
+			} only %}
 
-			{% if post.get_field( 'hero_subtitle' ) %}
-				{% include '01-atoms/content/subtitle/subtitle.twig' with {
-					subtitle     : post.get_field( 'hero_subtitle' ),
-					parent_class : component_class
-				} only %}
-			{% endif %}
+			{% include '01-atoms/content/content/content.twig' with {
+				content      : post.get_field( 'hero_subtitle' ),
+				parent_class : component_class
+			} only %}
 
-			{% if post.get_field( 'hero_buttons' ) %}
-				{% include '01-atoms/buttons/button-repeater/button-repeater.twig' with {
-					parent_class : component_class,
-					buttons      : post.get_field( 'hero_buttons' )
-				} only %}
-			{% endif %}
+			{% include '01-atoms/buttons/button-repeater/button-repeater.twig' with {
+				parent_class : component_class,
+				buttons      : post.get_field( 'hero_buttons' )
+			} only %}
 		</div>
 
 		{% if post.set_aside_image %}

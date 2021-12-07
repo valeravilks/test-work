@@ -27,8 +27,8 @@
  * ------------------------------------------------------------
  */
 
-.o-default-form-or-embed--align-center,
-.o-default-form-or-embed--align-default {
+.o-default-form-or-embed.o-dbm--align-center,
+.o-default-form-or-embed.o-dbm--align-default {
 	.o-default-form-or-embed {
 		&__title-wrapper,
 		&__title,
@@ -42,7 +42,7 @@
 	}
 }
 
-.o-default-form-or-embed--align-left {
+.o-default-form-or-embed.o-dbm--align-left {
 	.o-default-form-or-embed {
 		&__title-wrapper,
 		&__title,
@@ -67,8 +67,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-default-form-or-embed--color-default,
-.o-default-form-or-embed--color-dark {
+.o-default-form-or-embed.o-dbm--color-default,
+.o-default-form-or-embed.o-dbm--color-dark {
 	.o-default-form-or-embed {
 		&__title {
 			color: $g-heading-dark;
@@ -80,7 +80,7 @@
 	}
 }
 
-.o-default-form-or-embed--color-light {
+.o-default-form-or-embed.o-dbm--color-light {
 	.o-default-form-or-embed {
 		&__title,
 		&__content {
