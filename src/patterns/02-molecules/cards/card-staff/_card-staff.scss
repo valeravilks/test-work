@@ -101,33 +101,4 @@
 			}
 		}
 	}
-
-	&.o-i360-case-studies__card {
-		.m-card-staff {
-			&__img-wrapper {
-				height: 275px;
-			}
-
-			&__info {
-				padding: 40px 32px;
-			}
-
-			&__pretitle {
-				margin-bottom: 20px;
-			}
-
-			&__title-link {
-				margin-bottom: 25px;
-			}
-
-			&__title {
-				font-size: 36px;
-				letter-spacing: -0.43px;
-			}
-
-			&__content {
-				letter-spacing: -0.2px;
-			}
-		}
-	}
 }

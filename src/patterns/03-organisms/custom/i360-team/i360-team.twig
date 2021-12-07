@@ -10,7 +10,6 @@
 	{#######################################################}
 	{% extends '03-organisms/base/base-block/base-block.twig' %}
 
-
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
@@ -23,47 +22,36 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	{% block after_content %}
+	{% block main_payload %}
 
-		{# Sample markup. Example snippet: The repeater below might not be be needed. Remove if not applicable #}
-		<div class="{{ component_class }}__repeater" data-module="">
-			{% for item in section.repeater %}
-				<div class="{{ component_class }}__item {{ component_class }}__item-- wow">
-					<div class="{{ component_class }}__item-title-wrapper">
-						<h4 class="{{ component_class }}__item-title">{{ item.title }}</h4>
-					</div>
-					<span class="{{ component_class }}__item-line"></span>
-					<div class="{{ component_class }}__item-content">
-						{{ item.content }}
-					</div>
-				</div>
+		<div class="{{ component_class }}__repeater">
+			<!-- Grabbing recent posts. ACF relationship field chosen entries have right of way -->
+			{% if section.relationship %}
+				{% set items = section.relationship %}
+			{% endif %}
+
+			{% for item in items %}
+				{# Accessing WordPress post and making them available to Twig templates #}
+				{% set item = TimberPost( item ) %}
+
+				{# Accessing WordPress image object and making them available to Twig templates #}
+				{% set img = TimberImage( item.thumbnail ) %}
+
+				{% set terms = item.terms('case-studies-categories')|join(', ')  %}
+
+				{% include '02-molecules/cards/card-staff/card-staff.twig' with {
+					parent_class 		: component_class,
+					item         		: item,
+					img                 : img,
+					interval            : true,
+					term				: terms,
+					date  				: false,
+					index       		: loop.index,
+					add_class_on_anim   : true,
+				} only %}
 			{% endfor %}
 		</div>
 
-		{# Sample markup. The columns below might not be be needed. Remove if not applicable #}
-		<div class="{{ component_class }}__columns">
-			<div class="{{ component_class }}__column {{ component_class }}__column--1">
-
-			</div>
-			<div class="{{ component_class }}__columns {{ component_class }}__column--2">
-
-			</div>
-		</div>
-
-		{# Sample markup. The image below might not be be needed. Remove if not applicable #}
-		{% if section.add_image %}
-			{% set img = TimberImage(section.image) %}
-			<div class="{{ component_class }}__image-wrapper">
-				{% include '01-atoms/images/image-default/image-default.twig' with {
-					parent_class        : component_class,
-					img                 : img,
-					lazyload            : true,
-					srcset              : true,
-					wrapper             : true
-				} only %}
-			</div>
-		{% endif %}
-
-    {% endblock %}
+	{% endblock %}
 
 {% endspaceless %}

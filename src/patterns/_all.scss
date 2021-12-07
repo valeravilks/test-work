@@ -115,10 +115,10 @@
 @import '03-organisms/default/default-content-lists/default-content-lists-repeater';
 @import '03-organisms/default/default-jobs/default-jobs';
 @import '03-organisms/default/default-jobs/default-jobs-repeater';
-@import '03-organisms/default/default-team/default-team';
-@import '03-organisms/default/default-team/default-team-repeater';
-@import '03-organisms/default/default-team/default-team-modal';
-@import '03-organisms/default/default-team/default-team-positions-bar';
+//@import '03-organisms/default/default-team/default-team';
+//@import '03-organisms/default/default-team/default-team-repeater';
+//@import '03-organisms/default/default-team/default-team-modal';
+//@import '03-organisms/default/default-team/default-team-positions-bar';
 //@import '03-organisms/default/default-team/default-team-footer';
 @import '03-organisms/default/default-image-group/default-image-group-repeater';
 @import '03-organisms/default/default-image-group/default-image-group';
@@ -169,6 +169,7 @@
 @import '../patterns/03-organisms/custom/i360-cards-horizontal-icon/i360-cards-horizontal-icon';
 @import '../patterns/03-organisms/custom/i360-cards-horizontal-icon/i360-cards-horizontal-icon-repeater';
 @import '../patterns/03-organisms/custom/i360-team/i360-team';
+@import '../patterns/03-organisms/custom/i360-team/i360-team-repeater';
 @import '../patterns/03-organisms/custom/i360-badges/i360-badges';
 @import '../patterns/03-organisms/custom/i360-latest-posts/i360-latest-posts';
 @import '../patterns/03-organisms/custom/i360-latest-posts/i360-latest-posts-repeater';
