@@ -1,0 +1,104 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Image Group               //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Component Variables        //
+////////////////////////////////
+
+////////////////////////////////
+// Block Base Styling         //
+////////////////////////////////
+.o-i360-image-group {
+
+
+
+	//////////////////////////////////////////
+	// Block Alignment Versions             //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple alignments
+	 * "align-default" is required and the starting point
+	 * Both "align-center" and "align-left" are required to style
+	 * ------------------------------------------------------------
+	 */
+
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-image-group {
+			&__title-wrapper,
+			&__title,
+			&__content {
+
+			}
+
+			&__button-wrapper {
+
+			}
+		}
+	}
+
+	&.o-dbm--align-left {
+		.o-i360-image-group {
+			&__title-wrapper,
+			&__title,
+			&__content {
+
+			}
+
+			&__button-wrapper {
+
+			}
+		}
+	}
+
+	//////////////////////////////////////////
+	// Block Color Palette Versions         //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-image-group {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
+		}
+	}
+
+	&.o-dbm--color-light {
+		.o-i360-image-group {
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Block Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has versions beside
+	 * the color and alignment use cases above
+	 * ------------------------------------------------------------
+	 */
+
+	&--default {
+
+	}
+}
