@@ -88,6 +88,15 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
+	{% elseif section.acf_fc_layout == 'i360_statistics_vertical' %} 
+		{% include '03-organisms/custom/i360-statistics-vertical/i360-statistics-vertical.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_statistics_horizontal' %} 
+		{% include '03-organisms/custom/i360-statistics-horizontal/i360-statistics-horizontal.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_pills' %} 
+		{% include '03-organisms/custom/i360-pills/i360-pills.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_case_studies' %} 
 		{% include '03-organisms/custom/i360-case-studies/i360-case-studies.twig' %}
 
