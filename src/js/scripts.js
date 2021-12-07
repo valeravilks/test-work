@@ -23,6 +23,7 @@ import searchBar from '../patterns/02-molecules/search/search-bar/search-bar';
 import { defaultSlideOut } from '../patterns/02-molecules/slide-out/slide-out';
 import socialShare from '../patterns/02-molecules/social/social-share/social-share';
 import sliderImages from '../patterns/02-molecules/slider/slider-images/slider-images';
+import debugControls from '../patterns/02-molecules/debug-controls/debug-controls';
 /*
  * Organisms
  */
@@ -67,6 +68,7 @@ const app = {
 	defaultSlideOut,
 	modal,
 	mapBlock,
+	debugControls,
 	defaultArticleSideNavigation,
 	defaultTeamMembers,
 	defaultSecondaryNavbar,

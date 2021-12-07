@@ -1,0 +1,106 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Molecule: Debug Controls
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Molecule Variables         //
+////////////////////////////////
+
+
+
+////////////////////
+// Styling        //
+////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.m-debug-controls {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 200;
+	pointer-events: none;
+
+	&__activator {
+		background-color: #000;
+		padding: 10px;
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		color: #fff;
+		width: 200px;
+		text-transform: uppercase;
+		pointer-events: auto;
+		transition: $g-trans-base;
+		cursor: pointer;
+
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		&:hover {
+			padding-right: 12px;
+			background-color: rgba(#000,.9);
+		}
+	}
+
+	&__panel {
+		transform: translateX(100%);
+		position: fixed;
+		right: 0;
+		padding: 10px 0px;
+		bottom: 60px;
+		width: 200px;
+		height: 400px;
+		transition: $g-trans-base;
+		background-color: rgba(#000,.8);
+		pointer-events: auto;
+		&--active {
+			transform: translateX(0%);
+		}
+
+		&-list,
+		&-item {
+			list-style: none;
+		}
+
+		&-item {
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 700;
+			padding: 5px;
+			color: #fff;
+			transition: $g-trans-base;
+			&:hover {
+				padding-left: 7px;
+			}
+		}
+	}
+
+	&__title {
+
+	}
+	&__content {
+
+	}
+	&__button-wrapper {
+
+	}
+}
+
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+// Used to create additional versions of this molecule.
+
+.m-debug-controls {
+	&--default {
+
+	}
+}

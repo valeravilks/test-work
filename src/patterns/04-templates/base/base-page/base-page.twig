@@ -18,10 +18,14 @@
 {# Start of the Body                                         #}
 {#############################################################}
 <body
-	class="{{ body_class }} l-body js-body l-page l-page--{{ post.post_type }}"
+	class="{{ body_class }} l-body js-body l-page l-page--{{ post.post_type }}  {{ dev_mode ? 'debug-screens js-dev-mode' }}"
 	style="--theme-base-color: {{ options.theme_base_color }}"
 	itemtype="http://schema.org/WebPage"
 >
+
+{% if dev_mode %}
+	{% include '02-molecules/debug-controls/debug-controls.twig' %}
+{% endif %}
 
 {#############################################################}
 {# Custom Scripts: AFTER OPENING BODY                        #}
