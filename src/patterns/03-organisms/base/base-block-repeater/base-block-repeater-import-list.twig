@@ -88,6 +88,15 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
+	{% elseif section.acf_fc_layout == 'i360_cards_horizontal_icon' %} 
+		{% include '03-organisms/custom/i360-cards-horizontal-icon/i360-cards-horizontal-icon.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_team' %} 
+		{% include '03-organisms/custom/i360-team/i360-team.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_badges' %} 
+		{% include '03-organisms/custom/i360-badges/i360-badges.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_latest_posts' %} 
 		{% include '03-organisms/custom/i360-latest-posts/i360-latest-posts.twig' %}
 
