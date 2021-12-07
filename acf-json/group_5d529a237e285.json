@@ -26,7 +26,7 @@
             "label": "Title Type",
             "name": "title_type",
             "type": "number",
-            "instructions": "",
+            "instructions": "Select one of the 6 (H1 to H6) heading tags. This may change the visual look of the title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,7 +34,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
             "default_value": 2,
             "placeholder": "",
             "prepend": "",
@@ -62,7 +61,40 @@
                 "default": "Default (max-width: 720px)",
                 "wide": "Wide (max-width: 780px)"
             },
-            "default_value": [],
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_61afa33a56167",
+            "label": "Title Style",
+            "name": "title_style",
+            "type": "select",
+            "instructions": "Overwrite the title style set by the \"Title Type\" field. Unlike the \"Title Type\" field, changing the title style has no effect over SEO. The default selection resembles the orginal title design of this section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "h1": "H1",
+                "h2": "H2",
+                "h3": "H3",
+                "h4": "H4",
+                "h5": "H5",
+                "h6": "H6",
+                "pretitle": "Pretitle"
+            },
+            "default_value": "default",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -97,5 +129,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1610628133
+    "modified": 1638900714
 }
