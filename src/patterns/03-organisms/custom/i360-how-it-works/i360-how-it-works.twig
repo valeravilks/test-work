@@ -1,0 +1,69 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-how-it-works" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block after_content %}
+
+		{# Sample markup. Example snippet: The repeater below might not be be needed. Remove if not applicable #}
+		<div class="{{ component_class }}__repeater" data-module="">
+			{% for item in section.repeater %}
+				<div class="{{ component_class }}__item {{ component_class }}__item-- wow">
+					<div class="{{ component_class }}__item-title-wrapper">
+						<h4 class="{{ component_class }}__item-title">{{ item.title }}</h4>
+					</div>
+					<span class="{{ component_class }}__item-line"></span>
+					<div class="{{ component_class }}__item-content">
+						{{ item.content }}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		{# Sample markup. The columns below might not be be needed. Remove if not applicable #}
+		<div class="{{ component_class }}__columns">
+			<div class="{{ component_class }}__column {{ component_class }}__column--1">
+
+			</div>
+			<div class="{{ component_class }}__columns {{ component_class }}__column--2">
+
+			</div>
+		</div>
+
+		{# Sample markup. The image below might not be be needed. Remove if not applicable #}
+		{% if section.add_image %}
+			{% set img = TimberImage(section.image) %}
+			<div class="{{ component_class }}__image-wrapper">
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class        : component_class,
+					img                 : img,
+					lazyload            : true,
+					srcset              : true,
+					wrapper             : true
+				} only %}
+			</div>
+		{% endif %}
+
+    {% endblock %}
+
+{% endspaceless %}

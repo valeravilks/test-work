@@ -88,6 +88,9 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
+	{% elseif section.acf_fc_layout == 'i360_how_it_works' %} 
+		{% include '03-organisms/custom/i360-how-it-works/i360-how-it-works.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_cards_horizontal_icon' %} 
 		{% include '03-organisms/custom/i360-cards-horizontal-icon/i360-cards-horizontal-icon.twig' %}
 
