@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Default Latest Posts Repeater     //
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+/////////////////////////////
+// Repeater Styling        //
+/////////////////////////////
+
+.o-i360-latest-posts {
+	&__repeater {
+		padding-top: 40px;
+		@include outlining-card-1-by-3;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+}
