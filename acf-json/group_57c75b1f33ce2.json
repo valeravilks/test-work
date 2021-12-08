@@ -49,7 +49,7 @@
                 "i360-regular": "i360 - Hero Regular",
                 "i360-shape": "i360 - Hero with shape"
             },
-            "default_value": "default-regular",
+            "default_value": "i360-regular",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -208,6 +208,7 @@
                 "id": ""
             },
             "choices": {
+                "default: Default": "default: Default",
                 "small": "Small",
                 "medium": "Medium",
                 "large": "Large"
@@ -966,5 +967,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637863573
+    "modified": 1638924269
 }
