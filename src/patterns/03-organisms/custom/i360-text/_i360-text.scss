@@ -13,14 +13,7 @@
 // Block Base Styling         //
 ////////////////////////////////
 .o-i360-text {
-	&__title-wrapper,
-	&__title,
-	&__content {
 
-	}
-	&__button-wrapper {
-
-	}
 }
 
 
@@ -125,6 +118,63 @@
 		&__title,
 		&__content {
 
+		}
+	}
+}
+
+.o-i360-text--alt-title-left {
+	.o-i360-text {
+		&__container {
+			display: flex;
+			max-width: 1210px!important; // remove after discuss!!!, overwrite inline style - max-width: 1310px;
+			@include bpm-md {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__title-wrapper,
+		&__title,
+		&__content {
+			max-width: 100%;
+		}
+
+		&__title-wrapper {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 100%;
+			margin: 0;
+			@include bp-md {
+				flex-basis: 300px;
+				padding-right: 15px;
+			}
+		}
+
+		&__content {
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: 100%;
+			margin-left: 0;
+			@include bp-md {
+				flex-basis: 780px;
+			}
+		}
+	}
+}
+
+// o-i360-text--alt-title-left Block Alignment Versions
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--align-center {
+	.o-i360-text {
+		&__content {
+			text-align: center;
+		}
+	}
+}
+
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--align-left,
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--align-default {
+	.o-i360-text {
+		&__content {
+			text-align: left;
 		}
 	}
 }

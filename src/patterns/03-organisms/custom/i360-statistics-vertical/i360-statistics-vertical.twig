@@ -37,6 +37,13 @@
 						h                   : section.title_type,
 						spacing_bottom      : section.title_padding_bottom
 					} only %}
+
+					{% include '01-atoms/content/content/content.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						content             : section.content,
+						add_class_on_anim   : true
+					} only %}
 				</div>
 
 				<div class="{{ component_class }}__column {{ component_class }}__column--2">
