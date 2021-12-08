@@ -47,7 +47,8 @@
                 "default-side-image": "Default - Hero Side Image(small)",
                 "default-side-half-image": "Default - Hero Side Image(50% and full height)",
                 "i360-regular": "i360 - Hero Regular",
-                "i360-shape": "i360 - Hero with shape"
+                "i360-shape": "i360 - Hero with shape",
+                "i360-shape-alt": "i360 - Hero with shape alt"
             },
             "default_value": "i360-regular",
             "allow_null": 0,
@@ -773,13 +774,11 @@
                         "field": "field_57c75b25d85f4",
                         "operator": "==",
                         "value": "1"
-                    }
-                ],
-                [
+                    },
                     {
                         "field": "field_5c59d0dcbcd88",
                         "operator": "==",
-                        "value": "i360 - shape"
+                        "value": "i360-shape"
                     }
                 ]
             ],
@@ -881,6 +880,38 @@
             "delay": 1
         },
         {
+            "key": "field_61b0ea37703b2",
+            "label": "Hero Content",
+            "name": "hero_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-shape-alt"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5c5a294e9a6eb",
             "label": "Hero Buttons",
             "name": "hero_buttons",
@@ -967,5 +998,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638924269
+    "modified": 1638985224
 }

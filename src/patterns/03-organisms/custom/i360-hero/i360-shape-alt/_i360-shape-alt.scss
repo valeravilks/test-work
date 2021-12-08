@@ -1,0 +1,80 @@
+//////////////////////////////////////////////////////////////////////
+//// Hero Types                                                     //
+////                                                                //
+//// Each hero type has it's own alignment + text color options     //
+//////////////////////////////////////////////////////////////////////
+//
+//// Client specific hero type. Each hero type has it's own alignment + text color options
+.o-i360-hero--i360-shape-alt {
+	.o-i360-hero {
+	}
+}
+
+
+////////////////////
+// Versions       //
+////////////////////
+
+// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+.o-i360-hero--i360-shape-alt {
+	&.o-i360-hero {
+		&--align-center {
+			.o-i360-hero__info-wrapper {
+				margin: 0 auto;
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Block Color Palette Versions         //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-hero--i360-shape-alt {
+	&.o-i360-hero {
+		&--color-light,
+		&--color-default {
+			.o-i360-hero {
+				&__title {
+					color: $g-body-light;
+				}
+
+				&__pretitle,
+				&__subtitle {
+					color: $g-grey-color-light;
+				}
+			}
+		}
+
+		&--color-dark {
+			.o-i360-hero {
+				&__title {
+					color: $g-brand-color-4;
+				}
+
+				&__pretitle,
+				&__subtitle {
+					color: $g-body-dark;
+				}
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Block Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
