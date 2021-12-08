@@ -11,18 +11,27 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	<div class="{{ component_class }}">
+	<div class="{{ component_class }}" style="--background-column-1: {{ section.repeater.0.column_bg_color }}; --background-column-2: {{ section.repeater.1.column_bg_color }};">
 
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__container-inner wow">
 
 				{% for item in section.repeater %}
-					<div class="{{ component_class }}__column {{ component_class }}__column--{{ loop.index }}">
+					{% set text_color = item.column_text_color ? component_class ~ '__column--color-' ~ item.column_text_color : component_class ~ '__column--color-default' %}
+					{% set bg_color   = item.column_bg_color ? item.column_bg_color : '' %}
+
+					<div class="{{ component_class }}__column {{ component_class }}__column--{{ loop.index }} {{ text_color }}" style="background-color: {{ bg_color }}">
+
+						{% include '01-atoms/content/pretitle/pretitle.twig' with {
+							parent_class        : component_class,
+							pretitle            : item.pretitle,
+							add_class_on_anim   : true
+						} only %}
 
 						{% include '01-atoms/content/title/title.twig' with {
 							parent_class        : component_class,
 							title               : item.title,
-							h                   : 4,
+							h                   : 3,
 							add_class_on_anim   : false
 						} only %}
 
@@ -33,7 +42,7 @@
 						} only %}
 
 						{% if item.add_link %}
-							{% include '01-atoms/links/link/link.twig' with {
+							{% include '01-atoms/link/link.twig' with {
 								parent_class    	: component_class,
 								link                : item.link,
 								add_class_on_anim 	: false

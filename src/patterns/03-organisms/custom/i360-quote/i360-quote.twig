@@ -95,12 +95,10 @@
 				{% if item.add_button %}
 					{% set button =  item.get_field('button') %}
 
-					<div class="{{component_class}}__btn-wrapper">
-						{% include '01-atoms/buttons/button/button.twig' with {
-							parent_class : component_class,
-							button       : button
-						} only %}
-					</div>
+					{% include '01-atoms/buttons/button/button.twig' with {
+						parent_class : component_class,
+						button       : button
+					} only %}
 				{% endif %}
 
 			</div>

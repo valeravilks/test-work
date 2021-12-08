@@ -20,25 +20,70 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-column-double {
-
-	&__column {
-
+	@include bp-sm {
+		background: linear-gradient(90deg, var(--background-column-1) 50%, var(--background-column-2) 50%);
 	}
 
-	&__title-wrapper {
+	&__container {
+		max-width: 1245px;
+		@include bpm-sm {
+			width: 100%;
+			padding: 0;
+		}
+	}
 
+	&__column {
+		padding: 60px 20px;
+		@include bp-sm {
+			padding: 60px 0;
+		}
+
+		&--1 {
+			@include bp-sm {
+				padding-right: 50px;
+			}
+			@include bp-xl {
+				padding-right: 70px;
+			}
+		}
+
+		&--2 {
+			@include bp-sm {
+				padding-left: 50px;
+			}
+			@include bp-xl {
+				padding-left: 70px;
+			}
+		}
+	}
+
+	&__container-inner {
+		@include flex-outlining-card-1-by-2(0px, '.o-i360-column-double__column');
+	}
+
+	&__pretitle {
+		margin-bottom: 22px;
+		font-weight: 600;
 	}
 
 	&__title {
-
+		@include bp-lg {
+			padding-bottom: 22px;
+		}
 	}
 
-	&__content {
-
+	&__link-wrapper {
+		margin-top: 40px;
 	}
 
-	&__button-wrapper {
+	&__link {
+		@include underline-special;
+		@include underline-special-reverse;
 
+		&::before {
+			top: calc(100% - 4px);
+			height: 1px;
+		}
 	}
 }
 
@@ -100,24 +145,43 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-column-double--color-default,
-.o-i360-column-double--color-dark {
+.o-i360-column-double__column--color-dark {
     .o-i360-column-double {
-		&__title {
+		&__title,
+		&__link {
 			color: $g-heading-dark;
 		}
 
+		&__pretitle,
 		&__content {
 			color: $g-body-dark;
+		}
+
+		&__link {
+			&::before {
+				background-color: $g-heading-dark;
+			}
 		}
 	}
 }
 
-.o-i360-column-double--color-light {
+.o-i360-column-double__column--color-default,
+.o-i360-column-double__column--color-light {
 	.o-i360-column-double {
 		&__title,
-		&__content {
+		&__link {
 			color: $g-body-light;
+		}
+
+		&__pretitle,
+		&__content {
+			color: $g-grey-color-light;
+		}
+
+		&__link {
+			&::before {
+				background-color: $g-body-light;
+			}
 		}
 	}
 }
