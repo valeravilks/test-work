@@ -173,6 +173,9 @@
 .o-i360-text.o-i360-text--alt-title-left.o-dbm--align-left,
 .o-i360-text.o-i360-text--alt-title-left.o-dbm--align-default {
 	.o-i360-text {
+		&__title {
+			text-align: left;
+		}
 		&__content {
 			text-align: left;
 		}
