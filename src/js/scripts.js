@@ -45,6 +45,7 @@ import scrollToAnchor from './custom/scroll/scroll-to-anchor';
  */
 ////DO NOT ERASE OR PLOP IMPORTING WILL FAIL
 ////IMPORT FROM PLOP
+import clickableVideo from '../patterns/03-organisms/custom/i360-clickable-video/i360-clickable-video';
 import tabs from '../patterns/02-molecules/tabs/tabs';
 
 /*
