@@ -259,7 +259,8 @@
                                 "id": ""
                             },
                             "choices": {
-                                "default": "Default"
+                                "default": "Default",
+                                "alt-title-left": "Alternative ( Title Left )"
                             },
                             "default_value": "default",
                             "allow_null": 0,
@@ -268,8 +269,8 @@
                             "ajax": 0,
                             "return_format": "value",
                             "allow_custom": 0,
-                            "placeholder": "",
-                            "search_placeholder": ""
+                            "search_placeholder": "",
+                            "placeholder": ""
                         },
                         {
                             "key": "field_618c1454b7bfd",
@@ -4119,21 +4120,6 @@
                                     "toolbar": "full",
                                     "media_upload": 1,
                                     "delay": 1
-                                },
-                                {
-                                    "key": "field_61afc52edf2b3",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
                                 }
                             ]
                         },
@@ -12604,5 +12590,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638970570
+    "modified": 1638986887
 }
