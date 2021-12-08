@@ -98,7 +98,6 @@
  * the color and alignment use cases above
  * ------------------------------------------------------------
  */
-
 .o-i360-text--alt-title-left {
 	.o-i360-text {
 		&__container {
@@ -109,31 +108,55 @@
 			}
 		}
 
+		&__column {
+			flex-grow: 0;
+			flex-basis: 100%;
+
+			&--1 {
+				flex-shrink: 0;
+				margin: 0;
+				@include bp-md {
+					flex-basis: 300px;
+					padding-right: 15px;
+				}
+			}
+
+			&--2 {
+				flex-shrink: 1;
+				margin-left: 0;
+				@include bp-md {
+					flex-basis: 780px;
+				}
+			}
+		}
+
 		&__title-wrapper,
 		&__title,
 		&__content {
 			max-width: 100%;
 		}
+	}
+}
 
-		&__title-wrapper {
-			flex-grow: 0;
-			flex-shrink: 0;
-			flex-basis: 100%;
-			margin: 0;
-			@include bp-md {
-				flex-basis: 300px;
-				padding-right: 15px;
-			}
+// o-i360-text--alt-title-left Block Color Palette Versions
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--color-default,
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--color-dark {
+	.o-i360-text {
+		&__title {
+			color: $g-heading-dark;
 		}
 
 		&__content {
-			flex-grow: 0;
-			flex-shrink: 1;
-			flex-basis: 100%;
-			margin-left: 0;
-			@include bp-md {
-				flex-basis: 780px;
-			}
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-i360-text.o-i360-text--alt-title-left.o-dbm--color-light {
+	.o-i360-text {
+		&__title,
+		&__content {
+			color: $g-body-light;
 		}
 	}
 }
@@ -141,8 +164,13 @@
 // o-i360-text--alt-title-left Block Alignment Versions
 .o-i360-text.o-i360-text--alt-title-left.o-dbm--align-center {
 	.o-i360-text {
+		&__title,
 		&__content {
 			text-align: center;
+		}
+
+		&__button-wrapper {
+			justify-content: center;
 		}
 	}
 }
@@ -150,11 +178,13 @@
 .o-i360-text.o-i360-text--alt-title-left.o-dbm--align-left,
 .o-i360-text.o-i360-text--alt-title-left.o-dbm--align-default {
 	.o-i360-text {
-		&__title {
-			text-align: left;
-		}
+		&__title,
 		&__content {
 			text-align: left;
+		}
+
+		&__button-wrapper {
+			justify-content: flex-start;
 		}
 	}
 }
