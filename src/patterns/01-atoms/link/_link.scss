@@ -1,0 +1,59 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Link 		                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.a-link {
+	color: $g-link-color-dark;
+
+	&:hover {
+		color: $g-brand-color-1;
+	}
+
+	////////////////////
+	// Versions       //
+	////////////////////
+
+	&--underline {
+		@include underline-special
+	}
+
+	&--underline-reverse {
+		@include underline-special-reverse;
+	}
+
+	&--underline-primary {
+		color: $g-link-color-dark;
+
+		&:before {
+			background-color: $g-brand-color-1;
+		}
+
+		&:hover {
+			color: $g-link-color-dark;
+		}
+	}
+
+	&--underline-secondary {
+		color: $g-link-color-dark;
+
+		&:before {
+			background-color: $g-brand-color-2;
+		}
+
+		&:hover {
+			color: $g-link-color-dark;
+		}
+	}
+}
