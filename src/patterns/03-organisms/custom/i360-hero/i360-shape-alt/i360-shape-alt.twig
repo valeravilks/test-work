@@ -1,0 +1,54 @@
+{% spaceless %}
+	{# Hero background options #}
+	{% include '03-organisms/base/base-hero/base-hero-elements/base-hero-bg/base-hero-bg.twig' %}
+
+	{# Wrapper div that functions as container and "flexbox #}
+	<div class="{{ component_class }}__container l-container">
+		<div class="{{ component_class }}__deco-wrapper">
+            <!-- Please add here the svg from design -->
+		</div>
+
+		<div class="{{ component_class }}__info-wrapper">
+			{% if post.get_field('hero_title') and post.hide_the_hero_title == false %}
+				{% set title = post.get_field('hero_title')|replace({'<p>': "", '</p>': ""}) %}
+			{% elseif post.title and post.hide_the_hero_title == false %}
+				{% set title = post.title %}
+			{% elseif category_page  %}
+				{% set title = category_title %}
+			{% else %}
+				{% set title = false %}
+			{% endif %}
+
+			{% if title %}
+				{% include '01-atoms/content/title/title.twig' with {
+					parent_class : component_class,
+					title        : title,
+					h            : 1
+				} only %}
+			{% endif %}
+
+			{% if post.get_field( 'hero_subtitle' ) %}
+				{#The hero title if no hero title is specified in the back-end. Pulls the post.title#}
+				{% include '01-atoms/content/subtitle/subtitle.twig' with {
+					parent_class : component_class,
+					subtitle     : post.get_field( 'hero_subtitle' )
+				} only %}
+			{% endif %}
+
+            {% if post.get_field( 'hero_content' ) %}
+                {% include '01-atoms/content/content/content.twig' with {
+                    parent_class        : component_class,
+                    content             : post.get_field( 'hero_content' ),
+                    add_class_on_anim   : true
+                } only %}
+            {% endif %}
+
+			{% if post.get_field( 'hero_buttons' ) %}
+				{% include '01-atoms/buttons/button-repeater/button-repeater.twig' with {
+					parent_class : component_class,
+					buttons      : post.get_field( 'hero_buttons' )
+				} only %}
+			{% endif %}
+		</div>
+    </div>
+{% endspaceless %}
