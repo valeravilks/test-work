@@ -1689,8 +1689,8 @@
                             },
                             "acfe_repeater_stylised_button": 0,
                             "collapsed": "field_61afe9cf1780e",
-                            "min": 0,
-                            "max": 0,
+                            "min": 2,
+                            "max": 2,
                             "layout": "row",
                             "button_label": "Add Row",
                             "hide_collapse": 0,
@@ -1706,7 +1706,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -1731,13 +1731,32 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
                                     "color_palette": "",
                                     "hide_palette": 0
+                                },
+                                {
+                                    "key": "field_61b0a8285f942",
+                                    "label": "Pretitle",
+                                    "name": "pretitle",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 },
                                 {
                                     "key": "field_61afe9cf1780e",
@@ -1817,7 +1836,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url"
+                                    "return_format": "array"
                                 }
                             ]
                         },
@@ -12585,5 +12604,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638927193
+    "modified": 1638970570
 }

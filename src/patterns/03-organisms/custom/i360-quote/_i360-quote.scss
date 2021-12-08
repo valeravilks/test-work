@@ -106,7 +106,7 @@ $l-quote-block-padding-mobile-tablet: 80px;
 		}
 	}
 
-	&__btn-wrapper {
+	&__button-wrapper {
 		margin-top: 35px;
 		@include bpm-md {
 			text-align: center;
@@ -127,17 +127,19 @@ $l-quote-block-padding-mobile-tablet: 80px;
 			flex-direction: column-reverse;
 		}
 
-		.o-i360-quote__content {
-			align-items: baseline;
-		}
-
-		.o-i360-quote__content-group {
-			@include bp-lg {
-				padding-left: 80px;
+		.o-i360-quote {
+			&__content {
+				align-items: baseline;
 			}
-			@include bpm-md {
-				margin: 0 auto;
-				text-align: center;
+
+			&__content-group {
+				@include bp-lg {
+					padding-left: 80px;
+				}
+				@include bpm-md {
+					margin: 0 auto;
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -147,23 +149,25 @@ $l-quote-block-padding-mobile-tablet: 80px;
 			flex-direction: column;
 		}
 
-		.o-i360-quote__content {
-			align-items: baseline;
-		}
-
-		.o-i360-quote__content-group {
-			margin-left: auto;
-			@include bp-lg {
-				padding-right: 80px;
+		.o-i360-quote {
+			&__content {
+				align-items: baseline;
 			}
-			@include bpm-md {
-				margin: 0 auto;
-				text-align: center;
-			}
-		}
 
-		.o-i360-quote__btn {
-			width: auto;
+			&__content-group {
+				margin-left: auto;
+				@include bp-lg {
+					padding-right: 80px;
+				}
+				@include bpm-md {
+					margin: 0 auto;
+					text-align: center;
+				}
+			}
+
+			&__btn {
+				width: auto;
+			}
 		}
 	}
 
@@ -172,23 +176,25 @@ $l-quote-block-padding-mobile-tablet: 80px;
 			flex-direction: column;
 		}
 
-		.o-i360-quote__content,
-		.o-i360-quote__content-group {
-			align-items: center;
-			text-align: center;
-			margin: 0 auto;
-		}
+		.o-i360-quote {
+			&__content,
+			&__content-group {
+				align-items: center;
+				text-align: center;
+				margin: 0 auto;
+			}
 
-		.o-i360-quote__content-group {
-			margin: 0 auto;
-		}
+			&__content-group {
+				margin: 0 auto;
+			}
 
-		.o-i360-quote__btn-wrapper {
-			text-align: center;
-		}
+			&__button-wrapper {
+				text-align: center;
+			}
 
-		.o-i360-quote__btn {
-			width: auto;
+			&__btn {
+				width: auto;
+			}
 		}
 	}
 }

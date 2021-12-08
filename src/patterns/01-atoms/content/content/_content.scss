@@ -16,6 +16,6 @@
 .a-content {
 	// Super important mixing here. Includes a bunch of default styling that is applied to the content all blocks.
 	// Think heading, links, font styles.
-	@include main-content-styling;
+	@include wysiwyg-content-styling;
 	@include main-content-styling-block-only;
 }

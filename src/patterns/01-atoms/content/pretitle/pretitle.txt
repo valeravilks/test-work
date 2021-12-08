@@ -2,7 +2,7 @@
 
 {% include '01-atoms/content/pretitle/pretitle.twig' with {
 	parent_class        : component_class,
-	title               : section.pretitle,
+	pretitle            : section.pretitle,
 	add_class_on_anim   : true
 } only %}
 
@@ -11,6 +11,6 @@
 
 {% include '01-atoms/content/pretitle/pretitle.twig' with {
 	parent_class        : component_class,
-	title               : item.pretitle,
+	pretitle            : item.pretitle,
 	add_class_on_anim   : true
 } only %}
