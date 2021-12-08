@@ -98,6 +98,10 @@
 .o-i360-pills--color-default,
 .o-i360-pills--color-dark {
     .o-i360-pills {
+		&__pretitle {
+			color: $g-pretitle-dark;
+		}
+
 		&__title {
 			color: $g-heading-dark;
 		}
@@ -110,6 +114,10 @@
 
 .o-i360-pills--color-light {
 	.o-i360-pills {
+		&__pretitle {
+			color: $g-pretitle-light;
+		}
+
 		&__title,
 		&__content {
 			color: $g-body-light;
