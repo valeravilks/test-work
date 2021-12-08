@@ -32,6 +32,7 @@
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
 						title               : item.title,
+						extra_class         : "o-i360-how-it-works__item-title",
 						h                   : 4,
 						add_class_on_anim   : false
 					} only %}
@@ -39,16 +40,18 @@
 					{% include '01-atoms/content/content/content.twig' with {
 						parent_class        : component_class,
 						content             : item.content,
+						extra_class         : "o-i360-how-it-works__item-content",
 						add_class_on_anim   : false
 					} only %}
 				</div>
 			{% endfor %}
 		</div>
 
-		{% if section.content_extra %}
+		{% if section.extra_content_box %}
 			{% include '01-atoms/content/content/content.twig' with {
 				parent_class        : component_class,
-				content             : section.content_extra,
+				extra_class         : "o-i360-how-it-works__content-box",
+				content             : section.extra_content_box,
 				add_class_on_anim   : false
 			} only %}
 		{% endif %}
