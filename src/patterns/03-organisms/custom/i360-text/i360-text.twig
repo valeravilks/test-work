@@ -56,6 +56,7 @@
 				add_class_on_anim   : true
 			} only %}
 
+			{#Test#}
 			{% if section.add_button %}
 				{% include '01-atoms/buttons/button/button.twig' with {
 					default_block_class : default_block_class,
@@ -67,7 +68,7 @@
 
 			{#Used for the title on left and content/button on right version#}
 			{% if section.version == "alt-title-left" %}
-				<div class='{{component_class}}__column {{component_class}}__column--2'>
+				</div>
 			{% endif %}
 
 		</div>
