@@ -20,19 +20,104 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-statistics-vertical {
-	&__title-wrapper {
-
+	&__container {
+		max-width: 990px;
 	}
 
-	&__title {
+	&__container-inner {
+		display: flex;
+		align-items: flex-end;
+		@include bpm-sm {
+			flex-wrap: wrap;
+		}
+	}
 
+	&__column {
+		flex-basis: 100%;
+
+		&--1 {
+			@include bp-sm {
+				flex-grow: 1;
+				flex-shrink: 1;
+				flex-basis: 0;
+			}
+		}
+
+		&--2 {
+			@include bp-sm {
+				flex-grow: 0;
+				flex-shrink: 0;
+				flex-basis: 320px;
+				padding-left: 50px;
+			}
+			@include bp-md {
+				padding-left: 65px;
+			}
+		}
+	}
+
+	&__title-wrapper.o-dbm__title-wrapper,
+	&__title.o-dbm__title.a-title--default,
+	&__content.o-dbm__content {
+		max-width: 100%;
 	}
 
 	&__content {
+		h5 {
+			padding-bottom: 30px;
+		}
 
+		p {
+			margin: 0 0 40px;
+		}
 	}
 
-	&__button-wrapper {
+	&__repeater {
+		display: flex;
+		margin-top: 20px;
+		@include bp-xs {
+			margin-top: 50px;
+		}
+		@include bp-sm {
+			display: block;
+			margin-top: 0;
+		}
+		@include bpm-xs {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		margin-top: 20px;
+		margin-right: 0;
+		@include bp-xs {
+			margin-top: 0;
+			margin-right: 30px;
+		}
+		@include bp-sm {
+			margin-top: 30px;
+		}
+		@include bpm-xs {
+			flex-basis: 100%;
+		}
+
+		.o-i360-statistics-vertical {
+			&__title {
+				text-transform: uppercase;
+				font-weight: 300;
+				letter-spacing: -0.62px;
+				line-height: 1;
+				color: $g-brand-color-7!important;
+				@include bpm-sm {
+					font-size: 27px;
+				}
+			}
+
+			&__content {
+				font-size: 14px;
+				letter-spacing: -0.17px;
+			}
+		}
 
 	}
 }
@@ -54,31 +139,31 @@
 // "align-default" is the starting point and is required to style
 
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-statistics-vertical--align-center,
-.o-i360-statistics-vertical--align-default {
+.o-i360-statistics-vertical.o-dbm--align-center {
 	.o-i360-statistics-vertical {
 		&__title-wrapper,
 		&__title,
 		&__content {
-
+			text-align: center;
 		}
 
 		&__button-wrapper {
-
+			justify-content: center;
 		}
 	}
 }
 
-.o-i360-statistics-vertical--align-left {
+.o-i360-statistics-vertical.o-dbm--align-left,
+.o-i360-statistics-vertical.o-dbm--align-default {
 	.o-i360-statistics-vertical {
 		&__title-wrapper,
 		&__title,
 		&__content {
-
+			text-align: left;
 		}
 
 		&__button-wrapper {
-
+			justify-content: flex-start;
 		}
 	}
 }
@@ -95,8 +180,8 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-statistics-vertical--color-default,
-.o-i360-statistics-vertical--color-dark {
+.o-i360-statistics-vertical.o-dbm--color-default,
+.o-i360-statistics-vertical.o-dbm--color-dark {
     .o-i360-statistics-vertical {
 		&__title {
 			color: $g-heading-dark;
@@ -104,15 +189,25 @@
 
 		&__content {
 			color: $g-body-dark;
+
+			h5 {
+				color: $g-heading-dark;
+			}
 		}
 	}
 }
 
-.o-i360-statistics-vertical--color-light {
+.o-i360-statistics-vertical.o-dbm--color-light {
 	.o-i360-statistics-vertical {
 		&__title,
 		&__content {
 			color: $g-body-light;
+		}
+
+		&__content {
+			h5 {
+				color: $g-body-light;
+			}
 		}
 	}
 }

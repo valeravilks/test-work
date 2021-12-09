@@ -80,7 +80,7 @@
 				}
 
 				&__list-item-inner {
-					border: 1px solid #45c58e;
+					border: 1px solid $g-brand-color-7;
 					@include bp-md {
 						&--1 {
 							transition-delay: 1s;
