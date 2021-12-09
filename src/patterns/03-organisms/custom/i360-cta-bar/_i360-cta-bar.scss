@@ -176,7 +176,9 @@
 		&__title-wrapper,
 		&__title,
 		&__content {
-			text-align: left !important;
+			@include bp-lg {
+				text-align: left !important;
+			}
 		}
 
 		&__button-wrapper {
