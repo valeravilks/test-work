@@ -48,7 +48,8 @@
                 "default-side-half-image": "Default - Hero Side Image(50% and full height)",
                 "i360-regular": "i360 - Hero Regular",
                 "i360-shape": "i360 - Hero with shape",
-                "i360-shape-alt": "i360 - Hero with shape alt"
+                "i360-shape-alt": "i360 - Hero with shape alt",
+                "i360-case-study": "i360 Hero Case Study"
             },
             "default_value": "i360-regular",
             "allow_null": 0,
@@ -255,6 +256,18 @@
                         "operator": "==",
                         "value": "1"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-case-study"
+                    }
                 ]
             ],
             "wrapper": {
@@ -292,14 +305,14 @@
                         "value": "1"
                     },
                     {
-                        "field": "field_5c59d0dcbcd88",
-                        "operator": "==",
-                        "value": "default-regular"
-                    },
-                    {
                         "field": "field_5e3f57ecbb34d",
                         "operator": "==",
                         "value": "overlay"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "default-regular"
                     }
                 ],
                 [
@@ -309,14 +322,14 @@
                         "value": "1"
                     },
                     {
-                        "field": "field_5c59d0dcbcd88",
-                        "operator": "==",
-                        "value": "i360-regular"
-                    },
-                    {
                         "field": "field_5e3f57ecbb34d",
                         "operator": "==",
                         "value": "overlay"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
                     }
                 ]
             ],
@@ -364,6 +377,23 @@
                         "field": "field_5c59d0dcbcd88",
                         "operator": "==",
                         "value": "i360-regular"
+                    },
+                    {
+                        "field": "field_5e3f57ecbb34d",
+                        "operator": "==",
+                        "value": "gradient"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-case-study"
                     },
                     {
                         "field": "field_5e3f57ecbb34d",
@@ -780,6 +810,18 @@
                         "operator": "==",
                         "value": "i360-shape"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-case-study"
+                    }
                 ]
             ],
             "wrapper": {
@@ -960,6 +1002,82 @@
                     "prefix_name": 0
                 }
             ]
+        },
+        {
+            "key": "field_61b25767c5935",
+            "label": "Hero Columns",
+            "name": "hero_columns",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-case-study"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "collapsed": "",
+            "min": 4,
+            "max": 4,
+            "layout": "block",
+            "button_label": "Add Column",
+            "hide_collapse": 0,
+            "collapse_all_repeater": 0,
+            "btn-icon-only": 0,
+            "sub_fields": [
+                {
+                    "key": "field_61b25810c5937",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_61b25818c5938",
+                    "label": "Subtitle",
+                    "name": "subtitle",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -981,6 +1099,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-studies"
+            }
         ]
     ],
     "menu_order": 10,
@@ -998,5 +1123,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638985224
+    "modified": 1639077936
 }

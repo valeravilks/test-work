@@ -12573,6 +12573,13 @@
                 "operator": "==",
                 "value": "banner"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-studies"
+            }
         ]
     ],
     "menu_order": 0,
@@ -12590,5 +12597,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638986887
+    "modified": 1639056086
 }
