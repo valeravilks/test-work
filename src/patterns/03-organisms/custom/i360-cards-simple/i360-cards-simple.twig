@@ -30,7 +30,6 @@
 				{% if section.version == "default" %}
 
 					{% set icon_svg = item.icon_svg %}
-
 					{% include '02-molecules/cards/card-icon-content/card-icon-content.twig' with {
 						parent_class 		: component_class,
 						item         		: item,
@@ -45,7 +44,6 @@
 
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( item.thumbnail ) %}
-
 					{% include '02-molecules/cards/card-simple-alt/card-simple-alt.twig' with {
 						parent_class 		: component_class,
 						item         		: item,
@@ -66,13 +64,9 @@
 						index       		: loop.index,
 						add_class_on_anim   : true,
 					} only %}
-
-
 				{% endif %}
-
 			{% endfor %}
 		</div>
-
 	{% endblock %}
 
 {% endspaceless %}

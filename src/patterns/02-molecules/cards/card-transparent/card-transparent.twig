@@ -18,32 +18,17 @@
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
 
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
-{#		{% if icon_svg != '' %}#}
-{#			<div class="{{ component_class }}__icon-wrapper">#}
-{#				{% include '01-atoms/icon/icon.twig' with {#}
-{#					parent_class : component_class,#}
-{#					icon_svg     : icon_svg#}
-{#				} only %}#}
-{#			</div>#}
-{#		{% endif %}#}
+		{% include '01-atoms/content/title/title.twig' with {
+			parent_class        : component_class,
+			title               : item.title,
+			h                   : "5",
+			add_class_on_anim   : false
+		} only %}
 
-		<div class="{{ component_class }}__text-wrapper">
-			{% if item.title %}
-				{% include '01-atoms/content/title/title.twig' with {
-					parent_class        : component_class,
-					title               : item.title,
-					h                   : "5",
-					add_class_on_anim   : false
-				} only %}
-			{% endif %}
-
-			{% set content   = item.content %}
-
-			{% include '01-atoms/content/content/content.twig' with {
-				parent_class        : component_class,
-				content             : content,
-				add_class_on_anim   : false
-			} only %}
-		</div>
+		{% include '01-atoms/content/content/content.twig' with {
+			parent_class        : component_class,
+			content             : item.content,
+			add_class_on_anim   : false
+		} only %}
 	</div>
 {% endspaceless %}
