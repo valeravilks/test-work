@@ -9,7 +9,7 @@
 	* @param  {string}  extra_class          optional extra CSS class
 	#}
 
-	{% set component_class 		= "m-list" %}
+	{% set component_class 		= "m-list-simple" %}
 	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join(" ") %}

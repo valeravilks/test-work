@@ -6,7 +6,7 @@
 		<div class="l-container {{ component_class }}__container">
 			<div class="{{ component_class }}__cards-wrapper">
 
-				{% include '/02-molecules/list/list.twig' with {
+				{% include '/02-molecules/list/list-simple/list-simple.twig' with {
 					parent_class      : component_class,
 					list_title		  : section.cons_title,
 					list_items		  : section.cons_list,
@@ -17,7 +17,7 @@
 					list_type		  :'cons',
 				} only %}
 
-				{% include '/02-molecules/list/list.twig' with {
+				{% include '/02-molecules/list/list-simple/list-simple.twig' with {
 					parent_class      : component_class,
 					list_title		  : section.pros_title,
 					list_items		  : section.pros_list,

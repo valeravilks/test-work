@@ -1,10 +1,10 @@
-.m-list {
+.m-list-simple {
 	padding: 20px;
 	border-radius: 30px;
 	position: relative;
 	overflow: hidden;
 	&.animated {
-		.m-list {
+		.m-list-simple {
 			&__title {
 				transform: translateY(0%);
 			}

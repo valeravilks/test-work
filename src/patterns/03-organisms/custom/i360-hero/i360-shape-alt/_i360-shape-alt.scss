@@ -7,6 +7,48 @@
 //// Client specific hero type. Each hero type has it's own alignment + text color options
 .o-i360-hero--i360-shape-alt {
 	.o-i360-hero {
+		&__deco-wrapper {
+			@include absolute-tl;
+			height: 100%;
+
+			svg {
+				display: block;
+				height: 100%;
+			}
+		}
+
+		&__info-wrapper {
+			max-width: 815px;
+			padding: 75px 0;
+		}
+
+		&__title-wrapper,
+		&__subtitle {
+			max-width: 590px;
+			margin: 0 auto;
+		}
+
+		&__title,
+		&__content {
+			span {
+				color: $g-brand-color-3;
+			}
+		}
+
+		&__title {
+			padding-bottom: 10px;
+		}
+
+		&__content {
+			margin-top: 20px;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: normal;
+		}
+
+		&__button-wrapper {
+			padding-top: 60px;
+		}
 	}
 }
 

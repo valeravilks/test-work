@@ -100,6 +100,28 @@
 	}
 }
 
+// If code below don't needed remove!
+.o-i360-cards-simple--transparent {
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-cards-simple {
+			&__card {
+				text-align: center;
+			}
+		}
+	}
+
+	&.o-dbm--align-left {
+		.o-i360-cards-simple {
+			.o-i360-cards-simple {
+				&__card {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
 //////////////////////////////////////////
 // Block Color Palette Versions         //
 //////////////////////////////////////////
@@ -148,3 +170,23 @@
  * the color and alignment use cases above
  * ------------------------------------------------------------
  */
+
+.o-i360-cards-simple--transparent {
+	.o-i360-cards-simple {
+		&__title {
+			span {
+				color: $g-brand-color-3;
+			}
+		}
+
+		&__subheader-wrapper {
+			margin: 0 auto 55px;
+		}
+
+		&__repeater {
+			@include flex-outlining-card-1-by-4(20px, '.m-card-transparent');
+			justify-content: flex-start;
+			padding-top: 0;
+		}
+	}
+}
