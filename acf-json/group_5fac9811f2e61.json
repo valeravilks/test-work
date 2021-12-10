@@ -4412,7 +4412,7 @@
                                     "choices": {
                                         "primary": "Primary",
                                         "secondary": "Secondary",
-                                        "Tertiary": "Tertiary"
+                                        "tertiary": "Tertiary"
                                     },
                                     "default_value": "primary",
                                     "allow_null": 0,
@@ -12597,5 +12597,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639157267
+    "modified": 1639160427
 }
