@@ -55,13 +55,15 @@
 @import '02-molecules/cards/card-grid/card-grid';
 @import '02-molecules/cards/card-icon-content/card-icon-content';
 @import '02-molecules/cards/card-list/card-list';
+@import '02-molecules/cards/card-transparent/card-transparent';
 @import '02-molecules/modal/modal';
 @import '02-molecules/gallery/gallery';
 @import '02-molecules/slider/slider-images/slider-images';
 @import '02-molecules/slider/slider-testimonials/slider-testimonials';
 @import '02-molecules/dropdown/dropdown';
 @import '02-molecules/pagination/pagination';
-@import '02-molecules/list/list';
+@import '02-molecules/list/list-simple/list-simple';
+@import '02-molecules/list/list-alt/list-alt';
 
 ///////////////////////////////////////
 // Patterns -> Molecules - Default   //
@@ -151,6 +153,8 @@
 
 @import '03-organisms/custom/i360-header/i360-header';
 @import '03-organisms/custom/i360-hero/i360-hero/i360-hero';
+@import '03-organisms/custom/i360-hero/i360-shape-alt/i360-shape-alt';
+@import '03-organisms/custom/i360-hero/i360-case-study/i360-case-study';
 @import '03-organisms/custom/i360-hero/i360-shape/i360-shape';
 @import '03-organisms/custom/i360-image-text/i360-image-text';
 @import '03-organisms/custom/i360-text/i360-text';

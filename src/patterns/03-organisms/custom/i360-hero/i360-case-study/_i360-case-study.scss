@@ -5,4 +5,87 @@
 //////////////////////////////////////////////////////////////////////
 //
 //// Client specific hero type. Each hero type has it's own alignment + text color options
-.o-i360-hero--i360-case-study {}
+.o-i360-hero--i360-case-study {
+	.o-i360-hero {
+		&__columns {
+			display: inline-flex;
+			flex-wrap: wrap;
+			max-width: 410px;
+			margin-top: 20px;
+			@include bp-xs {
+				margin-top: 40px;
+			}
+		}
+
+		&__column {
+			flex-grow: 0;
+			flex-shrink: 1;
+			flex-basis: 100%;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid $g-brand-color-6;
+			@include bp-xs {
+				flex-basis: 50%;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			&:nth-child(odd) {
+				@include bp-xs {
+					padding-right: 40px;
+					border-right: 1px solid $g-brand-color-6;
+				}
+			}
+
+			&:nth-child(even) {
+				@include bp-xs {
+					padding-left: 40px;
+				}
+			}
+
+			&:nth-child(-n+2) {
+				@include bp-xs {
+					padding-top: 0;
+				}
+			}
+
+			&:nth-last-child(-n+2) {
+				@include bp-xs {
+					border-bottom: none;
+				}
+			}
+
+			&:last-child {
+				@include bpm-xs {
+					border-bottom: none;
+				}
+			}
+		}
+
+		&__pretitle {
+			margin-bottom: 30px;
+			font-weight: 600;
+		}
+
+		&__title {
+			padding-bottom: 15px;
+		}
+
+		&__column-title,
+		&__column-subtitle {
+			font-size: 16px;
+		}
+
+		&__column-title {
+			font-weight: 600;
+			line-height: normal;
+			letter-spacing: normal;
+			color: $g-heading-dark;
+		}
+
+		&__column-subtitle {
+			line-height: 1.5;
+			letter-spacing: -0.2px;
+		}
+	}
+}

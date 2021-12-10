@@ -21,7 +21,7 @@
 			margin-left: -20px;
 		}
 
-		.m-list {
+		.m-list-simple {
 			flex-grow: 0;
 			flex-shrink: 1;
 			flex-basis: 100%;
@@ -40,7 +40,7 @@
 
 	&__list {
 		&--cons {
-			.m-list {
+			.m-list-simple {
 				&__bg {
 					background-color: $g-brand-color-5;
 				}
@@ -70,7 +70,7 @@
 		}
 
 		&--pros {
-			.m-list {
+			.m-list-simple {
 				&__bg {
 					background-color: #e3f7ee;
 				}
