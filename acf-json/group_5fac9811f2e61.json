@@ -1743,7 +1743,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url"
+                                    "return_format": "array"
                                 }
                             ]
                         },
@@ -4711,10 +4711,10 @@
                                 "id": ""
                             },
                             "acfe_repeater_stylised_button": 1,
-                            "collapsed": "field_61afbd00789a4",
+                            "collapsed": "",
                             "min": 0,
                             "max": 0,
-                            "layout": "row",
+                            "layout": "block",
                             "button_label": "Add Row",
                             "hide_collapse": 0,
                             "collapse_all_repeater": 0,
@@ -4736,7 +4736,7 @@
                                     "choices": {
                                         "primary": "Primary",
                                         "secondary": "Secondary",
-                                        "Tertiary": "Tertiary"
+                                        "tertiary": "Tertiary"
                                     },
                                     "default_value": "primary",
                                     "allow_null": 0,
@@ -4768,9 +4768,9 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_61afc52f29f90",
-                                    "label": "Content",
-                                    "name": "content",
+                                    "key": "field_61b388ac56d76",
+                                    "label": "Subtitle",
+                                    "name": "subtitle",
                                     "type": "wysiwyg",
                                     "instructions": "",
                                     "required": 0,
@@ -4780,11 +4780,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 1
+                                    "default_value": "",
+                                    "delay": 0
                                 },
                                 {
                                     "key": "field_61afc52f29fd6",
@@ -4799,7 +4799,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array"
+                                    "return_format": "url"
                                 }
                             ]
                         },
@@ -12921,5 +12921,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639124227
+    "modified": 1639160427
 }

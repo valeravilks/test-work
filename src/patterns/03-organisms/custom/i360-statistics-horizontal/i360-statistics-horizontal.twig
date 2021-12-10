@@ -15,7 +15,7 @@
 	{# Block general settings                               #}
 	{########################################################}
 	{% set component_class = "o-i360-statistics-horizontal" %}
-	{% set container       = true %}
+	{% set container       = false %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -27,7 +27,12 @@
 
 		<div class="{{ component_class }}__repeater">
 			{% for item in section.repeater %}
-				<div class="{{ component_class }}__item {{ component_class }}__item-- wow">
+				{% set color_type = item.color ? component_class ~ '__item--color-' ~item.color %}
+
+				<div class="{{ component_class }}__item {{ color_type }} wow">
+					{% if item.link %}
+						<a class="{{ component_class }}_link" href="{{ item.link }}"></a>
+					{% endif %}
 
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
@@ -36,6 +41,11 @@
 						add_class_on_anim   : false
 					} only %}
 
+					{% include '01-atoms/content/subtitle/subtitle.twig' with {
+						parent_class        : component_class,
+						subtitle            : item.subtitle,
+						add_class_on_anim   : true
+					} only %}
 				</div>
 			{% endfor %}
 		</div>

@@ -20,20 +20,67 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-statistics-horizontal {
-	&__title-wrapper {
+	&__repeater {
+		display: flex;
+		@include bpm-sm {
+			flex-wrap: wrap;
+		}
+	}
 
+	&__item {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: 100%;
+		padding: 72px 10px 62px;
+		background-color: $g-brand-color-4;
+		border-width: 11px 0;
+		border-style: solid;
+		text-align: center;
+		@include bp-sm {
+			flex-basis: 0;
+		}
+
+		&--color-primary {
+			border-color: $g-brand-color-3;
+
+			.o-i360-statistics-horizontal__title {
+				color: $g-brand-color-3;
+			}
+		}
+
+		&--color-secondary {
+			border-color: $g-brand-color-1;
+
+			.o-i360-statistics-horizontal__title {
+				color: $g-brand-color-1;
+			}
+		}
+
+		&--color-tertiary {
+			border-color: $g-brand-color-7;
+
+			.o-i360-statistics-horizontal__title {
+				color: $g-brand-color-7;
+			}
+		}
 	}
 
 	&__title {
-
+		font-size: 45px;
+		line-height: 1;
+		letter-spacing: -4.03px;
+		@include bp-lg {
+			font-size: 80px;
+		}
 	}
 
-	&__content {
-
-	}
-
-	&__button-wrapper {
-
+	&__subtitle {
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 3.75px;
+		color: #fff;
 	}
 }
 
@@ -95,7 +142,7 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-statistics-horizontal--color-default,
+/*.o-i360-statistics-horizontal--color-default,
 .o-i360-statistics-horizontal--color-dark {
     .o-i360-statistics-horizontal {
 		&__title {
@@ -115,7 +162,7 @@
 			color: $g-body-light;
 		}
 	}
-}
+}*/
 
 
 //////////////////////////////////////////
