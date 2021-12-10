@@ -24,16 +24,9 @@
 	{#################################################################################}
 
 	{% block after_content %}
-
-		<!-- Allow WP user to manually select the entries to output -->
-		{% if section.case_studies %}
-			{% set items = section.case_studies %}
-		{% endif %}
-
 		<div class='{{component_class}}__repeater'>
-
 			<!-- Looping through either the manual selection or automatic selection -->
-			{% for item in items %}
+			{% for item in section.case_studies %}
 				<div class='{{component_class}}__column {{component_class}}__column--{{ loop.index }}'>
 
 					{# Accessing WordPress post and making them available to Twig templates #}
@@ -57,9 +50,7 @@
 
 				</div>
 			{% endfor %}
-
 		</div>
-
 	{% endblock %}
 
 {% endspaceless %}
