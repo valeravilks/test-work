@@ -4,9 +4,9 @@
     "fields": [
         {
             "key": "field_5ff8877606e0f",
-            "label": "Reading Duration",
-            "name": "reading_duration",
-            "type": "number",
+            "label": "Pretitle",
+            "name": "pretitle",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,13 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "BLOG",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": 1,
-            "max": "",
-            "step": ""
+            "maxlength": ""
         }
     ],
     "location": [
@@ -48,5 +46,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1610123166
+    "modified": 1639213500
 }
