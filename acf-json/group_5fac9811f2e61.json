@@ -8477,7 +8477,6 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "acfe_permissions": "",
                                     "choices": {
                                         "100": "100%",
                                         "50": "50%"
@@ -8868,17 +8867,16 @@
                                     },
                                     "choices": {
                                         "100": "100%",
-                                        "50": "50%"
+                                        "50": "50%",
+                                        "30": "30%"
                                     },
                                     "default_value": "width-100",
                                     "allow_null": 0,
                                     "multiple": 0,
                                     "ui": 0,
-                                    "ajax": 0,
                                     "return_format": "value",
-                                    "allow_custom": 0,
-                                    "placeholder": "",
-                                    "search_placeholder": ""
+                                    "ajax": 0,
+                                    "placeholder": ""
                                 }
                             ]
                         },
@@ -13241,20 +13239,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "cta-full"
             }
         ],
@@ -13288,5 +13272,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639217379
+    "modified": 1639254705
 }
