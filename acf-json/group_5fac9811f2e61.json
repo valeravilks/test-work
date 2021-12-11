@@ -12874,20 +12874,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "cta-full"
             }
         ],
@@ -12921,5 +12907,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639160427
+    "modified": 1639251676
 }

@@ -49,12 +49,10 @@
 					<div class="{{ component_class }}__date">{{ post.post_date | date('M j, Y') }}</div>
 				{% endif %}
 
-				<div class="{{ component_class }}__social-share-wrapper">
-					{% include '02-molecules/social/social-share/social-share.twig' with {
-						parent_class : component_class,
-						version      : "default"
-					} only %}
-				</div>
+				{% include '02-molecules/social/social-share/social-share.twig' with {
+					parent_class : component_class,
+					version      : "default"
+				} only %}
 			</div>
 
 			<div class="{{component_class}}__main-content-wrapper">
@@ -63,7 +61,6 @@
 						content      : post.content,
 						parent_class : component_class
 					} only %}
-
 				{% endif %}
 			</div>
 		</div>
