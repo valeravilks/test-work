@@ -50,6 +50,7 @@
 @import '02-molecules/cards/card-image-link-alt/card-image-link-alt';
 @import '02-molecules/cards/card-post-alt/card-post-alt';
 @import '02-molecules/cards/card-post-alt-horizontal/card-post-alt-horizontal';
+@import '02-molecules/cards/card-simple-alt/card-simple-alt';
 @import '02-molecules/filter-control/filter-control';
 @import '02-molecules/cards/card-statistic/card-statistic';
 @import '02-molecules/cards/card-grid/card-grid';
@@ -171,6 +172,7 @@
 @import '03-organisms/custom/i360-alternative-image-text/i360-alternative-image-text';
 ////DO NOT ERASE OR PLOP IMPORTING WILL FAIL
 ////IMPORT FROM PLOP
+@import '../patterns/03-organisms/custom/i360-author/i360-author';
 @import '../patterns/03-organisms/custom/i360-checkmarks/i360-checkmarks';
 @import '../patterns/03-organisms/custom/i360-clickable-video/i360-clickable-video';
 @import '../patterns/03-organisms/custom/i360-column-double/i360-column-double';

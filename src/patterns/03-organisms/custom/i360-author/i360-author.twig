@@ -1,0 +1,38 @@
+{% spaceless %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-author" %}
+	<div class="{{ component_class }}">
+		<div class="l-container {{ component_class }}__container">
+			{% if section.image %}
+				{% set img = TimberImage(section.image) %}
+				{% include '01-atoms/images/image-default/image-default.twig' with {
+					parent_class      : component_class,
+					img               : img,
+					wrapper           : true,
+					add_class_on_anim : true
+				} only %}
+			{% endif %}
+
+			<div class="{{ component_class }}__info">
+				{% if section.title %}
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class : component_class,
+						version      : "center",
+						h            : 3,
+						title        : section.title
+					} only %}
+				{% endif %}
+
+				{% if section.content %}
+					{% include '01-atoms/content/content/content.twig' with {
+						content      : section.content,
+						parent_class : component_class
+					} only %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endspaceless %}
