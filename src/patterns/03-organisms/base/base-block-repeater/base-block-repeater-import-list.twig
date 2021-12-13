@@ -88,46 +88,49 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
-	{% elseif section.acf_fc_layout == 'i360_author' %} 
+	{% elseif section.acf_fc_layout == 'i360_alternative_image_text' %}
+		{% include '03-organisms/custom/i360-alternative-image-text/i360-alternative-image-text.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_author' %}
 		{% include '03-organisms/custom/i360-author/i360-author.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_checkmarks' %} 
+	{% elseif section.acf_fc_layout == 'i360_checkmarks' %}
 		{% include '03-organisms/custom/i360-checkmarks/i360-checkmarks.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_clickable_video' %} 
+	{% elseif section.acf_fc_layout == 'i360_clickable_video' %}
 		{% include '03-organisms/custom/i360-clickable-video/i360-clickable-video.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_column_double' %} 
+	{% elseif section.acf_fc_layout == 'i360_column_double' %}
 		{% include '03-organisms/custom/i360-column-double/i360-column-double.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_image_group' %} 
+	{% elseif section.acf_fc_layout == 'i360_image_group' %}
 		{% include '03-organisms/custom/i360-image-group/i360-image-group.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_how_it_works' %} 
+	{% elseif section.acf_fc_layout == 'i360_how_it_works' %}
 		{% include '03-organisms/custom/i360-how-it-works/i360-how-it-works.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_cards_horizontal_icon' %} 
+	{% elseif section.acf_fc_layout == 'i360_cards_horizontal_icon' %}
 		{% include '03-organisms/custom/i360-cards-horizontal-icon/i360-cards-horizontal-icon.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_team' %} 
+	{% elseif section.acf_fc_layout == 'i360_team' %}
 		{% include '03-organisms/custom/i360-team/i360-team.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_badges' %} 
+	{% elseif section.acf_fc_layout == 'i360_badges' %}
 		{% include '03-organisms/custom/i360-badges/i360-badges.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_latest_posts' %} 
+	{% elseif section.acf_fc_layout == 'i360_latest_posts' %}
 		{% include '03-organisms/custom/i360-latest-posts/i360-latest-posts.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_statistics_vertical' %} 
+	{% elseif section.acf_fc_layout == 'i360_statistics_vertical' %}
 		{% include '03-organisms/custom/i360-statistics-vertical/i360-statistics-vertical.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_statistics_horizontal' %} 
+	{% elseif section.acf_fc_layout == 'i360_statistics_horizontal' %}
 		{% include '03-organisms/custom/i360-statistics-horizontal/i360-statistics-horizontal.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_pills' %} 
+	{% elseif section.acf_fc_layout == 'i360_pills' %}
 		{% include '03-organisms/custom/i360-pills/i360-pills.twig' %}
 
-	{% elseif section.acf_fc_layout == 'i360_case_studies' %} 
+	{% elseif section.acf_fc_layout == 'i360_case_studies' %}
 		{% include '03-organisms/custom/i360-case-studies/i360-case-studies.twig' %}
 
 	{% elseif section.acf_fc_layout == 'i360_quote' %}

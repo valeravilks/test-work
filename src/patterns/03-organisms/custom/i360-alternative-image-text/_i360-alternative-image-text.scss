@@ -1,0 +1,345 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Alternative Image Text
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+
+
+////////////////////////////////
+// Organism Base Styling      //
+////////////////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.o-i360-alternative-image-text {
+	&__title-wrapper,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		position: relative;
+	}
+
+	&__content-wrapper {
+		display: flex;
+		@include bpm-sm {
+			flex-direction: column-reverse;
+		}
+
+		.o-dbm__button-wrapper {
+			margin: 0;
+		}
+	}
+
+	&__group-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@include bp-sm {
+			width: 50%;
+		}
+		@include bpm-sm {
+			width: 100%;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 20px;
+		}
+	}
+
+	&__group-img {
+		@include bp-sm {
+			width: 50%;
+			display: flex;
+			align-items: center;
+		}
+		@include bpm-sm {
+			width: 100%;
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: relative;
+	}
+
+	&__button-wrapper {
+		text-align: left !important;
+	}
+
+
+	//////////////////////////////////////////
+	// Block Versions            		    //
+	//////////////////////////////////////////
+
+	// Two versions that have an image on the left.
+	// One with container (container-img-left). One without (img-left)
+	&--img-left,
+	&--container-img-left {
+		.o-default-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&__group-text {
+				padding-left: 0px;
+				padding-right: 0px;
+				@include bp-sm {
+					padding-left: 20px;
+				}
+			}
+
+			&__group-img {
+				@include bp-sm {
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+
+	// Two versions that have an image on the right.
+	// One with container (container-img-right). One without (img-right)
+	&--img-right,
+	&--container-img-right {
+		.o-default-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row;
+				}
+			}
+
+			&__group-text {
+				padding-left: 0px;
+				@include bp-sm {
+					padding-right: 20px;
+					padding-left: 20px;
+				}
+			}
+
+			&__group-img {
+				@include bp-sm {
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+
+	// Image right version without container.
+	// Adding 90% width and margin: 0 auto to simulate a container
+	&--img-right {
+		.o-default-image-text {
+			&__group-text {
+				@include bpm-sm {
+					padding-left: 15px;
+					padding-right: 15px;
+					width: 90%;
+					margin: 0 auto;
+				}
+				@include bp-sm {
+					padding-left: 50px;
+				}
+			}
+		}
+	}
+
+	// Image left version without container.
+	// Adding 90% width and margin: 0 auto to simulate a container
+	&--img-left {
+		.o-default-image-text {
+			&__group-text {
+				@include bpm-sm {
+					padding-left: 15px;
+					padding-right: 15px;
+					width: 90%;
+					margin: 0 auto;
+				}
+				@include bp-sm {
+					padding-left: 40px;
+					padding-right: 50px;
+				}
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Block Text Alignment Versions        //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple alignments
+	 * "align-default" is required and the starting point
+	 * Both "align-center" and "align-left" are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--align-default,
+	&.o-dbm--align-left {
+		.o-default-image-text {
+			&__title {
+				text-align: left;
+			}
+
+			&__content {
+				text-align: left;
+			}
+
+			&__button-wrapper {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	&.o-dbm--align-center {
+		.o-default-image-text {
+			&__title {
+				text-align: center;
+			}
+
+			&__content {
+				text-align: center;
+			}
+
+			&__button-wrapper {
+
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Block Color Palette Versions         //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-default-image-text {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
+		}
+	}
+
+	&.o-dbm--color-light {
+		.o-default-image-text {
+			&__title {
+				color: $g-heading-light;
+			}
+
+			&__content {
+				color: $g-body-light;
+			}
+		}
+	}
+}
+
+
+/////////////////////////////
+// Organism Versions       //
+/////////////////////////////
+
+// This organism is most likely inheriting styles from the default-organism.scss file.
+// If needed, the look & feel of organism versions can be modified below.
+
+
+//////////////////////////////////////////
+// Organism Versions -- Alignments      //
+//////////////////////////////////////////
+
+// Covers scenario(s) where this organism has multiple alignments ..
+// "align-default" is the starting point and is required to style
+
+// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+.o-i360-alternative-image-text--align-center,
+.o-i360-alternative-image-text--align-default {
+	.o-i360-alternative-image-text {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+.o-i360-alternative-image-text--align-left {
+	.o-i360-alternative-image-text {
+		&__title-wrapper,
+		&__title,
+		&__content {
+
+		}
+
+		&__button-wrapper {
+
+		}
+	}
+}
+
+
+/////////////////////////////////////////////
+// Organism Color Palette Versions         //
+/////////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has multiple color palettes
+ * "color-default" is required and the starting point
+ * Both "color-dark" and "color-light" are required to style
+ * Additional project color palettes might be present
+ * and are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-alternative-image-text--color-default,
+.o-i360-alternative-image-text--color-dark {
+    .o-i360-alternative-image-text {
+		&__title {
+			color: $g-heading-dark;
+		}
+
+		&__content {
+			color: $g-body-dark;
+		}
+	}
+}
+
+.o-i360-alternative-image-text--color-light {
+	.o-i360-alternative-image-text {
+		&__title,
+		&__content {
+			color: $g-body-light;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Organism Other Versions                 //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this organism has versions beside
+ * the color and alignment use cases above
+ * ------------------------------------------------------------
+ */
+
