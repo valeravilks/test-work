@@ -24,8 +24,11 @@
 		{% if post.author %}
 			{% include '03-organisms/custom/i360-author/i360-author.twig' with {
 				parent_class         : component_class,
-				section              : post.get_field('post_author'),
-				items                : items
+				section              : {
+					avatar : post.author.avatar(),
+					name   : post.author.display_name,
+					bio    : post.author.description
+				},
 			} %}
 		{% endif %}
 
