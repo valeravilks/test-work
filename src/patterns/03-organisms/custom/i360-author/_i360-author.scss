@@ -20,20 +20,47 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-author {
-	&__title-wrapper {
-
+	padding: 50px 0;
+	background-color: $g-brand-color-4;
+	@include bp-xs {
+		padding: 80px 0 95px;
 	}
 
-	&__title {
-
+	&__container {
+		display: flex;
+		max-width: 1010px;
+		@include bpm-xs {
+			flex-wrap: wrap;
+		}
 	}
 
+	&__img-wrapper {
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: 130px;
+		height: 130px;
+		margin: 0 auto 30px;
+		overflow: hidden;
+		background-color: #fff;
+		border-radius: 50%;
+		@include bp-xs {
+			margin: 0;
+		}
+	}
+
+	&__info {
+		flex-basis: 100%;
+		text-align: center;
+		@include bp-xs {
+			flex-basis: auto;
+			padding-left: 30px;
+			text-align: left;
+		}
+	}
+
+	&__title,
 	&__content {
-
-	}
-
-	&__button-wrapper {
-
+		color: $g-body-light;
 	}
 }
 

@@ -13,7 +13,7 @@
 	* @param  {string}  extra_class          optional extra CSS class
 	#}
 
-	{% set component_class 		= 'm-card-post-alt' %}
+	{% set component_class 		= 'm-card-simple-alt' %}
 	{% set version         		= version 			? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set interval        		= interval     		? "_" ~ index | join("") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
@@ -31,7 +31,7 @@
 		{% include '01-atoms/content/title/title.twig' with {
 			parent_class        : component_class,
 			title               : item.title,
-			h                   : "4",
+			h                   : "3",
 			add_class_on_anim   : false
 		} only %}
 
@@ -45,6 +45,7 @@
 			{% include '01-atoms/link/link.twig' with {
 				parent_class    	: component_class,
 				link                : item.link,
+				version				: "underline",
 				add_class_on_anim 	: false
 			} only %}
 		{% endif %}

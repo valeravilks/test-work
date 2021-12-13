@@ -31,37 +31,41 @@
 		} only %}
 
 		<div class="l-container {{ component_class }}__container">
-			{% include '01-atoms/content/pretitle/pretitle.twig' with {
-				parent_class        : component_class,
-				pretitle            : post.pretitle,
-				add_class_on_anim   : true
-			} only %}
-
-			{% include '01-atoms/content/title/title.twig' with {
-				parent_class : component_class,
-				version      : "center",
-				h            : 1,
-				title        : post.title
-			} only %}
-
-			<div class="{{ component_class }}__info-wrapper">
-				{% if post.post_date %}
-					<div class="{{ component_class }}__date">{{ post.post_date | date('M j, Y') }}</div>
-				{% endif %}
-
-				{% include '02-molecules/social/social-share/social-share.twig' with {
-					parent_class : component_class,
-					version      : "default"
+			<div class="{{ component_class }}__inner">
+				{% include '01-atoms/content/pretitle/pretitle.twig' with {
+					parent_class        : component_class,
+					pretitle            : post.pretitle,
+					add_class_on_anim   : true
 				} only %}
-			</div>
 
-			<div class="{{component_class}}__main-content-wrapper">
-				{% if post.content %}
-					{% include '01-atoms/content/content/content.twig' with {
-						content      : post.content,
-						parent_class : component_class
+				{% include '01-atoms/content/title/title.twig' with {
+					parent_class : component_class,
+					version      : "center",
+					h            : 1,
+					title        : post.title
+				} only %}
+
+				<div class="{{ component_class }}__info-wrapper">
+					{% if post.post_date %}
+						<div class="{{ component_class }}__date">
+							{{ post.post_date | date('M j, Y') }}
+						</div>
+					{% endif %}
+
+					{% include '02-molecules/social/social-share/social-share.twig' with {
+						parent_class : component_class,
+						version      : "default"
 					} only %}
-				{% endif %}
+				</div>
+
+				<div class="{{component_class}}__main-content-wrapper">
+					{% if post.content %}
+						{% include '01-atoms/content/content/content.twig' with {
+							content      : post.content,
+							parent_class : component_class
+						} only %}
+					{% endif %}
+				</div>
 			</div>
 		</div>
 	</div>

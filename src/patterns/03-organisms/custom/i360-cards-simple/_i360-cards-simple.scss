@@ -171,6 +171,26 @@
  * ------------------------------------------------------------
  */
 
+.o-i360-cards-simple--default {
+	.o-i360-cards-simple {
+		padding: 70px 0;
+
+		&__repeater {
+			padding-top: 70px;
+			@include flex-outlining-card-1-by-3(20px, '.m-card');
+			justify-content: center;
+			@include bp-md {
+				padding-top: 50px;
+			}
+		}
+
+		&__card {
+			visibility: hidden;
+			@include fadeInUp;
+		}
+	}
+}
+
 .o-i360-cards-simple--transparent {
 	.o-i360-cards-simple {
 		&__title {
@@ -187,6 +207,23 @@
 			@include flex-outlining-card-1-by-4(20px, '.m-card-transparent');
 			justify-content: flex-start;
 			padding-top: 0;
+		}
+	}
+}
+
+.o-i360-cards-simple--alt {
+	.o-i360-cards-simple {
+		&__container {
+			@include bp-lg {
+				width: 100%;
+				max-width: 1010px;
+			}
+		}
+
+		&__repeater {
+			@include flex-outlining-card-1-by-2(0px, '.m-card-simple-alt');
+			padding-top: 0;
+			justify-content: flex-start;
 		}
 	}
 }
