@@ -6,8 +6,8 @@
 	{% set component_class = "o-i360-author" %}
 	<div class="{{ component_class }}">
 		<div class="l-container {{ component_class }}__container">
-			{% if section.image %}
-				{% set img = TimberImage(section.image) %}
+			{% if section.avatar %}
+				{% set img = TimberImage(section.avatar) %}
 				{% include '01-atoms/images/image-default/image-default.twig' with {
 					parent_class      : component_class,
 					img               : img,
@@ -17,18 +17,18 @@
 			{% endif %}
 
 			<div class="{{ component_class }}__info">
-				{% if section.title %}
+				{% if section.name %}
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class : component_class,
 						version      : "center",
 						h            : 3,
-						title        : section.title
+						title        : section.name
 					} only %}
 				{% endif %}
 
-				{% if section.content %}
+				{% if section.bio %}
 					{% include '01-atoms/content/content/content.twig' with {
-						content      : section.content,
+						content      : section.bio,
 						parent_class : component_class
 					} only %}
 				{% endif %}
