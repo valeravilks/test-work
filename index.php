@@ -32,7 +32,7 @@ endif;
  * Single Post Type Templates.
 */
 if ( is_single() ) :
-	$template = '04-templates/default/default-article-single/default-article-single.twig';
+	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
 
 	//Conditionally change the template for individual post types
 	if ( is_singular( 'case-studies' ) ) :
@@ -40,9 +40,9 @@ if ( is_single() ) :
     elseif ( is_singular('event' )) :
 		$template = '04-templates/default/default-page-single/default-page-single.twig';
     elseif ( is_singular('news' )) :
-		$template = '04-templates/default/default-article-single/default-article-single.twig';
+	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
     elseif ( is_singular('whitepaper' )) :
-		$template = '04-templates/default/default-article-single/default-article-single.twig';
+	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
 	endif;
 
 /*
