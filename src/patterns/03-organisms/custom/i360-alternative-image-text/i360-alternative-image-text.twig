@@ -26,15 +26,13 @@
 	{% block block_inner %}
 		<div class="{{ component_class }}__content-wrapper">
 			<div class="{{ component_class }}__group-text">
-
 				{% include '01-atoms/content/title/title.twig' with {
 					default_block_class : default_block_class,
 					parent_class        : component_class,
 					title               : section.block_title,
-					type                : section.title_type,
 					version             : section.title_width,
-					h                   : block_title_type,
-					spacing_bottom      : section.title_padding_bottom,
+					h                   : section.title_type,
+					style               : section.title_style,
 					add_class_on_anim   : true
 				} only %}
 
