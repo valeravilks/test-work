@@ -991,20 +991,18 @@
                                 "id": ""
                             },
                             "choices": {
-                                "container-img-left": "Default (Image left, text right with container)",
-                                "container-img-right": "Image right, text left with container",
-                                "img-left": "Image left, text right without container",
-                                "img-right": "Image right, text left without container"
+                                "img-left": "Default (Image left, text right)",
+                                "img-right": "Image right, text left"
                             },
-                            "default_value": "container-img-left",
+                            "default_value": "img-left",
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 1,
                             "ajax": 0,
                             "return_format": "value",
                             "allow_custom": 0,
-                            "placeholder": "",
-                            "search_placeholder": ""
+                            "search_placeholder": "",
+                            "placeholder": ""
                         },
                         {
                             "key": "field_61b478ab958b4",
@@ -13272,5 +13270,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639254705
+    "modified": 1639494989
 }
