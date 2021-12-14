@@ -32,17 +32,20 @@ endif;
  * Single Post Type Templates.
 */
 if ( is_single() ) :
+	$context['post']['pretitle'] = "blog";
 	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
 
 	//Conditionally change the template for individual post types
 	if ( is_singular( 'case-studies' ) ) :
 		$template = '04-templates/base/base-page-template-blocks/base-page-template-blocks.twig';
     elseif ( is_singular('event' )) :
+    	$context['post']['pretitle'] = "event";
 		$template = '04-templates/default/default-page-single/default-page-single.twig';
     elseif ( is_singular('news' )) :
-	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
+    	$context['post']['pretitle'] = "news";
+		$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
     elseif ( is_singular('whitepaper' )) :
-	$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
+		$template = '04-templates/custom/i360-article-single/i360-article-single.twig';
 	endif;
 
 /*

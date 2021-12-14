@@ -32,9 +32,10 @@
 
 		<div class="l-container {{ component_class }}__container">
 			<div class="{{ component_class }}__inner">
+
 				{% include '01-atoms/content/pretitle/pretitle.twig' with {
 					parent_class        : component_class,
-					pretitle            : 'blog',
+					pretitle            : post.pretitle,
 					add_class_on_anim   : true
 				} only %}
 

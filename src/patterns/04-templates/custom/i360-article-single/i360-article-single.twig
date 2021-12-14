@@ -12,15 +12,6 @@
 			{% set items = function( 'get_cpt_posts_by', 'post', 3, 'post_date', 'DESC', post.ID ) %}
 		{% endif %}
 
-		{# Hardcoding some of the values for the latest posts. Prevens the creation of a new custom block #}
-		{% set section = {
-			block_pretitle: "explore other topics",
-			block_visuals: {
-				block_padding_bottom: 'default',
-				block_padding_top: 'default'
-			},
-		} %}
-
 		{% if post.author %}
 			{% include '03-organisms/custom/i360-author/i360-author.twig' with {
 				parent_class         : component_class,
@@ -31,6 +22,15 @@
 				},
 			} %}
 		{% endif %}
+
+		{# Hardcoding some of the values for the latest posts. Prevens the creation of a new custom block #}
+		{% set section = {
+			block_pretitle: "explore other topics",
+			block_visuals: {
+				block_padding_bottom: 'default',
+				block_padding_top: 'default'
+			},
+		} %}
 
 		{% include '03-organisms/default/default-latest-posts/default-latest-posts.twig' with {
 			parent_class         : component_class,
