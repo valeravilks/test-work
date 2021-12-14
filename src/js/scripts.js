@@ -66,6 +66,7 @@ const app = {
 	floatingCta,
 	socialShare,
 	hamburger,
+	clickableVideo,
 	defaultSlideOut,
 	modal,
 	mapBlock,
