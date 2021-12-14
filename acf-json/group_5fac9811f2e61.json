@@ -991,20 +991,18 @@
                                 "id": ""
                             },
                             "choices": {
-                                "container-img-left": "Default (Image left, text right with container)",
-                                "container-img-right": "Image right, text left with container",
-                                "img-left": "Image left, text right without container",
-                                "img-right": "Image right, text left without container"
+                                "img-left": "Default (Image left, text right)",
+                                "img-right": "Image right, text left"
                             },
-                            "default_value": "container-img-left",
+                            "default_value": "img-left",
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 1,
                             "ajax": 0,
                             "return_format": "value",
                             "allow_custom": 0,
-                            "placeholder": "",
-                            "search_placeholder": ""
+                            "search_placeholder": "",
+                            "placeholder": ""
                         },
                         {
                             "key": "field_61b478ab958b4",
@@ -6411,64 +6409,6 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
-                        },
-                        {
-                            "key": "field_61b825b42a8fa",
-                            "label": "Video Thumbnail Image",
-                            "name": "image",
-                            "type": "image",
-                            "instructions": "Uploading a 16\/9 image is recommended.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "uploader": "",
-                            "acfe_thumbnail": 0,
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "library": "all"
-                        },
-                        {
-                            "key": "field_61b825ca2a8fb",
-                            "label": "Video Embed Code",
-                            "name": "video_embed_code",
-                            "type": "oembed",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "width": "",
-                            "height": ""
-                        },
-                        {
-                            "key": "field_61b825fb2a8fc",
-                            "label": "Video Embed File",
-                            "name": "video_embed_file",
-                            "type": "oembed",
-                            "instructions": "Adding an embed code is recommended. Alternatively, an MP4 file can be uploaded here.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "width": "",
-                            "height": ""
                         },
                         {
                             "key": "field_61afc52de5276",
@@ -13330,5 +13270,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639458353
+    "modified": 1639494989
 }
