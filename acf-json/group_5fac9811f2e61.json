@@ -6413,6 +6413,64 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_61b825b42a8fa",
+                            "label": "Video Thumbnail Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "Uploading a 16\/9 image is recommended.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "acfe_thumbnail": 0,
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "library": "all"
+                        },
+                        {
+                            "key": "field_61b825ca2a8fb",
+                            "label": "Video Embed Code",
+                            "name": "video_embed_code",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        },
+                        {
+                            "key": "field_61b825fb2a8fc",
+                            "label": "Video Embed File",
+                            "name": "video_embed_file",
+                            "type": "oembed",
+                            "instructions": "Adding an embed code is recommended. Alternatively, an MP4 file can be uploaded here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        },
+                        {
                             "key": "field_61afc52de5276",
                             "label": "Add Button",
                             "name": "add_button",
@@ -13272,5 +13330,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639254705
+    "modified": 1639458353
 }
