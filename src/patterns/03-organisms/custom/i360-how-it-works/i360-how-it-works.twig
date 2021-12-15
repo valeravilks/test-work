@@ -24,11 +24,21 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 	{% block after_content %}
+		{% if section.extra_content_box %}
+			{% include '01-atoms/content/content/content.twig' with {
+				parent_class        : component_class,
+				extra_class         : "o-i360-how-it-works__content-box",
+				content             : section.extra_content_box,
+				add_class_on_anim   : false
+			} only %}
+		{% endif %}
 
 		{#Used for both how it works AND vertical pills#}
 		<div class="{{ component_class }}__repeater">
 			{% for item in section.repeater %}
-				<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index}} wow">
+				<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow">
+					<span class="{{ component_class }}__step-number">{{ loop.index }}</span>
+
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
 						title               : item.title,
@@ -46,16 +56,6 @@
 				</div>
 			{% endfor %}
 		</div>
-
-		{% if section.extra_content_box %}
-			{% include '01-atoms/content/content/content.twig' with {
-				parent_class        : component_class,
-				extra_class         : "o-i360-how-it-works__content-box",
-				content             : section.extra_content_box,
-				add_class_on_anim   : false
-			} only %}
-		{% endif %}
-
 
     {% endblock %}
 

@@ -19,14 +19,16 @@
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
 
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
-		{% set img = TimberImage(item.image) %}
-		{% include '01-atoms/images/image-default/image-default.twig' with {
-			parent_class : component_class,
-			img          : img,
-			lazyload     : false,
-			srcset       : true,
-			wrapper      : true
-		} only %}
+		{% if item.image %}
+			{% set img = TimberImage(item.image) %}
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class : component_class,
+				img          : img,
+				lazyload     : false,
+				srcset       : true,
+				wrapper      : true
+			} only %}
+		{% endif %}
 
 		{% include '01-atoms/content/title/title.twig' with {
 			parent_class        : component_class,
