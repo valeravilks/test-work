@@ -20,8 +20,8 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .m-modal {
-	z-index: $g-z1;
 	position: relative;
+	z-index: $g-zmax;
 
 	&__outer-wrapper {
 		display: none;
@@ -65,10 +65,8 @@
 		max-width: 500px;
 		max-height: 100vh;
 		padding: 30px;
-		background-color: #fff;
-		border-radius: 4px;
 		box-sizing: border-box;
-		overflow-y: auto;
+		overflow: visible;
 		@include bp-md {
 			min-width: 500px;
 		}
@@ -76,6 +74,50 @@
 
 	&__button-wrapper {
 		text-align: center;
+	}
+
+	&__link--video {
+		@include absolute-full;
+		display: block;
+		overflow: hidden;
+		z-index: $g-z10;
+
+		&:hover {
+			cursor: pointer;
+			.m-modal {
+				&__img {
+					transform: scale(1.1);
+				}
+
+				&__play-icon {
+					transform: translate(-50%, -50%) scale(1.15);
+				}
+			}
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transform: scale(1);
+		transition: all .8s cubic-bezier(.215,.61,.355,1);
+	}
+
+	&__play-icon {
+		@include absolute-general($top: 50%, $left: 50%);
+		transform: translate(-50%, -50%);
+		display: block;
+		width: 110px;
+		height: 110px;
+		transition: $g-trans-base;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	@keyframes mmfadeIn {
@@ -109,5 +151,51 @@
 .m-modal {
 	&--default {
 
+	}
+
+	&--video {
+		.m-modal {
+			&__overlay {
+				overflow: auto;
+				padding: 44px;
+			}
+
+			&__dialog {
+				position: relative;
+				min-width: 95%;
+				padding-top: 53.4%;
+				margin-top: 44px;
+				@include bp-md {
+					min-width: 54%;
+					padding-top: 30.32%;
+				}
+			}
+
+			&__btn-close {
+				@include absolute-general($top: -12px, $left: 100%);
+				width: 44px;
+				height: 44px;
+				@include bp-xs {
+					width: 54px;
+					height: 54px;
+				}
+
+				svg {
+					display: block;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+
+					path {
+						fill: #fff;
+					}
+				}
+			}
+		}
+
+		.a-video--full {
+			overflow: hidden;
+			border-radius: 10px;
+		}
 	}
 }
