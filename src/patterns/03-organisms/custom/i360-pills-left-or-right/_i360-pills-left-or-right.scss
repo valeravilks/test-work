@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Organism: Clickable Video
+//  Organism: Pills Left Or Right
 //  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
@@ -19,65 +19,21 @@
 // Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
-.o-i360-clickable-video {
-	margin: 0 0 40px;
-	padding: 50px 0;
-	overflow: visible;
-	@include bp-md {
-		margin: 40px 0;
-	}
+.o-i360-pills-left-or-right {
+	&__title-wrapper {
 
-	&__container-inner {
-		display: flex;
-		@include bpm-md {
-			flex-wrap: wrap;
-		}
-	}
-
-	&__column {
-		flex-grow: 0;
-		flex-shrink: 0;
-		flex-basis: 100%;
-
-		&--1 {
-			@include bp-md {
-				flex-basis: 42.4%;
-				padding-right: 20px;
-			}
-		}
-
-		&--2 {
-			position: relative;
-			overflow: hidden;
-			height: 380px;
-			margin: 40px 0 -90px;
-			background-color: $g-brand-color-5;
-			box-shadow: 0 15px 14px rgba(0, 0, 0, 0.1);
-			border-radius: 10px;
-			@include bp-md {
-				flex-basis: 57.6%;
-				height: auto;
-				margin: -90px 0;
-			}
-		}
 	}
 
 	&__title {
-		&.o-dbm__title.a-title--default {
-			max-width: 100%;
-		}
 
-		span {
-			color: $g-brand-color-3;
-		}
 	}
 
 	&__content {
-		letter-spacing: -0.2px;
 
-		&.o-dbm__content {
-			max-width: 100%;
-		}
+	}
+
+	&__button-wrapper {
+
 	}
 }
 
@@ -98,31 +54,31 @@
 // "align-default" is the starting point and is required to style
 
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-clickable-video.o-dbm--align-center {
-	.o-i360-clickable-video {
+.o-i360-pills-left-or-right--align-center,
+.o-i360-pills-left-or-right--align-default {
+	.o-i360-pills-left-or-right {
 		&__title-wrapper,
 		&__title,
 		&__content {
-			text-align: center;
+
 		}
 
 		&__button-wrapper {
-			justify-content: center;
+
 		}
 	}
 }
 
-.o-i360-clickable-video.o-dbm--align-left,
-.o-i360-clickable-video.o-dbm--align-default {
-	.o-i360-clickable-video {
+.o-i360-pills-left-or-right--align-left {
+	.o-i360-pills-left-or-right {
 		&__title-wrapper,
 		&__title,
 		&__content {
-			text-align: left;
+
 		}
 
 		&__button-wrapper {
-			justify-content: flex-start;
+
 		}
 	}
 }
@@ -139,8 +95,9 @@
  * and are required to style
  * ------------------------------------------------------------
  */
-.o-i360-clickable-video--color-dark {
-    .o-i360-clickable-video {
+.o-i360-pills-left-or-right--color-default,
+.o-i360-pills-left-or-right--color-dark {
+    .o-i360-pills-left-or-right {
 		&__title {
 			color: $g-heading-dark;
 		}
@@ -151,9 +108,8 @@
 	}
 }
 
-.o-i360-clickable-video.o-dbm--color-default,
-.o-i360-clickable-video.o-dbm--color-light {
-	.o-i360-clickable-video {
+.o-i360-pills-left-or-right--color-light {
+	.o-i360-pills-left-or-right {
 		&__title,
 		&__content {
 			color: $g-body-light;
