@@ -17,6 +17,7 @@
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
 
+	{# Clickable area default version #}
 	{% if button_modal %}
 		<div class="{{ component_class }}__button-wrapper">
 			<button class="{{ component_class }}__btn a-btn a-btn--primary"
@@ -28,6 +29,29 @@
 		</div>
 	{% endif %}
 
+	{# Clickable area for video version #}
+	{% if item.video %}
+		<div class="{{ component_class }}__link {{ component_class }}__link--video" data-micromodal-trigger="modal-{{ number }}">
+			{% set img = TimberImage(item.video.video_cover) %}
+			{% include '01-atoms/images/image-default/image-default.twig' with {
+				parent_class      	: component_class,
+				img               	: img,
+				wrapper           	: false,
+			} only %}
+
+			<span class="{{ component_class }}__play-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110">
+					<g>
+						<g opacity=".85">
+							<path fill="#fff" d="M72.587 56.288L45.571 75.815c-.302.185-.7.245-1.03.077A.99.99 0 0 1 44 75V36a.99.99 0 0 1 .539-.892c.331-.169.73-.108 1.032.08l27.016 19.514a.97.97 0 0 1 0 1.586zM55 0C24.627 0 0 24.627 0 55s24.627 55 55 55 55-24.627 55-55S85.373 0 55 0z"/>
+						</g>
+					</g>
+				</svg>
+			</span>
+		</div>
+	{% endif %}
+
+    {# Modal Body #}
 	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
 		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
 			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
@@ -45,9 +69,33 @@
 						add_class_on_anim   : false
 					} only %}
 
-					<button aria-label="Close modal" data-micromodal-close class="a-button-wrapper__btn  a-btn a-btn--primary mt-6">
-						Close Modal
-					</button>
+					{% if item.video %}
+						{% include '01-atoms/video/video.twig' with {
+							version        : "full",
+							autoplay       : false,
+							muted          : true,
+							loop           : true,
+							playsinline    : true,
+							controls       : true,
+							type           : item.video.video_type,
+							video_mp4      : TimberImage(item.video.video_file_mp4),
+							video_webm     : TimberImage(item.video.video_file_webm),
+							video_ext_mp4  : item.video.video_external_mp4,
+							video_ext_webm : item.video.video_external_webm,
+							video_embed    : item.video.video_embed,
+							video_cover    : TimberImage(item.video.video_cover)
+						} %}
+					{% endif %}
+
+					{% if item.video %}
+						<button aria-label="Close modal" data-micromodal-close class="{{ component_class }}__btn-close">
+							<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg>
+						</button>
+					{% else %}
+						<button aria-label="Close modal" data-micromodal-close class="a-button-wrapper__btn a-btn a-btn--primary mt-6">
+							Close Modal
+						</button>
+					{% endif %}
 				</div>
 			</div>
 		</div>

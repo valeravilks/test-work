@@ -6411,6 +6411,29 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_61b8b875e2211",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e486e12c4c3b"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0
+                        },
+                        {
                             "key": "field_61afc52de5276",
                             "label": "Add Button",
                             "name": "add_button",
@@ -6537,17 +6560,18 @@
                                 "id": ""
                             },
                             "choices": {
-                                "default": "Default"
+                                "video-right": "Default ( Video right, Text left )",
+                                "video-left": "Video left, Text right"
                             },
-                            "default_value": "default",
+                            "default_value": "video-right",
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 1,
                             "ajax": 0,
                             "return_format": "value",
                             "allow_custom": 0,
-                            "placeholder": "",
-                            "search_placeholder": ""
+                            "search_placeholder": "",
+                            "placeholder": ""
                         },
                         {
                             "key": "field_61afc52de570e",
@@ -13270,5 +13294,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639494989
+    "modified": 1639496262
 }
