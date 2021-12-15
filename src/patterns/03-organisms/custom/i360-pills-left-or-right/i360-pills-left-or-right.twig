@@ -14,7 +14,7 @@
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
-	{% set component_class = "o-i360-clickable-video" %}
+	{% set component_class = "o-i360-pills-left-or-right" %}
 
 
 	{#################################################################################}
@@ -24,9 +24,11 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 	{% block block_inner %}
-		<div class="{{ component_class }}__container l-container" data-module='clickableVideo'>
-			<div class="{{ component_class }}__container-inner wow">
-				<div class="{{ component_class }}__column {{ component_class }}__column--1">
+
+		<div class="{{ component_class }}__container l-container">
+			<div class="{{ component_class }}__container-inner flex flex-col md:flex-row">
+
+				<div class="{{ component_class }}__column {{ component_class }}__column--1 md:w-6/12 md:justify-start md:text-left text-center">
 					{% include '01-atoms/content/title/title.twig' with {
 						default_block_class : default_block_class,
 						parent_class        : component_class,
@@ -34,7 +36,8 @@
 						width               : section.title_width,
 						style               : section.title_style,
 						h                   : section.title_type,
-						spacing_bottom      : section.title_padding_bottom
+						spacing_bottom      : section.title_padding_bottom,
+						add_class_on_anim   : true
 					} only %}
 
 					{% include '01-atoms/content/content/content.twig' with {
@@ -44,25 +47,19 @@
 						add_class_on_anim   : true
 					} only %}
 
-					{% if section.add_button %}
-						{% include '01-atoms/buttons/button/button.twig' with {
-							parent_class : component_class,
-							button       : section.button
-						} only %}
-					{% endif %}
-				</div>
-
-				<div class="{{ component_class }}__column {{ component_class }}__column--2">
-					{% include '02-molecules/modal/modal.twig' with {
-						component_class : component_class,
-						version         : 'video',
-						number          : 1,
-						item			: {
-							video   : section.video,
-						}
+					{% include '01-atoms/buttons/button/button.twig' with {
+						parent_class : component_class,
+						button       : section.button
 					} only %}
 				</div>
+
+				<div class="{{ component_class }}__column {{ component_class }}__column--2 md:w-6/12 flex md:justify-end justify-center md:items-center">
+
+				</div>
+
 			</div>
 		</div>
+
 	{% endblock %}
+
 {% endspaceless %}
