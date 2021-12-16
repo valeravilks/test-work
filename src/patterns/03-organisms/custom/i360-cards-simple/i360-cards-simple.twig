@@ -15,6 +15,7 @@
 	{########################################################}
 	{% set component_class = "o-i360-cards-simple" %}
 	{% set container       = true %}
+	{% set brand_color_accent = section.brand_color_accent and section.version == "alt"	? component_class ~ "--brand-color-accent-" ~ section.brand_color_accent | join("") : "" %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -23,7 +24,7 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 	{% block main_payload %}
-		<div class="{{ component_class }}__repeater">
+		<div class="{{ component_class }}__repeater {{ brand_color_accent }}">
 
 			{% for item in section.repeater %}
 
