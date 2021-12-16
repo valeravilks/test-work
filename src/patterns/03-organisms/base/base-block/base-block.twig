@@ -29,7 +29,12 @@
 		This CSS class does NOT handle background colors or images. WP users can set those separately (see base-block-background-set.twig).
 		Styles associated with color palette's for this block are / should be defined inside the SCSS file for your block
 	#}
-	{% set block_color         = section.block_visuals.block_text_color ? default_block_class ~ "--color-"           ~ section.block_visuals.block_text_color       | join("") : component_class ~ "--color-default" %}
+	{% set block_text_color         = section.block_visuals.block_text_color ? default_block_class ~ "--color-"           ~ section.block_visuals.block_text_color       | join("") : component_class ~ "--color-default" %}
+
+	{#
+	Other misc settings that provide helpful classes to the block wrapper. Only used for specific blocks or scenarios
+	#}
+	{% set block_bg = section.block_visuals.block_background_type                      ? default_block_class ~ "--bg-" ~ section.block_visuals.block_background_type %}
 
 	{#
 	Wrapper of the block. Used to output a large number of block specific classes
@@ -40,9 +45,10 @@
 		{{ component_class }}
 		{{ block_version }}
 		{{ block_align_general }}
-		{{default_block_class}}--padding-bottom-{{ section.block_visuals.block_padding_bottom }}
-		{{default_block_class}}--padding-top-{{ section.block_visuals.block_padding_top }}
-		{{ block_color }}
+		{{ default_block_class }}--padding-bottom-{{ section.block_visuals.block_padding_bottom }}
+		{{ default_block_class }}--padding-top-{{ section.block_visuals.block_padding_top }}
+		{{ block_bg }}
+		{{ block_text_color }}
 		"
 		id="{{ section.block_id ? section.block_id }}"
 	>
