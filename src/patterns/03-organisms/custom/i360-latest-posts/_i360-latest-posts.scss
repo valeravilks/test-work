@@ -118,6 +118,19 @@
 
 
 	//////////////////////////////////////////
+	// Organism Title Versions              //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has a custom block title for it's default state.
+	 * If so, target ".o-dbm__title.a-title--style-default". This should NOT apply to additional titles in this block.
+	 * ------------------------------------------------------------
+	 */
+	.o-dbm__title.a-title--style-default {
+		@include pretitle-1;
+	}
+
+
+	//////////////////////////////////////////
 	// Organism Background Versions         //
 	//////////////////////////////////////////
 	/**
