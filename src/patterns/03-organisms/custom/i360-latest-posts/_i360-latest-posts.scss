@@ -97,6 +97,9 @@
 	&.o-dbm--color-default,
 	&.o-dbm--color-dark {
 		.o-i360-latest-posts {
+			&__pretitle {
+				color: $g-pretitle-dark;
+			}
 			&__title {
 				color: $g-heading-dark;
 			}
@@ -109,6 +112,9 @@
 
 	&.o-dbm--color-light {
 		.o-i360-latest-posts {
+			&__pretitle {
+				color: $g-pretitle-light;
+			}
 			&__title,
 			&__content {
 				color: $g-body-light;
