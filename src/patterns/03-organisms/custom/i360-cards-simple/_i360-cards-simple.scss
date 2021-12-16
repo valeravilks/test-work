@@ -134,7 +134,10 @@
 .o-i360-cards-simple.o-dbm--color-default,
 .o-i360-cards-simple.o-dbm--color-dark {
 	.o-i360-cards-simple {
-		&__pretitle,
+		&__pretitle {
+			color: $g-pretitle-dark;
+		}
+
 		&__title {
 			color: $g-heading-dark;
 		}
@@ -147,7 +150,10 @@
 
 .o-i360-cards-simple.o-dbm--color-light {
 	.o-i360-cards-simple {
-		&__pretitle,
+		&__pretitle {
+			color: $g-pretitle-light;
+		}
+
 		&__subheader {
 			color: $g-brand-color-5;
 		}
