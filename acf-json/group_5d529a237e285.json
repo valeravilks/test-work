@@ -85,14 +85,14 @@
                 "id": ""
             },
             "choices": {
-                "default": "Default",
-                "h1": "H1",
-                "h2": "H2",
-                "h3": "H3",
-                "h4": "H4",
-                "h5": "H5",
-                "h6": "H6",
-                "pretitle": "Pretitle"
+                "style-default": "Default",
+                "style-h1": "H1",
+                "style-h2": "H2",
+                "style-h3": "H3",
+                "style-h4": "H4",
+                "style-h5": "H5",
+                "style-h6": "H6",
+                "style-pretitle": "Pretitle"
             },
             "default_value": "default",
             "allow_null": 0,
@@ -129,5 +129,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1638900714
+    "modified": 1639672095
 }
