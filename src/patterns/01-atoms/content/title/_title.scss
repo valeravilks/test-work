@@ -51,43 +51,45 @@
 	//////////////////////////////////
 	// Versions - Title Types       //
 	//////////////////////////////////
-	&--h1 {
-		@include h1;
-	}
+	&--style {
+		&-h1 {
+			@include h1;
+		}
 
-	&--h2 {
-		@include h3;
-	}
+		&-h2 {
+			@include h3;
+		}
 
-	&--h3 {
-		@include h4;
-	}
+		&-h3 {
+			@include h4;
+		}
 
-	&--h4 {
-		@include h4;
-	}
+		&-h4 {
+			@include h4;
+		}
 
-	&--h5 {
-		@include h5;
-	}
+		&-h5 {
+			@include h5;
+		}
 
-	&--h6 {
-		@include h6;
-	}
+		&-h6 {
+			@include h6;
+		}
 
 
-	&--default {
+		&-default {
 
-	}
+		}
 
-	&--pretitle,
-	&--pretitle-1 {
-		font-size: 16px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-	}
+		&-pretitle,
+		&-pretitle-1 {
+			font-size: 16px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
 
-	&--pretitle-2 {
+		&-pretitle-2 {
 
+		}
 	}
 }
