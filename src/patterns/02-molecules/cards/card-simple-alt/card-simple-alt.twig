@@ -33,7 +33,7 @@
 			{% include '01-atoms/images/image-default/image-default.twig' with {
 				parent_class : component_class,
 				img          : img,
-				lazyload     : false,
+				lazyload     : true,
 				srcset       : true,
 				wrapper      : true
 			} only %}
@@ -42,7 +42,7 @@
 		{% include '01-atoms/content/title/title.twig' with {
 			parent_class        : component_class,
 			title               : item.title,
-			h                   : "3",
+			h                   : 3,
 			add_class_on_anim   : false
 		} only %}
 
