@@ -120,105 +120,121 @@
 		}
 
 	}
-}
 
 
-/////////////////////////////
-// Organism Versions       //
-/////////////////////////////
 
-// This organism is most likely inheriting styles from the default-organism.scss file.
-// If needed, the look & feel of organism versions can be modified below.
+	/////////////////////////////
+	// Organism Versions       //
+	/////////////////////////////
+
+	// This organism is most likely inheriting styles from the default-organism.scss file.
+	// If needed, the look & feel of organism versions can be modified below.
 
 
-//////////////////////////////////////////
-// Organism Versions -- Alignments      //
-//////////////////////////////////////////
+	//////////////////////////////////////////
+	// Organism Versions -- Alignments      //
+	//////////////////////////////////////////
 
-// Covers scenario(s) where this organism has multiple alignments ..
-// "align-default" is the starting point and is required to style
+	// Covers scenario(s) where this organism has multiple alignments ..
+	// "align-default" is the starting point and is required to style
 
-// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-statistics-vertical.o-dbm--align-center {
-	.o-i360-statistics-vertical {
-		&__title-wrapper,
-		&__title,
-		&__content {
-			text-align: center;
-		}
+	// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+	&.o-dbm--align-center {
+		.o-i360-statistics-vertical {
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: center;
+			}
 
-		&__button-wrapper {
-			justify-content: center;
-		}
-	}
-}
-
-.o-i360-statistics-vertical.o-dbm--align-left,
-.o-i360-statistics-vertical.o-dbm--align-default {
-	.o-i360-statistics-vertical {
-		&__title-wrapper,
-		&__title,
-		&__content {
-			text-align: left;
-		}
-
-		&__button-wrapper {
-			justify-content: flex-start;
+			&__button-wrapper {
+				justify-content: center;
+			}
 		}
 	}
-}
 
+	&.o-dbm--align-left,
+	&.o-dbm--align-default {
+		.o-i360-statistics-vertical {
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: left;
+			}
 
-/////////////////////////////////////////////
-// Organism Color Palette Versions         //
-/////////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-.o-i360-statistics-vertical.o-dbm--color-default,
-.o-i360-statistics-vertical.o-dbm--color-dark {
-    .o-i360-statistics-vertical {
-		&__title {
-			color: $g-heading-dark;
+			&__button-wrapper {
+				justify-content: flex-start;
+			}
 		}
+	}
 
-		&__content {
-			color: $g-body-dark;
 
-			h5 {
+	/////////////////////////////////////////////
+	// Organism Color Palette Versions         //
+	/////////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-statistics-vertical {
+			&__title {
 				color: $g-heading-dark;
 			}
-		}
-	}
-}
 
-.o-i360-statistics-vertical.o-dbm--color-light {
-	.o-i360-statistics-vertical {
-		&__title,
-		&__content {
-			color: $g-body-light;
-		}
+			&__content {
+				color: $g-body-dark;
 
-		&__content {
-			h5 {
-				color: $g-body-light;
+				h5 {
+					color: $g-heading-dark;
+				}
 			}
 		}
 	}
+
+	&.o-dbm--color-light {
+		.o-i360-statistics-vertical {
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__content {
+				h5 {
+					color: $g-body-light;
+				}
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Background Versions         //
+	//////////////////////////////////////////
+	/**
+	* Covers scenario(s) where this organism has a custom background for it's default state.
+	* If so, target ".m-background-set"
+	* ------------------------------------------------------------
+	*/
+	&.o-dbm--bg-default {
+		.m-background-set {
+			background-color: #f4f8f8;
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has versions beside
+	 * the color and alignment use cases above
+	 * ------------------------------------------------------------
+	 */
+
 }
-
-
-//////////////////////////////////////////
-// Organism Other Versions                 //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has versions beside
- * the color and alignment use cases above
- * ------------------------------------------------------------
- */
-
