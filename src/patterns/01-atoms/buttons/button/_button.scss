@@ -103,6 +103,18 @@
 	@include btn-open-tertiary;
 }
 
+.a-btn--open-alt-primary {
+	@include btn-open-alt-primary;
+}
+
+.a-btn--open-alt-secondary {
+	@include btn-open-alt-secondary;
+}
+
+.a-btn--open-alt-tertiary {
+	@include btn-open-alt-tertiary;
+}
+
 .a-btn--small {
 	@include btn-small;
 }
