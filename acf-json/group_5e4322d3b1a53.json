@@ -121,13 +121,20 @@
             "type": "extended-color-picker",
             "instructions": "If needed, the background color of this block can be changed here. Setting a custom background color is not required.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fd33b298c691",
+                        "operator": "==",
+                        "value": "color"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
             "default_value": "",
             "color_palette": "",
             "hide_palette": 0
@@ -306,5 +313,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639655242
+    "modified": 1639657069
 }
