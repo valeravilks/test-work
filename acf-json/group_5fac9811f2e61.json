@@ -1948,6 +1948,40 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_61ba397a3e8a2",
+                            "label": "Brand Color Accent",
+                            "name": "brand_color_accent",
+                            "type": "select",
+                            "instructions": "Set span element and link color",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61952dfccd780",
+                                        "operator": "==",
+                                        "value": "alt"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "default": "Default",
+                                "dark": "Dark",
+                                "light": "Light"
+                            },
+                            "default_value": "default",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_61952dfccd774",
                             "label": "Cards",
                             "name": "repeater",
@@ -13362,5 +13396,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639589487
+    "modified": 1639594553
 }

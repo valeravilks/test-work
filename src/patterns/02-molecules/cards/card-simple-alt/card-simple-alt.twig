@@ -19,7 +19,16 @@
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
 
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
-		{% if item.image %}
+		{% if item.add_video %}
+			{% include '02-molecules/modal/modal.twig' with {
+				component_class : component_class,
+				version         : 'video',
+				number          : 1,
+				item			: {
+					video   : item.video,
+				}
+			} only %}
+		{% elseif item.image %}
 			{% set img = TimberImage(item.image) %}
 			{% include '01-atoms/images/image-default/image-default.twig' with {
 				parent_class : component_class,
