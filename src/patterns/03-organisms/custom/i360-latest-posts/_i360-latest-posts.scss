@@ -35,95 +35,129 @@
 	&__button-wrapper {
 
 	}
-}
 
 
-/////////////////////////////
-// Organism Versions       //
-/////////////////////////////
+	/////////////////////////////
+	// Organism Versions       //
+	/////////////////////////////
 
-// This organism is most likely inheriting styles from the default-organism.scss file.
-// If needed, the look & feel of organism versions can be modified below.
+	// This organism is most likely inheriting styles from the default-organism.scss file.
+	// If needed, the look & feel of organism versions can be modified below.
 
 
-//////////////////////////////////////////
-// Organism Versions -- Alignments      //
-//////////////////////////////////////////
+	//////////////////////////////////////////
+	// Organism Versions -- Alignments      //
+	//////////////////////////////////////////
 
-// Covers scenario(s) where this organism has multiple alignments ..
-// "align-default" is the starting point and is required to style
+	// Covers scenario(s) where this organism has multiple alignments ..
+	// "align-default" is the starting point and is required to style
 
-// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-latest-posts--align-center,
-.o-i360-latest-posts--align-default {
-	.o-i360-latest-posts {
-		&__title-wrapper,
-		&__title,
-		&__content {
+	// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-latest-posts {
+			&__title-wrapper,
+			&__title,
+			&__content {
 
-		}
+			}
 
-		&__button-wrapper {
+			&__button-wrapper {
 
-		}
-	}
-}
-
-.o-i360-latest-posts--align-left {
-	.o-i360-latest-posts {
-		&__title-wrapper,
-		&__title,
-		&__content {
-
-		}
-
-		&__button-wrapper {
-
+			}
 		}
 	}
-}
 
+	&.o-dbm--align-left {
+		.o-i360-latest-posts {
+			&__title-wrapper,
+			&__title,
+			&__content {
 
-/////////////////////////////////////////////
-// Organism Color Palette Versions         //
-/////////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-.o-i360-latest-posts--color-default,
-.o-i360-latest-posts--color-dark {
-    .o-i360-latest-posts {
-		&__title {
-			color: $g-heading-dark;
-		}
+			}
 
-		&__content {
-			color: $g-body-dark;
+			&__button-wrapper {
+
+			}
 		}
 	}
-}
 
-.o-i360-latest-posts--color-light {
-	.o-i360-latest-posts {
-		&__title,
-		&__content {
-			color: $g-body-light;
+
+	/////////////////////////////////////////////
+	// Organism Color Palette Versions         //
+	/////////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-latest-posts {
+			&__pretitle {
+				color: $g-pretitle-dark;
+			}
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
 		}
 	}
+
+	&.o-dbm--color-light {
+		.o-i360-latest-posts {
+			&__pretitle {
+				color: $g-pretitle-light;
+			}
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Title Versions              //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has a custom block title for it's default state.
+	 * If so, target ".o-dbm__title.a-title--style-default". This should NOT apply to additional titles in this block.
+	 * ------------------------------------------------------------
+	 */
+	.o-dbm__title.a-title--style-default {
+		@include pretitle-1;
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Background Versions         //
+	//////////////////////////////////////////
+	/**
+	* Covers scenario(s) where this organism has a custom background for it's default state.
+	* If so, target ".m-background-set"
+	* ------------------------------------------------------------
+	*/
+	&.o-dbm--bg-default {
+		.m-background-set {
+			background-color: #f4f8f8;
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has versions beside
+	 * the color and alignment use cases above
+	 * ------------------------------------------------------------
+	 */
+
 }
-
-
-//////////////////////////////////////////
-// Organism Other Versions                 //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has versions beside
- * the color and alignment use cases above
- * ------------------------------------------------------------
- */
-

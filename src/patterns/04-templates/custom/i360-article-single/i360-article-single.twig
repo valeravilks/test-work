@@ -3,6 +3,8 @@
 
 	{% extends '04-templates/base/base-page/base-page.twig' %}
 
+	{% block hero %}{% endblock %}
+
 	{% block main %}
 		{% include '03-organisms/custom/i360-article-single/i360-article-single.twig' %}
 
@@ -25,16 +27,18 @@
 
 		{# Hardcoding some of the values for the latest posts. Prevens the creation of a new custom block #}
 		{% set section = {
-			block_pretitle: "explore other topics",
+			block_title: "explore other topics",
+			title_style: "style-default",
 			block_visuals: {
+				block_background_type: 'default',
 				block_padding_bottom: 'default',
 				block_padding_top: 'default'
 			},
 		} %}
 
-		{% include '03-organisms/default/default-latest-posts/default-latest-posts.twig' with {
+		{% include '03-organisms/custom/i360-latest-posts/i360-latest-posts.twig' with {
 			parent_class         : component_class,
-			alignment            : 'left',
+			alignment            : 'default',
 			section              : section,
 			items                : items
 		} %}

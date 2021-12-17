@@ -137,97 +137,126 @@
 			transition-delay: .1s;
 		}
 	}
-}
 
 
-/////////////////////////////
-// Organism Versions       //
-/////////////////////////////
 
-// This organism is most likely inheriting styles from the default-organism.scss file.
-// If needed, the look & feel of organism versions can be modified below.
+	/////////////////////////////
+	// Organism Versions       //
+	/////////////////////////////
+
+	// This organism is most likely inheriting styles from the default-organism.scss file.
+	// If needed, the look & feel of organism versions can be modified below.
 
 
-//////////////////////////////////////////
-// Organism Versions -- Alignments      //
-//////////////////////////////////////////
+	//////////////////////////////////////////
+	// Organism Versions -- Alignments      //
+	//////////////////////////////////////////
 
-// Covers scenario(s) where this organism has multiple alignments ..
-// "align-default" is the starting point and is required to style
+	// Covers scenario(s) where this organism has multiple alignments ..
+	// "align-default" is the starting point and is required to style
 
-// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-cta-bar.o-dbm--align-center {
-	.o-i360-cta-bar {
-		&__title-wrapper,
-		&__title,
-		&__content {
+	// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+	&.o-dbm--align-center {
+		.o-i360-cta-bar {
+			&__title-wrapper,
+			&__title,
+			&__content {
 
-		}
+			}
 
-		&__button-wrapper {
+			&__button-wrapper {
 
-		}
-	}
-}
-
-.o-i360-cta-bar.o-dbm--align-default,
-.o-i360-cta-bar.o-dbm--align-left {
-	.o-i360-cta-bar {
-		&__title-wrapper,
-		&__title,
-		&__content {
-			@include bp-lg {
-				text-align: left !important;
 			}
 		}
+	}
 
-		&__button-wrapper {
+	&.o-dbm--align-default,
+	&.o-dbm--align-left {
+		.o-i360-cta-bar {
+			&__title-wrapper,
+			&__title,
+			&__content {
+				@include bp-lg {
+					text-align: left !important;
+				}
+			}
+
+			&__button-wrapper {
+
+			}
+		}
+	}
+
+
+	/////////////////////////////////////////////
+	// Organism Color Palette Versions         //
+	/////////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-cta-bar {
+			&__title {
+				//color: $g-heading-dark;
+			}
+
+			&__content {
+				//color: $g-body-dark;
+			}
+		}
+	}
+
+	&.o-dbm--color-light {
+		.o-i360-cta-bar {
+			&__title,
+			&__content {
+				//color: $g-body-light;
+			}
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Background Versions         //
+	//////////////////////////////////////////
+	/**
+	* Covers scenario(s) where this organism has a custom background for it's default state.
+	* If so, target ".m-background-set"
+	* ------------------------------------------------------------
+	*/
+	&.o-dbm--bg-default {
+		.m-background-set {
 
 		}
 	}
-}
 
 
-/////////////////////////////////////////////
-// Organism Color Palette Versions         //
-/////////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-.o-i360-cta-bar.o-dbm--color-default,
-.o-i360-cta-bar.o-dbm--color-dark {
-    .o-i360-cta-bar {
-		&__title {
-			//color: $g-heading-dark;
-		}
+	//////////////////////////////////////////
+	// Organism Title Versions              //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has a default title style.
+	 * If so, target .o-dbm__title.a-title--type-default
+	 * ------------------------------------------------------------
+	 */
+	.o-dbm__title.a-title--type-default {
 
-		&__content {
-			//color: $g-body-dark;
-		}
 	}
+
+
+	//////////////////////////////////////////
+	// Organism Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has versions beside
+	 * the color and alignment use cases above
+	 * ------------------------------------------------------------
+	 */
+
 }
-
-.o-i360-cta-bar.o-dbm--color-light {
-	.o-i360-cta-bar {
-		&__title,
-		&__content {
-			//color: $g-body-light;
-		}
-	}
-}
-
-
-//////////////////////////////////////////
-// Organism Other Versions                 //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has versions beside
- * the color and alignment use cases above
- * ------------------------------------------------------------
- */
-

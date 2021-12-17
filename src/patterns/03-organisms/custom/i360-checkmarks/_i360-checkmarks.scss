@@ -133,11 +133,14 @@
 .o-i360-checkmarks.o-dbm--color-default,
 .o-i360-checkmarks.o-dbm--color-dark {
     .o-i360-checkmarks {
+		&__pretitle {
+			color: $g-pretitle-dark;
+		}
+
 		&__title {
 			color: $g-heading-dark;
 		}
 
-		&__pretitle,
 		&__content {
 			color: $g-body-dark;
 		}
@@ -146,7 +149,10 @@
 
 .o-i360-checkmarks.o-dbm--color-light {
 	.o-i360-checkmarks {
-		&__pretitle,
+		&__pretitle {
+			color: $g-pretitle-light;
+		}
+
 		&__title,
 		&__content {
 			color: $g-body-light;
