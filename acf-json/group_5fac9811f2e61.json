@@ -1096,7 +1096,7 @@
                 "layout_6194923c3da0b": {
                     "key": "layout_6194923c3da0b",
                     "name": "i360_quote",
-                    "label": "i360- Quote",
+                    "label": "i360 - Quote",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1983,7 +1983,7 @@
                         },
                         {
                             "key": "field_61bb33639fb87",
-                            "label": "Add Background Deco",
+                            "label": "Add Background Decoration",
                             "name": "add_bg_deco",
                             "type": "true_false",
                             "instructions": "",
@@ -2048,7 +2048,7 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
                                 },
                                 {
                                     "key": "field_61952ebdcd786",
@@ -2195,7 +2195,7 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
                                 },
                                 {
                                     "key": "field_61952dfccd778",
@@ -2613,7 +2613,7 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
                                 },
                                 {
                                     "key": "field_61afe9cf17811",
@@ -2955,7 +2955,7 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
                                 },
                                 {
                                     "key": "field_61afceb848519",
@@ -3356,7 +3356,7 @@
                                     "tabs": "all",
                                     "toolbar": "full",
                                     "media_upload": 1,
-                                    "delay": 0
+                                    "delay": 1
                                 }
                             ]
                         },
@@ -13362,5 +13362,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639662314
+    "modified": 1639727135
 }
