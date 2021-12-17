@@ -10,11 +10,10 @@
 	{#######################################################}
 	{% extends '03-organisms/base/base-block/base-block.twig' %}
 
-
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
-	{% set component_class = "o-i360-badges" %}
+	{% set component_class = "o-360-badges" %}
 	{% set container       = true %}
 
 	{#################################################################################}
@@ -23,47 +22,35 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	{% block after_content %}
+	{% block main_payload %}
 
-		{# Sample markup. Example snippet: The repeater below might not be be needed. Remove if not applicable #}
-		<div class="{{ component_class }}__repeater" data-module="">
-			{% for item in section.repeater %}
-				<div class="{{ component_class }}__item {{ component_class }}__item-- wow">
-					<div class="{{ component_class }}__item-title-wrapper">
-						<h4 class="{{ component_class }}__item-title">{{ item.title }}</h4>
-					</div>
-					<span class="{{ component_class }}__item-line"></span>
-					<div class="{{ component_class }}__item-content">
-						{{ item.content }}
-					</div>
-				</div>
-			{% endfor %}
-		</div>
+		{# Using a ACF relationship field here #}
+		{% if section.relationship %}
+			<div class="{{ component_class }}__repeater">
 
-		{# Sample markup. The columns below might not be be needed. Remove if not applicable #}
-		<div class="{{ component_class }}__columns">
-			<div class="{{ component_class }}__column {{ component_class }}__column--1">
+				{% for item in section.relationship %}
 
-			</div>
-			<div class="{{ component_class }}__columns {{ component_class }}__column--2">
+					{# Accessing WordPress post and making them available to Twig templates #}
+					{% set item = TimberPost( item ) %}
 
-			</div>
-		</div>
+					{# Keeping the TimberImage outside of the component below to ensure the card can be used in other places #}
 
-		{# Sample markup. The image below might not be be needed. Remove if not applicable #}
-		{% if section.add_image %}
-			{% set img = TimberImage(section.image) %}
-			<div class="{{ component_class }}__image-wrapper">
-				{% include '01-atoms/images/image-default/image-default.twig' with {
-					parent_class        : component_class,
-					img                 : img,
-					lazyload            : true,
-					srcset              : true,
-					wrapper             : true
-				} only %}
+					{# Accessing WordPress image object and making them available to Twig templates #}
+					{% set img = TimberImage( item.thumbnail ) %}
+
+					{% include '02-molecules/cards/card-image-static/card-image-static.twig' with {
+						parent_class 		: component_class,
+						img                 : img,
+						item         		: item,
+						interval            : true,
+						index       		: loop.index,
+						add_class_on_anim   : true,
+					} only %}
+
+				{% endfor %}
+
 			</div>
 		{% endif %}
 
-    {% endblock %}
-
+	{% endblock %}
 {% endspaceless %}
