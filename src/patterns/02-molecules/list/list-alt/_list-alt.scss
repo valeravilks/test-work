@@ -17,33 +17,8 @@
 		transform: translateY(100%);
 		transition: $g-trans-base;
 
-		&.animated {
-			transform: translateY(0%);
-		}
-
-		&--1 {
-			@include bp-md {
-				transition-delay: .3s;
-			}
-		}
-
-		&--2 {
-			@include bp-md {
-				transition-delay: .6s;
-			}
-		}
-
-		&--3 {
-			@include bp-md {
-				transition-delay: .9s;
-			}
-		}
-
-		&--4 {
-			@include bp-md {
-				transition-delay: 1.2s;
-			}
-		}
+		visibility: hidden;
+		@include fadeInUp;
 
 		&:last-child {
 			margin-bottom: 0;
