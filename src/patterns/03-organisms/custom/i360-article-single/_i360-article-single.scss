@@ -26,6 +26,7 @@
 			width: 100%;
 			height: 60%;
 			background-image: linear-gradient(180deg, rgba(250, 252, 252, 0) 0%, $g-brand-color-5 100%);
+			z-index: $g-z1;
 		}
 	}
 
@@ -38,6 +39,7 @@
 
 	&__container {
 		max-width: 1010px;
+		z-index: $g-z10;
 		@include bpm-xs {
 			width: 100%;
 		}
@@ -85,7 +87,6 @@
 
 	&__main-content-wrapper {
 		h1, h2, h3, h4, h5, h6 {
-			//padding-bottom: 0;
 			color: $g-brand-color-4;
 		}
 

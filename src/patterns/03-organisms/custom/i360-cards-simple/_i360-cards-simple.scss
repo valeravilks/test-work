@@ -98,7 +98,7 @@
 	}
 }
 
-// If code below don't needed remove!
+// Organism Other Versions Alignment
 .o-i360-cards-simple--transparent {
 	&.o-dbm--align-center,
 	&.o-dbm--align-default {
@@ -110,6 +110,27 @@
 	}
 
 	&.o-dbm--align-left {
+		.o-i360-cards-simple {
+			.o-i360-cards-simple {
+				&__card {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+.o-i360-cards-simple--alt {
+	&.o-dbm--align-center {
+		.o-i360-cards-simple {
+			&__card {
+				text-align: center;
+			}
+		}
+	}
+
+	&.o-dbm--align-left,
+	&.o-dbm--align-default {
 		.o-i360-cards-simple {
 			.o-i360-cards-simple {
 				&__card {
@@ -222,6 +243,36 @@
 			@include flex-outlining-card-1-by-2(0px, '.m-card-simple-alt');
 			padding-top: 0;
 			justify-content: flex-start;
+		}
+
+		&__bg-deco {
+			@include absolute-general($top: 0, $bottom: 0, $left: -41px);
+			width: 110vw;
+			height: 110vw;
+			margin: auto;
+			opacity: 0;
+			transform: scale(.9);
+			transition: $g-trans-base-5;
+			transition-delay: .5s;
+			@include bp-sm {
+				width: 1000px;
+				height: 1000px;
+			}
+			@include bp-lg {
+				width: 1403px;
+				height: 1403px;
+			}
+
+			&.animated {
+				transform: scale(1);
+				opacity: 1;
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }

@@ -22,28 +22,20 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
+	{% block before_title %}
+		<div class="{{ component_class }}__info">
+	{% endblock %}
 
-	{# Overwriting block_inner as max_width is not part of the base-block #}
 	{% block after_content %}
-		<div class="{{ component_class }}__repeater">
-			{% for item in section.repeater %}
-				<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow">
 
-					{% include '01-atoms/content/title/title.twig' with {
-						parent_class        : component_class,
-						title               : item.title,
-						h                   : 4,
-						add_class_on_anim   : false
-					} only %}
+		{% include '/02-molecules/list/list-alt/list-alt.twig' with {
+			parent_class      : component_class,
+			list_items		  : section.repeater,
+			color_accent      : 'light',
+		} only %}
+	{% endblock %}
 
-					{% include '01-atoms/content/content/content.twig' with {
-						parent_class        : component_class,
-						content             : item.content,
-						add_class_on_anim   : false
-					} only %}
-
-				</div>
-			{% endfor %}
+	{% block shape_bottom %}
 		</div>
 	{% endblock %}
 

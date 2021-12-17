@@ -26,6 +26,8 @@
 
 	&__card {
 		visibility: hidden;
-		@include fadeInUp;
+		// Remove this after reading!
+		// changing below because in card we have modals, if one of modals parent elems have transform prop it disturb position: fixed for modals(position fixed modals becoming relative to a parent with a transform property)
+		@include fadeIn;
 	}
 }
