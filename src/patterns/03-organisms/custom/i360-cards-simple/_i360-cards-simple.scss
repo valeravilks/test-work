@@ -211,7 +211,7 @@
 
 		&__card {
 			visibility: hidden;
-			@include fadeIn;
+			@include fadeInUp;
 		}
 	}
 }
@@ -233,6 +233,11 @@
 			justify-content: flex-start;
 			padding-top: 0;
 		}
+
+		&__card {
+			visibility: hidden;
+			@include fadeInUp;
+		}
 	}
 }
 
@@ -249,6 +254,11 @@
 			@include flex-outlining-card-1-by-2(0px, '.m-card-simple-alt');
 			padding-top: 0;
 			justify-content: flex-start;
+		}
+
+		&__card {
+			visibility: hidden;
+			@include fadeIn;
 		}
 
 		&__bg-deco {
