@@ -72,7 +72,17 @@
 }
 
 @mixin btn-tertiary {
+	background-color: $g-brand-color-7;
+	color: $g-body-light;
 
+	&:hover {
+		background-color: rgba($g-brand-color-7, .7);
+		color: $g-body-light;
+	}
+
+	svg path {
+		fill: $g-body-light;
+	}
 }
 
 @mixin btn-open-primary {

@@ -7,19 +7,27 @@
 	* @param  {string}  parent_class     	 CSS class of the parent component
 	* @param  {boolean} add_class_on_anim    Adds a CSS class when user scrolls to this component. Used for animations
 	* @param  {string}  extra_class          optional extra CSS class
-	* @param  {string}  color_accent         border brand color accent
 	#}
 
-	{% set component_class 		= "m-list-alt" %}
+	{% set component_class 		= "m-list-icon-alt" %}
 	{% set version         		= version 			 ? component_class ~ "--" ~ version | join(" ") : component_class ~ "--default" %}
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join(" ") %}
-	{% set color_accent_class   = color_accent ? component_class ~ "--brand-color-accent-" ~ color_accent | join("") : "" %}
 	{% set add_class_on_anim 	= add_class_on_anim  ? "wow" | join(" ") %}
 
-	<ul class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }} {{ color_accent_class }}">
+	<ul class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }}">
 		{% for item in list_items %}
-			<li class="{{ component_class }}__item wow">
-				<div class="{{ component_class }}__item-inner {{ component_class }}__item-inner--{{ loop.index }}">
+			<li class="{{ component_class }}__list-item">
+				<div class="{{ component_class }}__list-item-inner {{ component_class }}__list-item-inner--{{ loop.index}} wow">
+					<div class="{{ component_class }}__list-item-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+							<g>
+								<g>
+									<path fill="#45c58e" d="M22.172 13.134l-6.818 8.181a1.363 1.363 0 0 1-2.012.092l-4.09-4.091a1.364 1.364 0 0 1 1.928-1.928l3.034 3.035 5.863-7.035a1.363 1.363 0 0 1 1.29-.498c.488.11.895.42 1.062.885.167.466.069.986-.257 1.359zM15.67.67c-8.284 0-15 6.716-15 15 0 8.33 6.716 15 15 15 8.33 0 15-6.67 15-15 0-8.284-6.67-15-15-15z"/>
+								</g>
+							</g>
+						</svg>
+					</div>
+
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
 						title               : item.title,

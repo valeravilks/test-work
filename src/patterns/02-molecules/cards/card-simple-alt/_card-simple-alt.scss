@@ -22,13 +22,15 @@
 	}
 	@include bpm-sm {
 		padding: 40px 0;
-		border-bottom: 1px solid $g-grey-color-2;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
 	}
 
 	&:nth-child(odd) {
 		@include bp-sm {
 			padding-right: 40px;
-			border-right: 1px solid $g-grey-color-2;
+			border-right-width: 1px;
+			border-right-style: solid;
 		}
 		@include bp-lg {
 			padding-right: 110px;
@@ -58,6 +60,7 @@
 	}
 
 	&__img-wrapper {
+		position: relative;
 		margin-bottom: 40px;
 		overflow: hidden;
 		border-radius: 10px;
@@ -81,10 +84,6 @@
 		@include bpm-md {
 			font-size: 26px;
 		}
-
-		span {
-			color: $g-brand-color-2;
-		}
 	}
 
 	&__content {
@@ -103,12 +102,96 @@
 		font-weight: 600;
 		line-height: 1.4;
 		letter-spacing: normal;
-		color: $g-brand-color-2;
 
 		&::before {
 			top: calc(100% - 5px);
 			height: 1px;
-			background-color: $g-brand-color-2;
+		}
+	}
+
+	// Molecule Other Versions
+	&--brand-color-accent-default {
+		@include bpm-sm {
+			border-bottom-color: $g-body-light;
+		}
+
+		&:nth-child(odd) {
+			@include bp-sm {
+				border-right-color: $g-body-light;
+			}
+		}
+
+		.m-card-simple-alt {
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__link {
+				color: $g-body-light;
+
+				&::before {
+					background-color: $g-body-light;
+				}
+			}
+		}
+	}
+
+	&--brand-color-accent-dark,
+	&--brand-color-accent-light {
+		@include bpm-sm {
+			border-bottom-color: $g-grey-color-2;
+		}
+
+		&:nth-child(odd) {
+			@include bp-sm {
+				border-right-color: $g-grey-color-2;
+			}
+		}
+	}
+
+	&--brand-color-accent-dark {
+		.m-card-simple-alt {
+			&__title {
+				span {
+					color: $g-brand-color-2;
+				}
+			}
+
+			&__link {
+				color: $g-brand-color-2;
+
+				&::before {
+					background-color: $g-brand-color-2;
+				}
+			}
+		}
+	}
+
+	&--brand-color-accent-light {
+		.m-card-simple-alt {
+			&__title {
+				span {
+					color: $g-brand-color-7;
+				}
+			}
+
+			&__link {
+				color: $g-brand-color-7;
+
+				&::before {
+					background-color: $g-brand-color-7;
+				}
+			}
+		}
+	}
+
+	&--contains-modal {
+		z-index: $g-z100;
+
+		.m-card-simple-alt__img-wrapper {
+			@include bpm-sm {
+				height: 47.3vw;
+			}
 		}
 	}
 }
