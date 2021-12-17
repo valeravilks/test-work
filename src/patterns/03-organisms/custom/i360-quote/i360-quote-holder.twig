@@ -1,7 +1,5 @@
-MAKE SURE THIS FILE RENDERS IF QUOTE IS SELECTED. Regardless of quote 1 or 2
-
-{% if section.version === "something" %}
-	RENDER QUOTE 1 (i360-quote-1.twig)
-{% elseif section.version === "something" %}
-	RENDER QUOTE 2 (i360-quote-2.twig)
+{% if section.version == "default" %}
+	{% include "03-organisms/custom/i360-quote/i360-quote/i360-quote.twig" %}
+{% elseif section.version == "quote-alt" %}
+	{% include "03-organisms/custom/i360-quote/i360-alt-quote/i360-alt-quote.twig" %}
 {% endif %}
