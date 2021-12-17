@@ -109,10 +109,38 @@
 
 
 	//////////////////////////////////////////
-	// Block Other Versions                 //
+	// Organism Title Versions              //
 	//////////////////////////////////////////
 	/**
-	 * Covers scenario(s) where this block has versions beside
+	 * Covers scenario(s) where this organism has a custom block title for it's default state.
+	 * If so, target ".o-dbm__title.a-title--style-default". This should NOT apply to additional titles in this block.
+	 * ------------------------------------------------------------
+	 */
+	.o-dbm__title.a-title--style-default {
+
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Background Versions         //
+	//////////////////////////////////////////
+	/**
+	* Covers scenario(s) where this organism has a custom background for it's default state.
+	* If so, target ".m-background-set"
+	* ------------------------------------------------------------
+	*/
+	&.o-dbm--bg-default {
+		.m-background-set {
+
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has versions beside
 	 * the color and alignment use cases above
 	 * ------------------------------------------------------------
 	 */
