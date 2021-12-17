@@ -2,7 +2,6 @@
 	list-style-type: none;
 
 	&__list-item {
-		overflow: hidden;
 		margin-bottom: 10px;
 		margin-left: 0;
 		padding: 0;
@@ -14,12 +13,8 @@
 		background-color: $g-body-light;
 		border-radius: 10px;
 		border: 1px solid $g-brand-color-7;
-		transform: translateY(100%);
-		transition: $g-trans-base;
-
-		&.animated {
-			transform: translateY(0%);
-		}
+		visibility: hidden;
+		@include fadeInUp;
 
 		&--1 {
 			@include bp-md {

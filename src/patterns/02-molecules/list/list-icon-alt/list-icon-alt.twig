@@ -17,7 +17,7 @@
 	<ul class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }}">
 		{% for item in list_items %}
 			<li class="{{ component_class }}__list-item">
-				<div class="{{ component_class }}__list-item-inner {{ component_class }}__list-item-inner--{{ loop.index}} wow">
+				<div class="{{ component_class }}__list-item-inner {{ component_class }}__list-item-inner--{{ loop.index}} _{{ loop.index }} wow">
 					<div class="{{ component_class }}__list-item-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
 							<g>
