@@ -18,7 +18,7 @@
 
 	<div class="{{ default_block_class ? default_block_class ~ "__button-wrapper" }} {{ parent_class }}__button-wrapper {{ extra_class_wrapper }} {{ add_class_on_anim }}">
 
-		// Checking
+		{# Checking if the button should have an icon class #}
 		{% if button.style == "a-link a-link--underline" or "a-link a-link--basic" %}
 			{# no button icon class! #}
 		{% else %}
@@ -31,6 +31,7 @@
 		>
 			{{ button_link.title | striptags }}
 
+			{# Checking if the button should have an arrow icon #}
 			{% if button.style == "a-link a-link--underline" or "a-link a-link--basic" %}
 				{# no button icon class! #}
 			{% else %}
