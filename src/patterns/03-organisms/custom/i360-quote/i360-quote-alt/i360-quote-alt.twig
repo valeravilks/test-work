@@ -24,6 +24,14 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 
+	{% block before_container %}
+		{% if section.add_deco %}
+			<div class="{{ component_class }}__deco">
+				<!-- Background deco goes here -->
+			</div>
+		{% endif %}
+	{% endblock %}
+
     {# Overwrite title because the title is ACF display group #}
     {% block title %}
         {% include '01-atoms/content/title/title.twig' with {

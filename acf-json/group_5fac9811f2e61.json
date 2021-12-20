@@ -1174,6 +1174,33 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_61c0e535df940",
+                            "label": "Add Deco",
+                            "name": "add_deco",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61c0d4d9cbe75",
+                                        "operator": "==",
+                                        "value": "i360-quote-alt"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_61c0dc719e4e6",
                             "label": "Add Button",
                             "name": "add_button",
@@ -1190,7 +1217,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -1351,6 +1378,53 @@
                             "return_format": "value",
                             "ajax": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_61c0e6cfa788e",
+                            "label": "Block Visual Settings",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_61c0e6e6a788f",
+                            "label": "Block Visuals",
+                            "name": "block_visuals",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61c0d4d9cbe75",
+                                        "operator": "==",
+                                        "value": "i360-quote-alt"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e4322d3b1a53"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 1,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0
                         }
                     ],
                     "min": "",
@@ -13531,5 +13605,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640030348
+    "modified": 1640032206
 }
