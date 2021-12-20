@@ -1,0 +1,39 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-quote-alt" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+    {# Overwrite title because the title is ACF display group #}
+    {% block title %}
+        {% include '01-atoms/content/title/title.twig' with {
+            default_block_class : default_block_class,
+            parent_class        : component_class,
+            title               : section.title.block_title,
+            version             : section.title.title_width,
+            h                   : section.title.title_type,
+            style               : section.title.title_style,
+            add_class_on_anim   : true
+        } only %}
+    {% endblock %}
+{% endspaceless %}
