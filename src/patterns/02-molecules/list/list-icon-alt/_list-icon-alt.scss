@@ -2,7 +2,6 @@
 	list-style-type: none;
 
 	&__list-item {
-		overflow: hidden;
 		margin-bottom: 10px;
 		margin-left: 0;
 		padding: 0;
@@ -14,36 +13,9 @@
 		background-color: $g-body-light;
 		border-radius: 10px;
 		border: 1px solid $g-brand-color-7;
-		transform: translateY(100%);
+		visibility: hidden;
 		transition: $g-trans-base;
-
-		&.animated {
-			transform: translateY(0%);
-		}
-
-		&--1 {
-			@include bp-md {
-				transition-delay: .3s;
-			}
-		}
-
-		&--2 {
-			@include bp-md {
-				transition-delay: .6s;
-			}
-		}
-
-		&--3 {
-			@include bp-md {
-				transition-delay: .9s;
-			}
-		}
-
-		&--4 {
-			@include bp-md {
-				transition-delay: 1.2s;
-			}
-		}
+		@include fadeInUp;
 
 		&:last-child {
 			margin-bottom: 0;

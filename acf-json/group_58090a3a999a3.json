@@ -49,25 +49,6 @@
                 "id": ""
             },
             "return_format": "array"
-        },
-        {
-            "key": "field_619354a45c06e",
-            "label": "With icon",
-            "name": "with_icon",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
         }
     ],
     "location": [
@@ -94,5 +75,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637665964
+    "modified": 1639771642
 }
