@@ -10,17 +10,104 @@
 // Styling        //
 ////////////////////
 
-.o-i360-quote-alt {}
+.o-i360-quote-alt {
+	&__bg-deco {
+		@include absolute-general($top: 0, $bottom: 0, $left: -41px);
+		width: 110vw;
+		height: 110vw;
+		margin: auto;
+		opacity: 0;
+		transform: scale(.9);
+		transition: $g-trans-base-5;
+		transition-delay: .5s;
+		@include bp-sm {
+			width: 1000px;
+			height: 1000px;
+		}
+		@include bp-lg {
+			width: 1403px;
+			height: 1403px;
+		}
+
+		&.animated {
+			transform: scale(1);
+			opacity: 1;
+		}
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		font-size: 22px;
+		font-style: italic;
+		font-weight: 300;
+		line-height: 1.33;
+		letter-spacing: -0.6px;
+		@include bp-sm {
+			font-size: 28px;
+		}
+		@include bp-md {
+			font-size: 36px;
+		}
+	}
+}
 
 ////////////////////
 // Versions       //
 ////////////////////
 
-// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
-.o-i360-quote-alt {}
+//////////////////////////////////////////
+// Organism Background Versions         //
+//////////////////////////////////////////
+/**
+* Covers scenario(s) where this organism has a custom background for it's default state.
+* If so, target ".m-background-set"
+* ------------------------------------------------------------
+*/
+.o-i360-quote-alt {
+	&.o-dbm--bg-color {
+		.m-background-set {
+			background-color: $g-brand-color-4;
+		}
+	}
+}
 
 //////////////////////////////////////////
-// Block Color Palette Versions         //
+// Organism Alignment Versions          //
+//////////////////////////////////////////
+/**
+ * Covers scenario(s) where this block has multiple alignments
+ * "align-default" is required and the starting point
+ * Both "align-center" and "align-left" are required to style
+ * ------------------------------------------------------------
+ */
+.o-i360-quote-alt {
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-quote-alt {
+			&__title,
+			&__content {
+				text-align: center;
+			}
+		}
+	}
+
+	&.o-dbm--align-left {
+		.o-i360-quote-alt {
+			&__title,
+			&__content {
+				text-align: left;
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+// Organism Color Palette Versions      //
 //////////////////////////////////////////
 /**
  * Covers scenario(s) where this block has multiple color palettes
@@ -31,10 +118,31 @@
  * ------------------------------------------------------------
  */
 .o-i360-quote-alt {
+	&.o-dbm--color-light,
+	&.o-dbm--color-default {
+		.o-i360-quote-alt {
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+		}
+	}
+
+	&.o-dbm--color-dark {
+		.o-i360-quote-alt {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
+		}
+	}
 }
 
 //////////////////////////////////////////
-// Block Other Versions                 //
+// Organism Other Versions              //
 //////////////////////////////////////////
 /**
  * Covers scenario(s) where this block has versions beside
