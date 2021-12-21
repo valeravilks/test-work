@@ -12,6 +12,8 @@
 		&__deco-wrapper {
 			@include absolute-tl;
 			height: 100%;
+			transform: scale(.8);
+			animation: heroDecoZoomIn 1.5s ease-in-out .3s forwards;
 
 			svg {
 				display: block;
@@ -39,6 +41,23 @@
 
 		&__title {
 			padding-bottom: 10px;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__subtitle {
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__content {
@@ -46,6 +65,13 @@
 			font-size: 18px;
 			font-weight: 600;
 			letter-spacing: normal;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__button-wrapper {
