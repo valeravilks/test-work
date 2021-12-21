@@ -79,6 +79,21 @@
 		transition: $g-trans-base;
 	}
 
+	&__link-wrapper {
+		margin-top: 20px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		font-weight: 700;
+		color: $g-heading-dark;
+		@include underline-special-reverse;
+		&:hover {
+			color: $g-heading-dark;
+		}
+	}
+
 
 	////////////////////
 	// Versions       //
