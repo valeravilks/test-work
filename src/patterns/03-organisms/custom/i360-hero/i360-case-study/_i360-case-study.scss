@@ -7,6 +7,25 @@
 //// Client specific hero type. Each hero type has it's own alignment + text color options
 .o-i360-hero--i360-case-study {
 	.o-i360-hero {
+
+		&__img-wrapper {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
+
+		&__img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&__info-wrapper {
+			max-width: 630px;
+			padding: 140px 0;
+		}
+
 		&__columns {
 			display: inline-flex;
 			flex-wrap: wrap;
@@ -86,6 +105,38 @@
 		&__column-subtitle {
 			line-height: 1.5;
 			letter-spacing: -0.2px;
+		}
+	}
+}
+
+
+//////////////////////////////////////////
+// Hero Color Palette Versions          //
+//////////////////////////////////////////
+.o-i360-hero--i360-regular {
+	&.o-i360-hero--color-default,
+	&.o-i360-hero--color-dark {
+		.o-i360-hero {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__pretitle,
+			&__subtitle,
+			&__content {
+				color: $g-body-dark;
+			}
+		}
+	}
+
+	&.o-i360-hero--color-light {
+		.o-i360-hero {
+			&__pretitle,
+			&__title,
+			&__subtitle,
+			&__content {
+				color: $g-body-light;
+			}
 		}
 	}
 }

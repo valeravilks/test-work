@@ -21,6 +21,7 @@ h5, .h5,
 h6, .h6 {
 	font-family: $g-heading-font-family;
 	font-style: normal;
+	line-height: $g-heading-line-height;
 	font-weight: $g-heading-font-weight;
 	color: $g-heading-dark;
 	padding-bottom: $g-heading-padding-bottom;

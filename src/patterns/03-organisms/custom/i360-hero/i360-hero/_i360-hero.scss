@@ -5,58 +5,59 @@
 //////////////////////////////////////////////////////////////////////
 //
 //// Client specific hero type. Each hero type has it's own alignment + text color options
-.o-i360-hero {
+.o-i360-hero--i360-regular {
 	position: relative;
 	overflow: hidden;
-
-	&__bg-color,
-	&__gradient {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
-
-	&__img-wrapper {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
-
-	&__img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	&__info-wrapper {
-		max-width: 630px;
-		padding: 140px 0;
-	}
-
-	&__title {
-		letter-spacing: -0.81px;
-
-		span {
-			line-height: normal;
-			letter-spacing: normal;
-			color: $g-brand-color-1;
+	.o-i360-hero {
+		&__bg-color,
+		&__gradient {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
 		}
-	}
 
-	&__subtitle {
-		@include last-element-no-bm;
-	}
+		&__img-wrapper {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
 
-	&__button-wrapper {
-		padding-top: 20px;
+		&__img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&__info-wrapper {
+			max-width: 630px;
+			padding: 140px 0;
+		}
+
+		&__title {
+			letter-spacing: -0.81px;
+
+			span, strong, bold {
+				line-height: normal;
+				letter-spacing: normal;
+				color: $g-brand-color-1;
+			}
+		}
+
+		&__subtitle {
+			@include last-element-no-bm;
+		}
+
+		&__button-wrapper {
+			padding-top: 40px;
+		}
 	}
 }
 
 //////////////////////////////////////////
 // Hero Versions -- Alignments          //
 //////////////////////////////////////////
-.o-i360-hero {
+.o-i360-hero--i360-regular {
 	&.o-i360-hero--align-left,
 	&.o-i360-hero--align-default {
 		.o-i360-hero {
@@ -102,7 +103,7 @@
 //////////////////////////////////////////
 // Hero Color Palette Versions          //
 //////////////////////////////////////////
-.o-i360-hero {
+.o-i360-hero--i360-regular {
 	&.o-i360-hero--color-default,
 	&.o-i360-hero--color-dark {
 		.o-i360-hero {
