@@ -20,7 +20,78 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-pills-two-columns {
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		@include bp-lg {
+			flex-wrap: nowrap;
+		}
+	}
 
+	&__column {
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 100%;
+
+		&--1 {
+			@include bp-lg {
+				flex-basis: 42%;
+				padding-right: 11px;
+			}
+			@include bp-xl {
+				padding-right: 22px;
+			}
+		}
+
+		&--2 {
+			@include bp-lg {
+				flex-basis: 58%;
+			}
+			@include bp-xl {
+				padding-right: 5%;
+			}
+		}
+	}
+
+	&__pretitle-wrapper {
+		margin-bottom: 15px;
+	}
+
+	&__pretitle {
+		font-weight: 600;
+	}
+
+	.o-dbm__title,
+	.o-dbm__content {
+		max-width: 100%;
+	}
+
+	&__title {
+		span {
+			color: $g-brand-color-1;
+		}
+	}
+
+	&__list-alt {
+		display: flex;
+		flex-wrap: wrap;
+		@include bp-sm {
+			margin-left: -22px;
+		}
+		@include bp-lg {
+			margin-top: 0;
+		}
+
+		li {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 100%;
+			@include bp-sm {
+				flex-basis: calc(50% - 22px);
+				margin-left: 22px;
+			}
+		}
+	}
 }
 
 
@@ -31,6 +102,21 @@
 // This organism is most likely inheriting styles from the default-organism.scss file.
 // If needed, the look & feel of organism versions can be modified below.
 
+//////////////////////////////////////////
+// Organism Background Versions         //
+//////////////////////////////////////////
+/**
+* Covers scenario(s) where this organism has a custom background for it's default state.
+* If so, target ".m-background-set"
+* ------------------------------------------------------------
+*/
+.o-i360-pills-two-columns {
+	&.o-dbm--bg-color {
+		.m-background-set {
+			background-color: $g-body-light;
+		}
+	}
+}
 
 //////////////////////////////////////////
 // Organism Versions -- Alignments      //
@@ -42,6 +128,7 @@
 // Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
 .o-i360-pills-two-columns.o-dbm--align-center {
 	.o-i360-pills-two-columns {
+		&__pretitle,
 		&__title-wrapper,
 		&__title,
 		&__content {
@@ -57,6 +144,13 @@
 .o-i360-pills-two-columns.o-dbm--align-left,
 .o-i360-pills-two-columns.o-dbm--align-default {
 	.o-i360-pills-two-columns {
+		&__pretitle-wrapper {
+			&.o-dbm__pretitle-wrapper {
+				margin: 0 auto 15px;
+			}
+		}
+
+		&__pretitle,
 		&__title-wrapper,
 		&__title,
 		&__content {
