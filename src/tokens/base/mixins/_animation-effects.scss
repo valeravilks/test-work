@@ -188,6 +188,17 @@ $classesToAdd: 24;
 	}
 }
 
+@keyframes heroDecoZoomOut {
+	0% {
+		opacity: 0;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 // Use this mixin to have gradient animation on any selector
 //@mixin selector-bg-gradient-animation($linear-gradient-params, $animation-size, $animation-speed, $scroll-angle-0-and-100, $scroll-angle-50) {
 //    background: linear-gradient($linear-gradient-params);
