@@ -46,6 +46,7 @@
 
 		&__subtitle {
 			@include last-element-no-bm;
+			max-width: 540px;
 		}
 
 		&__button-wrapper {
