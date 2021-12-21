@@ -13,7 +13,7 @@
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
-	{% set component_class = "o-i360-pills" %}
+	{% set component_class = "o-i360-pills-two-columns" %}
 	{% set container       = true %}
 
 	{#################################################################################}
@@ -22,21 +22,19 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	{% block before_title %}
-		<div class="{{ component_class }}__info">
-	{% endblock %}
+    {% block shape_top %}
+        <div class="{{ component_class }}__column {{ component_class }}__column--1">
+    {% endblock %}
 
-	{% block after_content %}
-
-		{% include '/02-molecules/list/list-alt/list-alt.twig' with {
-			parent_class      : component_class,
-			list_items		  : section.repeater,
-			color_accent      : 'light',
-		} only %}
-	{% endblock %}
-
-	{% block shape_bottom %}
-		</div>
-	{% endblock %}
+    {% block after_button %}
+        </div>
+        <div class="{{ component_class }}__column {{ component_class }}__column--2">
+            {% include '02-molecules/list/list-alt/list-alt.twig' with {
+                parent_class      : component_class,
+                list_items		  : section.repeater,
+                color_accent      : 'dark',
+            } only %}
+        </div>
+    {% endblock %}
 
 {% endspaceless %}

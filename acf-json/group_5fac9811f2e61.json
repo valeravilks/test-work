@@ -3164,13 +3164,74 @@
                                     "maxlength": ""
                                 },
                                 {
+                                    "key": "field_61c20f83bf116",
+                                    "label": "Icon Type",
+                                    "name": "icon_image",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "Image",
+                                    "ui_off_text": "SVG"
+                                },
+                                {
+                                    "key": "field_61c20fd0bf117",
+                                    "label": "Icon Image",
+                                    "name": "icon_img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61c20f83bf116",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "uploader": "",
+                                    "acfe_thumbnail": 0,
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "library": "all"
+                                },
+                                {
                                     "key": "field_61afceb848517",
                                     "label": "Icon SVG",
                                     "name": "icon_svg",
                                     "type": "acf_code_field",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61c20f83bf116",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -3496,6 +3557,25 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_61c1f19b07a2e",
+                            "label": "Pretitle",
+                            "name": "block_pretitle",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_61afcedd33579",
                             "label": "Title",
                             "name": "title",
@@ -3731,8 +3811,7 @@
                             },
                             "choices": {
                                 "default": "Default",
-                                "alt": "Alternative",
-                                "checkboxes": "Checkboxes"
+                                "two-columns": "Two Columns"
                             },
                             "default_value": "default",
                             "allow_null": 0,
@@ -13605,5 +13684,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640032206
+    "modified": 1640108513
 }
