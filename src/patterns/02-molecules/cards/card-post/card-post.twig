@@ -73,6 +73,18 @@
 				content             : content,
 				add_class_on_anim   : false
 			} only %}
+
+			{# Setting the link object. As expected by the link atom #}
+			{% set link = {
+				title: "Learn More",
+				url: item.link
+			} %}
+
+			{% include '01-atoms/link/link.twig' with {
+				parent_class        : component_class,
+				link      			: link,
+				add_class_on_anim   : false
+			} only %}
 		</div>
 	</div>
 {% endspaceless %}
