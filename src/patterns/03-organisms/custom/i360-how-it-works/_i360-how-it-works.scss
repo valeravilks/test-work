@@ -21,27 +21,8 @@
 
 .o-i360-how-it-works {
 
-	&__title {
-		span {
-			color: $g-brand-color-7;
-		}
-	}
-
-	&__title.o-dbm__title.a-title--default,
-	&__content.o-dbm__content {
-		max-width: 940px;
-	}
-
 	&__content-box {
-		margin-top: 65px;
 		text-align: center;
-
-		&.a-content {
-			h1,h2,h3,h4,h5,h6 {
-				max-width: 780px;
-				margin: 0 auto;
-			}
-		}
 	}
 
 	&__repeater-outer-wrapper {
@@ -349,11 +330,68 @@
 .o-i360-how-it-works {
 	// for vertical pills
 	&--vertical-pills {
+		.o-i360-how-it-works {
+			&__content.o-dbm__content {
+				max-width: 780px;
+			}
 
+			&__title {
+				span {
+					color: $g-brand-color-1;
+				}
+			}
+
+			&__list-alt {
+				max-width: 780px;
+				margin: 35px auto 0;
+				text-align: center;
+			}
+
+			&__content-box {
+				margin-top: 45px;
+
+				&.a-content {
+					h1,h2,h3,h4,h5,h6 {
+						max-width: 560px;
+						margin: 0 auto;
+
+						span {
+							color: $g-brand-color-1;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// For how it works
 	&--default {
+		.o-i360-how-it-works {
+			&__title.o-dbm__title.a-title--default,
+			&__content.o-dbm__content {
+				max-width: 940px;
+			}
 
+			&__title {
+				span {
+					color: $g-brand-color-7;
+				}
+			}
+
+			&__content-box {
+				margin-top: 65px;
+
+				&.a-content {
+					h1,h2,h3,h4,h5,h6 {
+						max-width: 780px;
+						margin: 0 auto;
+
+						span {
+							color: $g-brand-color-7;
+						}
+					}
+				}
+			}
+		}
 	}
 }

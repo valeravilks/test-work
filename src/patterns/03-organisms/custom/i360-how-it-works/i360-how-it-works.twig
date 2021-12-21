@@ -24,6 +24,15 @@
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
 	{% block after_content %}
+
+		{% if section.version == 'vertical-pills' %}
+			{% include '02-molecules/list/list-alt/list-alt.twig' with {
+				parent_class      : component_class,
+				list_items		  : section.repeater,
+				color_accent      : 'dark'
+			} only %}
+		{% endif %}
+	
 		{% if section.extra_content_box %}
 			{% include '01-atoms/content/content/content.twig' with {
 				parent_class        : component_class,
@@ -34,32 +43,34 @@
 		{% endif %}
 
 		{#Used for both how it works AND vertical pills#}
-		<div class="{{ component_class }}__repeater-outer-wrapper">
-			<div class="{{ component_class }}__line wow"></div>
+		{% if section.version == 'default' %}
+			<div class="{{ component_class }}__repeater-outer-wrapper">
+				<div class="{{ component_class }}__line wow"></div>
 
-			<div class="{{ component_class }}__repeater">
-				{% for item in section.repeater %}
-					<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow">
-						<span class="{{ component_class }}__step-number" style="transition-delay: .{{ loop.index }}s;">{{ loop.index }}</span>
+				<div class="{{ component_class }}__repeater">
+					{% for item in section.repeater %}
+						<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow">
+							<span class="{{ component_class }}__step-number" style="transition-delay: .{{ loop.index }}s;">{{ loop.index }}</span>
 
-						{% include '01-atoms/content/title/title.twig' with {
-							parent_class        : component_class,
-							title               : item.title,
-							extra_class         : "o-i360-how-it-works__item-title",
-							h                   : 4,
-							add_class_on_anim   : false
-						} only %}
+							{% include '01-atoms/content/title/title.twig' with {
+								parent_class        : component_class,
+								title               : item.title,
+								extra_class         : "o-i360-how-it-works__item-title",
+								h                   : 4,
+								add_class_on_anim   : false
+							} only %}
 
-						{% include '01-atoms/content/content/content.twig' with {
-							parent_class        : component_class,
-							content             : item.content,
-							extra_class         : "o-i360-how-it-works__item-content",
-							add_class_on_anim   : false
-						} only %}
-					</div>
-				{% endfor %}
+							{% include '01-atoms/content/content/content.twig' with {
+								parent_class        : component_class,
+								content             : item.content,
+								extra_class         : "o-i360-how-it-works__item-content",
+								add_class_on_anim   : false
+							} only %}
+						</div>
+					{% endfor %}
+				</div>
 			</div>
-		</div>
+		{% endif %}
 
     {% endblock %}
 
