@@ -1,5 +1,5 @@
-{% if section.version == "default" %}
-	{% include "03-organisms/custom/i360-quote/i360-quote/i360-quote.twig" %}
-{% elseif section.version == "quote-alt" %}
-	{% include "03-organisms/custom/i360-quote/i360-alt-quote/i360-alt-quote.twig" %}
+{% if section.version == "i360-quote" %}
+	{% include '03-organisms/custom/i360-quote/i360-quote/i360-quote.twig' %}
+{% elseif section.version == "i360-quote-alt" %}
+	{% include '03-organisms/custom/i360-quote/i360-quote-alt/i360-quote-alt.twig' %}
 {% endif %}
