@@ -1,0 +1,40 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-pills-two-columns" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+    {% block shape_top %}
+        <div class="{{ component_class }}__column {{ component_class }}__column--1">
+    {% endblock %}
+
+    {% block after_button %}
+        </div>
+        <div class="{{ component_class }}__column {{ component_class }}__column--2">
+            {% include '02-molecules/list/list-alt/list-alt.twig' with {
+                parent_class      : component_class,
+                list_items		  : section.repeater,
+                color_accent      : 'light',
+            } only %}
+        </div>
+    {% endblock %}
+
+{% endspaceless %}
