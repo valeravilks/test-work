@@ -134,7 +134,7 @@ $l-quote-block-padding-mobile-tablet: 80px;
 
 			&__content-group {
 				@include bp-lg {
-					padding-left: 80px;
+					padding-left: 0px;
 				}
 				@include bpm-md {
 					margin: 0 auto;
