@@ -40,6 +40,14 @@
 						content             : item.content,
 						add_class_on_anim   : false
 					} only %}
+
+					{% if item.add_link %}
+						{% include '01-atoms/link/link.twig' with {
+							parent_class        : component_class,
+							link      			: item.link,
+							add_class_on_anim   : false
+						} only %}
+					{% endif %}
 				</div>
 			</li>
 		{% endfor %}

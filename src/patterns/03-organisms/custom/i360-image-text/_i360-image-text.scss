@@ -234,9 +234,11 @@
 	 * from the site-wide default padding state
 	 * ------------------------------------------------------------
 	 */
-	&.o-dbm--padding-bottom-default,
 	&.o-dbm--padding-top-default {
 		padding-top: 70px !important;
+	}
+
+	&.o-dbm--padding-bottom-default {
 		padding-bottom: 70px !important;
 	}
 
