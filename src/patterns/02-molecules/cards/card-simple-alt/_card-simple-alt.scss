@@ -186,7 +186,11 @@
 	}
 
 	&--contains-modal {
-		z-index: $g-z100;
+		z-index: $g-z90;
+
+		&-active {
+			z-index: $g-z500;
+		}
 
 		.m-card-simple-alt__img-wrapper {
 			@include bpm-sm {
