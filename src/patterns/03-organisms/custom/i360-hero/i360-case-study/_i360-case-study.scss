@@ -72,6 +72,7 @@
 
 			&:nth-last-child(-n+2) {
 				@include bp-xs {
+					padding-bottom: 0;
 					border-bottom: none;
 				}
 			}
