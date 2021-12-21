@@ -17,10 +17,12 @@
 	{% set add_class_on_anim = add_class_on_anim ? "wow" | join("") %}
 
 	{% if pretitle %}
-		<div
-			class="{{ default_block_class ? default_block_class ~ "__pretitle" }} {{ component_class }} {{ parent }} {{ add_class_on_anim }} a-content"
-		>
-			{{ pretitle }}
+		<div class="{{ default_block_class ? default_block_class ~ "__title-wrapper" }} {{ parent_class }}__title-wrapper {{ extra_class_wrapper }}">
+			<div
+				class="{{ default_block_class ? default_block_class ~ "__pretitle" }} {{ component_class }} {{ parent }} {{ add_class_on_anim }} a-content"
+			>
+				{{ pretitle }}
+			</div>
 		</div>
 	{% endif %}
 {% endspaceless %}
