@@ -7,6 +7,7 @@
 //// Client specific hero type. Each hero type has it's own alignment + text color options
 .o-i360-hero--i360-case-study {
 	position: relative;
+	overflow: hidden;
 	.o-i360-hero {
 
 		&__img-wrapper {
@@ -101,6 +102,7 @@
 			line-height: normal;
 			letter-spacing: normal;
 			color: $g-heading-dark;
+			padding-bottom: 8px;
 		}
 
 		&__column-subtitle {
