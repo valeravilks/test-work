@@ -38,4 +38,14 @@
 	&__link-wrapper {
 		padding-top: 25px;
 	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		font-weight: 500;
+		@include underline-special-reverse;
+		&:hover {
+			color: $g-grey-color-light;
+		}
+	}
 }
