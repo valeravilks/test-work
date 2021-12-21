@@ -21,7 +21,8 @@
 	border-radius: 10px;
 
 	&__title,
-	&__content {
+	&__content,
+	&__link {
 		color: $g-grey-color-light;
 	}
 
@@ -32,5 +33,20 @@
 	&__content {
 		font-size: 14px;
 		line-height: 1.6;
+	}
+
+	&__link-wrapper {
+		padding-top: 25px;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		font-weight: 500;
+		font-size: 14px;
+		@include underline-special-reverse;
+		&:hover {
+			color: $g-grey-color-light;
+		}
 	}
 }

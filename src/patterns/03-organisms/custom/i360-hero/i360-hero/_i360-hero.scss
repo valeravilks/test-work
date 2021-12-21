@@ -5,58 +5,86 @@
 //////////////////////////////////////////////////////////////////////
 //
 //// Client specific hero type. Each hero type has it's own alignment + text color options
-.o-i360-hero {
+.o-i360-hero--i360-regular {
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	.o-i360-hero {
+		&__bg-color,
+		&__gradient {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
 
-	&__bg-color,
-	&__gradient {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
+		&__img-wrapper {
+			@include absolute-tr;
+			width: 100%;
+			height: 100%;
+		}
 
-	&__img-wrapper {
-		@include absolute-tr;
-		width: 100%;
-		height: 100%;
-	}
+		&__img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 
-	&__img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+		&__info-wrapper {
+			max-width: 630px;
+			padding: 140px 0;
+		}
 
-	&__info-wrapper {
-		max-width: 630px;
-		padding: 140px 0;
-	}
+		&__title {
+			letter-spacing: -0.81px;
 
-	&__title {
-		letter-spacing: -0.81px;
+			span, strong, bold {
+				line-height: normal;
+				letter-spacing: normal;
+				color: $g-brand-color-1;
+			}
 
-		span {
-			line-height: normal;
-			letter-spacing: normal;
-			color: $g-brand-color-1;
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__subtitle {
+			@include last-element-no-bm;
+			max-width: 585px;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__button-wrapper {
+			padding-top: 25px;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.6s,
+				$function: ease,
+				$fill: both
+			);
 		}
 	}
 
-	&__subtitle {
-		@include last-element-no-bm;
-	}
 
-	&__button-wrapper {
-		padding-top: 20px;
-	}
-}
+	//////////////////////////////////////////
+	// Hero Versions -- Alignments          //
+	//////////////////////////////////////////
 
-//////////////////////////////////////////
-// Hero Versions -- Alignments          //
-//////////////////////////////////////////
-.o-i360-hero {
 	&.o-i360-hero--align-left,
 	&.o-i360-hero--align-default {
 		.o-i360-hero {
@@ -97,12 +125,12 @@
 			}
 		}
 	}
-}
 
-//////////////////////////////////////////
-// Hero Color Palette Versions          //
-//////////////////////////////////////////
-.o-i360-hero {
+
+	//////////////////////////////////////////
+	// Hero Color Palette Versions          //
+	//////////////////////////////////////////
+
 	&.o-i360-hero--color-default,
 	&.o-i360-hero--color-dark {
 		.o-i360-hero {
@@ -128,4 +156,31 @@
 			}
 		}
 	}
+
+	////////////////////////////////////////////////////
+	// Hero Sizes           						  //
+	////////////////////////////////////////////////////
+	&.o-i360-hero {
+		&--size-large {
+			min-height: 750px;
+		}
+
+		&--size-default,
+		&--size-medium {
+			height: 500px;
+			.o-i360-hero {
+				&__info-wrapper {
+					padding: 20px 0px !important;
+				}
+			}
+		}
+
+		&--size-small {
+			min-height: 400px;
+		}
+	}
+
+	////////////////////////////////////////////////////
+	// Additional Hero versions here    			  //
+	////////////////////////////////////////////////////
 }

@@ -13,7 +13,11 @@
 // Block Base Styling         //
 ////////////////////////////////
 .o-i360-text {
-
+	&__title {
+		span, strong, bold {
+			color: #18B1A9;
+		}
+	}
 }
 
 
