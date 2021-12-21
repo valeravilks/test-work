@@ -14,7 +14,6 @@
 ////////////////////////////////
 
 .o-i360-image-text {
-	margin-top: 70px;
 
 	&__container {
 		max-width: 1210px;
@@ -136,92 +135,109 @@
 			padding-top: 35px;
 		}
 	}
-}
 
-//////////////////////////////////////////
-// Block Alignment Versions             //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this block has multiple alignments
- * "align-default" is required and the starting point
- * Both "align-center" and "align-left" are required to style
- * ------------------------------------------------------------
- */
 
-.o-i360-image-text.o-dbm--align-default,
-.o-i360-image-text.o-dbm--align-left {
-	.o-i360-image-text {
-		&__title {
-			@include bp-sm {
-				text-align: left;
+	//////////////////////////////////////////
+	// Block Alignment Versions             //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple alignments
+	 * "align-default" is required and the starting point
+	 * Both "align-center" and "align-left" are required to style
+	 * ------------------------------------------------------------
+	 */
+
+	&.o-dbm--align-default,
+	&.o-dbm--align-left {
+		.o-i360-image-text {
+			&__title {
+				@include bp-sm {
+					text-align: left;
+				}
+			}
+
+			&__content {
+				@include bp-sm {
+					text-align: left;
+				}
+			}
+
+			&__button-wrapper {
+				@include bp-sm {
+					justify-content: flex-start;
+				}
 			}
 		}
+	}
 
-		&__content {
-			@include bp-sm {
-				text-align: left;
+	&.o-dbm--align-center {
+		.o-i360-image-text {
+			&__title {
+
+			}
+
+			&__content {
+
+			}
+
+			&__button-wrapper {
+
 			}
 		}
+	}
 
-		&__button-wrapper {
-			@include bp-sm {
-				justify-content: flex-start;
+
+
+	//////////////////////////////////////////
+	// Block Color Palette Versions         //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+
+	&.o-dbm.o-dbm--color-default,
+	&.o-dbm.o-dbm--color-dark {
+		.o-i360-image-text {
+			&__title {
+				color: $g-brand-color-4;
+			}
+
+			&__content {
+				color: $g-body-dark;
 			}
 		}
 	}
-}
 
-.o-i360-image-text.o-dbm--align-center {
-	.o-i360-image-text {
-		&__title {
+	&.o-dbm.o-dbm--color-light {
+		.o-i360-image-text {
+			&__title {
+				color: $g-heading-light;
+			}
 
-		}
-
-		&__content {
-
-		}
-
-		&__button-wrapper {
-
+			&__content {
+				color: $g-body-light;
+			}
 		}
 	}
-}
 
 
-
-//////////////////////////////////////////
-// Block Color Palette Versions         //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this block has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-
-.o-i360-image-text.o-dbm.o-dbm--color-default,
-.o-i360-image-text.o-dbm.o-dbm--color-dark {
-	.o-i360-image-text {
-		&__title {
-			color: $g-brand-color-4;
-		}
-
-		&__content {
-			color: $g-body-dark;
-		}
+	//////////////////////////////////////////
+	// Organism Padding                     //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where the default padding for this block differ
+	 * from the site-wide default padding state
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--padding-bottom-default,
+	&.o-dbm--padding-top-default {
+		padding-top: 70px !important;
+		padding-bottom: 70px !important;
 	}
-}
 
-.o-i360-image-text.o-dbm.o-dbm--color-light {
-	.o-i360-image-text {
-		&__title {
-			color: $g-heading-light;
-		}
-
-		&__content {
-			color: $g-body-light;
-		}
-	}
 }
