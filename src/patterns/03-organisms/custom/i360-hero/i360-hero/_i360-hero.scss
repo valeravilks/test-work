@@ -54,7 +54,7 @@
 
 		&__subtitle {
 			@include last-element-no-bm;
-			max-width: 540px;
+			max-width: 585px;
 
 			@include fadeInLeft(
 				$duration: 1s,
