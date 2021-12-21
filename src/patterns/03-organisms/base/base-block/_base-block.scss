@@ -15,6 +15,21 @@
 
 	&__title {
 		padding-bottom: 20px;
+
+		//////////////////////////////////
+		// Versions - Title Widths      //
+		//////////////////////////////////
+		&.a-title--small {
+			max-width: 620px;
+		}
+
+		&.a-title--default {
+			max-width: 720px;
+		}
+
+		&.a-title--wide {
+			max-width: 800px;
+		}
 	}
 
 	&__content {
