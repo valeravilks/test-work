@@ -13,7 +13,7 @@
 	{#####################################}
 	{% if post.hero_background == "color" %}
 		<div
-			class="h-cover {{ component_class }}__bg-color h-bg-color--custom"
+			class="h-cover {{ component_class }}__bg-color h-bg-color--custom absolute top-0 left-0 w-full"
 			style="background-color:{{ post.hero_bg_color ? post.hero_bg_color : options.theme_base_color }}"
 		></div>
 
