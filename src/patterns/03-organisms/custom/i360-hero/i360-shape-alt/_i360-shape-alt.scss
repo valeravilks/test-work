@@ -12,6 +12,8 @@
 		&__deco-wrapper {
 			@include absolute-tl;
 			height: 100%;
+			transform: scale(1.2);
+			animation: heroDecoZoomOut 1.5s ease-in-out .3s forwards;
 
 			svg {
 				display: block;
@@ -39,6 +41,23 @@
 
 		&__title {
 			padding-bottom: 10px;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__subtitle {
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__content {
@@ -46,21 +65,28 @@
 			font-size: 18px;
 			font-weight: 600;
 			letter-spacing: normal;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.6s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__button-wrapper {
 			padding-top: 60px;
 		}
 	}
-}
 
 
-////////////////////
-// Versions       //
-////////////////////
 
-// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
-.o-i360-hero--i360-shape-alt {
+	////////////////////
+	// Versions       //
+	////////////////////
+
+	// Covers scenario(s) where this block has multiple alignments .. "align-default" is required and the starting point
+
 	&.o-i360-hero {
 		&--align-center {
 			.o-i360-hero__info-wrapper {
@@ -69,21 +95,21 @@
 			}
 		}
 	}
-}
 
 
-//////////////////////////////////////////
-// Block Color Palette Versions         //
-//////////////////////////////////////////
-/**
- * Covers scenario(s) where this block has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-.o-i360-hero--i360-shape-alt {
+
+	//////////////////////////////////////////
+	// Block Color Palette Versions         //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this block has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+
 	&.o-i360-hero {
 		&--color-light,
 		&--color-default {
@@ -95,6 +121,10 @@
 				&__pretitle,
 				&__subtitle {
 					color: $g-grey-color-light;
+				}
+
+				&__content {
+					color: #fff;
 				}
 			}
 		}
