@@ -12,10 +12,9 @@
 			margin-bottom: 0;
 		}
 
-		&.animated {
-			.m-list-alt__item-inner {
-				transform: translateY(0%);
-			}
+		&__card {
+			visibility: hidden;
+			@include fadeInUp;
 		}
 	}
 

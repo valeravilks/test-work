@@ -18,7 +18,7 @@
 
 	<ul class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }}  {{ extra_class }} {{ color_accent_class }}">
 		{% for item in list_items %}
-			<li class="{{ component_class }}__item wow">
+			<li class="{{ component_class }}__item wow _{{ loop.index }}">
 				<div class="{{ component_class }}__item-inner {{ component_class }}__item-inner--{{ loop.index }}">
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
