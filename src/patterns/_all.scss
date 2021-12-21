@@ -76,7 +76,7 @@
 //////////////////////////////////////////
 // Patterns -> 02-Molecules - Custom    //
 //////////////////////////////////////////
-
+@import '02-molecules/pill/pill';
 
 
 //////////////////////////////////////////
@@ -190,8 +190,8 @@
 @import '../patterns/03-organisms/custom/i360-latest-posts/i360-latest-posts-repeater';
 @import '../patterns/03-organisms/custom/i360-statistics-vertical/i360-statistics-vertical';
 @import '../patterns/03-organisms/custom/i360-statistics-horizontal/i360-statistics-horizontal';
-@import '../patterns/03-organisms/custom/i360-pills/i360-pills';
-@import '../patterns/02-molecules/pill/pill';
+@import '03-organisms/custom/i360-pills/i360-pills/i360-pills';
+@import '03-organisms/custom/i360-pills/i360-pills-two-columns/i360-pills-two-columns';
 @import '../patterns/03-organisms/custom/i360-case-studies/i360-case-studies';
 @import '../patterns/03-organisms/custom/i360-case-studies/i360-case-studies-repeater';
 @import '../patterns/03-organisms/custom/i360-quote/i360-quote/i360-quote';
