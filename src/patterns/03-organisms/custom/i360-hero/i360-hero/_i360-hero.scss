@@ -42,15 +42,39 @@
 				letter-spacing: normal;
 				color: $g-brand-color-1;
 			}
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__subtitle {
 			@include last-element-no-bm;
 			max-width: 540px;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__button-wrapper {
 			padding-top: 40px;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.6s,
+				$function: ease,
+				$fill: both
+			);
 		}
 	}
 }
