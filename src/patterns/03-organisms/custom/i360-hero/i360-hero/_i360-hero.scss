@@ -8,6 +8,8 @@
 .o-i360-hero--i360-regular {
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
 	.o-i360-hero {
 		&__bg-color,
 		&__gradient {
