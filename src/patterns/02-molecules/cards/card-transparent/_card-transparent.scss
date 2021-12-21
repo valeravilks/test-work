@@ -43,6 +43,7 @@
 		position: relative;
 		display: inline-block;
 		font-weight: 500;
+		font-size: 14px;
 		@include underline-special-reverse;
 		&:hover {
 			color: $g-grey-color-light;

@@ -88,6 +88,7 @@
 		display: inline-block;
 		font-weight: 500;
 		color: $g-heading-dark;
+		font-size: 14px;
 		@include underline-special-reverse;
 		&:hover {
 			color: $g-heading-dark;
