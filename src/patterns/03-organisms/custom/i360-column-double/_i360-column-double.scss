@@ -80,8 +80,11 @@
 		@include underline-special;
 		@include underline-special-reverse;
 
+		font-weight: 600;
+		font-size: 20px;
+
 		&::before {
-			top: calc(100% - 4px);
+			top: calc(100% - 0px);
 			height: 1px;
 		}
 	}
