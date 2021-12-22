@@ -34,7 +34,8 @@
 						width               : section.title_width,
 						style               : section.title_style,
 						h                   : section.title_type,
-						spacing_bottom      : section.title_padding_bottom
+						spacing_bottom      : section.title_padding_bottom,
+						add_class_on_anim   : true
 					} only %}
 
 					{% include '01-atoms/content/content/content.twig' with {
@@ -46,8 +47,9 @@
 
 					{% if section.add_button %}
 						{% include '01-atoms/buttons/button/button.twig' with {
-							parent_class : component_class,
-							button       : section.button
+							parent_class 		: component_class,
+							button       		: section.button,
+							add_class_on_anim   : true
 						} only %}
 					{% endif %}
 				</div>
