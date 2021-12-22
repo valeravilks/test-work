@@ -132,7 +132,7 @@
 
 	&__item {
 		visibility: hidden;
-		@include fadeInUp;
+		@include fadeIn;
 	}
 
 
