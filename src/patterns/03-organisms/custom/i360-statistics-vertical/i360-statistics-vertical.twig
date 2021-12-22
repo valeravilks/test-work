@@ -35,7 +35,8 @@
 						width               : section.title_width,
 						style               : section.title_style,
 						h                   : section.title_type,
-						spacing_bottom      : section.title_padding_bottom
+						spacing_bottom      : section.title_padding_bottom,
+						add_class_on_anim   : true
 					} only %}
 
 					{% include '01-atoms/content/content/content.twig' with {
@@ -50,7 +51,7 @@
 
 					<div class="{{ component_class }}__repeater">
 						{% for item in section.repeater %}
-							<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index}} wow">
+							<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index}} _{{ loop.index }} wow">
 
 								{% include '01-atoms/content/title/title.twig' with {
 									parent_class        : component_class,

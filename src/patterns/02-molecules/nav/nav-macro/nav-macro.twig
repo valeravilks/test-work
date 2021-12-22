@@ -27,14 +27,22 @@
 			style="transition-delay: {{ index < 10 ? '.' ~ index : index/10 }}s"
 		>
 			{% if item.get_children %}
-				{{ nav.link(item, class) }}
+				{# Hide arrow for mobile view #}
+				{% set show_arrow = drop ? false : true %}
+				{{ nav.link(item, class, show_arrow) }}
 				{% if drop == true %}
 					{% if ('current_page_ancestor' in item.classes) or ('current-menu-item' in item.classes) %}
-						{% set active = 'a-plus-toggle--opened' %}
+						{% set active = 'a-arrow-toggle--opened' %}
 					{% endif %}
 					<div class="{{ class }}__toggle-wrapper js-nav-drop">
-						<div class="{{ class }}__plus-toggle a-plus-toggle js-plus-toggle">
-							<span class="{{ class }}__plus-toggle__line a-plus-toggle__line"></span>
+						<div class="{{ class }}__arrow-toggle a-arrow-toggle js-arrow-toggle">
+							<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5">
+								<g>
+									<g>
+										<path fill="#074757" d="M9 .77L5.26 4.52a.372.372 0 0 1-.53 0L1 .77A.35.35 0 0 1 .899.361C1 .221 1.093.13 1.245.13h7.5c.152 0 .255.091.347.231A.361.361 0 0 1 9 .771z"/>
+									</g>
+								</g>
+							</svg>
 						</div>
 					</div>
 
@@ -45,17 +53,17 @@
 					{% endfor %}
 				</ul>
 			{% else %}
-				{{ nav.link(item, class) }}
+				{{ nav.link(item, class, show_arrow) }}
 			{% endif %}
 		</li>
 	{% endmacro %}
-	{% macro link(item, class, arrow) %}
+	{% macro link(item, class, show_arrow) %}
 		<a
 			href="{{ item.get_link }}" {{ item._menu_item_target ? "target='_blank'" }}
 			class="{{ class }}__link {{ class }}__link--level-{{ item.level }} js-nav-link {{ item.classes|join(' ') }}"
 		>
 			<span class="{{ class }}__link-text">{{ item.title }}</span>
-			{{ item.get_children ? '<span class="a-nav__arrow a-arrow-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><g><g><path fill="#074757" d="M9 .77L5.26 4.52a.372.372 0 0 1-.53 0L1 .77A.35.35 0 0 1 .899.361C1 .221 1.093.13 1.245.13h7.5c.152 0 .255.091.347.231A.361.361 0 0 1 9 .771z"/></g></g></svg></span>' : ''}}
+			{{ item.get_children and show_arrow ? '<span class="a-nav__arrow a-arrow-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><g><g><path fill="#074757" d="M9 .77L5.26 4.52a.372.372 0 0 1-.53 0L1 .77A.35.35 0 0 1 .899.361C1 .221 1.093.13 1.245.13h7.5c.152 0 .255.091.347.231A.361.361 0 0 1 9 .771z"/></g></g></svg></span>' : ''}}
 		</a>
 	{% endmacro %}
 {% endspaceless %}

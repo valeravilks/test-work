@@ -93,6 +93,15 @@
 		display: flex;
 		margin-top: 30px;
 	}
+
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
+	}
 }
 
 

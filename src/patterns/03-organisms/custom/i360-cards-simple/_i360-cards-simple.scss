@@ -17,6 +17,11 @@
 		padding-bottom: 30px;
 	}
 
+	&__title,
+	&__content {
+		@include anim-fade-default;
+	}
+
 	&__title {
 		span {
 			color: $g-brand-color-7;
@@ -49,6 +54,21 @@
 			line-height: 32px;
 			letter-spacing: -0.21px;
 		}
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeIn;
+	}
+
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__subheader-wrapper,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
 	}
 }
 
