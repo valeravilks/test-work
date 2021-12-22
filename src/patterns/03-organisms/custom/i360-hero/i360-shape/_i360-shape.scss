@@ -71,7 +71,7 @@
 			@include fadeInLeft(
 				$duration: 1s,
 				$count: 1,
-				$delay: 0.1s,
+				$delay: 0.2s,
 				$function: ease,
 				$fill: both
 			);
@@ -83,7 +83,7 @@
 			@include fadeInLeft(
 				$duration: 1s,
 				$count: 1,
-				$delay: 0.2s,
+				$delay: 0.4s,
 				$function: ease,
 				$fill: both
 			);
@@ -100,7 +100,7 @@
 			@include fadeInLeft(
 				$duration: 1s,
 				$count: 1,
-				$delay: 0.4s,
+				$delay: 0.6s,
 				$function: ease,
 				$fill: both
 			);
