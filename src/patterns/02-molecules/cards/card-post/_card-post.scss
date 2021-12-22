@@ -79,8 +79,8 @@
 		transition: $g-trans-base;
 	}
 
-	&__link-wrapper {
-		margin-top: 20px;
+	&__content {
+		margin-bottom: 20px;
 	}
 
 	&__link {
@@ -103,7 +103,6 @@
 	// Used for case studies
 	&--big {
 		.m-card-post {
-
 			&__img-wrapper {
 				height: 275px;
 			}
@@ -116,6 +115,19 @@
 	}
 
 	&--default {
+		display: flex;
+		flex-direction: column;
 
+		.m-card-post {
+			&__info {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+			}
+
+			&__link-wrapper {
+				margin-top: auto;
+			}
+		}
 	}
 }
