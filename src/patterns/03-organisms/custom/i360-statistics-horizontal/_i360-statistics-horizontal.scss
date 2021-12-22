@@ -63,15 +63,36 @@
 				color: $g-brand-color-7;
 			}
 		}
+
+
+		&.animated {
+			.o-i360-statistics-horizontal {
+				&__title {
+					transform: translateY(0%);
+				}
+
+				&__subtitle {
+					opacity: 1;
+				}
+			}
+		}
 	}
 
 	&__title {
 		font-size: 45px;
 		line-height: 1;
-		letter-spacing: -4.03px;
+		letter-spacing: -2px;
+		padding-bottom: 0px;
+		transform: translateY(100%);
+		transition: $g-trans-base-longer;
 		@include bp-lg {
 			font-size: 80px;
 		}
+	}
+
+	&__title-wrapper {
+		margin-bottom: 20px;
+		overflow: hidden;
 	}
 
 	&__subtitle {
@@ -81,6 +102,9 @@
 		line-height: 1;
 		letter-spacing: 3.75px;
 		color: #fff;
+		transition: $g-trans-base-longer;
+		transition-delay: .2s;
+		opacity: 0;
 	}
 }
 

@@ -40,8 +40,15 @@
 			width: 423px;
 			height: 423px;
 			opacity: 0;
-			transform: scale(.8);
-			animation: heroDecoZoomIn 1.5s ease-in-out .3s forwards;
+
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
 
 			svg {
 				display: block;
@@ -60,10 +67,26 @@
 			font-size: 10px;
 			letter-spacing: 3.13px;
 			opacity: .8;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__title {
 			letter-spacing: -0.81px;
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
 
 			span {
 				line-height: normal;
@@ -74,6 +97,13 @@
 
 		&__subtitle {
 			@include last-element-no-bm;
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.6s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__button-wrapper {

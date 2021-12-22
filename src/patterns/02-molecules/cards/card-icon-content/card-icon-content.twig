@@ -27,12 +27,10 @@
 				wrapper      : true
 			} only %}
 		{% elseif item.icon_svg %}
-			<div class="{{ component_class }}__icon-wrapper">
-				{% include '01-atoms/icon/icon.twig' with {
-					parent_class : component_class,
-					icon_svg     : item.icon_svg
-				} only %}
-			</div>
+			{% include '01-atoms/icon/icon.twig' with {
+				parent_class : component_class,
+				icon_svg     : item.icon_svg
+			} only %}
 		{% endif %}
 
 		<div class="{{ component_class }}__text-wrapper">

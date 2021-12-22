@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Atom: Card Icon Content	                    //
+//  Molecule: Card Icon Content                 //
 //                                              //
-//  https://www.dreamersofday.co                 //
+//  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
 
@@ -15,23 +15,11 @@
 ////////////////////
 
 .m-card-icon-content {
-	padding: 30px 15px;
 	background-color: #fff;
 	border: 1px solid $g-grey-color-2;
 	border-radius: 10px;
-	@include bp-md {
-		padding: 40px 25px;
-	}
 
 	&__icon {
-		width: 80px;
-		height: 80px;
-		margin: 0 auto 30px;
-		@include bpm-xs {
-			width: 50px;
-			height: 50px;
-		}
-
 		svg {
 			display: block;
 			width: 100%;
@@ -39,16 +27,18 @@
 		}
 	}
 
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
 	&__icon-content {
 		@include bp-xs {
 			font-size: 16px;
 			letter-spacing: -0.36px;
 		}
-	}
-
-	&__title,
-	&__content {
-		text-align: center;
 	}
 
 	&__content {
@@ -61,5 +51,77 @@
 		}
 
 		@include wysiwyg-content-styling;
+	}
+}
+
+/////////////////////////////
+// Molecule Versions       //
+/////////////////////////////
+
+.m-card-icon-content--default {
+	padding: 30px 15px;
+	@include bp-md {
+		padding: 40px 25px;
+	}
+
+	.m-card-icon-content {
+		&__img-wrapper,
+		&__icon {
+			width: 50px;
+			height: 50px;
+			margin: 0 auto 30px;
+			@include bp-xs {
+				width: 80px;
+				height: 80px;
+			}
+		}
+
+		&__title,
+		&__content {
+			text-align: center;
+		}
+	}
+}
+
+.m-card-icon-content--horizontal {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+	@include bp-xs {
+		flex-wrap: nowrap;
+	}
+	@include bp-md {
+		padding: 30px;
+	}
+
+	.m-card-icon-content {
+		&__img-wrapper,
+		&__icon {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 100px;
+			height: 100px;
+			margin: 0 auto 10px;
+			@include bp-xs {
+				margin: 0;
+			}
+		}
+
+		&__title {
+			padding-bottom: 10px;
+			@include bp-lg {
+				font-size: 24px;
+			}
+		}
+
+		&__text-wrapper {
+			flex-basis: 100%;
+			text-align: center;
+			@include bp-xs {
+				flex-basis: auto;
+				padding-left: 25px;
+				text-align: left;
+			}
+		}
 	}
 }

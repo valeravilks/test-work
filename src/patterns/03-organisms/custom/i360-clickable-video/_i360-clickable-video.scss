@@ -89,6 +89,21 @@
 // This organism is most likely inheriting styles from the default-organism.scss file.
 // If needed, the look & feel of organism versions can be modified below.
 
+//////////////////////////////////////////
+// Organism Background Versions         //
+//////////////////////////////////////////
+/**
+* Covers scenario(s) where this organism has a custom background for it's default state.
+* If so, target ".m-background-set"
+* ------------------------------------------------------------
+*/
+.o-i360-clickable-video {
+	&.o-dbm--bg-color {
+		.m-background-set {
+			background-color: $g-brand-color-4;
+		}
+	}
+}
 
 //////////////////////////////////////////
 // Organism Versions -- Alignments      //

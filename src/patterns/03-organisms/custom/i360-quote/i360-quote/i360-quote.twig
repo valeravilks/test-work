@@ -70,7 +70,8 @@
 					{% include '01-atoms/content/pretitle/pretitle.twig' with {
 						pretitle     : item.pretitle,
 						parent_class : component_class,
-						h            : 6
+						h            : 6,
+						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
@@ -81,14 +82,16 @@
 						version             : item.title_width,
 						h                   : item.title_type,
 						style               : item.title_style,
-						spacing_bottom      : item.title_padding_bottom
+						spacing_bottom      : item.title_padding_bottom,
+						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
 				{% if item.quote_content %}
 					{% include '01-atoms/content/content/content.twig' with {
-						content      : item.quote_content,
-						parent_class : component_class
+						content      		: item.quote_content,
+						parent_class 		: component_class,
+						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
@@ -96,8 +99,9 @@
 					{% set button =  item.get_field('button') %}
 
 					{% include '01-atoms/buttons/button/button.twig' with {
-						parent_class : component_class,
-						button       : button
+						parent_class 		: component_class,
+						button       		: button,
+						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
