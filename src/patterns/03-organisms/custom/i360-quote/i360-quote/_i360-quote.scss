@@ -77,6 +77,7 @@ $l-quote-block-padding-mobile-tablet: 80px;
 	&__title,
 	&__content,
 	&__button-wrapper {
+		transition-delay: .2s;
 		@include anim-fade-default;
 	}
 
