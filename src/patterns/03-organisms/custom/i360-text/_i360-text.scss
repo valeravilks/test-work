@@ -17,6 +17,13 @@
 		span, strong, bold {
 			color: #18B1A9;
 		}
+		@include anim-bottom-default;
+		transition-delay: .2s;
+	}
+
+	&__content {
+		@include anim-bottom-default;
+		transition-delay: .4s;
 	}
 }
 
