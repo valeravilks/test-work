@@ -130,11 +130,6 @@
 		@include anim-fade-default;
 	}
 
-	&__item {
-		visibility: hidden;
-		@include fadeIn;
-	}
-
 
 	/////////////////////////////
 	// Organism Versions       //
