@@ -13,10 +13,10 @@
 	#}
 
 	{% set component_class 		= "m-modal" %}
-	{% set version         		= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
+	{% set version_class   		= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
-	{% set number               = random() %}
+	{% set number               = number ?? random() %}
 
 	{# Clickable area default version #}
 	{% if button_modal %}
@@ -53,10 +53,24 @@
 	{% endif %}
 
     {# Modal Body #}
-	<div class="{{ component_class }} {{ parent }} {{ version }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
+	<div class="{{ component_class }} {{ parent }} {{ version_class }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
 		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
 			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
 				<div class="{{ component_class }}__dialog text-center" role="dialog" aria-modal="true" aria-labelledby="modal-{{ number }}-title" >
+					
+					{% if version == 'team' %}
+						<div class="{{ component_class }} {{ component_class }}_modal-head">
+					{% endif %}
+					
+					{% if item.img %}
+						{% set img = TimberImage( item.img ) %}
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class      	: component_class,
+							img               	: img,
+							wrapper           	: true,
+						} only %}
+					{% endif %}
+					
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
 						title               : item.title,
@@ -64,11 +78,27 @@
 						add_class_on_anim   : false
 					} only %}
 
+					{% if item.subtitle %}
+						{% include '01-atoms/content/subtitle/subtitle.twig' with {
+							parent_class : component_class,
+							subtitle     : item.subtitle
+						} only %}
+					{% endif %}
+
+					{% if version == 'team' %}
+						</div>
+						<div class="{{ component_class }}__full-info">
+					{% endif %}
+
 					{% include '01-atoms/content/content/content.twig' with {
 						parent_class        : component_class,
 						content             : item.content,
 						add_class_on_anim   : false
 					} only %}
+
+					{% if version == 'team' %}
+						</div>
+					{% endif %}
 
 					{% if item.video %}
 						{% include '01-atoms/video/video.twig' with {
