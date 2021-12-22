@@ -36,6 +36,14 @@
 			@include bp-xs {
 				margin-top: 40px;
 			}
+
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.5s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__column {
@@ -87,10 +95,34 @@
 		&__pretitle {
 			margin-bottom: 20px;
 			font-weight: 600;
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__title {
 			padding-bottom: 15px;
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__subtitle {
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
+				$function: ease,
+				$fill: both
+			);
 		}
 
 		&__column-title,

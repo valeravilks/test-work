@@ -46,7 +46,8 @@
 				{% if section.add_button %}
 					{% include '01-atoms/buttons/button/button.twig' with {
 						parent_class : component_class,
-						button       : section.button
+						button       : section.button,
+						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 			</div>

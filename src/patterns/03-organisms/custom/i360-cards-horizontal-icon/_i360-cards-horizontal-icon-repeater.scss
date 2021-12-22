@@ -1,9 +1,9 @@
-//////////////////////////////////////////////////
-//                                              //
-//  Organism: i360 Cards Repeater                //
-//  https://www.dreamersofday.co                 //
-//                                              //
-//////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//                                                      //
+//  Organism: i360 Horizontal Icon Cards Repeater       //
+//  https://www.dreamersofday.co                        //
+//                                                      //
+//////////////////////////////////////////////////////////
 
 ////////////////////////////////
 // Component Variables        //
@@ -20,15 +20,10 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding classes below.
 
 .o-i360-cards-horizontal-icon {
-	padding: 70px 0;
-
 	&__repeater {
-		padding-top: 70px;
-		@include flex-outlining-card-1-by-3(20px, '.m-card');
+		@include flex-outlining-card-1-by-2(20px, '.m-card');
 		justify-content: center;
-		@include bp-md {
-			padding-top: 50px;
-		}
+		margin-top: 45px;
 	}
 
 	&__card {

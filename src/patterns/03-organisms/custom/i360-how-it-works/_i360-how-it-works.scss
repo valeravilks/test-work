@@ -123,7 +123,7 @@
 			.o-i360-how-it-works__content {
 				@include bpm-sm {
 					right: 0;
-					text-align: left!important;
+					text-align: left !important;
 				}
 			}
 		}
@@ -132,7 +132,7 @@
 			.o-i360-how-it-works__content {
 				@include bpm-sm {
 					left: 0;
-					text-align: right!important;
+					text-align: right !important;
 				}
 			}
 		}
@@ -205,119 +205,127 @@
 			font-size: 20px;
 		}
 	}
-}
 
-
-/////////////////////////////
-// Organism Versions       //
-/////////////////////////////
-
-// This organism is most likely inheriting styles from the default-organism.scss file.
-// If needed, the look & feel of organism versions can be modified below.
-
-
-//////////////////////////////////////////
-// Organism Versions -- Alignments      //
-//////////////////////////////////////////
-
-// Covers scenario(s) where this organism has multiple alignments ..
-// "align-default" is the starting point and is required to style
-
-// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
-.o-i360-how-it-works.o-dbm--align-center,
-.o-i360-how-it-works.o-dbm--align-default {
-	.o-i360-how-it-works {
-		&__pretitle,
-		&__title-wrapper,
-		&__title,
-		&__content {
-			text-align: center;
-		}
-
-		&__button-wrapper {
-			justify-content: center;
-		}
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
 	}
-}
-
-.o-i360-how-it-works.o-dbm--align-left {
-	.o-i360-how-it-works {
-		&__pretitle {
-			margin-bottom: 20px;
-		}
-
-		&__pretitle,
-		&__title-wrapper,
-		&__title,
-		&__content {
-			text-align: left;
-		}
-
-		&__button-wrapper {
-			justify-content: left;
-		}
-	}
-}
 
 
-/////////////////////////////////////////////
-// Organism Color Palette Versions         //
-/////////////////////////////////////////////
-/**
- * Covers scenario(s) where this organism has multiple color palettes
- * "color-default" is required and the starting point
- * Both "color-dark" and "color-light" are required to style
- * Additional project color palettes might be present
- * and are required to style
- * ------------------------------------------------------------
- */
-.o-i360-how-it-works.o-dbm--color-default,
-.o-i360-how-it-works.o-dbm--color-dark {
-    .o-i360-how-it-works {
-		&__title {
-			color: $g-heading-dark;
-		}
+	/////////////////////////////
+	// Organism Versions       //
+	/////////////////////////////
 
-		&__content {
-			color: $g-body-dark;
-		}
+	// This organism is most likely inheriting styles from the default-organism.scss file.
+	// If needed, the look & feel of organism versions can be modified below.
 
-		&__content-box {
-			&.a-content {
-				h1,h2,h3,h4,h5,h6 {
-					color: $g-heading-dark;
-				}
+
+	//////////////////////////////////////////
+	// Organism Versions -- Alignments      //
+	//////////////////////////////////////////
+
+	// Covers scenario(s) where this organism has multiple alignments ..
+	// "align-default" is the starting point and is required to style
+
+	// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-how-it-works {
+			&__pretitle,
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: center;
+			}
+
+			&__button-wrapper {
+				justify-content: center;
 			}
 		}
-
-		&__step-number {
-			border-color: $g-body-light;
-		}
 	}
-}
 
-.o-i360-how-it-works.o-dbm--color-light {
-	.o-i360-how-it-works {
-		&__pretitle,
-		&__title,
-		&__content {
-			color: $g-body-light;
-		}
+	&.o-dbm--align-left {
+		.o-i360-how-it-works {
+			&__pretitle {
+				margin-bottom: 20px;
+			}
 
-		&__content-box {
-			&.a-content {
-				h1,h2,h3,h4,h5,h6 {
-					color: $g-body-light;
-				}
+			&__pretitle,
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: left;
+			}
+
+			&__button-wrapper {
+				justify-content: left;
 			}
 		}
+	}
 
-		&__step-number {
-			border-color: #000;
+
+	/////////////////////////////////////////////
+	// Organism Color Palette Versions         //
+	/////////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-how-it-works {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
+
+			&__content-box {
+				&.a-content {
+					h1, h2, h3, h4, h5, h6 {
+						color: $g-heading-dark;
+					}
+				}
+			}
+
+			&__step-number {
+				border-color: $g-body-light;
+			}
+		}
+	}
+
+	&.o-dbm--color-light {
+		.o-i360-how-it-works {
+			&__pretitle,
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__content-box {
+				&.a-content {
+					h1, h2, h3, h4, h5, h6 {
+						color: $g-body-light;
+					}
+				}
+			}
+
+			&__step-number {
+				border-color: #000;
+			}
 		}
 	}
 }
-
 
 //////////////////////////////////////////
 // Organism Other Versions                 //
