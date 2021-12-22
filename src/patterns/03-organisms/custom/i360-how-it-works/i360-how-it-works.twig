@@ -32,13 +32,13 @@
 				color_accent      : 'dark'
 			} only %}
 		{% endif %}
-	
+
 		{% if section.extra_content_box %}
 			{% include '01-atoms/content/content/content.twig' with {
 				parent_class        : component_class,
 				extra_class         : "o-i360-how-it-works__content-box",
 				content             : section.extra_content_box,
-				add_class_on_anim   : false
+				add_class_on_anim   : true
 			} only %}
 		{% endif %}
 
