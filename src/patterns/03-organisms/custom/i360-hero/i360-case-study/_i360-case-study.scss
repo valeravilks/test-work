@@ -175,4 +175,31 @@
 			}
 		}
 	}
+
+	////////////////////////////////////////////////////
+	// Hero Sizes           						  //
+	////////////////////////////////////////////////////
+	&.o-i360-hero {
+		&--size-large {
+			min-height: 750px;
+		}
+
+		&--size-default,
+		&--size-medium {
+			height: 500px;
+			.o-i360-hero {
+				&__info-wrapper {
+					padding: 20px 0px !important;
+				}
+			}
+		}
+
+		&--size-small {
+			min-height: 400px;
+		}
+	}
+
+	////////////////////////////////////////////////////
+	// Additional Hero versions here    			  //
+	////////////////////////////////////////////////////
 }

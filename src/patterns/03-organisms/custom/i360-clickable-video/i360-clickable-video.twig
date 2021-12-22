@@ -25,7 +25,7 @@
 	{#################################################################################}
 	{% block block_inner %}
 		<div class="{{ component_class }}__container l-container" data-module='clickableVideo'>
-			<div class="{{ component_class }}__container-inner wow">
+			<div class="{{ component_class }}__container-inner">
 				<div class="{{ component_class }}__column {{ component_class }}__column--1">
 					{% include '01-atoms/content/title/title.twig' with {
 						default_block_class : default_block_class,
@@ -53,7 +53,6 @@
 						} only %}
 					{% endif %}
 				</div>
-
 				<div class="{{ component_class }}__column {{ component_class }}__column--2">
 					{% include '02-molecules/modal/modal.twig' with {
 						component_class : component_class,
