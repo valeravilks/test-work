@@ -14,12 +14,5 @@
 /////////////////////////////
 
 .o-i360-team {
-	&__repeater {
-		@include outlining-card-1-by-3;
-	}
 
-	&__card {
-		visibility: hidden;
-		@include fadeInUp;
-	}
 }

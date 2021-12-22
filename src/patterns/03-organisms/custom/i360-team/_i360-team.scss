@@ -32,8 +32,27 @@
 
 	}
 
+	&__repeater {
+		@include outlining-card-1-by-3;
+	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeInUp;
+	}
+
 	&__button-wrapper {
 
+	}
+
+
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
 	}
 }
 
