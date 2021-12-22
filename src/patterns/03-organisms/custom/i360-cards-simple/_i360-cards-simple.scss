@@ -17,6 +17,12 @@
 		padding-bottom: 30px;
 	}
 
+	&__title,
+	&__subheader,
+	&__content {
+		@include anim-fade-default;
+	}
+
 	&__title {
 		span {
 			color: $g-brand-color-7;
