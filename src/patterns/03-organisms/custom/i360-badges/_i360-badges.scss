@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Organism: Default Badges                    //
-//  https://www.dreamersofday.co                 //
+//  Organism: i360 Badges                       //
+//  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
 
@@ -13,27 +13,17 @@
 // Block Base Styling         //
 ////////////////////////////////
 .o-i360-badges {
-	&__title-wrapper,
-	&__title,
-	&__content {
-
-	}
-
 	&__repeater {
-		padding-top: 40px;
-		@include outlining-card-1-by-6;
+		@include flex-outlining-card-1-by-5(30px, '.o-i360-badges__card');
+		justify-content: center;
+		align-items: center;
+		padding-top: 30px;
 	}
 
 	&__card {
 		visibility: hidden;
 		@include fadeInUp;
 	}
-
-	&__button-wrapper {
-
-	}
-
-
 
 	//////////////////////////////////////////
 	// Block Alignment Versions             //
@@ -131,7 +121,7 @@
 	*/
 	&.o-dbm--bg-default {
 		.m-background-set {
-
+			background-color: $g-body-light;
 		}
 	}
 

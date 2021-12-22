@@ -13,7 +13,7 @@
 	{########################################################}
 	{# Block general settings                               #}
 	{########################################################}
-	{% set component_class = "o-i360-cards-simple" %}
+	{% set component_class = "o-i360-cards-horizontal-icon" %}
 	{% set container       = true %}
 
 	{#################################################################################}
@@ -32,6 +32,7 @@
 					interval            : true,
 					index       		: loop.index,
 					add_class_on_anim   : true,
+					version             : 'horizontal'
 				} only %}
 			{% endfor %}
 		</div>
