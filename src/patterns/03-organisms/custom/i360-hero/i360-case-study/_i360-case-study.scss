@@ -40,7 +40,7 @@
 			@include fadeInLeft(
 				$duration: 1s,
 				$count: 1,
-				$delay: 0.4s,
+				$delay: 0.5s,
 				$function: ease,
 				$fill: both
 			);
@@ -110,6 +110,16 @@
 				$duration: 1s,
 				$count: 1,
 				$delay: 0.2s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
+		&__subtitle {
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.4s,
 				$function: ease,
 				$fill: both
 			);
