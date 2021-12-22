@@ -75,8 +75,9 @@ $l-quote-block-padding-mobile-tablet: 80px;
 
 	&__pretitle,
 	&__title,
-	&__content {
-
+	&__content,
+	&__button-wrapper {
+		@include anim-fade-default;
 	}
 
 	&__content-group {
