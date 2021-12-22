@@ -9,10 +9,10 @@
 
                     <a class="{{ component_class }}__link {{ component_class }}__link--level-0"
                        href="{{ item.get_link }}">{{ item.title }}</a>
-                    {% include '01-atoms/toggle/plus-toggle/plus-toggle.twig' with {
-                    parent_class     : component_class,
-                    js_hook          : "js-nav-side-toggle"
-                    } %}
+						{% include '01-atoms/toggle/plus-toggle/plus-toggle.twig' with {
+							parent_class     : component_class,
+							js_hook          : "js-nav-side-toggle"
+						} %}
 
                     <ul class="{{ component_class }}__sub-menu">
                         {% for child in item.get_children %}
