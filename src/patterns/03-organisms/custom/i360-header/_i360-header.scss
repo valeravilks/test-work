@@ -276,8 +276,10 @@
 }
 
 .o-i360-header--hamburger-active {
+	box-shadow: none;
+
 	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-		background-color: $g-body-dark;
+		background-color: $g-brand-color-4;
 	}
 }
 
