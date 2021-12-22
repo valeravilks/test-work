@@ -17,14 +17,19 @@
 		span, strong, bold {
 			color: #18B1A9;
 		}
-		@include anim-fade-default;
-		transition-delay: .2s;
 	}
 
+	&__content {
+
+	}
+
+	// Animations
+	&__pretitle,
+	&__title,
 	&__content,
 	&__button-wrapper {
+		transition-delay: .2s;
 		@include anim-fade-default;
-		transition-delay: .4s;
 	}
 }
 
@@ -146,6 +151,11 @@
 		&__title,
 		&__content {
 			max-width: 100%;
+		}
+
+		&__title {
+			transition-delay: .2s;
+			@include anim-left-default;
 		}
 	}
 }
