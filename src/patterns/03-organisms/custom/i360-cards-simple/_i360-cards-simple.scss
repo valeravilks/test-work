@@ -55,6 +55,20 @@
 			letter-spacing: -0.21px;
 		}
 	}
+
+	&__card {
+		visibility: hidden;
+		@include fadeIn;
+	}
+
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
+	}
 }
 
 
