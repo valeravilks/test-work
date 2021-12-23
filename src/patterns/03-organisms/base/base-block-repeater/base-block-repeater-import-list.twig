@@ -88,6 +88,9 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
+	{% elseif section.acf_fc_layout == 'i360_vertical_pills' %} 
+		{% include '03-organisms/custom/i360-vertical-pills/i360-vertical-pills.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_alternative_image_text' %}
 		{% include '03-organisms/custom/i360-alternative-image-text/i360-alternative-image-text.twig' %}
 
@@ -134,7 +137,10 @@
 		{% include '03-organisms/custom/i360-case-studies/i360-case-studies.twig' %}
 
 	{% elseif section.acf_fc_layout == 'i360_quote' %}
-		{% include '03-organisms/custom/i360-quote/i360-quote-holder.twig' %}
+		{% include '03-organisms/custom/i360-quote/i360-quote/i360-quote.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_quote_alt' %}
+		{% include '03-organisms/custom/i360-quote/i360-quote-alt/i360-quote-alt.twig' %}
 
 	{% elseif section.acf_fc_layout == 'i360_cards_simple' %}
 		{% include '03-organisms/custom/i360-cards-simple/i360-cards-simple.twig' %}

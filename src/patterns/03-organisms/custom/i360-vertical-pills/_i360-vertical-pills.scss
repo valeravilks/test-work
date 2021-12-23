@@ -1,0 +1,208 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Organism: Vertical Pills
+//  https://www.dreamersofday.co                //
+//                                              //
+//////////////////////////////////////////////////
+
+////////////////////////////////
+// Organism Variables         //
+////////////////////////////////
+
+
+
+////////////////////////////////
+// Organism Base Styling      //
+////////////////////////////////
+
+// Each object class listed below probably has it's own SCSS file.
+// Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
+// If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
+
+.o-i360-vertical-pills {
+	// Animations
+	&__pretitle,
+	&__title,
+	&__content,
+	&__button-wrapper {
+		transition-delay: .2s;
+		@include anim-fade-default;
+	}
+
+	&__content.o-dbm__content {
+		max-width: 780px;
+	}
+
+	&__title {
+		span {
+			color: $g-brand-color-1;
+		}
+	}
+
+	&__list-alt {
+		max-width: 780px;
+		margin: 35px auto 0;
+		text-align: center;
+	}
+
+	&__content-box {
+		text-align: center;
+		margin-top: 45px;
+
+		&.a-content {
+			h1,h2,h3,h4,h5,h6 {
+				max-width: 560px;
+				margin: 0 auto;
+
+				span {
+					color: $g-brand-color-1;
+				}
+			}
+		}
+	}
+
+	/////////////////////////////
+	// Organism Versions       //
+	/////////////////////////////
+
+	// This organism is most likely inheriting styles from the default-organism.scss file.
+	// If needed, the look & feel of organism versions can be modified below.
+
+
+	//////////////////////////////////////////
+	// Organism Versions -- Alignments      //
+	//////////////////////////////////////////
+
+	// Covers scenario(s) where this organism has multiple alignments ..
+	// "align-default" is the starting point and is required to style
+
+	// Covers scenario(s) where this organism has multiple alignments .. "align-default" is the starting point
+	&.o-dbm--align-center,
+	&.o-dbm--align-default {
+		.o-i360-vertical-pills {
+			&__pretitle,
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: center;
+			}
+
+			&__button-wrapper {
+				justify-content: center;
+			}
+		}
+	}
+
+	&.o-dbm--align-left {
+		.o-i360-vertical-pills {
+			&__pretitle {
+				margin-bottom: 20px;
+			}
+
+			&__pretitle,
+			&__title-wrapper,
+			&__title,
+			&__content {
+				text-align: left;
+			}
+
+			&__button-wrapper {
+				justify-content: left;
+			}
+		}
+	}
+
+
+	/////////////////////////////////////////////
+	// Organism Color Palette Versions         //
+	/////////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has multiple color palettes
+	 * "color-default" is required and the starting point
+	 * Both "color-dark" and "color-light" are required to style
+	 * Additional project color palettes might be present
+	 * and are required to style
+	 * ------------------------------------------------------------
+	 */
+	&.o-dbm--color-default,
+	&.o-dbm--color-dark {
+		.o-i360-vertical-pills {
+			&__title {
+				color: $g-heading-dark;
+			}
+
+			&__content {
+				color: $g-body-dark;
+			}
+
+			&__content-box {
+				&.a-content {
+					h1, h2, h3, h4, h5, h6 {
+						color: $g-heading-dark;
+					}
+				}
+			}
+		}
+	}
+
+	&.o-dbm--color-light {
+		.o-i360-vertical-pills {
+			&__pretitle,
+			&__title,
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__content-box {
+				&.a-content {
+					h1, h2, h3, h4, h5, h6 {
+						color: $g-body-light;
+					}
+				}
+			}
+		}
+	}
+
+	//////////////////////////////////////////
+	// Organism Title Versions              //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has a custom block title for it's default state.
+	 * If so, target ".o-dbm__title.a-title--type-default". This should NOT apply to additional titles in this block.
+	 * ------------------------------------------------------------
+	 */
+	.o-dbm__title.a-title--type-default {
+
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Background Versions         //
+	//////////////////////////////////////////
+	/**
+	* Covers scenario(s) where this organism has a custom background for it's default state.
+	* If so, target ".m-background-set"
+	* ------------------------------------------------------------
+	*/
+	&.o-dbm--bg-default {
+		.m-background-set {
+
+		}
+	}
+
+
+	//////////////////////////////////////////
+	// Organism Other Versions                 //
+	//////////////////////////////////////////
+	/**
+	 * Covers scenario(s) where this organism has versions beside
+	 * the text color, background, title and alignment use cases above
+	 * ------------------------------------------------------------
+	 */
+
+	 &--default {
+	 	  .o-i360-vertical-pills {
+
+	 	  }
+	 }
+}
