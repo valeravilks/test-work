@@ -81,6 +81,26 @@
 							add_class_on_anim : true
 						} only %}
 					{% endif %}
+
+					{# Add staff member info #}
+					{% if section.version in ['staff-left', 'staff-right'] %}
+						{% include '01-atoms/content/title/title.twig' with {
+							default_block_class : default_block_class,
+							parent_class        : component_class,
+							title               : section.author_name,
+							version             : 'author-name',
+							add_class_on_anim   : true
+						} only %}
+		
+						{% include '01-atoms/content/content/content.twig' with {
+							default_block_class : default_block_class,
+							parent_class        : component_class,
+							content             : section.author_short_description,
+							version             : 'author-short-description',
+							add_class_on_anim   : true
+						} only %}
+					
+					{% endif %}
 				</div>
 			{% endif %}
 		</div>
