@@ -10,8 +10,8 @@
 	{########################################################}
 	{% set version         = version ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set item            = section.relationship ? TimberPost( section.relationship | first ) %}
-	{% set text_color      = item.text_color      ? component_class ~ "--color-" ~ item.text_color | join("") %}
-	{% set alignment       = item.alignment       ? component_class ~ "--align-" ~ item.alignment  : component_class ~ "--align-default" %}
+	{% set text_color      = item.get_field('text_color')      ? component_class ~ "--color-" ~ item.get_field('text_color') | join("") %}
+	{% set alignment       = item.get_field('alignment')       ? component_class ~ "--align-" ~ item.get_field('alignment')  : component_class ~ "--align-default" %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -21,12 +21,12 @@
 
 	<div
 		class="{{ component_class }} {{ text_color }} {{ alignment }} {{ version }}"
-		{{ item.background_type == "color" ? 'style="background-color: ' ~ item.background_color ~ ';"' }}
+		{{ item.get_field('background_type') == "color" ? 'style="background-color: ' ~ item.get_field('background_color') ~ ';"' }}
 	>
-		{% if item.background_type == "image" %}
+		{% if item.get_field('background_type') == "image" %}
 			{# Accessing WordPress image object and making them available to Twig templates #}
-			{% set bg_img = TimberImage( item.background_image ) %}
-			{% set bg_img_mob = TimberImage( item.background_image_mobile ) %}
+			{% set bg_img = TimberImage( item.get_field('background_image') ) %}
+			{% set bg_img_mob = TimberImage( item.get_field('background_image_mobile') ) %}
 
 			{% if bg_img_mob != '' %}
 				{% include '01-atoms/images/image-manual-responsive/image-manual-responsive.twig' with {
@@ -49,53 +49,53 @@
 			{% endif %}
 		{% endif %}
 
-		{% if item.add_overlay %}
+		{% if item.get_field('add_overlay') %}
 			<div class="h-overlay" style="background-color: {{ item.get_field('overlay_color') }};"></div>
 		{% endif %}
 
-		{% if item.add_gradient %}
-			{% if item.alignment ==  "left" %}
-				{% set gradient_style = 'background: linear-gradient(-90deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
-			{% elseif item.alignment ==  "default" %}
-				{% set gradient_style = 'background: linear-gradient(90deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
+		{% if item.get_field('add_gradient') %}
+			{% if item.get_field('alignment') ==  "left" %}
+				{% set gradient_style = 'background: linear-gradient(-90deg, ' ~ item.get_field('gradient_color') ~ '00 35%, ' ~ item.get_field('gradient_color') ~ '80 50%, ' ~ item.get_field('gradient_color') ~ 'f8 75%)' %}
+			{% elseif item.get_field('alignment') ==  "default" %}
+				{% set gradient_style = 'background: linear-gradient(90deg, ' ~ item.get_field('gradient_color') ~ '00 35%, ' ~ item.get_field('gradient_color') ~ '80 50%, ' ~ item.get_field('gradient_color') ~ 'f8 75%)' %}
 			{% else %}
-				{% set gradient_style = 'background: linear-gradient(180deg, ' ~ item.gradient_color ~ '00 35%, ' ~ item.gradient_color ~ '80 50%, ' ~ item.gradient_color ~ 'f8 75%)' %}
+				{% set gradient_style = 'background: linear-gradient(180deg, ' ~ item.get_field('gradient_color') ~ '00 35%, ' ~ item.get_field('gradient_color') ~ '80 50%, ' ~ item.get_field('gradient_color') ~ 'f8 75%)' %}
 			{% endif %}
 			<div class="h-overlay" style="{{ gradient_style }}"></div>
 		{% endif %}
 
 		<div class="{{ component_class }}__container l-container">
 			<div class="{{ component_class }}__content-group">
-				{% if item.pretitle %}
+				{% if item.get_field('pretitle') %}
 					{% include '01-atoms/content/pretitle/pretitle.twig' with {
-						pretitle     : item.pretitle,
+						pretitle     : item.get_field('pretitle'),
 						parent_class : component_class,
 						h            : 6,
 						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
-				{% if item.block_title %}
+				{% if item.get_field('block_title') %}
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
-						title               : item.block_title,
-						version             : item.title_width,
-						h                   : item.title_type,
-						style               : item.title_style,
-						spacing_bottom      : item.title_padding_bottom,
+						title               : item.get_field('block_title'),
+						version             : item.get_field('title_width'),
+						h                   : item.get_field('title_type'),
+						style               : item.get_field('title_style'),
+						spacing_bottom      : item.get_field('title_padding_bottom'),
 						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
-				{% if item.quote_content %}
+				{% if item.get_field('quote_content') %}
 					{% include '01-atoms/content/content/content.twig' with {
-						content      		: item.quote_content,
+						content      		: item.get_field('quote_content'),
 						parent_class 		: component_class,
 						add_class_on_anim   : true
 					} only %}
 				{% endif %}
 
-				{% if item.add_button %}
+				{% if item.get_field('add_button') %}
 					{% set button =  item.get_field('button') %}
 
 					{% include '01-atoms/buttons/button/button.twig' with {
