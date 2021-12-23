@@ -93,6 +93,7 @@
 	&__pretitle,
 	&__title,
 	&__content,
+	&__link-wrapper,
 	&__button-wrapper {
 		transition-delay: .2s;
 		@include anim-fade-default;

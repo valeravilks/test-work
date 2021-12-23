@@ -77,6 +77,13 @@
 
 		&__button-wrapper {
 			padding-top: 60px;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.8s,
+				$function: ease,
+				$fill: both
+			);
 		}
 	}
 
