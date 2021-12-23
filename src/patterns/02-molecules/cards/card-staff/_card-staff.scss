@@ -15,6 +15,8 @@
 ////////////////////
 
 .m-card-staff {
+	display: flex;
+	flex-direction: column;
 	overflow: hidden;
 	background-color: #fff;
 	border-radius: 10px;
@@ -41,6 +43,7 @@
 	}
 
 	&__info {
+		flex-grow: 1;
 		border-right: 1px solid rgba(#979797,.2);
 		border-bottom: 1px solid rgba(#979797,.2);
 		border-left: 1px solid rgba(#979797,.2);
@@ -73,18 +76,19 @@
 	}
 
 	// Card Post styles depending on organism
-	&.o-i360-article-overview__card {
+	&.o-i360-team__card {
 		.m-card-staff {
 			&__img-wrapper {
-				height: 250px;
+				height: 220px;
+				cursor: pointer;
 			}
 
 			&__info {
-				padding: 32px;
+				padding: 40px 32px;
 			}
 
 			&__pretitle {
-				margin-bottom: 25px;
+				margin: 20px 0;
 			}
 
 			&__title-link {
@@ -92,7 +96,6 @@
 			}
 
 			&__title {
-				font-size: 24px;
 				letter-spacing: -0.21px;
 			}
 
