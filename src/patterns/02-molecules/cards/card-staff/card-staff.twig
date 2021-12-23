@@ -20,11 +20,9 @@
 	{% set interval        		= interval     ? "_" ~ index | join("") %}
 
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }}">
-		{% if img %}
-			<a
-				class="{{ component_class }}__img-link"
-				href="{{ item.link }}"
-			>
+		{% if item.thumbnail %}
+			{% set img = TimberImage( item.thumbnail ) %}
+			<div data-micromodal-trigger="modal-{{ modal_number }}">
 				{% include '01-atoms/images/image-default/image-default.twig' with {
 					parent_class        : component_class,
 					img                 : img,
@@ -32,35 +30,28 @@
 					srcset              : true,
 					wrapper             : true
 				} only %}
-			</a>
+			</div>
 		{% endif %}
 
 		<div class="{{ component_class }}__info">
-			{% if item.post_date and date %}
-				<div class="a-pretitle {{ component_class }}__pretitle">
-					{{ item.post_date | date( 'M j, Y' ) }}
-				</div>
-			{% endif %}
-			{% if term %}
-				<div class="a-pretitle {{ component_class }}__pretitle">
-					{{ term }}
-				</div>
-			{% endif %}
 
 			{% if item.title %}
-				<a
-					class="{{ component_class }}__title-link"
-					href="{{ item.link }}"
-				>
+				<div data-micromodal-trigger="modal-{{ modal_number }}">
 					{% include '01-atoms/content/title/title.twig' with {
 						parent_class        : component_class,
 						title               : item.title,
 						h                   : "4",
 						add_class_on_anim   : false
 					} only %}
-				</a>
+				</div>
 			{% endif %}
 
+			{% set terms = item.terms('corporate-position')|join(', ')  %}
+			{% if terms %}
+				<div class="a-pretitle {{ component_class }}__pretitle">
+					{{ terms }}
+				</div>
+			{% endif %}
 
 			{% if item.excerpt %}
 				{% set content = item.excerpt %}
