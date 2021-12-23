@@ -13,6 +13,7 @@
 			@include absolute-tl;
 			height: 100%;
 			transform: scale(1.2);
+			opacity: 0;
 			animation: heroDecoZoomOut 1.5s ease-in-out .3s forwards;
 
 			svg {
@@ -76,6 +77,13 @@
 
 		&__button-wrapper {
 			padding-top: 60px;
+			@include fadeInUp(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0.8s,
+				$function: ease,
+				$fill: both
+			);
 		}
 	}
 

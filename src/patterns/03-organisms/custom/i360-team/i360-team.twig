@@ -15,6 +15,7 @@
 	{########################################################}
 	{% set component_class = "o-i360-team" %}
 	{% set container       = true %}
+	{% set modal_number    = random() %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -34,20 +35,25 @@
 				{# Accessing WordPress post and making them available to Twig templates #}
 				{% set item = TimberPost( item ) %}
 
-				{# Accessing WordPress image object and making them available to Twig templates #}
-				{% set img = TimberImage( item.thumbnail ) %}
-
-				{% set terms = item.terms('case-studies-categories')|join(', ')  %}
-
 				{% include '02-molecules/cards/card-staff/card-staff.twig' with {
 					parent_class 		: component_class,
 					item         		: item,
-					img                 : img,
+					modal_number        : modal_number,
 					interval            : true,
-					term				: terms,
-					date  				: false,
 					index       		: loop.index,
 					add_class_on_anim   : true,
+				} only %}
+
+				{% include '02-molecules/modal/modal.twig' with {
+					parent_class : component_class,
+					version         : 'team',
+					number          : modal_number,
+					item			: {
+						img      : item.thumbnail, 
+						title    : item.title,
+						subtitle : item.team_member_position_label,
+						content  : item.content,
+					}
 				} only %}
 			{% endfor %}
 		</div>

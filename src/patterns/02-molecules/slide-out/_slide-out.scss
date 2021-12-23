@@ -42,7 +42,7 @@
 	}
 
 	&--light {
-		background-color: #fff;
+		background-color: $g-brand-color-5;
 		.m-nav__link {
 			color: $g-body-dark;
 		}
@@ -103,9 +103,5 @@
 				padding-top: 0;
 			}
 		}
-	}
-
-	&__nav {
-		padding-bottom: 0;
 	}
 }

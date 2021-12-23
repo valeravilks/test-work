@@ -38,8 +38,7 @@
             {% if post.get_field( 'hero_content' ) %}
                 {% include '01-atoms/content/content/content.twig' with {
                     parent_class        : component_class,
-                    content             : post.get_field( 'hero_content' ),
-                    add_class_on_anim   : true
+                    content             : post.get_field( 'hero_content' )
                 } only %}
             {% endif %}
 

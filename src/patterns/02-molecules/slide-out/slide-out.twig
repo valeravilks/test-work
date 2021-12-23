@@ -24,6 +24,9 @@
 
             {% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
             {{ nav.menu(menu_mobile.get_items, 'm-nav', 'm-nav--mobile', parent_class, true) }}
+
+			{% import '02-molecules/nav/nav-macro/nav-macro.twig' as nav %}
+			{{ nav.menu(menu_secondary.get_items, 'm-nav', 'm-nav--secondary-mobile', parent_class, false) }}
         </div>
     </div>
 {% endspaceless %}

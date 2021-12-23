@@ -39,3 +39,34 @@
 		}
 	}
 }
+
+.m-nav--secondary-mobile {
+	padding: 10px 25px;
+	background-color: $g-brand-color-5;
+
+	.m-nav {
+		&__item {
+			display: block;
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		&__link {
+			display: block;
+			padding: 16px 0;
+			border-bottom: 1px solid $g-grey-color-2;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 1;
+			letter-spacing: normal;
+
+			&:hover {
+				color: $g-brand-color-1;
+			}
+
+			&.current_page_item {
+				color: $g-brand-color-1;
+			}
+		}
+	}
+}
