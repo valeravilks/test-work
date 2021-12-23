@@ -859,7 +859,22 @@
                             "type": "image",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61b478ab958b3",
+                                        "operator": "!=",
+                                        "value": "quote-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_61b478ab958b3",
+                                        "operator": "!=",
+                                        "value": "quote-right"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "50",
                                 "class": "",
@@ -890,14 +905,14 @@
                                     {
                                         "field": "field_61b478ab958b3",
                                         "operator": "==",
-                                        "value": "container-img-left"
+                                        "value": "img-left"
                                     }
                                 ],
                                 [
                                     {
                                         "field": "field_61b478ab958b3",
                                         "operator": "==",
-                                        "value": "container-img-right"
+                                        "value": "img-right"
                                     }
                                 ]
                             ],
@@ -915,11 +930,9 @@
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "ajax": 0,
                             "return_format": "value",
-                            "allow_custom": 0,
-                            "placeholder": "",
-                            "search_placeholder": ""
+                            "ajax": 0,
+                            "placeholder": ""
                         },
                         {
                             "key": "field_61c47f594cdeb",
@@ -975,6 +988,40 @@
                                         "field": "field_61b478ab958b3",
                                         "operator": "==",
                                         "value": "staff-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_61c48dd7fbf6a",
+                            "label": "Quote Content",
+                            "name": "quote_content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61b478ab958b3",
+                                        "operator": "==",
+                                        "value": "quote-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_61b478ab958b3",
+                                        "operator": "==",
+                                        "value": "quote-right"
                                     }
                                 ]
                             ],
@@ -1119,7 +1166,9 @@
                                 "img-left": "Default (Image left, text right)",
                                 "img-right": "Image right, text left",
                                 "staff-left": "Staff Image Left",
-                                "staff-right": "Staff Image Right"
+                                "staff-right": "Staff Image Right",
+                                "quote-left": "Quote left, text right",
+                                "quote-right": "Quote right, text left"
                             },
                             "default_value": "img-left",
                             "allow_null": 0,
@@ -14365,5 +14414,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640270301
+    "modified": 1640271854
 }

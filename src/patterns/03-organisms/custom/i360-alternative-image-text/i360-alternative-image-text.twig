@@ -25,7 +25,7 @@
 	{#################################################################################}
 	{% block block_inner %}
 		<div class="{{ component_class }}__content-wrapper">
-			<div class="{{ component_class }}__group-text">
+			<div class="{{ component_class }}__column {{ component_class }}__column--1">
 				{% include '01-atoms/content/title/title.twig' with {
 					default_block_class : default_block_class,
 					parent_class        : component_class,
@@ -59,8 +59,8 @@
 				{% set resize_height = 420 %}
 			{% endif %}
 
-			{% if section.image %}
-				<div class="{{component_class}}__group-img">
+			<div class="{{component_class}}__column {{ component_class }}__column--2">
+				{% if section.image and section.version not in ['quote-left', 'quote-right'] %}
 
 					{# Accessing WordPress image object and making them available to Twig templates #}
 					{% set img = TimberImage( section.image ) %}
@@ -80,29 +80,40 @@
 							wrapper           : true,
 							add_class_on_anim : true
 						} only %}
-					{% endif %}
+						{% endif %}
+				{% endif %}
 
-					{# Add staff member info #}
-					{% if section.version in ['staff-left', 'staff-right'] %}
-						{% include '01-atoms/content/title/title.twig' with {
-							default_block_class : default_block_class,
-							parent_class        : component_class,
-							title               : section.author_name,
-							version             : 'author-name',
-							add_class_on_anim   : true
-						} only %}
-		
-						{% include '01-atoms/content/content/content.twig' with {
-							default_block_class : default_block_class,
-							parent_class        : component_class,
-							content             : section.author_short_description,
-							version             : 'author-short-description',
-							add_class_on_anim   : true
-						} only %}
-					
-					{% endif %}
-				</div>
-			{% endif %}
+				{# Add staff member info #}
+				{% if section.version in ['staff-left', 'staff-right'] %}
+					{% include '01-atoms/content/title/title.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						title               : section.author_name,
+						version             : 'author-name',
+						add_class_on_anim   : true
+					} only %}
+	
+					{% include '01-atoms/content/content/content.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						content             : section.author_short_description,
+						version             : 'author-short-description',
+						add_class_on_anim   : true
+					} only %}
+				
+				{% endif %}
+
+				{# Add Quote #}
+				{% if section.version in ['quote-left', 'quote-right'] %}
+					{% include '01-atoms/content/content/content.twig' with {
+						default_block_class : default_block_class,
+						parent_class        : component_class,
+						content             : section.quote_content,
+						version             : 'quote',
+						add_class_on_anim   : true
+					} only %}
+				{% endif %}
+			</div>
 		</div>
 
 	{% endblock %}
