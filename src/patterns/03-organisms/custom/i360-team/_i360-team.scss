@@ -20,32 +20,6 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-team {
-	&__title-wrapper {
-
-	}
-
-	&__title {
-
-	}
-
-	&__content {
-
-	}
-
-	&__repeater {
-		@include outlining-card-1-by-3;
-	}
-
-	&__card {
-		visibility: hidden;
-		@include fadeInUp;
-	}
-
-	&__button-wrapper {
-
-	}
-
-
 	// Animations
 	&__pretitle,
 	&__title,
@@ -53,6 +27,12 @@
 	&__button-wrapper {
 		transition-delay: .2s;
 		@include anim-fade-default;
+	}
+
+	&__title {
+		span {
+			color: $g-brand-color-7;
+		}
 	}
 }
 

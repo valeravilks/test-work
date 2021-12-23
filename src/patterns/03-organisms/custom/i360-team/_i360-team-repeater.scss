@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////
 //                                              //
-//  Organism: Default Latest Posts Repeater     //
+//  Organism: i360 Team Repeater                //
 //  https://www.dreamersofday.co                //
 //                                              //
 //////////////////////////////////////////////////
@@ -14,5 +14,13 @@
 /////////////////////////////
 
 .o-i360-team {
+	&__repeater {
+		@include flex-outlining-card-1-by-4(20px, '.o-i360-team__card');
+		margin-top: 60px;
+	}
 
+	&__card {
+		visibility: hidden;
+		@include fadeIn;
+	}
 }
