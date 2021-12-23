@@ -24,20 +24,20 @@
 						{% include '01-atoms/content/pretitle/pretitle.twig' with {
 							parent_class        : component_class,
 							pretitle            : item.pretitle,
-							add_class_on_anim   : true
+							add_class_on_anim   : true,
 						} only %}
 
 						{% include '01-atoms/content/title/title.twig' with {
 							parent_class        : component_class,
 							title               : item.title,
 							h                   : 3,
-							add_class_on_anim   : false
+							add_class_on_anim   : true
 						} only %}
 
 						{% include '01-atoms/content/content/content.twig' with {
 							parent_class        : component_class,
 							content             : item.content,
-							add_class_on_anim   : false
+							add_class_on_anim   : true
 						} only %}
 
 						{% if item.add_link %}
@@ -45,7 +45,7 @@
 								parent_class    	: component_class,
 								link                : item.link,
 								version				: "underline-reverse",
-								add_class_on_anim 	: false
+								add_class_on_anim   : true
 							} only %}
 						{% endif %}
 
