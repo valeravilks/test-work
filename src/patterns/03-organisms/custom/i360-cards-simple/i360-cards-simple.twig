@@ -100,6 +100,13 @@
 						index       		: loop.index,
 						add_class_on_anim   : true,
 					} only %}
+
+				{# Used for the cards that have an image and colored buttons (design: Members - Find a provider section)) #}
+				{% elseif section.version == "provider" %}
+					USE CARD PROVIDER
+				{# Used for the cards that have an image and colored buttons (design: Members Login)) #}
+				{% elseif section.version == "members" %}
+					USE CARD MEMBER
 				{% endif %}
 			{% endfor %}
 		</div>
