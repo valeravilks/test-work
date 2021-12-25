@@ -20,17 +20,10 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-alternative-image-text {
-	&__container {
-		max-width: 1010px;
-	}
-
 	&__content-wrapper {
 		display: flex;
 		@include bp-sm {
 			align-items: flex-start;
-		}
-		@include bpm-sm {
-			flex-direction: column-reverse;
 		}
 
 		.o-dbm__button-wrapper {
@@ -38,20 +31,15 @@
 		}
 	}
 
-	&__group-text {
-		flex-grow: 1;
-		flex-shrink: 1;
-		flex-basis: 100%;
-		@include bp-sm {
-			flex-basis: auto;
-		}
+	.o-dbm__title,
+	.o-dbm__content {
+		max-width: 100%;
 	}
 
 	&__content {
-		h2,h3,h4,h5 {
+		h2,h3,h4,h5,h6 {
 			letter-spacing: normal;
 			line-height: 1.4;
-			color: $g-heading-dark;
 
 			span {
 				color: $g-brand-color-1;
@@ -66,19 +54,6 @@
 
 		&.o-dbm__title.a-title--small {
 			max-width: 100%;
-		}
-	}
-
-	&__group-img {
-		display: flex;
-		align-items: center;
-		max-width: 240px;
-		margin: 0 auto 30px;
-		@include bp-sm {
-			flex-grow: 0;
-			flex-shrink: 0;
-			flex-basis: 240px;
-			margin: 0;
 		}
 	}
 
@@ -112,6 +87,22 @@
 // This organism is most likely inheriting styles from the default-organism.scss file.
 // If needed, the look & feel of organism versions can be modified below.
 
+//////////////////////////////////////////
+// Organism Background Versions         //
+//////////////////////////////////////////
+/**
+* Covers scenario(s) where this organism has a custom background for it's default state.
+* If so, target ".m-background-set"
+* ------------------------------------------------------------
+*/
+.o-i360-alternative-image-text {
+	&.o-dbm--bg-color {
+		.m-background-set {
+			background-color: $g-body-light;
+		}
+	}
+}
+
 
 //////////////////////////////////////////
 // Organism Versions -- Alignments      //
@@ -125,10 +116,12 @@
 	&.o-dbm--align-default,
 	&.o-dbm--align-left {
 		.o-i360-alternative-image-text {
-			&__title {
-				text-align: left;
+			&__pretitle-wrapper {
+				margin: 0 auto 20px;
 			}
 
+			&__pretitle,
+			&__title,
 			&__content {
 				text-align: left;
 			}
@@ -141,10 +134,8 @@
 
 	&.o-dbm--align-center {
 		.o-i360-alternative-image-text {
-			&__title {
-				text-align: center;
-			}
-
+			&__pretitle,
+			&__title,
 			&__content {
 				text-align: center;
 			}
@@ -172,24 +163,40 @@
 	&.o-dbm--color-default,
 	&.o-dbm--color-dark {
 		.o-i360-alternative-image-text {
+			&__pretitle {
+				color: $g-pretitle-dark;
+			}
+
 			&__title {
 				color: $g-heading-dark;
 			}
 
 			&__content {
 				color: $g-body-dark;
+
+				h2,h3,h4,h5,h6 {
+					color: $g-heading-dark;
+				}
 			}
 		}
 	}
 
 	&.o-dbm--color-light {
 		.o-i360-alternative-image-text {
+			&__pretitle {
+				color: $g-pretitle-light;
+			}
+
 			&__title {
 				color: $g-heading-light;
 			}
 
 			&__content {
 				color: $g-body-light;
+
+				h2,h3,h4,h5,h6 {
+					color: $g-body-light;
+				}
 			}
 		}
 	}
@@ -205,7 +212,47 @@
  * ------------------------------------------------------------
  */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Alternative Image Text Version: "Image left, text right(default)" and "Image right, text left"    //
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 .o-i360-alternative-image-text {
+	&--img-left,
+	&--img-right {
+		.o-i360-alternative-image-text {
+			&__container {
+				max-width: 1010px;
+			}
+
+			&__content-wrapper {
+				@include bpm-sm {
+					flex-direction: column-reverse;
+				}
+			}
+
+			&__column--1 {
+				flex-grow: 1;
+				flex-shrink: 1;
+				flex-basis: 100%;
+				@include bp-sm {
+					flex-basis: auto;
+				}
+			}
+
+			&__column--2 {
+				display: flex;
+				align-items: center;
+				max-width: 240px;
+				margin: 0 auto 30px;
+				@include bp-sm {
+					flex-grow: 0;
+					flex-shrink: 0;
+					flex-basis: 240px;
+					margin: 0;
+				}
+			}
+		}
+	}
+
 	// Version that have an image on the left.
 	&--img-left {
 		.o-i360-alternative-image-text {
@@ -215,7 +262,7 @@
 				}
 			}
 
-			&__group-text {
+			&__column--1 {
 				@include bp-sm {
 					padding-left: 35px;
 				}
@@ -235,12 +282,210 @@
 				}
 			}
 
-			&__group-text {
+			&__column--1 {
 				@include bp-sm {
 					padding-right: 35px;
 				}
 				@include bp-sm {
 					padding-right: 60px;
+				}
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// Alternative Image Text Version: "Staff image left" and "Staff image right"    //
+///////////////////////////////////////////////////////////////////////////////////
+.o-i360-alternative-image-text {
+	&--staff-left,
+	&--staff-right {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bpm-md {
+					flex-wrap: wrap;
+				}
+			}
+
+			&__column--1 {
+				flex-grow: 0;
+				flex-shrink: 1;
+				flex-basis: 100%;
+				@include bp-md {
+					flex-basis: 66.1%;
+				}
+			}
+
+			&__column--2 {
+				flex-grow: 0;
+				flex-shrink: 1;
+				flex-basis: 100%;
+				margin-top: 30px;
+				@include bp-md {
+					flex-basis: 33.9%;
+					margin-top: 0;
+					padding: 0 0 0 15px;
+				}
+				@include bp-lg {
+					flex-shrink: 0;
+					padding: 0 25px;
+				}
+
+				.o-i360-alternative-image-text {
+					&__title {
+						padding-bottom: 8px;
+						font-size: 20px;
+						line-height: 1.33;
+						letter-spacing: -0.29px;
+						color: $g-brand-color-2;
+						@include bp-md {
+							text-align: center;
+							font-size: 24px;
+						}
+					}
+
+					&__content {
+						max-width: 205px;
+						margin: 0 auto 0 0;
+						font-size: 14px;
+						letter-spacing: -0.35px;
+						@include bp-md {
+							margin: 0 auto;
+							text-align: center;
+						}
+					}
+				}
+			}
+
+			&__img-wrapper {
+				width: 100px;
+				height: 100px;
+				margin-bottom: 10px;
+				border-radius: 50%;
+				overflow: hidden;
+				@include bp-md {
+					margin: 0 auto 10px;
+				}
+				@include bp-lg {
+					width: 175px;
+					height: 175px;
+					margin: 0 auto 30px;
+				}
+			}
+		}
+	}
+
+	&--staff-left {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row-reverse;
+				}
+			}
+		}
+	}
+
+	&--staff-right {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row;
+				}
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Alternative Image Text Version: "Quote left, text right" and "Quote right, text left"    //
+//////////////////////////////////////////////////////////////////////////////////////////////
+.o-i360-alternative-image-text {
+	&--quote-left,
+	&--quote-right {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bpm-md {
+					flex-wrap: wrap;
+				}
+			}
+
+			&__column--1 {
+				flex-grow: 1;
+				flex-shrink: 1;
+				flex-basis: 100%;
+				@include bp-md {
+					flex-basis: 67.8%;
+				}
+
+				.o-i360-alternative-image-text {
+					&__content {
+						span {
+							letter-spacing: -0.4px;
+							color: $g-brand-color-2;
+						}
+					}
+				}
+			}
+
+			&__column--2 {
+				flex-grow: 0;
+				flex-shrink: 0;
+				flex-basis: 100%;
+				margin-top: 30px;
+				@include bp-md {
+					flex-basis: 32.2%;
+					margin-top: 0;
+				}
+
+				.o-i360-alternative-image-text {
+					&__content {
+						blockquote {
+							border-top: 1px solid $g-brand-color-2;
+							border-bottom: 1px solid $g-brand-color-2;
+
+							p {
+								letter-spacing: -0.8px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--quote-left {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row-reverse;
+				}
+			}
+
+			&__column--1 {
+				@include bp-md {
+					padding-left: 45px;
+				}
+				@include bp-lg {
+					padding-left: 120px;
+				}
+			}
+		}
+	}
+
+	&--quote-right {
+		.o-i360-alternative-image-text {
+			&__content-wrapper {
+				@include bp-sm {
+					flex-direction: row;
+				}
+			}
+
+			&__column--1 {
+				@include bp-md {
+					padding-right: 45px;
+				}
+				@include bp-lg {
+					padding-right: 120px;
 				}
 			}
 		}
