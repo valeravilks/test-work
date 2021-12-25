@@ -1,0 +1,5 @@
+{% if section.version == 'default' %}
+    {% include '03-organisms/custom/i360-checkmarks/i360-double-columns/i360-double-columns.twig' %}
+{% elseif section.version == 'single-column' %}
+    {% include '03-organisms/custom/i360-checkmarks/i360-single-column/i360-single-column.twig' %}
+{% endif %}
