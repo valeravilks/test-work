@@ -46,7 +46,8 @@
 			} only %}
 
 			{% if section.form %}
-				<div class='{{component_class}}__form-wrapper'>
+{#				MAKE SURE TO ADD DEFAULT FORM BG COLOR HERE. USED WHEN USER IS NOT ENTERING COLOR IN CMS#}
+				<div class='{{component_class}}__form-wrapper' style='background-color: "{{ section.form_bg_color }}"'>
 					{{ section.form }}
 				</div>
 			{% endif %}

@@ -53,6 +53,9 @@
 	{% elseif section.acf_fc_layout == 'default_image_group' %}
 		{% include '03-organisms/default/default-image-group/default-image-group.twig' %}
 
+	{% elseif section.acf_fc_layout == 'i360_form' %}
+		{% include '03-organisms/custom/i360-form/i360-form.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_text' %}
 		{% include '03-organisms/custom/i360-text/i360-text.twig' %}
 
@@ -88,7 +91,7 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
-	{% elseif section.acf_fc_layout == 'i360_vertical_pills' %} 
+	{% elseif section.acf_fc_layout == 'i360_vertical_pills' %}
 		{% include '03-organisms/custom/i360-vertical-pills/i360-vertical-pills.twig' %}
 
 	{% elseif section.acf_fc_layout == 'i360_alternative_image_text' %}
