@@ -16,6 +16,7 @@
 .o-i360-latest-posts {
 	&__repeater {
 		@include outlining-card-1-by-3;
+		padding-top: 20px;
 	}
 
 	&__card {
