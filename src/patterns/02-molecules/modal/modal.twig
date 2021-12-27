@@ -61,6 +61,9 @@
 					{% if version == 'team' %}
 						<div class="{{ component_class }} {{ component_class }}_modal-head">
 					{% endif %}
+					<button class="{{ component_class }}_modal-next">next modal</button>
+					<button class="{{ component_class }}_modal-prev">prev modal</button>
+
 					
 					{% if item.img %}
 						{% set img = TimberImage( item.img ) %}
