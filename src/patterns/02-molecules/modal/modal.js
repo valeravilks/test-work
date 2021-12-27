@@ -23,9 +23,17 @@ export default () => {
 	});
 
 	MicroModal.init({
-		disableScroll: true, // [6]
+		// disableScroll: true, // [6]
 		awaitOpenAnimation: false, // [8]
 		awaitCloseAnimation: true, // [9]
+		onShow: modal => {
+			console.log('open modal');
+			$('body').css('overflow', 'hidden');
+		}, // [1]
+		onClose: modal => {
+			console.log('close modal');
+			$('body').css('overflow', 'visible');
+		},
 	});
 
 	// Modal button next and prev logic
@@ -68,6 +76,15 @@ export default () => {
 						.children()
 						.attr('id'),
 				);
+			});
+
+		$('#' + thisModalId)
+			.find('.m-modal__overlay')
+			.on('click', function(e) {
+				if ($(e.target).parents('.m-modal__dialog').length === 0) {
+					MicroModal.close(thisModalId);
+					$('body').css('overflow', 'visible');
+				}
 			});
 	});
 };

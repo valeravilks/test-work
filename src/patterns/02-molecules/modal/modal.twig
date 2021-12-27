@@ -55,7 +55,7 @@
     {# Modal Body #}
 	<div class="{{ component_class }} {{ parent }} {{ version_class }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
 		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
-			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
+			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}">
 				<div class="{{ component_class }}__dialog text-center" role="dialog" aria-modal="true" aria-labelledby="modal-{{ number }}-title" >
 					
 					{% if version == 'team' %}
