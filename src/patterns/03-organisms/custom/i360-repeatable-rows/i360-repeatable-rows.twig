@@ -1,0 +1,77 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-repeatable-rows" %}
+	{% set container       = true %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+	{% block after_content %}
+
+		{# Rows are outputted here #}
+		<div class="{{ component_class }}__repeater">
+			{% for item in section.repeater %}
+				<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow flex flex-col">
+					<div class='{{component_class}}__column {{component_class}}__column--1 w-1/2'>
+
+						{% set img = TimberImage(section.image) %}
+
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class        : component_class,
+							img                 : img,
+							lazyload            : false,
+							srcset              : true,
+							wrapper             : true
+						} only %}
+
+					</div>
+					<div class='{{component_class}}__column {{component_class}}__column--2 w-1/2'>
+						{% include '01-atoms/content/title/title.twig' with {
+							parent_class        : component_class,
+							title               : item.title,
+							extra_class         : "o-i360-repeatable-rows__item-title",
+							h                   : 4,
+							add_class_on_anim   : false
+						} only %}
+
+						{% include '01-atoms/content/content/content.twig' with {
+							parent_class        : component_class,
+							content             : item.content,
+							extra_class         : "o-i360-repeatable-rows__item-content",
+							add_class_on_anim   : false
+						} only %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		{# Sample markup. The columns below might not be be needed. Remove if not applicable #}
+		<div class="{{ component_class }}__columns">
+			<div class="{{ component_class }}__column {{ component_class }}__column--1">
+
+			</div>
+			<div class="{{ component_class }}__columns {{ component_class }}__column--2">
+
+			</div>
+		</div>
+
+	{% endblock %}
+
+{% endspaceless %}

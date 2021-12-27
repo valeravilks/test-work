@@ -91,6 +91,12 @@
 
 		{# DO NOT ERASE OR PLOP IMPORTING WILL FAIL #}
 		{# IMPORT FROM PLOP #}
+	{% elseif section.acf_fc_layout == 'i360_horizontal_menu' %} 
+		{% include '03-organisms/custom/i360-horizontal-menu/i360-horizontal-menu.twig' %}
+
+	{% elseif section.acf_fc_layout == 'i360_repeatable_rows' %} 
+		{% include '03-organisms/custom/i360-repeatable-rows/i360-repeatable-rows.twig' %}
+
 	{% elseif section.acf_fc_layout == 'i360_vertical_pills' %}
 		{% include '03-organisms/custom/i360-vertical-pills/i360-vertical-pills.twig' %}
 
