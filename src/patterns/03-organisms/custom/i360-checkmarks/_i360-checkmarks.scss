@@ -63,7 +63,15 @@
 * If so, target ".m-background-set"
 * ------------------------------------------------------------
 */
-.o-i360-checkmarks {
+.o-i360-checkmarks--default {
+	&.o-dbm--bg-color {
+		.m-background-set {
+			background-color: $g-body-light;
+		}
+	}
+}
+
+.o-i360-checkmarks--single-column {
 	&.o-dbm--bg-color {
 		.m-background-set {
 			background-color: $g-grey-color-light;
