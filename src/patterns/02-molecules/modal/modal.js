@@ -29,6 +29,7 @@ export default () => {
 		onShow: modal => {
 			console.log('open modal');
 			$('body').css('overflow', 'hidden');
+			$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
 		}, // [1]
 		onClose: modal => {
 			console.log('close modal');
