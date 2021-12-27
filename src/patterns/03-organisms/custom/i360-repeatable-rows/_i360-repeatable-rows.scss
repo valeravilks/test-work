@@ -32,6 +32,19 @@
 
 	}
 
+	&__column {
+		&--1 {
+			@include bp-md {
+				padding-left: 100px;
+			}
+		}
+		&--2 {
+			@include bp-md {
+				padding-left: 50px;
+			}
+		}
+	}
+
 	&__item {
 		padding-bottom: 40px;
 		margin-bottom: 40px;
