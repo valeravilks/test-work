@@ -31,7 +31,7 @@
 				<div class="{{ component_class }}__item {{ component_class }}__item--{{ loop.index }} wow flex flex-col">
 					<div class='{{component_class}}__column {{component_class}}__column--1 w-1/2'>
 
-						{% set img = TimberImage(section.image) %}
+						{% set img = TimberImage(item.image) %}
 
 						{% include '01-atoms/images/image-default/image-default.twig' with {
 							parent_class        : component_class,
