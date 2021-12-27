@@ -58,13 +58,16 @@
 		background: rgba(0, 0, 0, .6);
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		// align-items: center;
 		overflow-y: auto;
+		align-items: self-start;
+		padding: 100px 0;
 	}
 
 	&__dialog {
 		max-width: 500px;
-		max-height: 100vh;
+		// max-height: 100vh;
+		background: white;
 		padding: 30px;
 		box-sizing: border-box;
 		overflow: visible;
