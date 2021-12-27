@@ -30,6 +30,16 @@
 
 	}
 
+	&__column {
+		&--1 {
+			min-width: 427px;
+			padding-right: 30px;
+		}
+		&--2 {
+			width: 100%;
+		}
+	}
+
 	&__button-wrapper {
 
 	}

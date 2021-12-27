@@ -22,7 +22,7 @@
 	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
 	{# ----------------------------------------------------------------------------- #}
 	{#################################################################################}
-	<div class="{{ component_class }}">
+	<div class="{{ component_class }} flex flex-col">
 		<div class='{{component_class}}__column {{component_class}}__column--1'>
 			{% include '01-atoms/content/title/title.twig' with {
 				parent_class        : component_class,
