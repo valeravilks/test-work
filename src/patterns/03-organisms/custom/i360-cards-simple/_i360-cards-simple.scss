@@ -216,14 +216,13 @@
 			}
 		}
 
-		&__subheader-wrapper {
-			margin: 0 auto 55px;
-		}
-
 		&__repeater {
+			padding-top: 70px;
 			@include flex-outlining-card-1-by-4(20px, '.m-card-transparent');
 			justify-content: flex-start;
-			padding-top: 0;
+			@include bp-md {
+				padding-top: 50px;
+			}
 		}
 
 		&__card {
