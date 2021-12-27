@@ -26,12 +26,10 @@
 	{#################################################################################}
 
     {% block after_content %}
-        <div class="{{ component_class }}__list">
-            {% include '/02-molecules/list/list-icon-alt/list-icon-alt.twig' with {
-                parent_class      : component_class,
-                list_items		  : section.repeater,
-            } only %}
-        </div>
+		{% include '/02-molecules/list/list-icon-alt/list-icon-alt.twig' with {
+			parent_class      : component_class,
+			list_items		  : section.repeater,
+		} only %}
     {% endblock %}
 
 {% endspaceless %}
