@@ -38,7 +38,8 @@
 				{% set img = TimberImage( item.thumbnail ) %}
 				{% set terms = item.terms('case-studies-categories')|join(', ')  %}
 
-				{% set pretitle = item.type.singular_name %}
+				{# Give pretitle the post type name value #}
+				{% set pretitle = item.type.labels.singular_name %}
 
 				{% include '02-molecules/cards/card-post/card-post.twig' with {
 					parent_class 		: component_class,
