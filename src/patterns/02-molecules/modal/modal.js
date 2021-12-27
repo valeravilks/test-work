@@ -58,6 +58,7 @@ export default () => {
 			.on('click', () => {
 				MicroModal.close(thisModalId);
 				console.log('nextModalNumber: ' + nextModalNumber);
+				$('body').css('overflow', 'hidden');
 				MicroModal.show(
 					arrayModal
 						.eq(nextModalNumber)
@@ -70,6 +71,7 @@ export default () => {
 			.find('.m-modal_modal-prev')
 			.on('click', () => {
 				MicroModal.close(thisModalId);
+				$('body').css('overflow', 'hidden');
 				MicroModal.show(
 					arrayModal
 						.eq(prevModalNumber)
