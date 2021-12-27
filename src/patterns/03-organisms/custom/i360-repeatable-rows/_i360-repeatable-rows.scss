@@ -33,6 +33,9 @@
 	}
 
 	&__item {
+		&-img {
+			border-radius: 10px;
+		}
 		&-title {
 			@include h2;
 		}

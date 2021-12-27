@@ -36,7 +36,8 @@
 						{% include '01-atoms/images/image-default/image-default.twig' with {
 							parent_class        : component_class,
 							img                 : img,
-							lazyload            : false,
+							lazyload            : true,
+							extra_class         : "o-i360-repeatable-rows__item-img",
 							srcset              : true,
 							wrapper             : true
 						} only %}
