@@ -32,6 +32,12 @@
 
 	}
 
+	&__item {
+		&-title {
+			@include h2;
+		}
+	}
+
 	&__button-wrapper {
 
 	}
