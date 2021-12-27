@@ -40,7 +40,7 @@
 			letter-spacing: -0.81px;
 
 			span, strong, bold {
-				line-height: normal;
+				line-height: inherit;
 				letter-spacing: normal;
 				color: $g-brand-color-1;
 			}

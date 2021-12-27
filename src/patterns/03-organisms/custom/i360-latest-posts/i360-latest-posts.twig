@@ -41,6 +41,11 @@
 				{# Give pretitle the post type name value #}
 				{% set pretitle = item.type.labels.singular_name %}
 
+				{# Hack to ensure post gets renamed to blog without modifying the Post post type #}
+				{% if pretitle == "Post" %}
+					{% set pretitle = "Blog" %}
+				{% endif %}
+
 				{% include '02-molecules/cards/card-post/card-post.twig' with {
 					parent_class 		: component_class,
 					item         		: item,
