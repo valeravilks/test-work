@@ -66,6 +66,7 @@ export default () => {
 						.children()
 						.attr('id'),
 				);
+				$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
 			});
 
 		$('#' + thisModalId)
@@ -79,6 +80,8 @@ export default () => {
 						.children()
 						.attr('id'),
 				);
+				console.log('scroll');
+				$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
 			});
 
 		$('#' + thisModalId)
