@@ -45,6 +45,14 @@
 					<div class='{{component_class}}__column {{component_class}}__column--2 w-1/2'>
 						{% include '01-atoms/content/title/title.twig' with {
 							parent_class        : component_class,
+							title               : item.pretitle,
+							extra_class         : "o-i360-repeatable-rows__item-pretitle",
+							h                   : 6,
+							add_class_on_anim   : false
+						} only %}
+
+						{% include '01-atoms/content/title/title.twig' with {
+							parent_class        : component_class,
 							title               : item.title,
 							extra_class         : "o-i360-repeatable-rows__item-title",
 							h                   : 4,
