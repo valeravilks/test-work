@@ -1,0 +1,68 @@
+{% spaceless %}
+	{#######################################################}
+	{# --------------------------------------------------- #}
+	{# Extending one of the Base Block Layout Types        #}
+	{# 													   #}
+	{# The block wrapper, title, content, button		   #}
+	{# and container are declared inside the 		       #}
+	{# base block layout          						   #}
+	{# --------------------------------------------------- #}
+	{#######################################################}
+	{% extends '03-organisms/base/base-block/base-block.twig' %}
+
+	{########################################################}
+	{# Block general settings                               #}
+	{########################################################}
+	{% set component_class = "o-i360-form" %}
+	{% set container       = false %}
+
+	{#################################################################################}
+	{# ----------------------------------------------------------------------------- #}
+	{# CUSTOM DEV: Add custom block specific stuff here by                           #}
+	{# overwriting {% block %}'s defined in the chosen Base Block Layout Type above  #}
+	{# ----------------------------------------------------------------------------- #}
+	{#################################################################################}
+
+	{# Overwriting block_inner as max_width is not part of the base-block #}
+	{% block block_inner %}
+		<div class="l-container {{ component_class }}__container" {% if section.max_width %}style="max-width:{{ section.max_width }}px"{% endif %}>
+
+			{% include '01-atoms/content/title/title.twig' with {
+				default_block_class : default_block_class,
+				parent_class        : component_class,
+				title               : section.block_title,
+				width               : section.title_width,
+				style               : section.title_style,
+				h                   : section.title_type,
+				spacing_bottom      : section.title_padding_bottom,
+				add_class_on_anim   : true
+			} only %}
+
+			{% include '01-atoms/content/content/content.twig' with {
+				default_block_class : default_block_class,
+				parent_class        : component_class,
+				content             : section.content,
+				add_class_on_anim   : true
+			} only %}
+
+			{% if section.form %}
+{#				MAKE SURE TO ADD DEFAULT FORM BG COLOR HERE. USED WHEN USER IS NOT ENTERING COLOR IN CMS#}
+				<div class='{{component_class}}__form-wrapper' style='background-color: "{{ section.form_bg_color }}"'>
+					{{ section.form }}
+				</div>
+			{% endif %}
+
+			{#Test#}
+			{% if section.add_button %}
+				{% include '01-atoms/buttons/button/button.twig' with {
+					default_block_class : default_block_class,
+					parent_class 		: component_class,
+					button      		: section.button,
+					add_class_on_anim   : true
+				} only %}
+			{% endif %}
+
+		</div>
+	{% endblock %}
+
+{% endspaceless %}

@@ -56,7 +56,7 @@
 				&__group-img {
 					@include bp-sm {
 						@include absolute-tr;
-						transform: scaleX(-1); // remove, just for show
+						//transform: scaleX(-1); // remove, just for show
 						padding-left: 0;
 					}
 				}

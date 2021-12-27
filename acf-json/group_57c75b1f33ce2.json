@@ -655,6 +655,18 @@
                         "operator": "==",
                         "value": "default-side-half-image"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    }
                 ]
             ],
             "wrapper": {
@@ -771,6 +783,23 @@
                         "operator": "==",
                         "value": "1"
                     }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
+                    },
+                    {
+                        "field": "field_5eaafca1a80f2",
+                        "operator": "==",
+                        "value": "1"
+                    }
                 ]
             ],
             "wrapper": {
@@ -821,6 +850,18 @@
                         "field": "field_5c59d0dcbcd88",
                         "operator": "==",
                         "value": "i360-case-study"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_57c75b25d85f4",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c59d0dcbcd88",
+                        "operator": "==",
+                        "value": "i360-regular"
                     }
                 ]
             ],
@@ -1116,5 +1157,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639213541
+    "modified": 1640403751
 }

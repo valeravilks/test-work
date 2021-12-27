@@ -28,34 +28,6 @@
 		}
 	}
 
-	&__subheader-wrapper {
-		max-width: 780px;
-		margin: 0 auto 30px;
-		@include bp-md {
-			margin: 0 auto 45px;
-		}
-	}
-
-	&__subheader {
-		padding-bottom: 0;
-		font-size: 16px;
-		font-weight: 400;
-		line-height: 28px;
-		letter-spacing: -0.2px;
-	}
-
-	&__content {
-		font-size: 20px;
-		font-weight: 600;
-		line-height: normal;
-		letter-spacing: -0.25px;
-		@include bp-md {
-			font-size: 24px;
-			line-height: 32px;
-			letter-spacing: -0.21px;
-		}
-	}
-
 	&__card {
 		visibility: hidden;
 		@include fadeIn;
@@ -194,13 +166,14 @@
 			color: $g-pretitle-light;
 		}
 
-		&__subheader {
-			color: $g-brand-color-5;
-		}
-
 		&__title,
 		&__content {
 			color: $g-body-light;
+		}
+		&__content {
+			h1,h2,h3,h4,h5,h6 {
+				color: #fff;
+			}
 		}
 	}
 }

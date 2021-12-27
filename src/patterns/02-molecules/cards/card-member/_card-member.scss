@@ -1,0 +1,103 @@
+//////////////////////////////////////////////////
+//                                              //
+//  Atom: Card Image			                //
+//                                              //
+//  https://www.dreamersofday.co                 //
+//                                              //
+//////////////////////////////////////////////////
+
+//////////////////////////////
+// Default variables        //
+//////////////////////////////
+
+////////////////////
+// Styling        //
+////////////////////
+
+.m-card-member {
+	position: relative;
+	height: 100%;
+	min-height: 300px;
+	display: flex;
+	align-items: flex-end;
+
+	@include bpm-md {
+		min-height: 340px;
+	}
+	@include bpm-sm {
+		min-height: 280px;
+	}
+
+    &__item-link {
+        @include absolute-full;
+        display: block;
+        z-index: $g-z20;
+
+        &:hover {
+            & ~ .m-card-member__img-wrapper img {
+                transform: scale(1.1);
+            }
+
+            & ~ .m-card-member__item-info {
+                .m-card-member__decoration-line {
+                    width: 40%;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
+    &__img-wrapper {
+        @include absolute-full;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            @include absolute-full;
+            background-color: rgba(0, 0, 0, .4);
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        backface-visibility: hidden;
+		transition: $g-trans-base-longer !important;
+    }
+
+    &__item-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        padding: 15px 15px 25px 15px;
+        z-index: $g-z10;
+        color: #fff;
+    }
+
+    &__title,
+    &__content {
+        color: #fff;
+    }
+
+    &__title {
+        padding-bottom: 15px;
+    }
+
+    &__content {
+        font-size: 18px;
+
+        @include last-element-no-bm;
+    }
+
+    &__decoration-line {
+        width: 0;
+        height: 2px;
+        background-color: $g-brand-color-1;
+        transition: $g-trans-base;
+    }
+}

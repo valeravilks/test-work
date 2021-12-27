@@ -1,0 +1,13 @@
+## Inside repeater:
+
+{# Keeping the TimberImage outside of the component below to ensure the card can be used in other places #}
+{% set img = TimberImage( item.image ) %}
+
+{% include '02-molecules/cards/card-provider/card-provider.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	interval            : true,
+	img                 : img,
+	index       		: loop.index,
+	add_class_on_anim   : true,
+} only %}
