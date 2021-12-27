@@ -57,6 +57,9 @@
 
 		&-img {
 			border-radius: 10px;
+			@include bpm-md {
+				margin-bottom: 20px;
+			}
 		}
 		&-pretitle {
 			font-weight: 600;
