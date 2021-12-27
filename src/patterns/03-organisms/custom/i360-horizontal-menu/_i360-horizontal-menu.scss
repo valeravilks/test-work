@@ -20,12 +20,10 @@
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
 .o-i360-horizontal-menu {
-	&__title-wrapper {
-
-	}
-
+	background-color: #18B1A9;
+	&__title-wrapper,
 	&__title {
-
+		color: $g-heading-light;
 	}
 
 	&__content {
