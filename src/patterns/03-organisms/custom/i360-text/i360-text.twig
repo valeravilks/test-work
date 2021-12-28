@@ -32,6 +32,14 @@
 				<div class='{{component_class}}__column {{component_class}}__column--1'>
 			{% endif %}
 
+			{% include '01-atoms/content/pretitle/pretitle.twig' with {
+				default_block_class : default_block_class,
+				pretitle     		: section.block_pretitle,
+				parent_class 		: component_class,
+				h            		: 6,
+				add_class_on_anim   : true
+			} only %}
+
 			{% include '01-atoms/content/title/title.twig' with {
 				default_block_class : default_block_class,
 				parent_class        : component_class,
