@@ -25,26 +25,29 @@
 
 	&__outer-wrapper {
 		display: none;
+		transition: .3s;
+		opacity: 0;
 
 		&.is-open {
 			display: block;
 			z-index: $g-z100;
+			opacity: 1;
 		}
 
 		&[aria-hidden="false"] .m-modal__overlay {
-			animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+			animation: mmfadeIn .5s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
 
 		&[aria-hidden="false"] .m-modal__dialog {
-			animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+			animation: mmfadeIn .5s cubic-bezier(0, 0, .2, 1);
 		}
 
 		&[aria-hidden="true"] .m-modal__overlay {
-			animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+			animation: mmfadeOut .5s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
 
 		&[aria-hidden="true"] .m-modal__dialog {
-			animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+			animation: mmfadeOut .5s cubic-bezier(0, 0, .2, 1);
 		}
 
 		.m-modal__dialog,
