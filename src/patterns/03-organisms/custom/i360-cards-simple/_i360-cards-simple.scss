@@ -184,6 +184,9 @@
 	}
 
 	.m-card-simple-alt {
+		@include bpm-md {
+			border-bottom-color: #fff !important;
+		}
 		&:nth-child(odd){
 			border-right-color: #fff !important;
 		}
