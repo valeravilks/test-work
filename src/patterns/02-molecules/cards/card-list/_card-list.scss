@@ -37,7 +37,7 @@
 	&__list-link {
 		position: relative;
 		display: inline-block;
-		font-weight: 700;
+		font-weight: 600;
 		color: $g-heading-dark;
 		@include underline-special-reverse;
 		&:hover {
