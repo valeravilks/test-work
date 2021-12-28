@@ -14,7 +14,13 @@
 			height: 100%;
 			transform: scale(1.2);
 			opacity: 0;
-			animation: heroDecoZoomOut 1.5s ease-in-out .3s forwards;
+			@include bp-md {
+				animation: heroDecoZoomOut 1.5s ease-in-out .3s forwards;
+			}
+			@include bpm-md {
+				animation: heroDecoZoomOutMob 1.5s ease-in-out .3s forwards;
+			}
+
 
 			svg {
 				display: block;
