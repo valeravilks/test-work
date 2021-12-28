@@ -11,6 +11,9 @@
 
 @mixin h2 {
 	font-size: 42px;
+	@include bp-sm {
+		font-size: 38px;
+	}
 }
 
 @mixin h3 {
