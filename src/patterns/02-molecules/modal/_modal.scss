@@ -85,6 +85,10 @@
 		}
 	}
 
+	&__subtitle {
+		text-align: left;
+	}
+
 	&__button-wrapper {
 		text-align: center;
 	}
@@ -115,7 +119,7 @@
 		align-items: center;
 		margin-bottom: 30px;
 
-		@include bpm-md() {
+		@include bpm-xs() {
 			flex-wrap: wrap;
 		}
 	}
@@ -145,14 +149,10 @@
 	}
 
 	&__title {
-		font-size: 45px;
+		font-size: 36px;
 		line-height: 54px;
 		text-align: left;
 		padding: 0;
-
-		@include bpm-md() {
-			font-size: 40px;
-		}
 
 		&-wrapper {
 			@include bpm-md() {
@@ -180,6 +180,18 @@
 			@include bpm-md() {
 				margin-top: 0;
 			}
+
+			@include bpm-xs() {
+				order: -1;
+				flex: 0 0 100%;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__block {
+		@include bpm-xs() {
+			flex: 0 0 100%;
 		}
 	}
 

@@ -74,13 +74,24 @@
 						extra_class         : "m-modal_modal-next"
 					} only %}
 
-					{% include '01-atoms/content/title/title.twig' with {
-						parent_class        : component_class,
-						title               : item.title,
-						h                   : "4",
-						add_class_on_anim   : false
-					} only %}
-					
+					<div class="{{ component_class }}__block">
+
+						{% include '01-atoms/content/title/title.twig' with {
+							parent_class        : component_class,
+							title               : item.title,
+							h                   : "4",
+							add_class_on_anim   : false
+						} only %}
+						
+						{% if item.subtitle %}
+							{% include '01-atoms/content/subtitle/subtitle.twig' with {
+								parent_class : component_class,
+								subtitle     : item.subtitle
+							} only %}
+						{% endif %}
+						
+					</div>
+
 					{% if item.img %}
 						{% set img = TimberImage( item.img ) %}
 						{% include '01-atoms/images/image-default/image-default.twig' with {
@@ -90,12 +101,6 @@
 						} only %}
 					{% endif %}
 
-					{% if item.subtitle %}
-						{% include '01-atoms/content/subtitle/subtitle.twig' with {
-							parent_class : component_class,
-							subtitle     : item.subtitle
-						} only %}
-					{% endif %}
 
 					{% if version == 'team' %}
 						</div>
