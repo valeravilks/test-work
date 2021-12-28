@@ -20,7 +20,7 @@ if ( class_exists( 'TimberSite' ) ) {
 			$context['site']    = $this;
 			$context['options'] = get_fields( 'option' );
 			$context['sidebar'] = Timber::get_sidebar( 'sidebar.php' );
-			$context['dev_mode']  = true;
+			$context['dev_mode']  = false;
 
 			// Add Registered menus to the context
 			$menus = get_registered_nav_menus();
