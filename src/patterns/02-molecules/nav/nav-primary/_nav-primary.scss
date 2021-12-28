@@ -226,6 +226,7 @@
 				//border-bottom: 1px solid #ececec;
 				color: $g-heading-dark;
 				opacity: 0;
+				line-height: 1.3;
 				transition: $g-trans-base;
 				@include bpm-lg {
 					font-size: 14px;
