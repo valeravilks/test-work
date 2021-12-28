@@ -16,6 +16,7 @@ import showAccordion from '../patterns/02-molecules/accordion/accordion';
 import dropdown from '../patterns/02-molecules/dropdown/dropdown';
 import mapBlock from '../patterns/02-molecules/map/map';
 import modal from '../patterns/02-molecules/modal/modal';
+import modalVideo from '../patterns/02-molecules/modal-video/modal-video';
 import { hamburger } from '../patterns/02-molecules/nav/hamburger/hamburger';
 import navigateCategory from '../patterns/02-molecules/nav/nav-category/nav-category';
 import navMob from '../patterns/02-molecules/nav/nav-mobile/nav-mobile';
@@ -69,6 +70,7 @@ const app = {
 	clickableVideo,
 	defaultSlideOut,
 	modal,
+	modalVideo,
 	mapBlock,
 	debugControls,
 	defaultArticleSideNavigation,

@@ -19,8 +19,8 @@
 // Please contact the dev manager for help to decide if the SCSS of an object itself needs to be overwritten or extended here.
 // If needed, additional CSS properties can be given to the objects in this block by adding properties to the classes below.
 
-.m-modal {
-	// position: relative;
+.m-modal-video {
+	position: relative;
 	z-index: $g-z100;
 
 	&__outer-wrapper {
@@ -31,24 +31,24 @@
 			z-index: $g-z100;
 		}
 
-		&[aria-hidden="false"] .m-modal__overlay {
+		&[aria-hidden="false"] .m-modal-video__overlay {
 			animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
 
-		&[aria-hidden="false"] .m-modal__dialog {
+		&[aria-hidden="false"] .m-modal-video__dialog {
 			animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
 		}
 
-		&[aria-hidden="true"] .m-modal__overlay {
+		&[aria-hidden="true"] .m-modal-video__overlay {
 			animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
 
-		&[aria-hidden="true"] .m-modal__dialog {
+		&[aria-hidden="true"] .m-modal-video__dialog {
 			animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
 		}
 
-		.m-modal__dialog,
-		.m-modal__overlay {
+		.m-modal-video__dialog,
+		.m-modal-video__overlay {
 			will-change: transform;
 		}
 	}
@@ -58,30 +58,17 @@
 		background: rgba(0, 0, 0, .6);
 		display: flex;
 		justify-content: center;
-		// align-items: center;
-		overflow-y: auto;
-		align-items: self-start;
-		padding: 100px 0;
-
-		@include bpm-md() {
-			padding: 0;
-		}
+		align-items: center;
 	}
 
 	&__dialog {
-		max-width: 660px;
-		// max-height: 100vh;
-		position: relative;
-		background: white;
-		padding: 70px 80px 95px;
+		max-width: 500px;
+		max-height: 100vh;
+		padding: 30px;
 		box-sizing: border-box;
 		overflow: visible;
 		@include bp-md {
-			// min-width: 500px;
-		}
-
-		@include bpm-md() {
-			padding: 45px;
+			min-width: 500px;
 		}
 	}
 
@@ -97,7 +84,7 @@
 
 		&:hover {
 			cursor: pointer;
-			.m-modal {
+			.m-modal-video {
 				&__img {
 					transform: scale(1.1);
 				}
@@ -109,59 +96,6 @@
 		}
 	}
 
-	&__modal-head {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 30px;
-
-		@include bpm-md() {
-			flex-wrap: wrap;
-		}
-	}
-
-	.a-btn-pagination--next {
-		position: absolute;
-		right: -100px;
-		top: 200px;
-
-		@include bpm-md() {
-			right: 0;
-		}
-	}
-
-	.a-btn-pagination--prev {
-		position: absolute;
-		left: -100px;
-		top: 200px;
-
-		@include bpm-md() {
-			left: 0;
-		}
-	}
-
-	&__content {
-		text-align: left;
-	}
-
-	&__title {
-		font-size: 45px;
-		line-height: 54px;
-		text-align: left;
-		padding: 0;
-
-		@include bpm-md() {
-			font-size: 40px;
-		}
-
-		&-wrapper {
-			@include bpm-md() {
-				flex: 0 0 100%;
-				order: 2;
-			}
-		}
-	}
-
 	&__img {
 		display: block;
 		width: 100%;
@@ -169,18 +103,6 @@
 		object-fit: cover;
 		transform: scale(1);
 		transition: all .8s cubic-bezier(.215,.61,.355,1);
-
-		&-wrapper {
-			border-radius: 100%;
-			box-shadow: 20px 20px 46px rgba(0, 0, 0, 0.15);
-			max-width: 180px;
-			flex-basis: 180px;
-			margin-top: -95px;
-
-			@include bpm-md() {
-				margin-top: 0;
-			}
-		}
 	}
 
 	&__play-icon {
@@ -227,13 +149,13 @@
 
 // Used to create additional versions of this molecule.
 
-.m-modal {
+.m-modal-video {
 	&--default {
 
 	}
 
 	&--video {
-		.m-modal {
+		.m-modal-video {
 			&__overlay {
 				overflow: auto;
 				padding: 44px;

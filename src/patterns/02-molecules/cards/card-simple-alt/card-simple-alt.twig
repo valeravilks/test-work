@@ -22,7 +22,7 @@
 	<div class="{{ component_class }} {{ parent_class }}__card {{ parent_class }}__card--{{ index }} m-card {{ add_class_on_anim }} {{ version }} {{ interval }} {{ extra_class }} {{ brand_color_accent_class }}">
 		{% if item.add_video %}
 			<div class="{{ component_class }}__img-wrapper">
-				{% include '02-molecules/modal/modal.twig' with {
+				{% include '02-molecules/modal-video/modal-video.twig' with {
 					component_class : component_class,
 					version         : 'video',
 					item			: {

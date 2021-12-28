@@ -1,0 +1,20 @@
+## Outside repeater:
+
+{% include '01-atoms/default-modal/default-modal.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	number              : 1,
+	button_modal        : true
+	add_class_on_anim   : false,
+} only %}
+
+
+## Inside repeater:
+
+{% include '01-atoms/default-modal/default-modal.twig' with {
+	parent_class 		: component_class,
+	item         		: item,
+	number              : loop.index,
+	button_modal        : true,
+	add_class_on_anim   : false,
+} only %}

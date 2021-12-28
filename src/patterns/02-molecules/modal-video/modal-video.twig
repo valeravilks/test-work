@@ -12,7 +12,7 @@
 	* @param  {string}  extra_class          optional extra CSS class
 	#}
 
-	{% set component_class 		= "m-modal" %}
+	{% set component_class 		= "m-modal-video" %}
 	{% set version_class   		= version 			 ? component_class ~ "--" ~ version | join("") : component_class ~ "--default" %}
 	{% set parent           	= parent_class 		 ? parent_class    ~ "__" ~ component_class|replace({"m-" : ""}) | join("") %}
 	{% set add_class_on_anim 	= add_class_on_anim ? "wow" | join("") %}
@@ -52,64 +52,52 @@
 		</div>
 	{% endif %}
 
-	{# Modal Body #}
+    {# Modal Body #}
 	<div class="{{ component_class }} {{ parent }} {{ version_class }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
 		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
-			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}">
+			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
 				<div class="{{ component_class }}__dialog text-center" role="dialog" aria-modal="true" aria-labelledby="modal-{{ number }}-title" >
 
 					{% if version == 'team' %}
-					<div class="{{ component_class }} {{ component_class }}__modal-head">
-						{% endif %}
+						<div class="{{ component_class }} {{ component_class }}_modal-head">
+					{% endif %}
 
-						{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
-							parent_class        : component_class,
-							version             : "prev",
-							extra_class         : "m-modal_modal-prev"
+					{% if item.img %}
+						{% set img = TimberImage( item.img ) %}
+						{% include '01-atoms/images/image-default/image-default.twig' with {
+							parent_class      	: component_class,
+							img               	: img,
+							wrapper           	: true,
 						} only %}
+					{% endif %}
 
-						{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
-							parent_class        : component_class,
-							version             : "next",
-							extra_class         : "m-modal_modal-next"
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : item.title,
+						h                   : "4",
+						add_class_on_anim   : false
+					} only %}
+
+					{% if item.subtitle %}
+						{% include '01-atoms/content/subtitle/subtitle.twig' with {
+							parent_class : component_class,
+							subtitle     : item.subtitle
 						} only %}
+					{% endif %}
 
-						{% include '01-atoms/content/title/title.twig' with {
-							parent_class        : component_class,
-							title               : item.title,
-							h                   : "4",
-							add_class_on_anim   : false
-						} only %}
+					{% if version == 'team' %}
+						</div>
+						<div class="{{ component_class }}__full-info">
+					{% endif %}
 
-						{% if item.img %}
-							{% set img = TimberImage( item.img ) %}
-							{% include '01-atoms/images/image-default/image-default.twig' with {
-								parent_class      	: component_class,
-								img               	: img,
-								wrapper           	: true,
-							} only %}
-						{% endif %}
+					{% include '01-atoms/content/content/content.twig' with {
+						parent_class        : component_class,
+						content             : item.content,
+						add_class_on_anim   : false
+					} only %}
 
-						{% if item.subtitle %}
-							{% include '01-atoms/content/subtitle/subtitle.twig' with {
-								parent_class : component_class,
-								subtitle     : item.subtitle
-							} only %}
-						{% endif %}
-
-						{% if version == 'team' %}
-					</div>
-					<div class="{{ component_class }}__full-info">
-						{% endif %}
-
-						{% include '01-atoms/content/content/content.twig' with {
-							parent_class        : component_class,
-							content             : item.content,
-							add_class_on_anim   : false
-						} only %}
-
-						{% if version == 'team' %}
-					</div>
+					{% if version == 'team' %}
+						</div>
 					{% endif %}
 
 					{% if item.video %}
