@@ -104,7 +104,7 @@
 		letter-spacing: normal;
 
 		&::before {
-			top: calc(100% - 5px);
+			top: calc(100% - -1px);
 			height: 1px;
 		}
 	}
@@ -122,17 +122,17 @@
 		}
 
 		.m-card-simple-alt {
-			&__content {
-				color: $g-body-light;
-			}
+			//&__content {
+			//	color: $g-body-light;
+			//}
 
-			&__link {
-				color: $g-body-light;
-
-				&::before {
-					background-color: $g-body-light;
-				}
-			}
+			//&__link {
+			//	color: $g-body-light;
+			//
+			//	&::before {
+			//		background-color: $g-body-light;
+			//	}
+			//}
 		}
 	}
 

@@ -10,6 +10,10 @@
 	overflow: hidden;
 	display: flex;
 	align-items: center;
+	@include bpm-md {
+		flex-direction: column-reverse;
+	}
+
 	.o-i360-hero {
 		&__bg-color,
 		&__gradient {
@@ -19,9 +23,9 @@
 		}
 
 		&__img-wrapper {
-			@include absolute-tr;
-			width: 100%;
-			height: 100%;
+			@include bpm-md {
+				position: relative;
+			}
 		}
 
 		&__img {
@@ -34,6 +38,9 @@
 		&__info-wrapper {
 			max-width: 630px;
 			padding: 140px 0;
+			@include bpm-md {
+				padding: 40px 0px !important;
+			}
 		}
 
 		&__title {
@@ -99,10 +106,16 @@
 			&__subtitle,
 			&__content {
 				text-align: left;
+				@include bpm-md {
+					text-align: center;
+				}
 			}
 
 			&__button-wrapper {
 				justify-content: flex-start;
+				@include bpm-md {
+					justify-content: center;
+				}
 			}
 		}
 	}
@@ -162,21 +175,22 @@
 	////////////////////////////////////////////////////
 	&.o-i360-hero {
 		&--size-large {
-			min-height: 750px;
+			@include bp-md {
+				min-height: 750px;
+			}
 		}
 
 		&--size-default,
 		&--size-medium {
-			height: 500px;
-			.o-i360-hero {
-				&__info-wrapper {
-					padding: 20px 0px !important;
-				}
+			@include bp-md {
+				height: 500px;
 			}
 		}
 
 		&--size-small {
-			min-height: 400px;
+			@include bp-md {
+				min-height: 400px;
+			}
 		}
 	}
 
