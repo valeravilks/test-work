@@ -65,13 +65,13 @@
 					{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
 						parent_class        : component_class,
 						version             : "prev",
-						extra_class         : "m-modal_modal-prev"
+						extra_class         : "m-modal__prev-btn"
 					} only %}
 
 					{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
 						parent_class        : component_class,
 						version             : "next",
-						extra_class         : "m-modal_modal-next"
+						extra_class         : "m-modal__next-btn"
 					} only %}
 
 					<div class="{{ component_class }}__block">
@@ -89,7 +89,7 @@
 								subtitle     : item.subtitle
 							} only %}
 						{% endif %}
-						
+
 					</div>
 
 					{% if item.img %}

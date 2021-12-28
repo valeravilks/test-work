@@ -1,44 +1,40 @@
 import MicroModal from 'micromodal';
 
 export default () => {
-	let componentClass = 'm-card-simple-alt';
-
-	// Brings modal container above all DOM elems
-	$(`.${componentClass}--contains-modal`).on('click', function() {
-		$(this).addClass(`${componentClass}--contains-modal-active`);
-	});
-
-	// Modal out-click logic
-	$(document).on('click', function(e) {
-		if (
-			$(e.target).is(`.a-video`) === false &&
-			$(`.a-video`).has(e.target).length === 0 &&
-			$(e.target).is(`.m-modal__link`) === false &&
-			$(`.m-modal__link`).has(e.target).length === 0
-		) {
-			$(`.${componentClass}--contains-modal`).removeClass(
-				`${componentClass}--contains-modal-active`,
-			);
-		}
-	});
+	/** -----------------------------------------------------------------
+	 * Micromodal initialization.
+	------------------------------------------------------------------ */
 
 	MicroModal.init({
-		// disableScroll: true, // [6]
-		awaitOpenAnimation: false, // [8]
-		awaitCloseAnimation: true, // [9]
+		awaitCloseAnimation: true,
 		onShow: modal => {
-			console.log('open modal');
+			/**
+			 * When showing the modal window, forcibly hide the overflows
+			 * for the body so that there is no scrolling. Also scroll to
+			 * the top of the modal if it is not in the start position.
+			 */
+
 			$('body').css('overflow', 'hidden');
 			$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
-		}, // [1]
+		},
 		onClose: modal => {
-			console.log('close modal');
+			/**
+			 * When you close any window, restore the overflow on the visible
+			 */
+
 			$('body').css('overflow', 'visible');
 		},
 	});
 
-	// Modal button next and prev logic
+	/** -----------------------------------------------------------------
+	 * Creation of logic of behavior of buttons inside each modal window.
+	------------------------------------------------------------------ */
+
 	let arrayModal = $('.o-i360-team__modal');
+
+	/**
+	 * Loop through all instances of the modal window
+	 */
 
 	arrayModal.each(index => {
 		let thisModalId = arrayModal
@@ -48,17 +44,26 @@ export default () => {
 		let nextModalNumber = index + 1;
 		let prevModalNumber = index - 1;
 
+		/**
+		 * Clarifications for extreme indexes.
+		 */
+
 		if (index <= 0) {
 			prevModalNumber = arrayModal.length - 1;
 		} else if (index >= arrayModal.length - 1) {
 			nextModalNumber = 0;
 		}
 
+		/**
+		 * When you click on the 'Next' button, hide the current modal and show
+		 *  the next one. Forcibly hide overflows to hidden so that there is
+		 *  no scrolling on the page.
+		 */
+
 		$('#' + thisModalId)
-			.find('.m-modal_modal-next')
+			.find('.m-modal__next-btn')
 			.on('click', () => {
 				MicroModal.close(thisModalId);
-				console.log('nextModalNumber: ' + nextModalNumber);
 				$('body').css('overflow', 'hidden');
 				MicroModal.show(
 					arrayModal
@@ -69,8 +74,14 @@ export default () => {
 				$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
 			});
 
+		/**
+		 * When you click on the 'Prev' button, hide the current modal and show
+		 *  the next one. Forcibly hide overflows to hidden so that there is
+		 *  no scrolling on the page.
+		 */
+
 		$('#' + thisModalId)
-			.find('.m-modal_modal-prev')
+			.find('.m-modal__prev-btn')
 			.on('click', () => {
 				MicroModal.close(thisModalId);
 				$('body').css('overflow', 'hidden');
@@ -80,9 +91,13 @@ export default () => {
 						.children()
 						.attr('id'),
 				);
-				console.log('scroll');
 				$('.m-modal__overlay').animate({ scrollTop: 0 }, 0);
 			});
+
+		/**
+		 * When you click outside the modal window, it closes. Overflow for body
+		 * is also restored.
+		 */
 
 		$('#' + thisModalId)
 			.find('.m-modal__overlay')
@@ -93,8 +108,11 @@ export default () => {
 				}
 			});
 
-		// An event to force the current modal to close.
-		// Fixed incorrect work of the "data-micromodal-close" attribute.
+		/**
+		 * Clicking on the button closes the current modal window. Recovering
+		 * overflow for body.
+		 */
+
 		$('#' + thisModalId)
 			.find('button[aria-label="Close modal"]')
 			.on('click', function() {
