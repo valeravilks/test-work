@@ -175,7 +175,7 @@ new BrowserSyncPlugin({
 Here's how to dump your local database with Docker into a `.sql` file
 
 ```
-docker exec db_dodwpstarterkit /usr/bin/mysqldump -u wordpress --password=wordpress wordpress > backup.sql
+docker exec db_i360 /usr/bin/mysqldump -u wordpress --no-tablespaces --password=wordpress wordpress > backup.sql
 ```
 
 ## Local Database Restore
@@ -183,7 +183,7 @@ docker exec db_dodwpstarterkit /usr/bin/mysqldump -u wordpress --password=wordpr
 Restore a previous database backup
 
 ```
-cat backup.sql | docker exec -i db_cd /usr/bin/mysql -u wordpress --password=wordpress wordpress
+cat backup.sql | docker exec -i db_i360 /usr/bin/mysql -u wordpress --password=wordpress wordpress
 ```
 
 ## Author
@@ -210,7 +210,7 @@ $ sudo docker-compose down
 $ docker-compose rm --all
 
 # To connect you into wordpress container
-$ docker-compose exec wordpress_dodwpstarterkit /bin/bash
+$ docker-compose exec wordpress_i360 /bin/bash
 
 # To connect you into mysql container
 $ docker-compose exec mydb.mysql.db /bin/bash
@@ -219,10 +219,10 @@ $ docker-compose exec mydb.mysql.db /bin/bash
 $ docker kill $(docker ps -q)
 
 # To make a backup of the database
-docker exec db_dodwpstarterkit /usr/bin/mysqldump --no-tablespaces  -u wordpress --password=wordpress wordpress > backup.sql
+docker exec db_i360 /usr/bin/mysqldump --no-tablespaces  -u wordpress --password=wordpress wordpress > backup.sql
 
 # To restore the database
-cat backup.sql | docker exec -i db_dodwpstarterkit /usr/bin/mysql -u wordpress --password=wordpress wordpress
+cat backup.sql | docker exec -i db_i360 /usr/bin/mysql -u wordpress --password=wordpress wordpress
 
 
 Before starting the installation install these softwares:

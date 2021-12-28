@@ -15,6 +15,16 @@
 				{% set title = false %}
 			{% endif %}
 
+			{% if post.hero_pretitle %}
+				{% include '01-atoms/content/pretitle/pretitle.twig' with {
+					default_block_class : default_block_class,
+					pretitle     		: post.hero_pretitle,
+					parent_class 		: component_class,
+					h            		: 6,
+					add_class_on_anim   : false
+				} only %}
+			{% endif %}
+
 			{% if title %}
 				{% include '01-atoms/content/title/title.twig' with {
 					parent_class : component_class,

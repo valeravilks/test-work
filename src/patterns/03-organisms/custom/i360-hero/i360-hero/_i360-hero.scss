@@ -43,6 +43,17 @@
 			}
 		}
 
+		&__pretitle {
+			margin-bottom: 20px;
+			@include fadeInLeft(
+				$duration: 1s,
+				$count: 1,
+				$delay: 0s,
+				$function: ease,
+				$fill: both
+			);
+		}
+
 		&__title {
 			letter-spacing: -0.81px;
 
