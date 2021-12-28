@@ -4012,11 +4012,11 @@
                                 "id": ""
                             },
                             "choices": {
-                                "default": "Default",
-                                "alt": "Alternative",
-                                "transparent": "Transparent Cards (green border)",
-                                "provider: Provider Cards": "provider: Provider Cards",
-                                "member": "Member Cards"
+                                "default": "Default (simple white cards)",
+                                "alt": "Alternative (cards have a line in between them)",
+                                "transparent": "Transparent Cards (has a green border)",
+                                "provider": "Provider Cards (cards have colored buttons)",
+                                "member": "Member Cards (cards have a member logo on top)"
                             },
                             "default_value": "default",
                             "allow_null": 0,
@@ -15600,5 +15600,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640668179
+    "modified": 1640668756
 }
