@@ -178,6 +178,23 @@
 	}
 }
 
+.o-i360-cards-simple--alt.o-dbm--color-light {
+	.o-i360-cards-simple {
+		.m-card-simple-alt {
+			&__content {
+				color: $g-body-light;
+			}
+
+			&__link {
+				color: $g-body-light;
+
+				&::before {
+					background-color: $g-body-light;
+				}
+			}
+		}
+	}
+}
 
 //////////////////////////////////////////
 // Block Other Versions                 //
