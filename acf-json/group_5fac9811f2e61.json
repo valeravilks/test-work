@@ -3469,7 +3469,7 @@
                             "label": "Brand Color Accent",
                             "name": "brand_color_accent",
                             "type": "select",
-                            "instructions": "Set span element and link color",
+                            "instructions": "Set's the link color inside the card",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -3486,9 +3486,8 @@
                                 "id": ""
                             },
                             "choices": {
-                                "default": "Default",
-                                "dark": "Dark",
-                                "light": "Light"
+                                "dark": "Dark (Dark green link)",
+                                "light": "Light (Light green link)"
                             },
                             "default_value": "default",
                             "allow_null": 0,
@@ -3503,7 +3502,7 @@
                             "label": "Add Background Decoration",
                             "name": "add_bg_deco",
                             "type": "true_false",
-                            "instructions": "",
+                            "instructions": "The background decoration is only visibile on non-white backgrounds. You may change the background color or set a background image in the block visual settings.",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -15600,5 +15599,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640668756
+    "modified": 1640672780
 }
