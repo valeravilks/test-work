@@ -92,5 +92,14 @@ export default () => {
 					$('body').css('overflow', 'visible');
 				}
 			});
+
+		// An event to force the current modal to close.
+		// Fixed incorrect work of the "data-micromodal-close" attribute.
+		$('#' + thisModalId)
+			.find('button[aria-label="Close modal"]')
+			.on('click', function() {
+				MicroModal.close(thisModalId);
+				$('body').css('overflow', 'visible');
+			});
 	});
 };
