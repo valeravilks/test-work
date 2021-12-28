@@ -185,7 +185,7 @@
 
 	.m-card-simple-alt {
 		&:nth-child(odd){
-			border-right-color: #fff;
+			border-right-color: #fff !important;
 		}
 		&__content {
 			color: $g-body-light;
