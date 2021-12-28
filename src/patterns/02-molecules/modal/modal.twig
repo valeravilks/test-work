@@ -55,12 +55,31 @@
     {# Modal Body #}
 	<div class="{{ component_class }} {{ parent }} {{ version_class }} {{ add_class_on_anim }} {{ extra_class }}" data-module="modal">
 		<div class="{{ component_class }}__outer-wrapper" id="modal-{{ number }}" aria-hidden="true">
-			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}" data-micromodal-close>
+			<div class="{{ component_class }}__overlay" tabindex="-{{ number }}">
 				<div class="{{ component_class }}__dialog text-center" role="dialog" aria-modal="true" aria-labelledby="modal-{{ number }}-title" >
 					
 					{% if version == 'team' %}
-						<div class="{{ component_class }} {{ component_class }}_modal-head">
+						<div class="{{ component_class }} {{ component_class }}__modal-head">
 					{% endif %}
+
+					{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+						parent_class        : component_class,
+						version             : "prev",
+						extra_class         : "m-modal_modal-prev"
+					} only %}
+
+					{% include '01-atoms/buttons/button-pagination/button-pagination.twig' with {
+						parent_class        : component_class,
+						version             : "next",
+						extra_class         : "m-modal_modal-next"
+					} only %}
+
+					{% include '01-atoms/content/title/title.twig' with {
+						parent_class        : component_class,
+						title               : item.title,
+						h                   : "4",
+						add_class_on_anim   : false
+					} only %}
 					
 					{% if item.img %}
 						{% set img = TimberImage( item.img ) %}
@@ -70,13 +89,6 @@
 							wrapper           	: true,
 						} only %}
 					{% endif %}
-					
-					{% include '01-atoms/content/title/title.twig' with {
-						parent_class        : component_class,
-						title               : item.title,
-						h                   : "4",
-						add_class_on_anim   : false
-					} only %}
 
 					{% if item.subtitle %}
 						{% include '01-atoms/content/subtitle/subtitle.twig' with {

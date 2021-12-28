@@ -15,7 +15,6 @@
 	{########################################################}
 	{% set component_class = "o-i360-team" %}
 	{% set container       = true %}
-	{% set modal_number    = random() %}
 
 	{#################################################################################}
 	{# ----------------------------------------------------------------------------- #}
@@ -32,6 +31,9 @@
 			{% endif %}
 
 			{% for item in items %}
+			
+				{% set modal_number    = random() %}
+				
 				{# Accessing WordPress post and making them available to Twig templates #}
 				{% set item = TimberPost( item ) %}
 
