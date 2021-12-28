@@ -104,7 +104,7 @@
 		letter-spacing: normal;
 
 		&::before {
-			top: calc(100% - 5px);
+			top: calc(100% - -1px);
 			height: 1px;
 		}
 	}
