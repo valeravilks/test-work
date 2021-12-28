@@ -2128,7 +2128,7 @@
                             "choices": {
                                 "img-left": "Default (Image left, text right)",
                                 "img-right": "Image right, text left",
-                                "staff-left": "Staff Image Left",
+                                "staff-left": "Staff Image left",
                                 "staff-right": "Staff Image right",
                                 "quote-left": "Quote left, text right",
                                 "quote-right": "Quote right, text left",
@@ -8383,7 +8383,8 @@
                                 "whitepaper",
                                 "case-studies",
                                 "event",
-                                "news"
+                                "news",
+                                "page"
                             ],
                             "taxonomy": "",
                             "filters": [
@@ -15599,5 +15600,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1640588598
+    "modified": 1640668179
 }
